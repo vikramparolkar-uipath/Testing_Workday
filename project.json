@@ -1,0 +1,250 @@
+{
+  "name": "WorkdayTestingDemo",
+  "projectId": "8c8634ff-0359-44a5-8880-a5b4f7c15622",
+  "description": "Test Automation Project",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.Excel.Activities": "[2.22.3]",
+    "UiPath.GoogleCloud.Activities": "[2.3.2]",
+    "UiPath.GoogleVertex.IntegrationService.Activities": "[5.1.0]",
+    "UiPath.GoogleVision.Activities": "[1.4.1]",
+    "UiPath.IntegrationService.Activities": "[1.3.0-beta.20240219.9]",
+    "UiPath.System.Activities": "[23.10.5]",
+    "UiPath.Testing.Activities": "[23.12.0]",
+    "UiPath.UIAutomation.Activities": "[23.10.10]",
+    "UiPath.Workday.Activities": "[1.4.1]",
+    "UiPath.Workday.IntegrationService.Activities": "[5.3.1]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.9.0.0",
+  "projectVersion": "1.0.51330844",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Tests",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "aee01a72-78c2-4375-920f-5dd609af8d93",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Login_AccountsPayable.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "d5504850-6698-4088-b182-d08b5118f269",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Login_HR.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "6e55a808-deaa-4b81-9201-7fd09977b3f4",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Compensation_CompleteFlow.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "48d32550-1fb2-4cac-aa97-0bb58d214dd9",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Compensation_RescindRaise.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "011e1afa-9ee6-4988-b0e2-d56126c26899",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Approval.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "56fc82aa-deb5-44f7-81c1-20499c3b2dd7",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Submission.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "a7f6bd6c-8da0-48d8-9a4d-f56f226cea4c",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Rescind.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3aef155d-0b26-4c6c-a72c-b9c458bfc4bf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TestCase.xaml"
+      }
+    ],
+    "saveToCloud": false
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "TC_Compensation_CompleteFlow.xaml",
+      "uniqueId": "6e55a808-deaa-4b81-9201-7fd09977b3f4",
+      "input": [
+        {
+          "name": "Employee_ID",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Worker",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Effective_Date",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Percent_Change",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        }
+      ],
+      "output": []
+    },
+    {
+      "filePath": "TC_Termination_Submission.xaml",
+      "uniqueId": "56fc82aa-deb5-44f7-81c1-20499c3b2dd7",
+      "input": [
+        {
+          "name": "Employee_ID",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Worker",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Termination_Date",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Last_Day_Worked",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        }
+      ],
+      "output": []
+    },
+    {
+      "filePath": "TC_Login_HR.xaml",
+      "uniqueId": "d5504850-6698-4088-b182-d08b5118f269",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TC_Login_AccountsPayable.xaml",
+      "uniqueId": "aee01a72-78c2-4375-920f-5dd609af8d93",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TC_Termination_Approval.xaml",
+      "uniqueId": "011e1afa-9ee6-4988-b0e2-d56126c26899",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TC_Termination_Rescind.xaml",
+      "uniqueId": "a7f6bd6c-8da0-48d8-9a4d-f56f226cea4c",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "TC_Compensation_RescindRaise.xaml",
+      "uniqueId": "48d32550-1fb2-4cac-aa97-0bb58d214dd9",
+      "input": [
+        {
+          "name": "Role",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "User",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Password",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Employee_ID",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Worker",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Effective_Date",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        },
+        {
+          "name": "Percent_Change",
+          "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+          "required": false,
+          "hasDefault": true
+        }
+      ],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}
