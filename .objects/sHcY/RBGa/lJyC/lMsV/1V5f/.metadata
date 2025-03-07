@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Select files",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "1V5fBlMX8U2O_otSTF7Avw",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/1V5fBlMX8U2O_otSTF7Avw",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/lMsVrNGSD06JERPmj_HpqQ",
+  "Created": "2025-03-06T04:09:16.2023663Z",
+  "Updated": "2025-03-06T04:09:16.2023663Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

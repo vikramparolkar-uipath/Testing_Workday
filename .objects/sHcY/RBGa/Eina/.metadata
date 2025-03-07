@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Submission Screen",
+  "Type": "Screen",
+  "Id": "Eina1sKEv0-9sIqTQRDCyQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/Eina1sKEv0-9sIqTQRDCyQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-06T04:38:52.6737112Z",
+  "Updated": "2025-03-06T04:39:08.286759Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

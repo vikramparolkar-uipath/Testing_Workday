@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hQmZq5qPQkOeYMevc8YE2g" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://impl.workday.com/wday/authgwy/uipath_dpt1/login.htmld?" DesignTimeRectangle="407, 648, 52, 22" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Sign In' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sign In' tag='BUTTON' type='button' check:text='Sign In' /&gt;" Guid="da13ea47-7fbe-4ad5-914f-8dcce66f8eec" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAAaCAYAAADi4p8jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIaSURBVFhH7ZhPy2lRFMZ9ABMfwJCBoXwDmWCAMmJCJphJkqEMjEmifABlYKhEMjAwZEKSSP7k30d43p5d53Tynts9181933Puu+vJbq+z9l4/e63V6Zhg8PH/AB6PR9RqNeRyOV2LDGSRhgxIw2AwwOPx0LXIQBZpyICkV3PQo8gijR9APeotgPv9HufzWdX2r/Uy4Hg8ht/vh8lkgsvlQqvVwuVywel0QjKZRKfTUfX7UzWbTRQKBVWbFr0EOJ/PBVy/38f9fsdisUA0GkW321V9/m/0JYC8vUQigcPhIK8Rtt1uizkD6vV68rrT6YTNZkM+n0cwGMR6vRb2dDqNbDYLs9mMcDiM5XIp7ydJCajVR6mXADebDUKhEIrFIna73Se7BMibJRAhr9crGo0G3G63DMjUnkwmIq3pU6lUPu31DKjFR6mXAKntdotSqQS73Y5AIIDRaCTSlTYJkEqlUnLDmU6n4o+RAKXAqV+l4jOgFh+lXgaUxMbCNwav1ysC4BoP5fw5AN0AKutNkvIw/jIYSpc3OBwO4fF4RC0wLVmT8XhcrgceymB+V4Nagv0SQEIxaJ/PJ7oZO2S5XBZv7rTzUAbDudRFrVYrMpkMIpGIqN9vDahVt9sNs9lMpChrtV6vi715m2rPv0NvBWQrr1arcDgcsFgsiMViWK1Wqs++S28F/A76AdS7VAEN/8nC8B+djDoMDgh8AKRRN3O5N9HoAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign In to Workday' /&gt;" SearchSteps="FuzzySelector, Image">
+      <imageRef attrName="InformativeScreenshot" originalValue="e0b6934504c29b040522992f06db8bc3.png" xmlns="">0Su5sZM7zCkC5ZyiLks5jCQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

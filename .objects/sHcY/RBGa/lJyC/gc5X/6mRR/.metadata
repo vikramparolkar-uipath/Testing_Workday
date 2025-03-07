@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Save for Later",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "6mRRF-BAck67XNII6EfGsg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/6mRRF-BAck67XNII6EfGsg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/gc5XyuSCaEWzqqrzCyvdrA",
+  "Created": "2025-03-06T03:06:51.2721895Z",
+  "Updated": "2025-03-06T03:06:51.2721895Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

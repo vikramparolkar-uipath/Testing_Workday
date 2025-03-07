@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Attachments Tab",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "X1ocuYVplkqNsuQo8tcSpA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/X1ocuYVplkqNsuQo8tcSpA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/lMsVrNGSD06JERPmj_HpqQ",
+  "Created": "2025-03-06T04:09:01.7854929Z",
+  "Updated": "2025-03-06T04:09:09.5543068Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

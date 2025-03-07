@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Supplier's Invoice Numb…",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "UpMAJb84N0CgNur-ErpnYg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/UpMAJb84N0CgNur-ErpnYg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/B1mDayqae0-nuftOOrEpFw",
+  "Created": "2025-03-06T03:49:40.6435684Z",
+  "Updated": "2025-03-06T03:49:40.6435684Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

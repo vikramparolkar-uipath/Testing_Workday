@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Invoice Reference Information",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "B1mDayqae0-nuftOOrEpFw",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/B1mDayqae0-nuftOOrEpFw",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/lJyCFmAOf0GUq1L9Fajm0A",
+  "Created": "2025-03-06T03:06:29.6041396Z",
+  "Updated": "2025-03-06T03:06:29.6041396Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Home Screen",
+  "Type": "Screen",
+  "Id": "ZIniZma510O4EQR_hDvecw",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/ZIniZma510O4EQR_hDvecw",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-06T02:44:48.8816735Z",
+  "Updated": "2025-03-06T02:44:55.1306084Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

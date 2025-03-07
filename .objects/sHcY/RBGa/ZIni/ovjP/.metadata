@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Profile Icon",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "ovjP7-tLPkWezkBhmuARBQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/ovjP7-tLPkWezkBhmuARBQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/ZIniZma510O4EQR_hDvecw",
+  "Created": "2025-03-06T02:44:57.6241271Z",
+  "Updated": "2025-03-06T02:45:05.3771338Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "name": "Testing_Workday",
+  "projectId": "8c8634ff-0359-44a5-8880-a5b4f7c15622",
+  "description": "Test Automation Project",
+  "main": "Main.xaml",
+  "dependencies": {
+    "UiPath.DataService.Activities": "[25.2.0]",
+    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.GoogleVertex.IntegrationService.Activities": "[5.1.2]",
+    "UiPath.IntegrationService.Activities": "[1.14.0-beta.20250214.2]",
+    "UiPath.System.Activities": "[25.2.1]",
+    "UiPath.Testing.Activities": "[24.10.4]",
+    "UiPath.UIAutomation.Activities": "[24.10.11]",
+    "UiPath.Workday.IntegrationService.Activities": "[5.3.3]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "namespace": "Testing_Workday"
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.9.0.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Tests",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "aee01a72-78c2-4375-920f-5dd609af8d93",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Login_AccountsPayable.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "d5504850-6698-4088-b182-d08b5118f269",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Login_HR.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6e55a808-deaa-4b81-9201-7fd09977b3f4",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Compensation_CompleteFlow.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "48d32550-1fb2-4cac-aa97-0bb58d214dd9",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Compensation_RescindRaise.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "011e1afa-9ee6-4988-b0e2-d56126c26899",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Approval.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "56fc82aa-deb5-44f7-81c1-20499c3b2dd7",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Submission.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "a7f6bd6c-8da0-48d8-9a4d-f56f226cea4c",
+        "testCaseType": "TestCase",
+        "fileName": "TC_Termination_Rescind.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3aef155d-0b26-4c6c-a72c-b9c458bfc4bf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Integration Service.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "e9de3869-561f-46cf-b0b4-0ba123af7b69",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TC_Login_FinancePersona.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "7e84897c-faa3-4e5d-b395-d97c36d3f44d",
+        "dataVariationFilePath": ".variations\\WorkdaySupplierInvoice_Include In Test.json",
+        "testCaseType": "TestCase",
+        "fileName": "TC_CreateSupplierInvoice.xaml"
+      }
+    ],
+    "saveToCloud": false
+  },
+  "arguments": {
+    "input": [],
+    "output": []
+  },
+  "expressionLanguage": "VisualBasic",
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

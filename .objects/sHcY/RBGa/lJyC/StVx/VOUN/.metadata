@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Other Charges",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "VOUNkphl80-luzGVk8p6qg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/VOUNkphl80-luzGVk8p6qg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/StVx3LVNB0SJ_8_RM7dt1Q",
+  "Created": "2025-03-06T03:07:00.8078751Z",
+  "Updated": "2025-03-06T03:07:00.8078751Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

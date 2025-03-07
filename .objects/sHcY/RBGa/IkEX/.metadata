@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Search Results Screen",
+  "Type": "Screen",
+  "Id": "IkEXmNsD_UuhKEzfrNqS3w",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/IkEXmNsD_UuhKEzfrNqS3w",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-06T03:02:44.1358458Z",
+  "Updated": "2025-03-06T03:02:47.3702034Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

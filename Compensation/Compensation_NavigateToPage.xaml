@@ -1,0 +1,152 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="NavigateToCompensationPage" this:NavigateToCompensationPage.in_BrowserType="msedge.exe" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_BrowserType" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="io_BrowserElement" Type="InOutArgument(ui:UiElement)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1042,1078</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>NavigateToCompensationPage_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Note: This workflow has been built as a reusable component. &#xD;&#xA;In order to unit test the workflow, you may need to remove the Input Browser Element (in_BrowserElement) from the first activity container.&#xD;&#xA;&#xD;&#xA;BrowserType: This workflow was built using MS Edge windows. To change the browser window during design-time, change the in_BrowserType argument." DisplayName="NavigateToCompensationPage" sap:VirtualizedContainerService.HintSize="512,1013" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Home - Workday" sap:VirtualizedContainerService.HintSize="450,823" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_BrowserElement]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4dde51ae-549c-48b2-ba01-06cb43dbdf61" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,663" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View All Apps'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://impl.workday.com/uipath_dpt1/d/home.htmld" DesignTimeRectangle="1233, 760, 90, 17" ElementType="Text" FriendlyName="'View All Apps'" FullSelectorArgument="&lt;webctrl aaname='View All Apps' parentid='mainContent' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='View All Apps' parentid='mainContent' tag='SPAN' type='' check:text='View All Apps' /&gt;" Guid="adf01f55-8ebf-461b-8598-a8040bfaf899" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAVCAYAAADPTVnBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR+SURBVFhH7VdNS5tZFJ5l/kW2LmeXpVuX2WXp1mU28iIMxoWUgJRGBpnZSJAurCBFiowMwghFBkGKARcBNyFf5sM0qbY1SJCn59x77r1v7hs7NYtkoHngQO7Hez+e85xzT37BDFPBjPgpYUb8lDAjfkp4HvF3N0gHZcRftdCUrmni7HUZseUyspej2/9nWOITdOBYcI2zR+lQ+IyDTX2ZpfefFfHBShlzm+2JEd87ran9YxtRZ49N/F0baV5zuYo3LembMCzxuVV96NyVdDDsAWs4upO+icI5PrZcQb4u3YJxie+9F2eSJQ9vpXeysMSX3lXUQRL7PekB+ud1fcCtNlRvq4UUt8Pq63aQe0nph/tXKlja66CnouYWb7J8ubpEkbTNt8apZu1RkP3iaxUVkeGzMcYjns6xQfOCCuZZbKsNFGSEodeoINitI0nRHaPUuvi2i76M4/Ja7bGwfY1gXe/360ta417GcY/iMX37mx6bW6sidxFVrcvx5SYWaGJsvYmS6ujjZFt/HJzLtj7xDx+RXaM2XWJphw7CF6Lx5DtNUGGf26TUMjX86LlqKDIXZO4olA61GDLn5FxDUigVjkV8vYkkzYnnb3C2p+fnigMZdGvEVqqK/BSTT+30KaVahhDPlmLy5c5xEVD/Q12JMLHVxNFFCxnmhzjIXbk9GKHH9Rb5FzxJ8t4jkUreZsWePOgZPvEm/6r8z3jsOoKoaSImffrFRQ9Z9nKA5j9V+3s0esizouTd0U4cnj8O8Say1Tri/PjrjzJq1hCxMIp6jo1Mo3gjGHNnEVTzWN8rfaZDoN/o4uSig0LDxoxCiHinsNQx5T3agD0Xz3dcmHnEW3VEjMji+Z0WFqmd2O/quRt1FZ6cMvS333k75MKJva5uW6W68/hE++0IwsKQ9KfEFjhx6TVCj+4DFRS0ps0EQrziSMFkBnFWg+6sBEsp6EUNmcMblO6i4hoi3lyOvXsiCst8CHnqCeKX3naUV531JG+Lal/VkKYLs0qUctepzfk+25K05mOAgqSBqPkkPYN4o94RZtJphHiTIp8k/guOtvibUJR86uJgt4aUSjNkQRUHXvU0TLxNN6Q0VkZICQoe8SasEjuhqCi2cdQwHh5YMthUxSSRpL7zHkuLhw4yrJrVKjK718iJZTZ1RJrU9jziSZnEDI8v5t2auZ0a5qkvRiUyn0avMW6q+YrC37xuCwXF2wClvzRHzlEaHvGOTLZw7lPwH9d7eVz5IL/rSyzwH6yQI2wdbv4jmNAls4+2B/NARfY3BcAQST9IvHFm5L+KRCURd/DJreE/rsG5lC1CPNvQ47p9o+7Mbxefff5PflzbyKrKbvgBZ0SIt+SSRR4+n3gGlZN/bFUwx/10seR2C0VbWhEo56lv5GAuNCn8OqrDg6vdo47pibpIkVTTP4d4W7vbcziYh5trer0GRdr+98vJ1E7jh8vJ7L/R/wpR4n9yGOKf/EcbyfHjwRLPi/3sxvCJ98d94sPj/2VhzBTvYeKKn2GymBE/JcyInwqAbypN+yxBUCajAAAAAElFTkSuQmCC" InformativeScreenshot="d48e27e2197e8cb5fcdfbc5330167e41.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home - Workday' /&gt;" SearchSteps="FuzzySelector, Image">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1197, 748, 138, 40" ElementType="Button" FriendlyName="'View All Apps'" FullSelectorArgument="&lt;webctrl aaname='View All Apps' parentid='mainContent' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='View All Apps' parentid='mainContent' tag='BUTTON' type='button' check:text='View All Apps' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Compensation'" sap:VirtualizedContainerService.HintSize="354,197" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4dde51ae-549c-48b2-ba01-06cb43dbdf61" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://impl.workday.com/uipath_dpt1/d/home.htmld" DesignTimeRectangle="102, 422, 104, 19" ElementType="Text" FriendlyName="'Compensation'" FullSelectorArgument="&lt;webctrl aaname='Compensation' parentid='tabpanel-i3bb6-app' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Compensation' parentid='tabpanel-i3bb6-app' tag='SPAN' type='' check:text='Compensation' /&gt;" Guid="467b881e-6f55-4499-ac02-ee6702b8bb4e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGwAAAAXCAYAAADug6rPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATDSURBVGhD7VjfZyRZFN5/r5+KKEIRpoQW0pa0MG1IWSYvZV5qmLKkjdV5SB5aQtQyEaIYWaJCdBg9rF5WEx2GJpShCd+ec39U3a5U0t2xv5r66Ic6995z7jnfPeee2z+gwlKhImzJUBG2ZKgIWzJUhC0ZHhP2MEKy76G+aqFWq8FaddHaizFM1XiFmRgeN2DVHIQ3EyX5+zBN2Pce2q+YKAv2to/w5xD+tk3Ga6itheh9V/MqZBidNMXBDq+VgDD6tfnvEDY8qAvjze5QSSS0vF6QVygn7J+EQVgf7VXKpJqPi2Im3R6hwVm2HWGsRLjv4fCnOmyL11hwXreR3KkxgnYk+JSgrbN0pQ7/fAR8y2XWqpIpyHUuOuen8OuqLDstdG4KNTkdIPJz+3U/wiCb0kPI9raOkJz5qrxz1eigb6op6LA3fES/T9tJbw7hbej9O3Q9JBg/8IiyYf62IrAnpSQOYwSvHanHsuV+79UYIYvXeQ8dPU/Hy0BO2F2EpmH0WaS02TU27MJ7HyJ878Flp60mIkWa3kA+pwWHv6lUOGsWGr6xrtbCqToJj9fpObluLt3CPulqmbqJoFEhmNYrDwGX9h8V+R96QgVZQrTNMge73ZiIbaOxwnZzO5ObUOi1NgNEcYyjt47Q4Xzs0+gYg8sEp+9dIWsdJEhuRuAi+IiwW4ot+7DSgE97CX2+4+jbuGYyv+ngTMfG8JvwIsKGXVkiW2dZviG9CmCTzN5jZ/IN7Mb5iR3sS+fqB3lpHR5Imf9Z1vuydeOzlpDZIlD597Qe3pOlgqQIW22jLwgkPCQIWLZ+CLHqm/L3XSKGGZPLEO66i13h1wQXPgesgaNbOZ7psCjQSvSIHMK0jPS844Nho/1FDAuMjuUcHUO9xozpiJoXlunYMF5A2JhOJjviITZSOguSCshsRyS0rHkirZbNwX0Mj3WLvaWId9i+EUjGdSjWNY5Zj9rLlC8661SwH+gKUFVit5tgcDdPg0BZuWXoYMlMP8kuZwofHjGqoOPtX5RnJaEYG8YLCHu8aYkRjjZz+WxHJIqbKpszTYC2/8RPlLw5CGMYd6lYy3fGyYCOhMLDWDxxGo4sp/lvQcJ4TTGuOluVfJ7YMOZrOu5O4VGpcP2Y8mtGhqmTNNsRieKmyuaUZ5grGprksvD7g0vKnIRpTFIMryMEm7I58X/jMz9B74Mtvpu/9DC8T5HeD3BoHErGbD/J7nMZthOLAzJPbBgGYUTZR3mpNkVZyVFs6+UdZsE7n32HPe2IRHFT+tu8w9LPvsgCfYdl9o16T7PQv+yr7JhN2OSqLe4r75Phqyqrci8q0LUASXYPDtBZz3UwZvup7zAH7a9iWOCpO2whwkT3N8/DeYEu8aWEPac7s0/7FB1V1gW6FBTODkXOcxmmO02rgeCEusRYZ5gOLGXyWxkLdycgGwE89cwwCUvPPSGzNncRdnvl2bJAl7gYYQz+a2qP2mRucXkj4q+pRLXLBuZ8h72UML9beId9yTNOgMrT02+oOQhjFHywNzx0roysVe80EVx+g+1Ta/+G57o4/FPNoXhFO+pN+eZUvFPL/Jz3HbY4Yf8xSp2tkKEibMlQEbZk+N8RVuF5VIQtGSrClgrAXxfLBTCgmofmAAAAAElFTkSuQmCC" InformativeScreenshot="c5324cfc72e6ce06b60dbcc6525b16d9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Home - Workday' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Compensation Change'" sap:VirtualizedContainerService.HintSize="354,182" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4dde51ae-549c-48b2-ba01-06cb43dbdf61" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://impl.workday.com/uipath_dpt1/d/inst/13102!CK5mGhIKBggDEMenAhIICgYI1Q0QjCg~*HjCIjmwxf60~/cacheable-task/2997$2151.htmld#backheader=true" DesignTimeRectangle="591, 396, 320, 43" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Compensation Change'" FullSelectorArgument="&lt;webctrl id='2997$237' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='2997$237' tag='A' type='' class='WHP4 WPXO WJHK' aaname='Compensation Change' check:innerText='Compensation Change' /&gt;" Guid="ad7d7883-364d-4bdc-9ca9-c3ca630e8b3c" ImageBase64="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" InformativeScreenshot="2e5c9e8291088dc0bd23ddb0bd540e62.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Compensation - Workday' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Edge" IconBase64="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" InformativeScreenshot="07cb64de45f3ca29cb818598bc24a1de.png" Selector="[string.Format(&quot;&lt;html app='{0}' title='Home - Workday' /&gt;&quot;, in_BrowserType)]" Title="Home - Workday" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Item Description",
+  "Type": "Element",
+  "Id": "ohg_pgHqIk6_zg5XOyjhpA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/ohg_pgHqIk6_zg5XOyjhpA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/qkOuC3YPvECYiyYDkbJveA",
+  "Created": "2025-03-06T03:51:05.7594568Z",
+  "Updated": "2025-03-06T03:51:05.7594568Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

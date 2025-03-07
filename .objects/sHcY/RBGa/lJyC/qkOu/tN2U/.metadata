@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Extended Amount",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "tN2UEG1gaEiRgHi-0cIA_A",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/tN2UEG1gaEiRgHi-0cIA_A",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/qkOuC3YPvECYiyYDkbJveA",
+  "Created": "2025-03-06T03:52:17.6930191Z",
+  "Updated": "2025-03-06T03:52:17.6930191Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

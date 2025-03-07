@@ -1,0 +1,9 @@
+{
+  "issueKeyTestcaseValues": {},
+  "testManagerBasePath": "https://staging.uipath.com/uibank/developmenttenant/testmanager_/",
+  "defaultProject": {
+    "id": "b858c095-a180-0000-d12f-0b47f3298832",
+    "name": "Workday",
+    "key": "WDAY"
+  }
+}

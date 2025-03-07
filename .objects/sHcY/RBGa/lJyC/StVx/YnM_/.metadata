@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Supplier",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "YnM_l6hu1EiLACp8MiVEhg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/YnM_l6hu1EiLACp8MiVEhg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/StVx3LVNB0SJ_8_RM7dt1Q",
+  "Created": "2025-03-06T03:07:00.9884127Z",
+  "Updated": "2025-03-06T03:07:00.9884127Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Comment",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "FCZ7FXpT7kqlXljltgPZdQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/FCZ7FXpT7kqlXljltgPZdQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/lMsVrNGSD06JERPmj_HpqQ",
+  "Created": "2025-03-06T04:09:42.5462705Z",
+  "Updated": "2025-03-06T04:09:42.5462705Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

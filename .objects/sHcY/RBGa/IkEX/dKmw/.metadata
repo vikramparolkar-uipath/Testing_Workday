@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Create Supplier Invoice",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "dKmwum9cA0qx8E_yYHmyGA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/dKmwum9cA0qx8E_yYHmyGA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/IkEXmNsD_UuhKEzfrNqS3w",
+  "Created": "2025-03-06T03:02:52.0301563Z",
+  "Updated": "2025-03-06T03:02:52.0301563Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
