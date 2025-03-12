@@ -22,7 +22,7 @@
   ],
   "schemaVersion": "4.0",
   "studioVersion": "20.9.0.0",
-  "projectVersion": "2.0.0",
+  "projectVersion": "2.0.195449536",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -52,12 +52,6 @@
       "ignoredFiles": []
     },
     "fileInfoCollection": [
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "aee01a72-78c2-4375-920f-5dd609af8d93",
-        "testCaseType": "TestCase",
-        "fileName": "TC_Login_AccountsPayable.xaml"
-      },
       {
         "editingStatus": "InProgress",
         "testCaseId": "d5504850-6698-4088-b182-d08b5118f269",
@@ -114,6 +108,13 @@
         "dataVariationFilePath": ".variations\\WorkdaySupplierInvoice_Include In Test.json",
         "testCaseType": "TestCase",
         "fileName": "TC_CreateSupplierInvoice.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f3f8de49-173e-466a-9cb1-5d9b161b9398",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TC_Login_AccountsPayablePersona.xaml"
       }
     ],
     "saveToCloud": false
