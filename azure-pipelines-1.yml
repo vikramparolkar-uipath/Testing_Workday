@@ -63,7 +63,7 @@ stages:
             
             # Get Test IDs
             $PROJECTID = "2f6219e7-826a-0000-935e-0b4686790953"
-            $urlGetTestSets = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testsets"
+            $urlGetTestSets = "https://staging.uipath.com/uibank/DevelopmentTenant/testmanager_/api/v2/${PROJECTID}/testsets"
             $headersGetTestSets = @{
               Authorization = "Bearer $token"
             }
@@ -93,7 +93,7 @@ stages:
                 Authorization = "Bearer $token"
                 "Content-Type" = "application/json"
               }
-              $urlStartExecution = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testsets/$testSetId/startexecute?executionType=automated"
+              $urlStartExecution = "https://staging.uipath.com/uibank/DevelopmentTenant/testmanager_/api/v2/${PROJECTID}/testsets/$testSetId/startexecute?executionType=automated"
               Write-Host $urlStartExecution
               $responseStartExecution = Invoke-RestMethod -Uri $urlStartExecution -Method Post -Headers $headersStartExecution
 
@@ -104,7 +104,7 @@ stages:
             Write-Host "....Execution Started"
 
             # Check execution status
-            $urlCheckExecTestSet = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testexecutions/$testSetExecutionId/withstats"
+            $urlCheckExecTestSet = "https://staging.uipath.com/uibank/DevelopmentTenant/testmanager_/api/v2/${PROJECTID}/testexecutions/$testSetExecutionId/withstats"
             $headersCheckExecTestSet = @{
               Authorization = "Bearer $token"
             }
