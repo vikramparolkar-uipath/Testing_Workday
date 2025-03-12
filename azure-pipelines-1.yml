@@ -41,7 +41,7 @@ stages:
               grant_type = "client_credentials"
               client_id = "$(app_id)"
               client_secret = "$(app_secret)"
-              scope = "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read"
+              scope = "TM.TestExecutions TM.TestSets TM.TestCases TM.Projects.Read TM.CustomFieldValues.Read TM.CustomFieldDefinitions.Read"
             }
             $response = Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
             $token = $($response.access_token)
