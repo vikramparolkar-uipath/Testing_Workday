@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Worker History",
+  "Type": "Element",
+  "Id": "q_1vt4pzn0O2ccXsm_XmZg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/q_1vt4pzn0O2ccXsm_XmZg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/-M975wTchkyQa8javXNHlA",
+  "Created": "2025-03-12T05:11:54.4349887Z",
+  "Updated": "2025-03-12T05:11:54.4349887Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

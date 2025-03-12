@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Worker History (Dropdown)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "NUgPHBlVVUqB6s5Tjj2C7w",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/NUgPHBlVVUqB6s5Tjj2C7w",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/joGvPIbSXUek403GUDp8WQ",
+  "Created": "2025-03-12T05:12:25.9190263Z",
+  "Updated": "2025-03-12T05:12:25.9190263Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

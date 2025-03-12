@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="FEYLo712-UK1lld9m8KMtw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/search.htmld" DesignTimeRectangle="696, 229, 544, 144" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl aria-role='dialog' css-selector='body&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='dialog' type='' tag='DIV' class='WCU wd-popup WGV' aaname='' /&gt;" Guid="ec2a1b89-7bf3-4f9d-9925-167496554cd5" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search Results - Saved Categories - Workday' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="b652adb5fbd55b4ad697ebc90ea82e9b.png" xmlns="">0Vy1K1kt0B0CH10EgnlV5ZQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

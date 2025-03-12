@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6hPfhh5Oq0ixe2Tp9ZIy2Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/task/2997$237.htmld" CVScreenId="d30745a9-3c2b-41f2-8e3d-eb6f90f2555e" CvTextArea="1617, 373, 26, 14" CvTextArgument="Edit" CvType="Text" DesignTimeRectangle="1619, 369, 86, 28" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='WOBL' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='WOBL' tag='DIV' type='' aaname='' check:innerText='Edit' /&gt;" Guid="361d560f-f074-434c-bb45-9379eae36300" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFoAAAAgCAYAAACSEW+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGPSURBVGhD7dbPSgJhFAVwn6ZF+5Zt2vcGtekZgqBFQUG7dkGLeoIggmgjtQjKiASLskVmQeImK6c0yTK9eUc/0/H4Z3FrM2fgB3eOM7M4fn5jJDIVFfoHMCR7MCR7MCR7MCR7MCR7MCR7MCR7MBzC9PqVPBW+ZGnnzj+f30r5gtdRkxs2D7OCjmy+LBMr8a4bg0VfPBQk/ViSsYVTPyt8VFqfUZ0btGgtRwvsuKCHYNHtWDTghkFFj87F5OTWk+9qTT4rVYnfv0n+/bfo62zRd5B8af4WGoeeB58VSm4YVPRuIievpYosbqdlcjUhxzeelOuFB4vWmSsacEOvPVpz3aN1r947z7VunNlIynOxe0XrzKIBN/Rb0Zp59dW8tp/pyNr3aBY9gBtY9B9zQ7+iuXUYcEO/olXwZaj/Onq9DPVL0Gv1mePLZx3PCS03aCnocOUP+/dO55HZI4mlPKnVRC4zjSz0YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEj2YEjGovIDYpk5BqlvBgAAAAAASUVORK5CYII=" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Request Compensation Change - Workday' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2bdcc23b2a6313da87452ec29db22e25.png" xmlns="">0idMdsE5GgkS721zn84850w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

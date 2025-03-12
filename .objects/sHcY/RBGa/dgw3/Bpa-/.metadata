@@ -1,0 +1,17 @@
+﻿{
+  "Name": "'X' - View Related Info",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "Bpa-8c47-Uapw95kATCFsg",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/Bpa-8c47-Uapw95kATCFsg",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/dgw3AHSYwk-QTVQjb4JaWQ",
+  "Created": "2025-03-12T04:23:39.7799664Z",
+  "Updated": "2025-03-12T04:24:27.1141293Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

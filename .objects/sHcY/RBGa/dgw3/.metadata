@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Request Compensation Change Screen",
+  "Type": "Screen",
+  "Id": "dgw3AHSYwk-QTVQjb4JaWQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/dgw3AHSYwk-QTVQjb4JaWQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-12T04:14:10.8591542Z",
+  "Updated": "2025-03-12T04:14:18.6009265Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

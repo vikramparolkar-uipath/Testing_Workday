@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Request Compensation Change",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "-JDzrOgtQ0aYnY-J9ByD2w",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/-JDzrOgtQ0aYnY-J9ByD2w",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/IkEXmNsD_UuhKEzfrNqS3w",
+  "Created": "2025-03-12T04:08:26.5137771Z",
+  "Updated": "2025-03-12T04:08:26.5137771Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

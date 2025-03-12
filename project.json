@@ -53,19 +53,13 @@
     },
     "fileInfoCollection": [
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "d5504850-6698-4088-b182-d08b5118f269",
-        "testCaseType": "TestCase",
-        "fileName": "TC_Login_HR.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "6e55a808-deaa-4b81-9201-7fd09977b3f4",
         "testCaseType": "TestCase",
         "fileName": "TC_Compensation_CompleteFlow.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "48d32550-1fb2-4cac-aa97-0bb58d214dd9",
         "testCaseType": "TestCase",
         "fileName": "TC_Compensation_RescindRaise.xaml"
@@ -110,11 +104,18 @@
         "fileName": "TC_CreateSupplierInvoice.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "f3f8de49-173e-466a-9cb1-5d9b161b9398",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "TC_Login_AccountsPayablePersona.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "36492799-8164-48d7-a5e2-e237bf42e712",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TC_Login_HRPersona.xaml"
       }
     ],
     "saveToCloud": false

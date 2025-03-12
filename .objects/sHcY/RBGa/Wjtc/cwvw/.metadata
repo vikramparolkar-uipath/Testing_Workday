@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Business Process",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "cwvwFeG_PkyIX9e1xmvGGA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/cwvwFeG_PkyIX9e1xmvGGA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/WjtcsXLV60y47gaaRgPJQg",
+  "Created": "2025-03-12T05:18:08.4326616Z",
+  "Updated": "2025-03-12T05:18:08.4326616Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

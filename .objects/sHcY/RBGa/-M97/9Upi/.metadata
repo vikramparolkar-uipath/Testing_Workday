@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Button 'View Worker History by …'",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "9UpiAmgUwEKEBO4_sKD24Q",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/9UpiAmgUwEKEBO4_sKD24Q",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/-M975wTchkyQa8javXNHlA",
+  "Created": "2025-03-12T05:37:54.5323232Z",
+  "Updated": "2025-03-12T05:37:54.5323232Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

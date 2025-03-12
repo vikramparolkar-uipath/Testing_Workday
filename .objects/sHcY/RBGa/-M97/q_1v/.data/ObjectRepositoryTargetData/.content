@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TlGpkk9omUuk_pBp5RLdMw" Reference="nk82MXn6ik6LC2h7bHpCZQ/q_1vt4pzn0O2ccXsm_XmZg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/inst/1$247/247$45.htmld" CVScreenId="adad3ad7-5dfb-4ec9-a7ee-dd80031a269d" CvTextArea="2472, 572, 197, 32" CvTextArgument="Worker History" CvType="Text" DesignTimeRectangle="2446, 540, 257, 96" DesignTimeScaleFactor="2" ElementType="ListItem" FuzzySelectorArgument="&lt;webctrl aria-role='tab' type='' tag='LI' class='WC1- WAY-' aaname='' check:innerText='Worker History' /&gt;" Guid="2380c642-dd1a-4d8c-8adc-ddba653b5f20" ImageBase64="" ScopeSelectorArgument="&lt;html app='msedge.exe' title='View Worker - Nathan Moore - Workday' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="1302989057b8f2cd9c07c021414a4274.png" xmlns="">0hDBIRArElk6ytln4Odni-w</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">None</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

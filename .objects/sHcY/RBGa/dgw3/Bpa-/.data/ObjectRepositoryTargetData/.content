@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="HQBLB-VyYUOFZgh7gEFsEg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/task/2997$237.htmld" DesignTimeRectangle="1725, 256, 10, 10" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl class='wd-icon-fill' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;svg&amp;gt;g&amp;gt;path' tag='path' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl class='wd-icon-fill' type='' tag='path' aaname='' /&gt;" Guid="1e35ad78-4d1b-4733-a772-ea9272935639" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Request Compensation Change - Workday' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="978961cb9ff199b281c91b9a3d9507d2.png" xmlns="">0Ereqwib6iUCcdeaTOSYBJA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
