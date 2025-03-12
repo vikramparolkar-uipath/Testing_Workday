@@ -1,0 +1,136 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+#Stages
+stages:
+  - stage: TriggerTestSets
+    displayName: 'Trigger Test Sets in UiPath Test Manager'
+    jobs:
+    - job:
+      displayName: 'Test Module Execution'
+
+      variables:
+      - group: UiPath-TestManager
+
+      steps:
+      # Checkout repository
+      - checkout: self
+        fetchTags: false
+
+      - task: powershell@2
+        name: ExecutionScript
+        displayName: 'Execute Script'
+        inputs:         
+          targetType: 'inline'
+          script: |
+            
+            # Authorization - get token
+            $url = "https://staging.uipath.com/identity_/connect/token"
+            $headers = @{
+              "Content-Type" = "application/x-www-form-urlencoded"
+            }
+            $body = @{
+              grant_type = "client_credentials"
+              client_id = "$(app_id)"
+              client_secret = "$(app_secret)"
+              scope = "TM.TestExecutions TM.TestSets TM.TestCases TM.Projects.Read TM.CustomFieldValues.Read TM.CustomFieldDefinitions.Read"
+            }
+            $response = Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body
+            $token = $($response.access_token)
+
+            # Import CSV
+            $csvPath = ".\testsets.csv"
+            if (Test-Path -Path $csvPath) {
+              $testSets = Import-Csv -Path $csvPath
+              # List all test sets from CSV
+              Write-Host "Executing the following test sets:"
+              foreach ($testSet in $testSets) {
+                Write-Host $testSet.Name
+              }
+              Write-Host # Empty line
+            } else {
+              Write-Host "Error: File not found at path $csvPath"
+              exit 1
+            }
+            
+            # Get Test IDs
+            $PROJECTID = "2f6219e7-826a-0000-935e-0b4686790953"
+            $urlGetTestSets = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testsets"
+            $headersGetTestSets = @{
+              Authorization = "Bearer $token"
+            }
+            $responseGetTestSets = Invoke-RestMethod -Uri $urlGetTestSets -Method Get -Headers $headersGetTestSets
+
+            Write-Host "=================================================================================="
+            Write-Host $urlGetTestSets
+            Write-Host "=================================================================================="
+            Write-Host $token
+            Write-Host "=================================================================================="
+            Write-Host $responseGetTestSets
+            Write-Host "=================================================================================="
+
+            # Loop through Test Sets from CSV
+            foreach ($testSet in $testSets) {
+              # Reset variables
+              $testSetName = $testSet.Name
+              $testSetId = $responseGetTestSets.data | where-Object name -eq $testSetName | Select-Object -ExpandProperty id
+              $testCasesPassed = 0
+              $testCasesFailed = 0
+
+              Write-Host "....Test Set Id $testSetId"
+
+              # Start execution
+              Write-Host "Starting Execution for Test Set: $testSetName"
+              $headersStartExecution = @{
+                Authorization = "Bearer $token"
+                "Content-Type" = "application/json"
+              }
+              $urlStartExecution = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testsets/$testSetId/startexecute?executionType=automated"
+              Write-Host $urlStartExecution
+              $responseStartExecution = Invoke-RestMethod -Uri $urlStartExecution -Method Post -Headers $headersStartExecution
+
+              # Get test set execution ID
+              $testSetExecutionId = $responseStartExecution.id
+            }
+
+            Write-Host "....Execution Started"
+
+            # Check execution status
+            $urlCheckExecTestSet = "https://staging.uipath.com/uibank/AutomationCoE/testmanager_/api/v2/${PROJECTID}/testexecutions/$testSetExecutionId/withstats"
+            $headersCheckExecTestSet = @{
+              Authorization = "Bearer $token"
+            }
+            $statusTestSet = ""
+            $responseCheckExecTestSet = Invoke-RestMethod -Uri $urlCheckExecTestSet -Method Get -Headers $headersCheckExecTestSet
+            $statusTestSet = $responseCheckExecTestSet.status
+            $time = Get-Date -Format "hh:mm tt"
+            Write-Host "....Execution status: $statusTestSet at $time"
+
+            # Loop until execution is finished
+            while ($statusTestSet -ne "Finished") {
+              Start-Sleep -Seconds 30
+              $responseCheckExecTestSet = Invoke-RestMethod -Uri $urlCheckExecTestSet -Method Get -Headers $headersCheckExecTestSet
+              $statusTestSet = $responseCheckExecTestSet.status
+              $time = Get-Date -Format "hh:mm tt"
+              Write-Host "....Execution status: $statusTestSet at $time"
+            }
+
+            # Get test set execution results
+            Write-Host "....Execution complete"
+            $testCasesPassed = $responseCheckExecTestSet.passed
+            $testCasesFailed = $responseCheckExecTestSet.failed
+            Write-Host "........Test Cases Passed: $testCasesPassed"
+            Write-Host "........Test Cases Failed: $testCasesFailed"
+            Write-Host # Empty line
