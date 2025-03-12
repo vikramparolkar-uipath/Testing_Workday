@@ -62,6 +62,7 @@ stages:
             }
             
             # Get Test IDs
+            Write-Host "Getting Test Set IDs via API"
             $PROJECTID = $(PROJECTID)
             $urlGetTestSets = "https://staging.uipath.com/uibank/DevelopmentTenant/testmanager_/api/v2/${PROJECTID}/testsets"
             $headersGetTestSets = @{
