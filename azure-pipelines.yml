@@ -14,9 +14,9 @@ steps:
   inputs:
     versionType: 'AutoVersion'
     projectJsonPath: '$(Build.SourcesDirectory)'
+    outputType: 'Tests'
     orchestratorConnection: 'UiBank Dev Tenant Orchestrator'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
-    traceLevel: 'Verbose'
 
 - task: UiPathDeploy@5
   inputs:
