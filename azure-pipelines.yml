@@ -24,5 +24,5 @@ steps:
 - task: UiPathDeploy@5
   inputs:
     orchestratorConnection: 'UiBank Dev Tenant Orchestrator'
-    packagesPath: '''$(Build.ArtifactStagingDirectory)\Output'''
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
     folderName: 'Workday'
