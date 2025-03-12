@@ -112,7 +112,7 @@
       <AssemblyReference>Testing_Workday.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Pre-requisite: User is logged out of Workday" DisplayName="TC_Login_FinancePersona" sap:VirtualizedContainerService.HintSize="809.8000000000001,1616.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Pre-requisite: User is logged out of Workday" DisplayName="TC_Login_FinancePersona" sap:VirtualizedContainerService.HintSize="810.2,1616.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:UiElement" Name="BrowserContext" />
       <Variable x:TypeArguments="x:String" Name="TestResult" />
