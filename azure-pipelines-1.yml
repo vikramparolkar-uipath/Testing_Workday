@@ -62,7 +62,7 @@ stages:
             }
             
             # Get Test IDs
-            $PROJECTID = "2f6219e7-826a-0000-935e-0b4686790953"
+            $PROJECTID = $(PROJECTID)
             $urlGetTestSets = "https://staging.uipath.com/uibank/DevelopmentTenant/testmanager_/api/v2/${PROJECTID}/testsets"
             $headersGetTestSets = @{
               Authorization = "Bearer $token"
