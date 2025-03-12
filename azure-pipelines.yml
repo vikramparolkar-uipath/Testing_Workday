@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: windows-latest
+
+steps:
+- task: UiPathPack@5
+  inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: '$(Build.SourcesDirectory)'
+    orchestratorConnection: 'UiBank Dev Tenant Orchestrator'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    traceLevel: 'Verbose'
+
+- task: UiPathDeploy@5
+  inputs:
+    orchestratorConnection: 'UiBank Dev Tenant Orchestrator'
+    packagesPath: '''$(Build.ArtifactStagingDirectory)\Output'''
+    folderName: 'Workday'
