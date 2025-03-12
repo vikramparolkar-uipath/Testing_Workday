@@ -10,6 +10,9 @@ pool:
   vmImage: windows-latest
 
 steps:
+- task: UiPathInstallPlatform@5
+  inputs:
+    cliVersion: 'WIN_24.12.9166.24491'
 - task: UiPathPack@5
   inputs:
     versionType: 'AutoVersion'
