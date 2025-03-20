@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Approve",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "mcqqFAePXke25zMcE2Cz6A",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/mcqqFAePXke25zMcE2Cz6A",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/6owlQQskXEOyu1Rb-sfuCQ",
+  "Created": "2025-03-18T04:33:51.8157992Z",
+  "Updated": "2025-03-18T04:33:51.8157992Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Terminate Employee",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "1F6WwofchEaQrdw4aLfmFA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/1F6WwofchEaQrdw4aLfmFA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/IkEXmNsD_UuhKEzfrNqS3w",
+  "Created": "2025-03-17T16:20:48.3887315Z",
+  "Updated": "2025-03-17T16:20:48.3887315Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

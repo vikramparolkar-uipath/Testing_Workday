@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SearchJohnChen" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchJohnChen" this:SearchJohnChen.in_EmployeeName="Charlotte Ryan" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_EmployeeID" Type="InArgument(x:String)" />
+    <x:Property Name="in_EmployeeName" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -31,6 +31,20 @@
       <x:String>System.Xml.Linq</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -63,63 +77,92 @@
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>C9B411EBB8B_Employee.DzRnF4Ij4jS1NuAwSzPti02</AssemblyReference>
+      <AssemblyReference>C9B411EBB8B_Workers.oO6UO2VBG0I1bboi83uRKFs</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SearchJohnChen" sap:VirtualizedContainerService.HintSize="476,610" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SearchEmployeeToTerminate" sap:VirtualizedContainerService.HintSize="942,793" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Terminate'" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="0930249c498d4d7d23e3ac1192c71e49" Selector="&lt;html title='Terminate Employee - Workday' /&gt;">
-      <ui:BrowserScope.Body>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Terminate Employee - Workday" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="484,770" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="6a68216b-ad53-4105-a29e-b360191502d2" Version="V2">
+      <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,372" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,530" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  56$400715--uid12...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[in_EmployeeID+ &quot;[k(enter)]&quot;]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="ac98995f-f2fc-4464-beae-60cbf93fbfab" InformativeScreenshot="d1ba002117575fb87443e63d91336ba5" Selector="&lt;webctrl tag='INPUT' aaname='Employee' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  043bd6def511433...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-              <ui:Click.CursorPosition>
-                <ui:CursorPosition Position="Center">
-                  <ui:CursorPosition.OffsetX>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetX>
-                  <ui:CursorPosition.OffsetY>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:CursorPosition.OffsetY>
-                </ui:CursorPosition>
-              </ui:Click.CursorPosition>
-              <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="59aabac7-c818-4694-801f-6842769794f1" InformativeScreenshot="c6df56a3bb457585ec87b37c2442a572" Selector="&lt;webctrl tag='BUTTON' aaname='OK' innertext='OK' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:Click.Target>
-            </ui:Click>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DisplayName="Type Into 'Employee'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,286" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="6a68216b-ad53-4105-a29e-b360191502d2" Text="[in_EmployeeName + &quot;[k(Enter)]&quot;]" Version="V4">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="impl.workday.com/uipath_dpt1/d/task/2997$10511.htmld" CVScreenId="9f458bb2-366b-4c9f-ad2e-ab3469a9039e" ContentHash="F4nfJTsLEEG1PR4t2SMyJA" CvElementArea="1417, 814, 711, 107" CvType="InputBox" DesignTimeRectangle="1425, 824, 615, 90" DesignTimeScaleFactor="2.5" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-labelledby='56$400715--uid12-formLabel' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='56$400715--uid12-formLabel' tag='INPUT' type='' class='css-lcr69g-InputContainer-1 edt0qdt14' placeholder='Search' aaname='Employee' /&gt;" Guid="186bd66b-ed1f-4f67-801d-babd781f13b4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAmsAAABeCAYAAAB8ZFPTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ3SURBVHhe7dwxSuxQGIDR7FvbZ2OhYCVY2AgWdlPZuABBQcFGEOxFdxAiucwMruDNV5wDN8VNFvDx3yTT8sfm/mE5+nc21uX17fL4/Lp8ff8s8zxvnwAA4H/ax9rfUFsjDQCAwxux9vTytg+194/PcQMAgMMbsXZ6cWWiBgAQNO2maus7agAAtEw3dxtTNQCAqGl3BLp+9QkAQMt0fHI+Ys3vOQAAeqY11NYFAECPWAMACBNrAABhYg0AIEysAQCEiTUAgDCxBgAQJtYAAMLEGgBAmFgDAAgTawAAYWINACBMrAEAhIk1AIAwsQYAECbWAADCxBoAQJhYAwAIE2sAAGFiDQAgTKwBAISJNQCAMLEGABAm1gAAwsQaAECYWAMACBNrAABhYg0AIEysAQCEiTUAgDCxBgAQJtYAAMLEGgBAmFgDAAgTawAAYWINACBMrAEAhIk1AIAwsQYAECbWAADCxBoAQJhYAwAIE2sAAGFiDQAgTKwBAISJNQCAMLEGABAm1gAAwsQaAECYWAMACBNrAABhYg0AIEysAQCEiTUAgDCxBgAQJtYAAMLEGgBAmFgDAAgTawAAYWINACBMrAEAhIk1AIAwsQYAECbWAADCxBoAQJhYAwAIE2sAAGFiDQAgTKwBAISJNQCAMLEGABAm1gAAwsQaAECYWAMACBNrAABhYg0AIEysAQCEiTUAgDCxBgAQNh2fnI9Ym+d5uwUAQMV0enE1Yu3r+2e7BQBAxXRztxmx9vj8ut0CAKBienp5G7F2eX273QIAoGJaL7ujUNM1AICWEWu76dq63j8+xw0AAA5vxNpqc/+wDzYTNgCAgmX5BbswugR24bHQAAAAAElFTkSuQmCC" InformativeScreenshot="c802dab7a7da4de93503d91c00065f3f.png" IsResponsive="True" Reference="nk82MXn6ik6LC2h7bHpCZQ/IWNaNKC9k0-XEhEkfObXUw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Terminate Employee - Workday' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="9f458bb2-366b-4c9f-ad2e-ab3469a9039e" CvTextArea="1218, 850, 155, 40" CvTextArgument="Employee" CvType="Text" DesignTimeRectangle="1221, 849, 152, 42" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='wd-PageContent-6$16798' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='wd-PageContent-6$16798' tag='LABEL' type='' class='' aaname='Employee' check:innerText='Employee' /&gt;" Guid="88f456fd-14fd-4a2c-a843-4dd2d9de40f7" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" ExpectedText="[in_EmployeeName]" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,182" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a68216b-ad53-4105-a29e-b360191502d2" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="impl.workday.com/uipath_dpt1/d/task/2997$10511.htmld" CVScreenId="7c22dd68-e689-49e0-8d7f-d1646d2acc88" ContentHash="fCS1nSaK2kCHRaWD0U7Egg" CvElementArea="1140, 509, 118, 44" CvTextArea="1188, 523, 21, 13" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1167, 521, 64, 20" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='OK' class='WHVM' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='OK' class='WHVM' tag='SPAN' type='' check:innerText='OK' /&gt;" Guid="9376ca5d-3ed0-4f28-b02e-e92186d6ed28" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAYCAYAAABDX1s+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGaSURBVFhH7Za7SgNBFIYtfQGfwCfwLQQLC2sbKxtLO8soCLYiCpJGsRALCxtDbIxXrBQCJngJxmg2iW6uu0l293fOQMbZKUSEGSLMwlfsnDkL5+OcmR0ZXSzA8o0VomCFKFghClaIghWiYEzI/H4NOaePIASiCPhoh1jPNDC29MLjc3tVNPwQ2feeyJnedlB0A56zc9MS6zoxImThoAa3E6IbRLgudHGU7eCTvcuFqkIm1kq4LfW4vHTOE+J0Y0RI5tHnxW+cNcTa7G6Fd0m5GfBOkIVQ8SSBZJAUkiN/TyfahUxulvHK2t5hhc8knVjs4tnnXbOScmNCqGtIII0LyZJzdKNdyKBQkkJy5NhJ3gM9yaum2Ff3Qnj9CD4jcezG9ptg6ITQMzh485W+0XEhtAuZ2irjrf77kSGW2fv5k8+lpO69WI5uhvJQpTitlZhIGp/VdF3k6caIEPnaPX3wcXjXRrX187VLkAgSYvJwNSKE+MuPmXz9XrLxGk8URUwXxoT8F6wQBStEwQpRsEIUrBAFK0TBColRwBfDRrQbubzTIwAAAABJRU5ErkJggg==" InformativeScreenshot="a5eb85a3c4764464f76d9f072e93d88b.png" Reference="nk82MXn6ik6LC2h7bHpCZQ/4k5zKVQUpU-K0iaTSeG-IA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Terminate Employee - Workday' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V5" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="7c22dd68-e689-49e0-8d7f-d1646d2acc88" CvElementArea="1140, 509, 118, 44" CvTextArea="1188, 523, 21, 13" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1143, 511, 112, 40" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='OK' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='OK' tag='BUTTON' type='button' class='WFVM WJVM WPBO WGIN WNWM' check:innerText='OK' /&gt;" Guid="032a911b-926a-4bd0-ab66-96670c2449e8" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHQAAAAsCAYAAAC0R5y9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP/SURBVHhe7ZzLTxNRFMZdImJc+QcQ+QeMbHGtceHCtSFx5cadQkxc8TAxERY+YjAxbMRHjAsXbiAgifiMYaEJBohasBRaHrYF2qGv43z39k6n7bR0Cm3nwvmSL6GduZPh/Oae3jv3cYRYB0o1ARpLZLJ/sUqpVjHaE9CNWJoGJyN0fihIrT1+OnFzkY52LVDTDXYlRqwQs9Zev4jh4GRUxHQvqgroy+ltOvtghY6bNyNvzkdN19WN4jvzs+3G2U5GjLLxE7GTMUNMEVvEuBq5Ajo2a1D7YEDeBEOroWVsEWvE3I0qAmokM9Q5skrNIp3anix2DS0zXXPXoog9GFSiXYEGIilbrWSQ9beMORiAxW4qC/RnMEFt/f7shTnFNs4y9m39SyaTZJaOs0oCxdOACxRfnN1Ig0m5muoING72kc4MqDTL9prBBoyc5Ai089latjCnWe9ZMgEjJxUBHZ2N07Fu/BBzA8i7XhSMwKpQRUDbRarlmul9+wSrQuUBfTG9JU7k2qmDwcgnmNmVB7Tj3rI4yfkCbO/ZRx33l7P0pCygG9tpaul2KsT2ssEM7JQsoAPvIo4FdPHVV+s0F0pSyvzfMmaLHv/kw6konbz1Vxy/8nyNokaaZlYSVpmLT0LkD6dEmaff8HNTfF0dDHZKFtBzQ0HzoJ7p9trrdQrH0rSTytDXhR16OxOjf+ZnO6hCoKfvBuh7ICHgj8/FLfD62SfYKVlAMSaXGwLTy1O/DQHv0Yeo9d3lkVVRS4ObKVET7UABDxABE1AB1349rWwyAzslCygGWh0LeNx4OpfMtBkywV0aDuUd++QzRK29PRbOA4paiwcA6Raw7WV0NNgpWUDlQf2gKlCAKn82cscm5mXHe/jLpnVeJJ6meDIjhqP6RsN55+tpyUxJAMX8FtWvKS7gbbsFCqmG0/xqUu90KyyZKdmA5g7q5AuPg7QcqTzlwv3m549/DAF1bDaeV0Y/g9kBSrmw20YRjuM7DEMh/d4Z17nL5pByIV0bRbC92/L+l0FvfmzT2lb5bgsMkACqe+PIsVGkc7cFrubFgr378tlMz6f61OwMjVyq26Lzi4XD7RIvFnR/9XeY7fjqDymqhV/Oa2cwAzslCyiEoRhOuzrZJ4Y87coDygPcOlm+CCo7wA3xFBRdXMEUFIgnielgF5PEIJ7G6WVLJhVP44R4orW37XqiNcRLIbzpqpZCKGFhTA4qp9/GWcYeC8ewgKycygKF8DTwcsJGWsZ8X5YTKuUW/Mq+D4Oth2Wssch6Xxf82sVL8utlGVvEuiZL8gvFm2bsh22ZTsROxqyum2YUSm5rE5Xb2vTytjZubW1r06O2tYk0ZlsblnfFQA+UiP4DEnW+12+ai2YAAAAASUVORK5CYII=" SearchSteps="Selector, FuzzySelector, Image, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
           </Sequence>
         </ActivityAction>
-      </ui:BrowserScope.Body>
-    </ui:BrowserScope>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-3833, 7, 3875, 2315" BrowserType="Edge" ContentHash="khMdxqtmKE6RCsdVXSVpJA" IconBase64="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" InformativeScreenshot="f81c973c78c941a2edfbbb70142c0148.jpg" Reference="nk82MXn6ik6LC2h7bHpCZQ/oa_U9e28RkmstoKfBMhUuw" Selector="&lt;html app='msedge.exe' title='Terminate Employee - Workday' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$10511.htmld" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>

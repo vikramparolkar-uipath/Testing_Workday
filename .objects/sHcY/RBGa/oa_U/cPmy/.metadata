@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Primary Reason",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "cPmy0O2OdEi5fiRGaO1lRA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/cPmy0O2OdEi5fiRGaO1lRA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/oa_U9e28RkmstoKfBMhUuw",
+  "Created": "2025-03-17T18:24:29.7274999Z",
+  "Updated": "2025-03-17T18:24:29.7274999Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

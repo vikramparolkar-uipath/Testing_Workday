@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="eO_2Ia6Ua021ZiZkjCSprQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/task/2997$503.htmld" CVScreenId="8c85c3ce-3f0c-4d82-8b8c-a508045ee98d" CvElementArea="3689, 575, 42, 39" CvTextArea="3570, 580, 120, 30" CvTextArgument="View All" CvType="ArrowButton" DesignTimeRectangle="3557, 552, 195, 90" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='View All' tag='BUTTON' /&gt;" Guid="d0892698-47a8-4573-ac40-8359fad47216" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Create Supplier Invoice - Workday' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="8c85c3ce-3f0c-4d82-8b8c-a508045ee98d" CvElementArea="3740, 448, 57, 57" CvType="CloseButton" DesignTimeRectangle="3745, 453, 54, 54" ElementType="Icon" FullSelectorArgument="&lt;webctrl aria-role='presentation' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;svg' tag='svg' /&gt;" Guid="7d3261be-9576-4d9c-94c8-d61f0c482e5b" SearchSteps="Selector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">CheckState</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

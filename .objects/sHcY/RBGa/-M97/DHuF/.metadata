@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Rescind",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "DHuFRJ46WEK9F84MIoVMmQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/DHuFRJ46WEK9F84MIoVMmQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/-M975wTchkyQa8javXNHlA",
+  "Created": "2025-03-18T06:06:41.4254643Z",
+  "Updated": "2025-03-18T06:06:41.4254643Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

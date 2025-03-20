@@ -6,11 +6,11 @@
   "dependencies": {
     "UiPath.DataService.Activities": "[25.2.0]",
     "UiPath.Excel.Activities": "[2.24.4]",
-    "UiPath.GoogleVertex.IntegrationService.Activities": "[5.1.2]",
-    "UiPath.IntegrationService.Activities": "[1.14.0-beta.20250214.2]",
-    "UiPath.System.Activities": "[25.2.1]",
+    "UiPath.IntegrationService.Activities": "[1.14.0]",
+    "UiPath.System.Activities": "25.2.2",
     "UiPath.Testing.Activities": "[24.10.4]",
-    "UiPath.UIAutomation.Activities": "[24.10.11]",
+    "UiPath.UIAutomation.Activities": "25.4.0-alpha.8376855",
+    "UiPath.WebAPI.Activities": "[1.21.1]",
     "UiPath.Workday.IntegrationService.Activities": "[5.3.3]"
   },
   "webServices": [],
@@ -22,14 +22,14 @@
   ],
   "schemaVersion": "4.0",
   "studioVersion": "20.9.0.0",
-  "projectVersion": "2.0.195493558",
+  "projectVersion": "3.0.196009470",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
     "isPausable": true,
     "isAttended": false,
     "requiresUserInteraction": true,
-    "supportsPersistence": false,
+    "supportsPersistence": true,
     "workflowSerialization": "DataContract",
     "excludedLoggedData": [
       "Private:*",
@@ -65,29 +65,22 @@
         "fileName": "TC_Compensation_RescindRaise.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "011e1afa-9ee6-4988-b0e2-d56126c26899",
         "testCaseType": "TestCase",
         "fileName": "TC_Termination_Approval.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "56fc82aa-deb5-44f7-81c1-20499c3b2dd7",
         "testCaseType": "TestCase",
         "fileName": "TC_Termination_Submission.xaml"
       },
       {
-        "editingStatus": "InProgress",
+        "editingStatus": "Publishable",
         "testCaseId": "a7f6bd6c-8da0-48d8-9a4d-f56f226cea4c",
         "testCaseType": "TestCase",
         "fileName": "TC_Termination_Rescind.xaml"
-      },
-      {
-        "editingStatus": "InProgress",
-        "testCaseId": "3aef155d-0b26-4c6c-a72c-b9c458bfc4bf",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Integration Service.xaml"
       },
       {
         "editingStatus": "Publishable",
@@ -95,13 +88,6 @@
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
         "fileName": "TC_Login_FinancePersona.xaml"
-      },
-      {
-        "editingStatus": "Publishable",
-        "testCaseId": "7e84897c-faa3-4e5d-b395-d97c36d3f44d",
-        "dataVariationFilePath": ".variations\\WorkdaySupplierInvoice_Include In Test.json",
-        "testCaseType": "TestCase",
-        "fileName": "TC_CreateSupplierInvoice.xaml"
       },
       {
         "editingStatus": "Publishable",
@@ -113,9 +99,39 @@
       {
         "editingStatus": "Publishable",
         "testCaseId": "36492799-8164-48d7-a5e2-e237bf42e712",
+        "executionTemplatePath": ".templates\\TestFramework.xaml",
         "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
         "executionTemplateInvokeIsolated": false,
         "fileName": "TC_Login_HRPersona.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "f64354f0-1f49-4cc7-9e99-26a9d1c521f5",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Verify successful login with valid credentials and MFA.xaml"
+      },
+      {
+        "editingStatus": "Publishable",
+        "testCaseId": "f1a7d20e-663c-49b9-a7d8-3d7ecc089080",
+        "dataVariationFilePath": ".variations\\WorkdaySupplierInvoice_Include In Test.json",
+        "executionTemplatePath": ".templates\\TestFramework.xaml",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "Local",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TC_CreateSupplierInvoice.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "3aef155d-0b26-4c6c-a72c-b9c458bfc4bf",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "TC_API.xaml"
+      },
+      {
+        "templateType": "ExecutionTemplate",
+        "fileName": ".templates\\TestFramework.xaml"
       }
     ],
     "saveToCloud": false

@@ -71,5 +71,12 @@
   "UiPath.UIAutomationNext.Activities.Generic.AskAtRuntime": "False",
   "UiPath.UIAutomationNext.Activities.ClosePopup.PopupAppearTimeout": "30",
   "UiPath.UIAutomationNext.Activities.SAPLogon.SAPLogonRetries": "5",
-  "UiPath.UIAutomationNext.Activities.SAPLogon.SAPLogonDelayBetweenRetries": "0.5"
+  "UiPath.UIAutomationNext.Activities.SAPLogon.SAPLogonDelayBetweenRetries": "0.5",
+  "UiPath.UIAutomationNext.Activities.SearchStepsWnd.WpfSupport": "False",
+  "UiPath.UIAutomationNext.Activities.Logging.UITaskLogLevel": "Info",
+  "UiPath.UIAutomationNext.Activities.KeyboardEvents.TypeIntoClipboardMode": "Never",
+  "UiPath.UIAutomationNext.Activities.UITask.UITaskClipboardMode": "Never",
+  "UiPath.UIAutomationNext.Activities.UITask.UITaskMaxIterations": "100",
+  "UiPath.UIAutomationNext.Activities.Logging.TargetSearchLogLevel": "Off",
+  "UiPath.UIAutomationNext.Activities.Logging.TargetSearchPerformanceLogLevel": "Off"
 }

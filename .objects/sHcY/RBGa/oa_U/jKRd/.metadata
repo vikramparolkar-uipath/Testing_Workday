@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Reason - Edit",
+  "Type": "Element",
+  "TaxonomyType": "Icon",
+  "Id": "jKRd4elwFUi3zZvDplA8Ag",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/jKRd4elwFUi3zZvDplA8Ag",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/oa_U9e28RkmstoKfBMhUuw",
+  "Created": "2025-03-17T18:24:25.7457075Z",
+  "Updated": "2025-03-17T18:24:25.7457075Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

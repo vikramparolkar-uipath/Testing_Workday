@@ -1,6 +1,6 @@
-{
-  "UiPath.Testing.Activities.Generic.KeepScreenshots": "False",
-  "UiPath.Testing.Activities.Generic.ScreenshotsPath": "",
+﻿{
+  "UiPath.Testing.Activities.Generic.KeepScreenshots": "True",
+  "UiPath.Testing.Activities.Generic.ScreenshotsPath": "./Screenshots/Local Verification Screenshots",
   "UiPath.Testing.Activities.VerifyActivitiesOutputFormat.VerifyExpressionOutputFormat": "",
   "UiPath.Testing.Activities.VerifyActivitiesOutputFormat.VerifyExpressionWithOperatorOutputFormat": "",
   "UiPath.Testing.Activities.VerifyActivitiesOutputFormat.VerifyControlAttributeOutputFormat": "",

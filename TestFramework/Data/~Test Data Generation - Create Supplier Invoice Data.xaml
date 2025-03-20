@@ -1,0 +1,152 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Test_Data_Generation___Create_Supplier_Invoice_Data" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Test_Data_Generation___Create_Supplier_Invoice_Data_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasa="clr-namespace:UiPath.Activities.System.Agentic;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upad="clr-namespace:UiPath.Platform.Activities.DataMapping;assembly=UiPath.Platform" xmlns:upd="clr-namespace:UiPath.Platform.DataMapping;assembly=UiPath.Platform" xmlns:usavstb="clr-namespace:UiPath.System.Activities.ViewModels.SWEntities.Test_Data_Generation_Workday_Input.Bundle;assembly=Test_Data_Generation.DcSpkY42KO1EOK8X3pLnZX3" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Orchestrator.Client.Models</x:String>
+      <x:String>UiPath.Activities.System.Agentic</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>Testing_Workday</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.OrchestratorClient</AssemblyReference>
+      <AssemblyReference>Test_Data_Generation.DcSpkY42KO1EOK8X3pLnZX3</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday</AssemblyReference>
+      <AssemblyReference>Testing_Workday.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>GlobalVariablesZGI23dJFDa</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Test_Data_Generation___Create_Supplier_Invoice_Data" sap:VirtualizedContainerService.HintSize="973,792.04" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(x:Object)" Name="output_randomGeneratedData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uasa:RunAgent ContinueOnError="False" DisplayName="Run Agent" FolderPath="Workday" sap:VirtualizedContainerService.HintSize="416,260" sap2010:WorkflowViewState.IdRef="RunAgent_2" ProcessName="Test-Data-Generation-Workday">
+      <uasa:RunAgent.AgentArgumentsMetadata>
+        <ui:ArgumentMetadata Input="{}{&#xA;  &quot;type&quot;: &quot;object&quot;,&#xA;  &quot;properties&quot;: {&#xA;    &quot;number_of_records&quot;: {&#xA;      &quot;type&quot;: &quot;integer&quot;,&#xA;      &quot;description&quot;: &quot;Number of synthetic data records to generate&quot;&#xA;    }&#xA;  },&#xA;  &quot;required&quot;: [&#xA;    &quot;number_of_records&quot;&#xA;  ]&#xA;}" Output="{}{&#xA;  &quot;type&quot;: &quot;object&quot;,&#xA;  &quot;properties&quot;: {&#xA;    &quot;generated_data&quot;: {&#xA;      &quot;type&quot;: &quot;array&quot;,&#xA;      &quot;items&quot;: {&#xA;        &quot;type&quot;: &quot;object&quot;,&#xA;        &quot;properties&quot;: {&#xA;          &quot;browser_type&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;,&#xA;            &quot;description&quot;: &quot;Edge, Chrome, Firefox&quot;&#xA;          },&#xA;          &quot;company&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;,&#xA;            &quot;description&quot;: &quot;'Global Modern Services, Inc.' or 'Green Planet Solutions, Inc.'&quot;&#xA;          },&#xA;          &quot;control_total_amount&quot;: {&#xA;            &quot;type&quot;: &quot;number&quot;,&#xA;            &quot;description&quot;: &quot;Invoice amounts between 100 and 10,000 USD.&quot;&#xA;          },&#xA;          &quot;include_in_test&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;,&#xA;            &quot;description&quot;: &quot;\&quot;No\&quot;&quot;&#xA;          },&#xA;          &quot;invoice_date&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;,&#xA;            &quot;description&quot;: &quot;Random date within the past year, formatted as MM/dd/yyyy&quot;&#xA;          },&#xA;          &quot;invoice_item_1_cost_center&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          },&#xA;          &quot;invoice_item_1_spend_category&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          },&#xA;          &quot;invoice_item_1_description&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          },&#xA;          &quot;invoice_received_date&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          },&#xA;          &quot;supplier&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          },&#xA;          &quot;supplier_invoice_number&quot;: {&#xA;            &quot;type&quot;: &quot;string&quot;&#xA;          }&#xA;        },&#xA;        &quot;required&quot;: [&#xA;          &quot;invoice_item_1_cost_center&quot;,&#xA;          &quot;invoice_date&quot;,&#xA;          &quot;include_in_test&quot;,&#xA;          &quot;control_total_amount&quot;,&#xA;          &quot;browser_type&quot;,&#xA;          &quot;company&quot;,&#xA;          &quot;invoice_item_1_spend_category&quot;,&#xA;          &quot;invoice_item_1_description&quot;,&#xA;          &quot;invoice_received_date&quot;,&#xA;          &quot;supplier&quot;,&#xA;          &quot;supplier_invoice_number&quot;&#xA;        ]&#xA;      }&#xA;    }&#xA;  },&#xA;  &quot;required&quot;: []&#xA;}" />
+      </uasa:RunAgent.AgentArgumentsMetadata>
+      <uasa:RunAgent.Arguments>
+        <InArgument x:TypeArguments="usavstb:Test_Data_Generation_Workday_Input" x:Key="AgentInput">
+          <upad:DataMappingPocoActivity x:TypeArguments="usavstb:Test_Data_Generation_Workday_Input" sap2010:WorkflowViewState.IdRef="DataMappingPocoActivity`1_1" ParentPath="">
+            <upad:DataMappingPocoActivity.MappingInputs>
+              <scg:List x:TypeArguments="upd:MappingInput" Capacity="4">
+                <upd:MappingInput PropertyName="number_5F_of_5F_records" PropertyType="s:Nullable(x:Int32)">
+                  <upd:MappingInput.Value>
+                    <InArgument x:TypeArguments="s:Nullable(x:Int32)">[2]</InArgument>
+                  </upd:MappingInput.Value>
+                </upd:MappingInput>
+              </scg:List>
+            </upad:DataMappingPocoActivity.MappingInputs>
+          </upad:DataMappingPocoActivity>
+        </InArgument>
+        <OutArgument x:TypeArguments="scg:List(x:Object)" x:Key="generated_data">[output_randomGeneratedData]</OutArgument>
+      </uasa:RunAgent.Arguments>
+    </uasa:RunAgent>
+  </Sequence>
+</Activity>

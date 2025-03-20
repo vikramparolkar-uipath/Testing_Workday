@@ -1,0 +1,20 @@
+﻿[
+	{
+		"Name": "Workday Credentials - Accounts Payable Persona",
+		"Asset": "Workday Credentials - Accounts Payable Persona",
+		"OrchestratorAssetFolder": "Workday",
+		"Description": "Credentials for Accounts Payable Persona"
+	},
+	{
+		"Name": "Workday Credentials - Finance User Persona",
+		"Asset": "Workday Credentials - Finance User Persona",
+		"OrchestratorAssetFolder": "Workday",
+		"Description": "Credentials for Finance User Persona"
+	},
+	{
+		"Name": "Workday Credentials - HR User Persona",
+		"Asset": "Workday Credentials - HR User Persona",
+		"OrchestratorAssetFolder": "Workday",
+		"Description": "Credentials for HR User Persona"
+	}
+]

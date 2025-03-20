@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Rescind Termination",
+  "Type": "Screen",
+  "Id": "Ve3Crqyq8UGyhHW4ncauvQ",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/Ve3Crqyq8UGyhHW4ncauvQ",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-18T04:54:55.4778016Z",
+  "Updated": "2025-03-18T04:55:07.5454739Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

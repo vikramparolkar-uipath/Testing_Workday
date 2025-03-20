@@ -1,0 +1,17 @@
+﻿{
+  "Name": "Comments",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "_LeJgV4LUUuA-Aa3NQ19ww",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/_LeJgV4LUUuA-Aa3NQ19ww",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/oa_U9e28RkmstoKfBMhUuw",
+  "Created": "2025-03-17T18:25:14.4789572Z",
+  "Updated": "2025-03-17T18:25:21.6850203Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

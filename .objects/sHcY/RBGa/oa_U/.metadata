@@ -1,0 +1,16 @@
+﻿{
+  "Name": "Terminate Employee Screen",
+  "Type": "Screen",
+  "Id": "oa_U9e28RkmstoKfBMhUuw",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/oa_U9e28RkmstoKfBMhUuw",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/RBGaGN8GCkypUYiZJvJYWg",
+  "Created": "2025-03-17T16:22:02.3802822Z",
+  "Updated": "2025-03-17T16:22:10.2578919Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
