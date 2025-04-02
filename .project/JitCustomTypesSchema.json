@@ -85448,6 +85448,374 @@
         "hash": "MTEzNzEzNDI5Mw",
         "assemblyName": "Test_Data_Generation.DcSpkY42KO1EOK8X3pLnZX3"
       }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "q51HZpXxJGylHph2Z7jfqdA/a1ekmoeEqNS9JUJvOy8GGOa66zBPou1AlxttDmCa8At0Gs1Yh7D9SDMHWDMvwA==",
+        "bundleName": "C9B411EBB8B_Create_PreHire_Upload",
+        "entitiesBundle": {
+          "Types": {
+            "ID": {
+              "name": "ID",
+              "properties": [
+                {
+                  "name": "Attribute_Value",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Attribute_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Applicant_Reference": {
+              "name": "Applicant_Reference",
+              "properties": [
+                {
+                  "name": "ID",
+                  "type": {
+                    "definitionName": "ID"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exception_Data": {
+              "name": "Exception_Data",
+              "properties": [
+                {
+                  "name": "Classification",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Message",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exceptions_Data": {
+              "name": "Exceptions_Data",
+              "properties": [
+                {
+                  "name": "Exception_Data",
+                  "type": {
+                    "definitionName": "Exception_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exceptions_Response_Data": {
+              "name": "Exceptions_Response_Data",
+              "properties": [
+                {
+                  "name": "Exceptions_Data",
+                  "type": {
+                    "definitionName": "Exceptions_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Create_PreHire_Upload": {
+              "name": "Create_PreHire_Upload",
+              "properties": [
+                {
+                  "name": "Applicant_Reference",
+                  "type": {
+                    "definitionName": "Applicant_Reference"
+                  }
+                },
+                {
+                  "name": "Exceptions_Response_Data",
+                  "type": {
+                    "definitionName": "Exceptions_Response_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "version_Attribute",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.C9B411EBB8B_Create_PreHire_Upload",
+        "hash": "cTUxSFpwWHhKR3lsSHBoMlo3amZxZEEvYTFla21vZUVxTlM5SlVKdk95OEdHT2E2NnpCUG91MUFseHR0RG1DYThBdDBHczFZaDdEOVNETUhXRE12d0E9PQ",
+        "assemblyName": "C9B411EBB8B_Create_P.ROmIq2xZ1KL13cQ2K1RjYWj2"
+      }
+    },
+    {
+      "providerName": "CustomEntities",
+      "bundleOptions": {
+        "hash": "mn42QR5Egr5CqA8ODAc2P+6GeqRYC1oDmRyJ0+gjBGuM7MlYq52KvFYIjDtQUm/Kb4PHTe/etBgQ42fpO5cm6g==",
+        "bundleName": "C9B411EBB8B_Hire_Employee_Create",
+        "entitiesBundle": {
+          "Types": {
+            "ID": {
+              "name": "ID",
+              "properties": [
+                {
+                  "name": "Attribute_Value",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Attribute_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Applicant_Reference": {
+              "name": "Applicant_Reference",
+              "properties": [
+                {
+                  "name": "ID",
+                  "type": {
+                    "definitionName": "ID"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "ID1": {
+              "name": "ID1",
+              "properties": [
+                {
+                  "name": "Attribute_Value",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Attribute_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Employee_Reference": {
+              "name": "Employee_Reference",
+              "properties": [
+                {
+                  "name": "ID",
+                  "type": {
+                    "definitionName": "ID1"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "ID2": {
+              "name": "ID2",
+              "properties": [
+                {
+                  "name": "Attribute_Value",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Attribute_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Event_Reference": {
+              "name": "Event_Reference",
+              "properties": [
+                {
+                  "name": "ID",
+                  "type": {
+                    "definitionName": "ID2"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exception_Data": {
+              "name": "Exception_Data",
+              "properties": [
+                {
+                  "name": "Classification",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Message",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exceptions_Data": {
+              "name": "Exceptions_Data",
+              "properties": [
+                {
+                  "name": "Exception_Data",
+                  "type": {
+                    "definitionName": "Exception_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Exceptions_Response_Data": {
+              "name": "Exceptions_Response_Data",
+              "properties": [
+                {
+                  "name": "Exceptions_Data",
+                  "type": {
+                    "definitionName": "Exceptions_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "ID3": {
+              "name": "ID3",
+              "properties": [
+                {
+                  "name": "Attribute_Value",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Attribute_type",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Position_Reference": {
+              "name": "Position_Reference",
+              "properties": [
+                {
+                  "name": "ID",
+                  "type": {
+                    "definitionName": "ID3"
+                  }
+                }
+              ],
+              "baseType": null
+            },
+            "Hire_Employee_Create": {
+              "name": "Hire_Employee_Create",
+              "properties": [
+                {
+                  "name": "Applicant_Reference",
+                  "type": {
+                    "definitionName": "Applicant_Reference"
+                  }
+                },
+                {
+                  "name": "Employee_Reference",
+                  "type": {
+                    "definitionName": "Employee_Reference"
+                  }
+                },
+                {
+                  "name": "Event_Reference",
+                  "type": {
+                    "definitionName": "Event_Reference"
+                  }
+                },
+                {
+                  "name": "Exceptions_Response_Data",
+                  "type": {
+                    "definitionName": "Exceptions_Response_Data"
+                  },
+                  "isCollection": true,
+                  "collectionGenericType": {
+                    "ClrType": "System.Collections.Generic.List`1, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "Position_Reference",
+                  "type": {
+                    "definitionName": "Position_Reference"
+                  }
+                },
+                {
+                  "name": "Event_Reference_ID",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                },
+                {
+                  "name": "version_Attribute",
+                  "type": {
+                    "ClrType": "System.String, System.Private.CoreLib"
+                  }
+                }
+              ],
+              "baseType": null
+            }
+          },
+          "version": 1
+        }
+      },
+      "entityAssemblyKey": {
+        "name": "UiPath.IntegrationService.Activities.SWEntities.C9B411EBB8B_Hire_Employee_Create",
+        "hash": "bW40MlFSNUVncjVDcUE4T0RBYzJQKzZHZXFSWUMxb0RtUnlKMCtnakJHdU03TWxZcTUyS3ZGWUlqRHRRVW0vS2I0UEhUZS9ldEJnUTQyZnBPNWNtNmc9PQ",
+        "assemblyName": "C9B411EBB8B_Hire_Emp.IGn8I1YzTkK1BT9Wv29Klra"
+      }
     }
   ]
 }

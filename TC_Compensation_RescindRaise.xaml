@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="TestRescindCompensationRaise" this:TestRescindCompensationRaise.WorkerName="Nathan Moore" this:TestRescindCompensationRaise.OrchestratorFolder="Workday" this:TestRescindCompensationRaise.BrowserType="Edge" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="WorkerName" Type="InArgument(x:String)" />
@@ -117,9 +118,10 @@
       <AssemblyReference>UiPath.Testing</AssemblyReference>
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>Testing_Workday.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RescindCompensationRaiseWorkflow" sap:VirtualizedContainerService.HintSize="942,1585" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="RescindCompensationRaiseWorkflow" sap:VirtualizedContainerService.HintSize="1189,1792" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,29 +144,52 @@
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke RescindCompensation workflow" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Compensation\RescindCompensation.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke RescindCompensation workflow" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Helper Functions\Compensation\RescindCompensation.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="636,854" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="636,1061" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Home Screen" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="602,603" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V2">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Home Screen" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="602,810" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,354" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,561" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
+              <uix:NCheckState DelayBefore="2" DisplayName="Check App State 'Dialog Box(1)'" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="534,209" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V4">
+                <uix:NCheckState.IfExists>
+                  <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </uix:NCheckState.IfExists>
+                <uix:NCheckState.IfNotExists>
+                  <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </uix:NCheckState.IfNotExists>
+                <uix:NCheckState.Target>
+                  <uix:TargetAnchorable BrowserURL="impl.workday.com/uipath_dpt1/d/inst/1$247/247$45.htmld" ContentHash="yKtGcRfV-0ec-0-ucNPJhQ" DesignTimeRectangle="1219, 571, 1396, 301" FullSelectorArgument="&lt;webctrl aria-role='dialog' css-selector='body&amp;gt;div' tag='DIV' /&gt;" Guid="bd9756e2-e259-41bc-bd1d-22f01506fcc6" InformativeScreenshot="817f67eee112e773690b23cad8e94684.png" Reference="nk82MXn6ik6LC2h7bHpCZQ/JwNRBGtsHU-GP6vGVzG-dA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='View Worker - Nathan Moore - Workday' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
+                </uix:NCheckState.Target>
+              </uix:NCheckState>
               <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Rescinding of Compensation" sap:VirtualizedContainerService.HintSize="534,292" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Contains" OutputArgument="TextString" OutputMessageFormat="Compensation change (rescind back to original value) is expected to be submitted. Pop-up modal located and reads {LeftExpression}. which is expected to {Operator} the expected text {RightExpressionText}. Test Case result: {Result}." TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
                 <uta:VerifyControlAttribute.ActivityToTest>
                   <ActivityAction>
@@ -179,7 +204,7 @@
                         </OutArgument>
                       </uix:NGetText.OutUiElement>
                       <uix:NGetText.Target>
-                        <uix:TargetAnchorable BrowserURL="impl.workday.com/uipath_dpt1/d/search.htmld" ContentHash="FEYLo712-UK1lld9m8KMtw" DesignTimeRectangle="696, 229, 544, 144" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl aria-role='dialog' css-selector='body&amp;gt;div' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='dialog' type='' tag='DIV' class='WCU wd-popup WGV' aaname='' /&gt;" Guid="ec2a1b89-7bf3-4f9d-9925-167496554cd5" InformativeScreenshot="b652adb5fbd55b4ad697ebc90ea82e9b.png" Reference="nk82MXn6ik6LC2h7bHpCZQ/1sO2y97mYE6Gelb1ImcWbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Search Results - Saved Categories - Workday' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                        <uix:TargetAnchorable BrowserURL="impl.workday.com/uipath_dpt1/d/inst/1$247/247$45.htmld" ContentHash="yKtGcRfV-0ec-0-ucNPJhQ" DesignTimeRectangle="1219, 571, 1396, 301" FullSelectorArgument="&lt;webctrl aria-role='dialog' css-selector='body&amp;gt;div' tag='DIV' /&gt;" Guid="bd9756e2-e259-41bc-bd1d-22f01506fcc6" InformativeScreenshot="817f67eee112e773690b23cad8e94684.png" Reference="nk82MXn6ik6LC2h7bHpCZQ/JwNRBGtsHU-GP6vGVzG-dA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='View Worker - Nathan Moore - Workday' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None" />
                       </uix:NGetText.Target>
                       <uix:NGetText.TextString>
                         <OutArgument x:TypeArguments="x:String">

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Activity mc:Ignorable="sap sap2010" x:Class="TC_Compensation_CompleteFlow" this:TC_Compensation_CompleteFlow.Employee_ID="21422" this:TC_Compensation_CompleteFlow.Effective_Date="August 14th 2020" this:TC_Compensation_CompleteFlow.Percent_Change="5" this:TC_Compensation_CompleteFlow.BrowserType="Edge" this:TC_Compensation_CompleteFlow.OrchestratorFolder="Workday" this:TC_Compensation_CompleteFlow.WorkerName="Nathan Moore" this:TC_Compensation_CompleteFlow.ReasonForRequest="Adjustment &gt; Responsibility Change" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="Employee_ID" Type="InArgument(x:String)" />
@@ -126,13 +127,13 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TC_Compensation_CompleteFlow" sap:VirtualizedContainerService.HintSize="942,1808" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TC_Compensation_CompleteFlow" sap:VirtualizedContainerService.HintSize="1189,1853" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Test Data&#xA;&gt; Browser Type (in argument): Values of Edge, Chrome, or Firefox can be provided" DisplayName="... Given" sap:VirtualizedContainerService.HintSize="670,494" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="Test Data&#xA;&gt; Browser Type (in argument): Values of Edge, Chrome, or Firefox can be provided" DisplayName="... Given" sap:VirtualizedContainerService.HintSize="670,497" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,7 +147,7 @@
           <InArgument x:TypeArguments="x:String" x:Key="in_BrowserType">[BrowserType]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Compensation_NavigateToPage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Compensation\Compensation_NavigateToPage.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Compensation_NavigateToPage.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Helper Functions\Compensation\Compensation_NavigateToPage.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <scg:Dictionary x:TypeArguments="x:String, Argument" />
         </ui:InvokeWorkflowFile.Arguments>
@@ -157,46 +158,46 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
     </Sequence>
-    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="670,1291" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="... When" sap:VirtualizedContainerService.HintSize="670,1333" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Compensation_RequestChange.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Compensation\Compensation_RequestChange.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Compensation_RequestChange.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Helper Functions\Compensation\Compensation_RequestChange.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_effectiveDate">[Effective_Date]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[WorkerName]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_Reason_for_Request">[ReasonForRequest]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke MoreCompensationDetails workflow" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Compensation\MoreCompensationDetails.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke MoreCompensationDetails workflow" sap:VirtualizedContainerService.HintSize="636,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Helper Functions\Compensation\MoreCompensationDetails.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_PercentChange">[Percent_Change]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="636,854" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence DisplayName="... Then" sap:VirtualizedContainerService.HintSize="636,896" sap2010:WorkflowViewState.IdRef="Sequence_4">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Search Results - Saved Categories - Work" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="602,603" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Search Results - Saved Categories - Work" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="602,645" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,354" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="568,355" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify Submission of Compensation Request" ContinueOnFailure="True" DisplayName="Verify Compensation Request Submission" sap:VirtualizedContainerService.HintSize="534,292" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Contains" OutputArgument="TextString" OutputMessageFormat="Compensation change requested is expected to be submitted and completed. Pop-up modal located and reads {LeftExpression}. which is expected to {Operator} the expected text {RightExpressionText}. Test Case result: {Result}." TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+                <uta:VerifyControlAttribute KeepScreenshots="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="Verify Submission of Compensation Request" ContinueOnFailure="True" DisplayName="Verify Compensation Request Submission" sap:VirtualizedContainerService.HintSize="534,293" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_2" Operator="Contains" OutputArgument="TextString" OutputMessageFormat="Compensation change requested is expected to be submitted and completed. Pop-up modal located and reads {LeftExpression}. which is expected to {Operator} the expected text {RightExpressionText}. Test Case result: {Result}." TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
                   <uta:VerifyControlAttribute.ActivityToTest>
                     <ActivityAction>
-                      <uix:NGetText DisplayName="Get Text 'Dialog Box'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="500,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V4">
+                      <uix:NGetText DisplayName="Get Text 'Dialog Box'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="500,158" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="08d5b5dd-baea-4398-b5fe-e3fdf05820c9" Version="V4">
                         <uix:NGetText.OutUiElement>
                           <OutArgument x:TypeArguments="ui:UiElement">
                             <VariableReference x:TypeArguments="ui:UiElement">

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Dialog Box(1)",
+  "Type": "Element",
+  "Id": "JwNRBGtsHU-GP6vGVzG-dA",
+  "Reference": "nk82MXn6ik6LC2h7bHpCZQ/JwNRBGtsHU-GP6vGVzG-dA",
+  "ParentRef": "nk82MXn6ik6LC2h7bHpCZQ/ZIniZma510O4EQR_hDvecw",
+  "Created": "2025-03-24T17:59:01.945287Z",
+  "Updated": "2025-03-24T17:59:01.945287Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.4.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

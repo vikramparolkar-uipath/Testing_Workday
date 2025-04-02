@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="yKtGcRfV-0ec-0-ucNPJhQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="impl.workday.com/uipath_dpt1/d/inst/1$247/247$45.htmld" DesignTimeRectangle="1219, 571, 1396, 301" FullSelectorArgument="&lt;webctrl aria-role='dialog' css-selector='body&amp;gt;div' tag='DIV' /&gt;" Guid="bd9756e2-e259-41bc-bd1d-22f01506fcc6" ScopeSelectorArgument="&lt;html app='msedge.exe' title='View Worker - Nathan Moore - Workday' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="None">
+      <imageRef attrName="InformativeScreenshot" originalValue="817f67eee112e773690b23cad8e94684.png" xmlns="">0pCXjscn880u19qK3M2oWaQ</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
