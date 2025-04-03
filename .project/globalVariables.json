@@ -14,5 +14,13 @@
     "UnresolvedTypeFullyQualifiedName": null,
     "Expression": "\"Time out exceeded\"",
     "IsLiteral": false
+  },
+  {
+    "Constant": true,
+    "Name": "OrchestratorFolder",
+    "TypeFullyQualifiedName": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+    "UnresolvedTypeFullyQualifiedName": null,
+    "Expression": "\"Workday\"",
+    "IsLiteral": false
   }
 ]
