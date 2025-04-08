@@ -22,7 +22,7 @@
   ],
   "schemaVersion": "4.0",
   "studioVersion": "20.9.0.0",
-  "projectVersion": "3.0.197314032",
+  "projectVersion": "3.1.197827119",
   "runtimeOptions": {
     "autoDispose": false,
     "netFrameworkLazyLoading": false,
@@ -127,17 +127,17 @@
         "fileName": ".templates\\TestFramework.xaml"
       },
       {
-        "editingStatus": "InProgress",
-        "testCaseId": "84cd58c4-ed06-4ff5-abc6-b3bf4bd66eeb",
-        "testCaseType": "TestCase",
-        "executionTemplateInvokeIsolated": false,
-        "fileName": "Create Single Supplier Invoice.xaml"
-      },
-      {
         "editingStatus": "Publishable",
         "testCaseId": "4722d2d3-ff66-412f-825f-798d9494a284",
         "testCaseType": "TestCase",
         "fileName": "z_GoldenDemo\\Coded Automation\\CodedTestCase.cs"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "84cd58c4-ed06-4ff5-abc6-b3bf4bd66eeb",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "z_GoldenDemo\\Create Single Supplier Invoice.xaml"
       }
     ],
     "saveToCloud": false
@@ -149,7 +149,7 @@
   "expressionLanguage": "VisualBasic",
   "entryPoints": [
     {
-      "filePath": "Create Single Supplier Invoice.xaml",
+      "filePath": "z_GoldenDemo\\Create Single Supplier Invoice.xaml",
       "uniqueId": "1a866104-0b6b-47f0-85cb-50bcfeeb2e82",
       "input": [],
       "output": []
