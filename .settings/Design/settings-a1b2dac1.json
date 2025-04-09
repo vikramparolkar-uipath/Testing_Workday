@@ -33,5 +33,10 @@
   "UiPath.UIAutomationNext.Activities.SearchStepsWnd.FindSelectorType": "One",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.FindSelectorType": "One",
   "UiPath.UIAutomationNext.Activities.SearchStepsSAP.FindSelectorType": "One",
-  "UiPath.UIAutomationNext.Activities.SearchStepsJava.FindSelectorType": "One"
+  "UiPath.UIAutomationNext.Activities.SearchStepsJava.FindSelectorType": "One",
+  "UiPath.UIAutomationNext.Activities.SearchStepsWnd.Semantic": "False",
+  "UiPath.UIAutomationNext.Activities.SearchStepsWeb.Semantic": "False",
+  "UiPath.UIAutomationNext.Activities.SearchStepsSAP.Semantic": "False",
+  "UiPath.UIAutomationNext.Activities.SearchStepsJava.Semantic": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.WindowAttachMode": "ByInstance"
 }

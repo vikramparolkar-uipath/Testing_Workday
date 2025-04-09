@@ -109,7 +109,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="RequestChange" sap:VirtualizedContainerService.HintSize="1189,2175" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="RequestChange" sap:VirtualizedContainerService.HintSize="1055,2175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,7 +121,7 @@
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,1912" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,1908" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,8 +141,8 @@
                 </uix:TargetAnchorable>
               </uix:NTypeInto.Target>
             </uix:NTypeInto>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="494,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Today.toString(&quot;dd/MM/yyyy&quot;)]" />
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DeselectAfter="True" DisplayName="Type Into 'Employee'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="494,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="ca9f2f7f-97d2-451c-9f1f-5d5fb1dd998d" Text="[in_WorkerName + &quot;[k(Tab)]&quot;]" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="494,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Today.toString(&quot;dd/MM/yyyy&quot;)]" />
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="1" DelayBetweenKeys="0.1" DeselectAfter="True" DisplayName="Type Into 'Employee'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="334,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="ca9f2f7f-97d2-451c-9f1f-5d5fb1dd998d" Text="[in_WorkerName + &quot;[k(Tab)]&quot;]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://impl.workday.com/uipath_dpt1/d/inst/13102!CK5mGhIKBggDEMenAhIICgYI1Q0QjCg~*HjCIjmwxf60~/cacheable-task/2997$2151.htmld" ContentHash="TBH-J42zhUu_ceUvzRyzZA" CvElementArea="573, 602, 285, 43" CvType="InputBox" DesignTimeRectangle="577, 606, 246, 36" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl aria-labelledby='56$6747--uid344-formLabel' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-labelledby='56$6747--uid344-formLabel' tag='INPUT' type='' class='css-1k92ajc-InputContainer edt0qdt22' aaname='Employee' /&gt;" Guid="affaa5b5-d821-444a-8c31-8aaba5a3ef10" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAPoAAAAoCAYAAADXGucZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADzSURBVHhe7dehrUJREEXR3/c3GAQKQQs4FF0gEDRBCB3w1CUzoYo5ayXHXL8z7/2tn+frvc6X69odTut/fzSzQevQK/IK/HZ/rM+2dfjAHB16XfKKHJipQ69r7pLDXB16fcMDcwkdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAggdAnTou8NpfbatH4B5OvTz5bpu90c/APN06M/Xu696xe6ywzwdeqnY67JX8PXPbmZTdlxfxqiyU9tcq60AAAAASUVORK5CYII=" InformativeScreenshot="8be2eefb10e1dd41bc0d08cf0b38376b.png" IsResponsive="True" Reference="nk82MXn6ik6LC2h7bHpCZQ/b-jpC1IDa0OI851jkmp-Wg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Request Compensation Change - Workday' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -175,7 +175,7 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NCheckState DisplayName="Check App State 'Request Compensation Ch…'" EnableIfExists="False" sap:VirtualizedContainerService.HintSize="494,736" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ca9f2f7f-97d2-451c-9f1f-5d5fb1dd998d" Timeout="2" Version="V4">
+            <uix:NCheckState DisplayName="Check App State 'Request Compensation Ch…'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="494,736" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="ca9f2f7f-97d2-451c-9f1f-5d5fb1dd998d" Timeout="2" Version="V4">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>

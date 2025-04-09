@@ -78,5 +78,11 @@
   "UiPath.UIAutomationNext.Activities.UITask.UITaskClipboardMode": "Never",
   "UiPath.UIAutomationNext.Activities.UITask.UITaskMaxIterations": "100",
   "UiPath.UIAutomationNext.Activities.Logging.TargetSearchLogLevel": "Off",
-  "UiPath.UIAutomationNext.Activities.Logging.TargetSearchPerformanceLogLevel": "Off"
+  "UiPath.UIAutomationNext.Activities.Logging.TargetSearchPerformanceLogLevel": "Off",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingDismissAlerts": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingDismissConfirms": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingDismissPrompts": "False",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingConfirmDialogResponse": "Cancel",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingPromptDialogResponse": "Cancel",
+  "UiPath.UIAutomationNext.Activities.ApplicationCard.DialogHandlingPromptDialogResponseText": ""
 }

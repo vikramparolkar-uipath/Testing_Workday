@@ -7,9 +7,9 @@
     "UiPath.DataService.Activities": "[25.2.0]",
     "UiPath.Excel.Activities": "[2.24.4]",
     "UiPath.IntegrationService.Activities": "[1.14.0]",
-    "UiPath.System.Activities": "25.3.0-alpha.8439675",
+    "UiPath.System.Activities": "25.3.0-alpha.8575345",
     "UiPath.Testing.Activities": "[24.10.4]",
-    "UiPath.UIAutomation.Activities": "25.4.0-alpha.8376855",
+    "UiPath.UIAutomation.Activities": "25.4.0-alpha.8597441",
     "UiPath.WebAPI.Activities": "[1.21.1]",
     "UiPath.Workday.IntegrationService.Activities": "[5.3.3]"
   },
