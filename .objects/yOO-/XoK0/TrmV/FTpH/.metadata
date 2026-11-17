@@ -1,6 +1,6 @@
 ﻿{
   "Name": "StartProxy_SelectedUser_Text",
-  "Description": "Selected person shown in the User to Proxy As prompt after choosing them, for example James Walker (jwalker)",
+  "Description": "Selected person shown in the User to Proxy As prompt after choosing them, for example James Walker",
   "Type": "Element",
   "TaxonomyType": "Label",
   "Id": "FTpH7SWwQUSsuaSvkWTtdw",

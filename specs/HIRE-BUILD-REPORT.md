@@ -1,7 +1,7 @@
 # Workday Hire Integration Build Report
 
 **Project:** `Testing_Workday_CrossPlatform`  
-**Project path:** `C:\Users\vikram.parolkar\Documents\UiPath\Testing_Workday_CrossPlatform`  
+**Project path:** `<project folder>`  
 **Framework:** Portable Test Automation, Visual Basic expressions, `net10.0`  
 **Studio/uip:** Studio `26.10.0`; `uip` `1.205.0`  
 **Report status:** **Blocked at project build**
@@ -45,7 +45,7 @@
 Command:
 
 ```powershell
-uip rpa build "C:\Users\vikram.parolkar\Documents\UiPath\Testing_Workday_CrossPlatform" --output json
+uip rpa build "<project folder>" --output json
 ```
 
 Result: **Failed, exit code 1**

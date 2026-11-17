@@ -117,4 +117,4 @@ End Try
 - **Registered test case**: `Tests/TC-HR-HIRE-01.xaml`
 - **Other workflow**: `Login to Workday.xaml`
 - **Key documentation**: `specs/TC-HR-HIRE-01.md`, `project.json`, `AGENTS.md`
-- **Project directory**: `C:\Users\vikram.parolkar\Documents\UiPath\Testing_Workday_CrossPlatform`
+- **Project directory**: `<project folder>`

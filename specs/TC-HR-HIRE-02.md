@@ -23,7 +23,7 @@ The SOAP Workday connector was inspected across accessible folders. Exactly one 
 
 | Connection name | Folder | Connector | State | Default | Account evidence |
 |---|---|---|---|---|---|
-| `uipath-presales` | `Workday` | `Workday` SOAP (`uipath-workday-workday`) | Enabled | Yes | Owned by `vikram.parolkar@uipath.com`; the CLI exposes the connection name and owner but not a separate vendor username. |
+| Workday integration connection | `Workday` | `Workday` SOAP (`uipath-workday-workday`) | Enabled | Yes | Owned by the project owner; the CLI exposes the connection name and owner but not a separate vendor username. |
 
 The connection ping returned **Enabled / Connection is active**. The connection was not created or modified.
 
@@ -75,7 +75,7 @@ None. This is a headless Integration Service/Data Fabric test case. No browser, 
 
 ## 7. Targeting and risky points
 
-- Use only the existing `uipath-presales` connection in the `Workday` folder.
+- Use only the existing Workday integration connection in the `Workday` folder.
 - Use the generic `ConnectorActivity` and the SOAP Workday connector; do not use Workday REST, raw HTTP, SOAP XML, `GetRobotCredential`, `SecureString`, or a vendor-specific Workday package.
 - Bind `Email_Address` to `[currentRun.Email]`; the generated `GetPreHireByEmail[]` output is bound to `workdayPreHires`.
 - Preserve the generated connector `Configuration`, field names, field types, and field list exactly.
