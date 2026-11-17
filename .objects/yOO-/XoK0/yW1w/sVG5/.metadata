@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Header_GlobalSearch_Input",
+  "Description": "Global Search Workday input in the page header",
+  "Type": "Element",
+  "TaxonomyType": "Dropdown",
+  "Id": "sVG5kcoypkSWzlVTXhXY_Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/sVG5kcoypkSWzlVTXhXY_Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug",
+  "Created": "2026-11-13T17:36:53.2722177Z",
+  "Updated": "2026-11-13T17:36:53.2722177Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

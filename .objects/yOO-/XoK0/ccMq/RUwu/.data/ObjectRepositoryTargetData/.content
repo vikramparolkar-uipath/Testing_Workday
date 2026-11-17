@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="IU6t1HMfbU2nFNgfksOneg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="267, 632, 868, 36" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='multiSelectContainer' data-uxi-widget-type='multiselect' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:data-uxi-widget-type='fuzzy' fuzzylevel:data-uxi-widget-type='0.0' /&gt;&lt;webctrl color='var(--cnvs-brand-common-focus-outline)' data-automation-id='multiselectInputContainer' dir='ltr' tag='DIV' matching:color='fuzzy' fuzzylevel:color='0.0' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:dir='fuzzy' fuzzylevel:dir='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Reason' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="22fc4520-1c4e-4297-906b-653e1cfee5c3" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="268, 605, 46, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Reason' tag='LABEL' type='' class='WIWI' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Reason' /&gt;" Guid="ba300a1b-883f-435a-89d8-a466fd55a1ab" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="831398f5eba2363742e049fe34ab1e9a.jpg" xmlns="">0IhvnQ86YH0yn3kKg06D6yA</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

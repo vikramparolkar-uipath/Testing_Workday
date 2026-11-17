@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="n6rdggI7c0y4zPBcYzk7vg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="52, 177, 285, 29" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Rescind Business Process' data-automation-id='pageHeaderTitleText' tag='SPAN' /&gt;" Guid="d7b64c84-f74a-4dcb-8792-dffff5dfd459" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="b46fc724b6ae80c9b1a9eeda35420058.jpg" xmlns="">0OIIn0PBEzkaY2NZt2C0T4w</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

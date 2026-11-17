@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Webhook Log",
+  "Description": "TalentTrack ATS webhook event log page",
+  "Type": "Screen",
+  "Id": "Swb8KzRO6EKb1NuaaOYv3A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Swb8KzRO6EKb1NuaaOYv3A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/Nea8KalrzU2m_geSFn0gmQ",
+  "Created": "2026-11-13T03:06:25.6903731Z",
+  "Updated": "2026-11-13T03:06:25.6903731Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

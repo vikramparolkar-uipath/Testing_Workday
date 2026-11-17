@@ -1,0 +1,1218 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_TC_HR_HIRE_05" this:Tests_TC_HR_HIRE_05.AtsBaseUrl="http://localhost:4100" this:Tests_TC_HR_HIRE_05.WorkdayUiTimeout="00:00:30" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="AtsBaseUrl" Type="InArgument(x:String)" />
+    <x:Property Name="FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="LastName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-05 NEG-01 Incomplete data rejected" sap:VirtualizedContainerService.HintSize="858,5100" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="suffix" />
+      <Variable x:TypeArguments="x:String" Name="workdayFirstName" />
+      <Variable x:TypeArguments="x:String" Name="workdayLastName" />
+      <Variable x:TypeArguments="x:String" Name="candidateFirstName" />
+      <Variable x:TypeArguments="x:String" Name="candidateLastName" />
+      <Variable x:TypeArguments="x:String" Name="candidateEmail" />
+      <Variable x:TypeArguments="x:String" Name="candidatePhone" />
+      <Variable x:TypeArguments="x:String" Name="searchText" />
+      <Variable x:TypeArguments="x:String" Name="resultText" />
+      <Variable x:TypeArguments="x:String" Name="signedInUserLabel" />
+      <Variable x:TypeArguments="x:Boolean" Name="signedIn" />
+      <Variable x:TypeArguments="x:String" Name="errorText" />
+      <Variable x:TypeArguments="x:Boolean" Name="discardDialogExists" />
+      <Variable x:TypeArguments="x:Boolean" Name="resultExists" />
+      <Variable x:TypeArguments="x:String" Name="modeText" />
+      <Variable x:TypeArguments="x:String" Name="candidateName" />
+      <Variable x:TypeArguments="x:String" Name="currentStage" />
+      <Variable x:TypeArguments="x:Boolean" Name="markAsHiredDisabled" />
+      <Variable x:TypeArguments="x:String" Name="workdayStatusText" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="candidatesResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="hireResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="candidateResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="eventsResponse" />
+      <Variable x:TypeArguments="njl:JArray" Name="candidatesArray" />
+      <Variable x:TypeArguments="njl:JArray" Name="eventsArray" />
+      <Variable x:TypeArguments="njl:JObject" Name="candidateJson" />
+      <Variable x:TypeArguments="njl:JObject" Name="candidateAfterJson" />
+      <Variable x:TypeArguments="x:String" Name="candidateId" />
+      <Variable x:TypeArguments="x:String" Name="applicationId" />
+      <Variable x:TypeArguments="x:String" Name="candidateApiStage" />
+      <Variable x:TypeArguments="x:String" Name="candidateApiStatus" />
+      <Variable x:TypeArguments="x:Boolean" Name="hasWorkdayApi" />
+      <Variable x:TypeArguments="x:Boolean" Name="hasProhibitedEvent" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifySignedIn" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayError" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayDiscard" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayAbsence" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAtsLive" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateCreated" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateStageUi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyMarkAsHiredDisabled" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayNotSentUi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAts409" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAtsOfferError" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateApiStage" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateApiStatus" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyNoWorkdayApi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyNoProhibitedEvent" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyRefreshedStage" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyRefreshedWorkday" />
+      <Variable x:TypeArguments="x:Boolean" Name="allVerifiesPassed" />
+      <Variable x:TypeArguments="x:String" Name="failedTitles" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Generate NEG-01 suffix" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[suffix]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("ddMMyyHHmm", System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set NEG-01 identities" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[workdayFirstName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Neg"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set Workday last name" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[workdayLastName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Test" &amp; suffix]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set ATS first name" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateFirstName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Neg"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set ATS last name" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateLastName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Offerless" &amp; suffix]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set ATS contact data" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateEmail]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["neg.offerless" &amp; suffix &amp; "@example.com"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set ATS phone" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidatePhone]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["+1 312 555 0142"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set output run ID" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_8">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["NEG-" &amp; suffix]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Prepare Workday: sign in as Logan and stop any leftover proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_Prep05" UnSafe="False" WorkflowFileName="Workflows/Workday/PrepareWorkdaySession.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Check Workday signed-in user" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Workday\CheckIfSignedIn.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInUserLabel]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedIn]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:InvokeWorkflowFile>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 1 - Workday is signed in as Logan McNeil" ContinueOnFailure="True" DisplayName="NEG-01 step 1 - Workday is signed in as Logan McNeil" Expression="[signedIn]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[&quot;Workday user label was '&quot; &amp; signedInUserLabel &amp; &quot;'. Expected a signed-in Logan McNeil session. Result: {Result}.&quot;]" Result="[verifySignedIn]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <If Condition="[Not signedIn]" DisplayName="Stop when Workday user precondition fails" sap:VirtualizedContainerService.HintSize="710,138" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Workday user precondition failure" sap:VirtualizedContainerService.HintSize="680,72" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw Workday signed-in precondition failure" Exception="[New System.InvalidOperationException(&quot;NEG-01 step 1 failed: Workday is not signed in as Logan McNeil.&quot;)]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </If.Then>
+    </If>
+    <Assign DisplayName="Set Workday Create Pre-Hire search" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[searchText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Create Pre-Hire"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set Workday result target" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_10">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[resultText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">["Create Pre-Hire"]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Header Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,186" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="b5011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Search Workday for Create Pre-Hire" sap:VirtualizedContainerService.HintSize="680,120" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RetryScope DisplayName="Retry header search while Workday re-renders" NumberOfRetries="3" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_Hdr0"><ui:RetryScope.ActivityBody><ActivityAction><uix:NTypeInto ActivateBefore="True" DisplayName="Enter Workday Create Pre-Hire search" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="b5011111-1111-4111-8111-111111111111" Text="[searchText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="GyVA-QOucE2tKEbsj-UT1w" DesignTimeRectangle="719, 491, 568, 52" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wd-contextual-search-input' tag='INPUT' /&gt;" Guid="be8baa9e-2b46-48eb-8349-7dbb579b6d29" InformativeScreenshot="12ec9b636f46a2bc12fef47622a93fa2.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/sVG5kcoypkSWzlVTXhXY_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto></ActivityAction></ui:RetryScope.ActivityBody><ui:RetryScope.Condition><ActivityFunc x:TypeArguments="x:Boolean" /></ui:RetryScope.Condition></ui:RetryScope>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Workday search Enter" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="b5011111-1111-4111-8111-111111111111" Shortcuts="[d(hk)][k(Enter)][u(hk)]" Version="V5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="lm1OjRgnPEa2ri6V7uk7EQ" InformativeScreenshot="5a6314b9ad21ea88bd551e0b084dc6cc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Search Results - Create Pre-Hire" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,138" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="b5022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Open Create Pre-Hire" sap:VirtualizedContainerService.HintSize="680,72" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Create Pre-Hire result" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="8PruUQe4hkCRXkPKUnWiMA" DesignTimeRectangle="448, 317, 82, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='pex-search-results-header-title-link' tag='A' /&gt;&quot;, resultText)]" Guid="691c55f9-ade3-4853-a131-bb078fed71e1" InformativeScreenshot="895d9832fd69839227df3e63a275840e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/gvhI1tnqx0S-fwkBRqVk1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="D_ooyb5H_UuKNIcSdKXYCA" InformativeScreenshot="0037d73ed67ccd52671e52b8cc289316.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/search.htmld?q=Start+Proxy&amp;state=searchCategory-all%3Adefault" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Create Pre-Hire Negative Form" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,708" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="b5033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Submit incomplete Workday pre-hire" sap:VirtualizedContainerService.HintSize="710,642" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter Workday negative first name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="Simulate" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Text="[workdayFirstName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="eNkJ9KVpL0aNEfKLuFyifw" DesignTimeRectangle="156, 548, 280, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='First Name' data-automation-id='textInputBox' tag='INPUT' /&gt;" Guid="40d2f8f3-02be-40b7-81b0-5d254f3a8f8c" InformativeScreenshot="c0cb44edc0ca4ac5e581c2059342a338.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/wP_0rlx340anuSChT-yY5A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter Workday negative last name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="Simulate" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Text="[workdayLastName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="9E-VL7nCbUWsCM5QNQsJ0w" DesignTimeRectangle="156, 644, 280, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Last Name' data-automation-id='textInputBox' tag='INPUT' /&gt;" Guid="de9de97f-d9ea-4447-84a1-93c49c2a3b30" InformativeScreenshot="c9dba8899b980b2acc60e65ab251c185.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/PP-H4CbDVk26ANSGkMiwpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit incomplete Workday pre-hire" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="nalnwdnj-kWoUKL5ovKC4Q" DesignTimeRectangle="33, 939, 112, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='wd-CommandButton_uic_okButton' tag='BUTTON' /&gt;" Guid="38615a0a-b031-4922-bd9a-4375d2d19869" InformativeScreenshot="7562d27b98c8f5dc7f77fdd479d63d64.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/hSFW1NvixkG6SLj3vHVjlg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Expand the Workday error banner if it is collapsed" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_ViewAll" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Timeout="5" Version="V5"><uix:NClick.Target><uix:TargetAnchorable ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-expanded='false' data-automation-id='bannerButton' tag='BUTTON' /&gt;" Guid="5c2d9e10-7a41-4b6f-8e2c-1d3a9b7c6e21" Reference="e00i96boZ0Ke_iif9ZtTVw/VTY9S-NxIUeKtTh1VH8R3Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+              <uix:NGetText DisplayName="Read Workday validation error" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" TextString="[errorText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="DJ3lFo9SPkiHjdTOVQbp5g" DesignTimeRectangle="13, 241, 1910, 41" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='applicationError' tag='LI' /&gt;" Guid="538f2c7a-6529-4853-9855-d6896148e8f4" InformativeScreenshot="fdf0fc8a6f314739ca7d33b24cad9ac4.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/cK5e6_0OrkO5V9ktj0D3xw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 2 - Workday rejects missing contact information" ContinueOnFailure="True" DisplayName="NEG-01 step 2 - Workday rejects missing contact information" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Contains" OutputMessageFormat="[&quot;Workday validation text was '&quot; &amp; CStr(errorText) &amp; &quot;'. Expected it to contain '&quot; &amp; CStr(&quot;Please enter at least one address, phone number, or email address.&quot;) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyWorkdayError]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[errorText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">["Please enter at least one address, phone number, or email address."]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpressionWithOperator>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Cancel Workday Create Pre-Hire" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="g7Oz_Gzf2EecaLMRkAB5mw" DesignTimeRectangle="161, 939, 112, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='wd-CommandButton_uic_cancelButton' tag='BUTTON' /&gt;" Guid="b71a1476-59ec-45ac-b211-1344fdd43664" InformativeScreenshot="1e3e2bf4bf63dbb3d0e66dfc4d9903e0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/W4KqLa-EMUG4iJaNgHnfcw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check Workday discard dialog" Exists="[discardDialogExists]" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="680,282" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Discard dialog appears" sap:VirtualizedContainerService.HintSize="680,96" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Discard Workday pre-hire changes" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b5033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="TIqjKolpDEawtsRsgGrRwg" DesignTimeRectangle="769, 612, 112, 35" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Discard' data-automation-id='wd-CommandButton_uic_genericYesButton' tag='BUTTON' /&gt;" Guid="ce06fd4d-9561-43db-924f-efa2c8f7ec99" InformativeScreenshot="bf0e8f713775dafa7b37e92606939f05.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/S3T4peWDbE6iOseZERlcIQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Discard dialog not present" sap:VirtualizedContainerService.HintSize="680,96" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="t7sLW9JrVUmsy-o8Vtp1fw" DesignTimeRectangle="769, 523, 398, 32" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='dialogLabel' tag='H2' /&gt;" Guid="4771c01f-b0a9-4d8a-b785-d5bf7d6b0e42" InformativeScreenshot="03b6171085f909bde472fdbe2cf64b28.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Y7-SCL8P6US4ozCkU0HGxg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 3 - Workday incomplete form is discarded" ContinueOnFailure="True" DisplayName="NEG-01 step 3 - Workday incomplete form is discarded" Expression="[discardDialogExists]" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" OutputMessageFormat="[&quot;Workday discard dialog detected: &quot; &amp; CStr(discardDialogExists) &amp; &quot;. Expected the incomplete form to be discarded. Result: {Result}.&quot;]" Result="[verifyWorkdayDiscard]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="HVKl4bfqY0yo2TAltJxV_Q" InformativeScreenshot="8865d9bd2d7b6bca439c95c1d0abceb6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$155.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Set Workday negative search" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_11">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[searchText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[workdayFirstName &amp; " " &amp; workdayLastName]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set Workday negative result target" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[resultText]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[workdayFirstName &amp; " " &amp; workdayLastName]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Header Search - Negative Candidate" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,198" sap2010:WorkflowViewState.IdRef="NApplicationCard_4" OpenMode="Never" ScopeGuid="b5044444-4444-4444-8444-444444444444" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Search Workday for the rejected candidate" sap:VirtualizedContainerService.HintSize="680,132" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:RetryScope DisplayName="Retry header search while Workday re-renders" NumberOfRetries="3" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_Hdr1"><ui:RetryScope.ActivityBody><ActivityAction><uix:NTypeInto ActivateBefore="True" DisplayName="Enter Workday negative candidate search" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="Simulate" ScopeIdentifier="b5044444-4444-4444-8444-444444444444" Text="[searchText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="GyVA-QOucE2tKEbsj-UT1w" DesignTimeRectangle="719, 491, 568, 52" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wd-contextual-search-input' tag='INPUT' /&gt;" Guid="be8baa9e-2b46-48eb-8349-7dbb579b6d29" InformativeScreenshot="12ec9b636f46a2bc12fef47622a93fa2.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/sVG5kcoypkSWzlVTXhXY_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto></ActivityAction></ui:RetryScope.ActivityBody><ui:RetryScope.Condition><ActivityFunc x:TypeArguments="x:Boolean" /></ui:RetryScope.Condition></ui:RetryScope>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Workday negative search Enter" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" InteractionMode="HardwareEvents" ScopeIdentifier="b5044444-4444-4444-8444-444444444444" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="lm1OjRgnPEa2ri6V7uk7EQ" InformativeScreenshot="5a6314b9ad21ea88bd551e0b084dc6cc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Search Results - Verify Negative Candidate Is Absent" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,144" sap2010:WorkflowViewState.IdRef="NApplicationCard_5" OpenMode="Never" ScopeGuid="b5055555-5555-4555-8555-555555555555" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Verify rejected Workday result is absent" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <uix:NCheckState DisplayName="Check negative Workday result link" Exists="[resultExists]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="b5055555-5555-4555-8555-555555555555" Timeout="[10]" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Negative result unexpectedly exists" sap2010:WorkflowViewState.IdRef="Sequence_10" />
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Negative result is absent" sap2010:WorkflowViewState.IdRef="Sequence_11" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="8PruUQe4hkCRXkPKUnWiMA" DesignTimeRectangle="448, 317, 82, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='pex-search-results-header-title-link' tag='A' /&gt;&quot;, resultText)]" Guid="691c55f9-ade3-4853-a131-bb078fed71e1" InformativeScreenshot="895d9832fd69839227df3e63a275840e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/gvhI1tnqx0S-fwkBRqVk1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 4 - Workday rejected candidate is absent" ContinueOnFailure="True" DisplayName="NEG-01 step 4 - Workday rejected candidate is absent" Expression="[Not resultExists]" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" OutputMessageFormat="[&quot;The dynamic Workday result link exists: {Expression}. Expected False for '&quot; &amp; CStr(resultText) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyWorkdayAbsence]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="D_ooyb5H_UuKNIcSdKXYCA" InformativeScreenshot="0037d73ed67ccd52671e52b8cc289316.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/search.htmld?q=Start+Proxy&amp;state=searchCategory-all%3Adefault" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS Jobs" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,234" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" OpenMode="IfNotOpen" ScopeGuid="a6011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Verify ATS live mode and open job" sap:VirtualizedContainerService.HintSize="680,168" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGoToUrl DisplayName="Go to the ATS Jobs list" sap2010:WorkflowViewState.IdRef="NGoToUrl_Jobs" Timeout="[WorkdayUiTimeout.TotalSeconds]" Url="[AtsBaseUrl &amp; &quot;/#/jobs&quot;]" Version="V5" />
+            <uix:NGetText DisplayName="Read ATS Workday live mode" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a6011111-1111-4111-8111-111111111111" TextString="[modeText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="58k5ZbMavUiIeUqEFbJrsg" DesignTimeRectangle="1573, 105, 173, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-mode' tag='SPAN' /&gt;" Guid="6e1550c5-4372-4b89-8405-12940c25d336" InformativeScreenshot="8ab244f52a16379393ce3a825e373079.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/nmTuEBHy80qzUkrKeedcpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 5 - ATS Workday integration is live" ContinueOnFailure="True" DisplayName="NEG-01 step 5 - ATS Workday integration is live" Expression="[modeText = &quot;Workday: LIVE (uipath_dpt1)&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" OutputMessageFormat="[&quot;ATS mode was '&quot; &amp; CStr(modeText) &amp; &quot;'. Expected Workday: LIVE (uipath_dpt1). Result: {Result}.&quot;]" Result="[verifyAtsLive]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Accounting Specialist - AP job" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a6011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="BEIqCe4Fx0CFAHUI4ejb4w" DesignTimeRectangle="463, 321, 173, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='jobs-table' tag='TABLE' /&gt;&lt;webctrl data-testid='job-link-4001' tag='A' /&gt;" Guid="423f4084-7a3a-457c-8687-328d3d2870df" InformativeScreenshot="5493316fa75c64aa74d835a465151df8.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/v5lHGm-pv0GrOIh0ccMBWQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="Ml43qfS6mEixOFqfki9KTg" InformativeScreenshot="9458ac2c8d27aa1481ea357319b1716b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/jobs" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS Add Offerless Candidate" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,330" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" OpenMode="Never" ScopeGuid="a6022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Create unique offerless candidate" sap:VirtualizedContainerService.HintSize="680,264" sap2010:WorkflowViewState.IdRef="Sequence_13">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter ATS candidate first name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="Simulate" ScopeIdentifier="a6022222-2222-4222-8222-222222222222" Text="[candidateFirstName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="AuwZ56rxgUahOP9fstuAIg" DesignTimeRectangle="455, 736, 248, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='fn' tag='INPUT' type='' class='' aaname='First name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="68b30e6e-993b-40a7-848c-8d6eb3af670b" InformativeScreenshot="3b4da005758a1f466180136dafa0b7dc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jUxRwZKBaEuVmBVkfdTyhA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="455, 713, 248, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='First name' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='First name' /&gt;" Guid="8999df4d-a326-4c6d-ae7c-35ae5ba5c90c" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter ATS candidate last name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="Simulate" ScopeIdentifier="a6022222-2222-4222-8222-222222222222" Text="[candidateLastName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="DqWyZMaLgk-9wwIJYlQabg" DesignTimeRectangle="715, 736, 247, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ln' tag='INPUT' type='' class='' aaname='Last name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0ee6d50b-dcdc-4499-86eb-297e63481c63" InformativeScreenshot="6fc6e61ccea3c37625f5deac0384ff5d.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/thV3SkK9A02gKHori_taJg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="715, 713, 247, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Last name' /&gt;" Guid="32d187f0-a9ed-4e8d-9fa3-f9be6a5768e6" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter ATS candidate email" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="Simulate" ScopeIdentifier="a6022222-2222-4222-8222-222222222222" Text="[candidateEmail]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="YRz3hirB60iM9w4tXZI9dg" DesignTimeRectangle="974, 736, 248, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='em' tag='INPUT' type='email' class='' aaname='Email' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7b50d76c-e966-478d-b070-908b7cce969f" InformativeScreenshot="58119a25095f3f7f849f157ac6ea361b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/rFn6yF5OqkC98uUFHUvJcg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="974, 713, 248, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Email' /&gt;" Guid="d191716a-4528-4e14-ad9e-3fab6e30b275" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" DisplayName="Enter ATS candidate phone" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="Simulate" ScopeIdentifier="a6022222-2222-4222-8222-222222222222" Text="[candidatePhone]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="mcRrr3mhO0mipuRUnNAJNw" DesignTimeRectangle="1234, 736, 247, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ph' tag='INPUT' type='' class='' aaname='Phone' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b6ee9195-9861-4abe-843f-c5915bcbe11c" InformativeScreenshot="fe7ccbda2996bd35046a40634d0b534a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/DbZaR9TPxEixlclxp6xYTA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="1234, 713, 247, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Phone' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Phone' /&gt;" Guid="42615377-d31f-4ecf-96d4-c4c08da74f27" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Create ATS offerless candidate" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a6022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="hx41ru1b0EOwVQMTy4X6wQ" DesignTimeRectangle="455, 788, 129, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='add-cand' tag='FORM' /&gt;&lt;webctrl data-testid='add-candidate-submit' tag='BUTTON' /&gt;" Guid="ae731f01-5e60-4e8a-9095-145b392e60cc" InformativeScreenshot="4a3790f5c5f57b1003bccaf068e73e44.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/0rsNObuLhkuTaEaN0ekVkQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="sqtsTQbUo0mwhPK5i4_ToQ" InformativeScreenshot="73181fa03624c3d973038449588354ac.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/jobs/4001" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS Candidate Initial State" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,474" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" OpenMode="Never" ScopeGuid="a6033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Verify offerless candidate initial state" sap:VirtualizedContainerService.HintSize="680,408" sap2010:WorkflowViewState.IdRef="Sequence_14">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NGetText DisplayName="Read ATS candidate name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="a6033333-3333-4333-8333-333333333333" TextString="[candidateName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="Ex56NQFbR0iykDz0SeeC7g" DesignTimeRectangle="434, 210, 1068, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='candidate-name' tag='H1' /&gt;" Guid="20bcffc0-6ea8-4990-9799-1e54e16808d7" InformativeScreenshot="d302451f796c8b357bea41d2a0d640d7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/7zR312fJtEypFz6XVUmUlQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 6 - ATS creates the unique offerless candidate" ContinueOnFailure="True" DisplayName="NEG-01 step 6 - ATS creates the unique offerless candidate" Expression="[candidateName = candidateFirstName &amp; &quot; &quot; &amp; candidateLastName]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" OutputMessageFormat="[&quot;Candidate name was '&quot; &amp; CStr(candidateName) &amp; &quot;'. Expected '&quot; &amp; CStr(candidateFirstName) &amp; &quot; &quot; &amp; CStr(candidateLastName) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyCandidateCreated]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+            <uix:NGetText DisplayName="Read ATS current stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="a6033333-3333-4333-8333-333333333333" TextString="[currentStage]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="n9mLs-ELf0Gp3MVYn9SMBQ" DesignTimeRectangle="552, 437, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='current-stage' tag='SPAN' /&gt;" Guid="bdcb06e3-57ac-482d-928f-adb87dc15e0e" InformativeScreenshot="6e9c393680b413bd6371f6f73bcb31a6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 7 - ATS candidate is in Application Review" ContinueOnFailure="True" DisplayName="NEG-01 step 7 - ATS candidate is in Application Review" Expression="[currentStage = &quot;Application Review&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_6" OutputMessageFormat="[&quot;Candidate stage was '&quot; &amp; CStr(currentStage) &amp; &quot;'. Expected Application Review. Result: {Result}.&quot;]" Result="[verifyCandidateStageUi]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+            <uix:NGetAttributeGeneric x:TypeArguments="x:Boolean" Attribute="disabled" DisplayName="Read Mark as Hired disabled attribute" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric_1" Result="[markAsHiredDisabled]" ScopeIdentifier="a6033333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetAttributeGeneric.Target>
+                <uix:TargetAnchorable ContentHash="NlO8MAkX_kWnmldB0bnPUw" DesignTimeRectangle="455, 788, 139, 45" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='mark-as-hired' tag='BUTTON' /&gt;" Guid="27614bb6-3c61-49af-87b4-bf8297ed5d00" InformativeScreenshot="29cbcb31061b5fd77998fee700c43373.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jtjIxm-Y90CL5NDvlQnFMA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetAttributeGeneric.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetAttributeGeneric>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 8 - Mark as Hired is disabled before the negative API call" ContinueOnFailure="True" DisplayName="NEG-01 step 8 - Mark as Hired is disabled before the negative API call" Expression="[markAsHiredDisabled]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_7" OutputMessageFormat="[&quot;Mark as Hired disabled attribute was &quot; &amp; CStr(markAsHiredDisabled) &amp; &quot;. Expected True. Result: {Result}.&quot;]" Result="[verifyMarkAsHiredDisabled]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+            <uix:NGetText DisplayName="Read ATS Workday hand-off status" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="a6033333-3333-4333-8333-333333333333" TextString="[workdayStatusText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="localhost" ContentHash="5eBTEgreMEGOWFpJsqdmMg" DesignTimeRectangle="2131, 1161, 958, 162" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-status' /&gt;" Guid="86089056-0c7d-493f-a3b3-9c5a88f7669b" InformativeScreenshot="c0655d8539ef14c09cd1f72082601490.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KG-D7k0jYEyGp-JZvKZPZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector, SemanticSelector" SemanticSelectorArgument="A status indicator within the Workday hand-off section that confirms the candidate's data has been successfully synced to the Workday system and displays the associated pre-hire identifier." SemanticSelectorFindMethod="Dom" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 9 - ATS has not sent the candidate to Workday" ContinueOnFailure="True" DisplayName="NEG-01 step 9 - ATS has not sent the candidate to Workday" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Contains" OutputMessageFormat="[&quot;Workday hand-off text was '&quot; &amp; CStr(workdayStatusText) &amp; &quot;'. Expected it to contain '&quot; &amp; CStr(&quot;Not sent to Workday yet&quot;) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyWorkdayNotSentUi]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[workdayStatusText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">["Not sent to Workday yet"]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpressionWithOperator>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="tYppv9xjzEmll7ckrxIY2w" InformativeScreenshot="9e97b1ac01cddcb0fc3bc6cb40b9e869.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/candidates/9001" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <If Condition="[Not verifyAtsLive OrElse Not verifyMarkAsHiredDisabled]" DisplayName="Gate ATS negative hire API call" sap:VirtualizedContainerService.HintSize="710,138" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="ATS negative API gate failure" sap:VirtualizedContainerService.HintSize="680,72" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw ATS negative API gate failure" Exception="[New System.InvalidOperationException(&quot;NEG-01 API gate failed: ATS is not live or Mark as Hired is not disabled.&quot;)]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Throw_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </If.Then>
+    </If>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="GET ATS candidates" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/candidates&quot;]" Result="[candidatesResponse]" RetryCount="3" RetryPolicyType="None" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="False" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="30000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uwah:NetHttpRequest>
+    <ui:DeserializeJsonArray DisplayName="Parse ATS candidates" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[candidatesArray]" JsonString="[candidatesResponse.TextContent]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:DeserializeJsonArray>
+    <Assign DisplayName="Find candidate by unique email" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_13">
+      <Assign.To>
+        <OutArgument x:TypeArguments="njl:JObject">[candidateJson]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="njl:JObject">[TryCast(candidatesArray.FirstOrDefault(Function(item As JToken) item.SelectToken("emails[0].value") IsNot Nothing AndAlso item.SelectToken("emails[0].value").ToString() = candidateEmail), JObject)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set candidate lookup verification" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_14">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[verifyCandidateFound]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[candidateJson IsNot Nothing]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 10 - ATS API finds the created candidate by email" ContinueOnFailure="True" DisplayName="NEG-01 step 10 - ATS API finds the created candidate by email" Expression="[verifyCandidateFound]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_8" OutputMessageFormat="[&quot;Candidate lookup by email returned a record: {Expression}. Expected True for '&quot; &amp; CStr(candidateEmail) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyCandidateFound]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <Assign DisplayName="Extract candidate and application IDs" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[candidateJson("id").ToString()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Extract application ID" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[applicationId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[candidateJson.SelectToken("applications[0].id").ToString()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" AuthenticationType="None" ContinueOnError="True" DisableSslVerification="False" DisplayName="POST ATS hire without accepted offer" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="POST" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="Text" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/applications/&quot; &amp; applicationId &amp; &quot;/hire&quot;]" Result="[hireResponse]" RetryCount="3" RetryPolicyType="None" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayload="[&quot;{}&quot;]" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="False" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="30000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uwah:NetHttpRequest>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 11 - ATS hire endpoint returns HTTP 409" ContinueOnFailure="True" DisplayName="NEG-01 step 11 - ATS hire endpoint returns HTTP 409" Expression="[hireResponse.StatusCode = System.Net.HttpStatusCode.Conflict]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_9" OutputMessageFormat="ATS hire response status was {hireResponse.StatusCode}. Expected Conflict (409). Result: {Result}." Result="[verifyAts409]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 12 - ATS requires an accepted offer before hiring" ContinueOnFailure="True" DisplayName="NEG-01 step 12 - ATS requires an accepted offer before hiring" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_3" Operator="Contains" OutputMessageFormat="[&quot;ATS hire response body was '&quot; &amp; CStr(hireResponse.TextContent) &amp; &quot;'. Expected it to contain '&quot; &amp; CStr(&quot;An accepted offer is required before hiring&quot;) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyAtsOfferError]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <uta:VerifyExpressionWithOperator.FirstExpression>
+        <InArgument x:TypeArguments="x:String">[hireResponse.TextContent]</InArgument>
+      </uta:VerifyExpressionWithOperator.FirstExpression>
+      <uta:VerifyExpressionWithOperator.SecondExpression>
+        <InArgument x:TypeArguments="x:String">["An accepted offer is required before hiring"]</InArgument>
+      </uta:VerifyExpressionWithOperator.SecondExpression>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpressionWithOperator>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="GET ATS candidate after rejected hire" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="NetHttpRequest_3" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/candidates/&quot; &amp; candidateId]" Result="[candidateResponse]" RetryCount="3" RetryPolicyType="None" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="False" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="30000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uwah:NetHttpRequest>
+    <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Parse candidate after rejected hire" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="DeserializeJson_1" JsonObject="[candidateAfterJson]" JsonString="[candidateResponse.TextContent]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:DeserializeJson>
+    <Assign DisplayName="Read candidate API stage" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateApiStage]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[candidateAfterJson.SelectToken("applications[0].stage").ToString()]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Read candidate API status" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[candidateApiStatus]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(candidateAfterJson("status") Is Nothing, String.Empty, candidateAfterJson("status").ToString())]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Read candidate API Workday state" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_19">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[hasWorkdayApi]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[candidateAfterJson("workday") IsNot Nothing AndAlso candidateAfterJson("workday").HasValues AndAlso Not String.IsNullOrWhiteSpace(candidateAfterJson("workday").ToString())]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 13 - API candidate remains in Application Review" ContinueOnFailure="True" DisplayName="NEG-01 step 13 - API candidate remains in Application Review" Expression="[candidateApiStage = &quot;Application Review&quot;]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_10" OutputMessageFormat="[&quot;API candidate stage was '&quot; &amp; CStr(candidateApiStage) &amp; &quot;'. Expected Application Review. Result: {Result}.&quot;]" Result="[verifyCandidateApiStage]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 14 - API candidate is not hired" ContinueOnFailure="True" DisplayName="NEG-01 step 14 - API candidate is not hired" Expression="[Not String.Equals(candidateApiStatus, &quot;hired&quot;, StringComparison.OrdinalIgnoreCase)]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_11" OutputMessageFormat="[&quot;API candidate status was '&quot; &amp; CStr(candidateApiStatus) &amp; &quot;'. Expected a value other than hired. Result: {Result}.&quot;]" Result="[verifyCandidateApiStatus]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 15 - API candidate has no Workday hand-off" ContinueOnFailure="True" DisplayName="NEG-01 step 15 - API candidate has no Workday hand-off" Expression="[Not hasWorkdayApi]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_12" OutputMessageFormat="[&quot;API Workday object present: &quot; &amp; CStr(hasWorkdayApi) &amp; &quot;. Expected False. Result: {Result}.&quot;]" Result="[verifyNoWorkdayApi]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="GET ATS webhook events" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormDataParts="[New List (Of FormDataPart) From _&#xD;&#xA;{&#xD;&#xA;&#x9;New FileFormDataPart(),&#xD;&#xA;&#x9;New BinaryFormDataPart(),&#xD;&#xA;&#x9;New TextFormDataPart()&#xD;&#xA;}]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="NetHttpRequest_4" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/events&quot;]" Result="[eventsResponse]" RetryCount="3" RetryPolicyType="None" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xD;&#xA;{&#xD;&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xD;&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xD;&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TlsProtocol="Automatic" UseJitter="False" UseOsNegotiatedAuthCredentials="True">
+      <uwah:NetHttpRequest.TimeoutInMiliseconds>
+        <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+          <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="30000" />
+        </InArgument>
+      </uwah:NetHttpRequest.TimeoutInMiliseconds>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uwah:NetHttpRequest>
+    <ui:DeserializeJsonArray DisplayName="Parse ATS webhook events" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_2" JsonArray="[eventsArray]" JsonString="[eventsResponse.TextContent]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:DeserializeJsonArray>
+    <Assign DisplayName="Find prohibited Workday events" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_20">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[hasProhibitedEvent]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[eventsArray.Any(Function(item As JToken) (String.Equals(If(item("action") Is Nothing, String.Empty, item("action").ToString()), "workday_prehire_synced", StringComparison.OrdinalIgnoreCase) OrElse String.Equals(If(item("action") Is Nothing, String.Empty, item("action").ToString()), "candidate_hired", StringComparison.OrdinalIgnoreCase)) AndAlso item.SelectToken("payload.applicationId") IsNot Nothing AndAlso item.SelectToken("payload.applicationId").ToString() = applicationId)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 16 - no prohibited Workday webhook event exists" ContinueOnFailure="True" DisplayName="NEG-01 step 16 - no prohibited Workday webhook event exists" Expression="[Not hasProhibitedEvent]" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_13" OutputMessageFormat="[&quot;Prohibited event for application &quot; &amp; CStr(applicationId) &amp; &quot; present: &quot; &amp; CStr(hasProhibitedEvent) &amp; &quot;. Expected False. Result: {Result}.&quot;]" Result="[verifyNoProhibitedEvent]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uta:VerifyExpression>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS Candidate Refreshed State" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,330" sap2010:WorkflowViewState.IdRef="NApplicationCard_9" OpenMode="Never" ScopeGuid="a6044444-4444-4444-8444-444444444444" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Refresh and verify candidate remains offerless" sap:VirtualizedContainerService.HintSize="680,264" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Refresh ATS candidate page" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" InteractionMode="HardwareEvents" ScopeIdentifier="a6044444-4444-4444-8444-444444444444" Shortcuts="[d(hk)][k(F5)][u(hk)]" Version="V5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NKeyboardShortcuts>
+            <uix:NGetText DisplayName="Read refreshed ATS current stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="a6044444-4444-4444-8444-444444444444" TextString="[currentStage]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="n9mLs-ELf0Gp3MVYn9SMBQ" DesignTimeRectangle="552, 437, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='current-stage' tag='SPAN' /&gt;" Guid="bdcb06e3-57ac-482d-928f-adb87dc15e0e" InformativeScreenshot="6e9c393680b413bd6371f6f73bcb31a6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 17 - refreshed ATS candidate remains in Application Review" ContinueOnFailure="True" DisplayName="NEG-01 step 17 - refreshed ATS candidate remains in Application Review" Expression="[currentStage = &quot;Application Review&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_14" OutputMessageFormat="[&quot;Refreshed candidate stage was '&quot; &amp; CStr(currentStage) &amp; &quot;'. Expected Application Review. Result: {Result}.&quot;]" Result="[verifyRefreshedStage]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpression>
+            <uix:NGetText DisplayName="Read refreshed ATS Workday hand-off status" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="a6044444-4444-4444-8444-444444444444" TextString="[workdayStatusText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="localhost" ContentHash="5eBTEgreMEGOWFpJsqdmMg" DesignTimeRectangle="2131, 1161, 958, 162" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-status' /&gt;" Guid="86089056-0c7d-493f-a3b3-9c5a88f7669b" InformativeScreenshot="c0655d8539ef14c09cd1f72082601490.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KG-D7k0jYEyGp-JZvKZPZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector, SemanticSelector" SemanticSelectorArgument="A status indicator within the Workday hand-off section that confirms the candidate's data has been successfully synced to the Workday system and displays the associated pre-hire identifier." SemanticSelectorFindMethod="Dom" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="NEG-01 step 18 - refreshed ATS candidate still has no Workday hand-off" ContinueOnFailure="True" DisplayName="NEG-01 step 18 - refreshed ATS candidate still has no Workday hand-off" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_4" Operator="Contains" OutputMessageFormat="[&quot;Refreshed Workday hand-off text was '&quot; &amp; CStr(workdayStatusText) &amp; &quot;'. Expected it to contain '&quot; &amp; CStr(&quot;Not sent to Workday yet&quot;) &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyRefreshedWorkday]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[workdayStatusText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">["Not sent to Workday yet"]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uta:VerifyExpressionWithOperator>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="tYppv9xjzEmll7ckrxIY2w" InformativeScreenshot="9e97b1ac01cddcb0fc3bc6cb40b9e869.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/candidates/9001" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Aggregate NEG-01 verification results" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_21">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[allVerifiesPassed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[verifySignedIn AndAlso verifyWorkdayError AndAlso verifyWorkdayDiscard AndAlso verifyWorkdayAbsence AndAlso verifyAtsLive AndAlso verifyCandidateCreated AndAlso verifyCandidateStageUi AndAlso verifyMarkAsHiredDisabled AndAlso verifyWorkdayNotSentUi AndAlso verifyCandidateFound AndAlso verifyAts409 AndAlso verifyAtsOfferError AndAlso verifyCandidateApiStage AndAlso verifyCandidateApiStatus AndAlso verifyNoWorkdayApi AndAlso verifyNoProhibitedEvent AndAlso verifyRefreshedStage AndAlso verifyRefreshedWorkday]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Build NEG-01 failed verification titles" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_22">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[failedTitles]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[String.Join("; ", (New String() {If(Not verifySignedIn, "NEG-01 step 1 - Workday is signed in as Logan McNeil", String.Empty), If(Not verifyWorkdayError, "NEG-01 step 2 - Workday rejects missing contact information", String.Empty), If(Not verifyWorkdayDiscard, "NEG-01 step 3 - Workday incomplete form is discarded", String.Empty), If(Not verifyWorkdayAbsence, "NEG-01 step 4 - Workday rejected candidate is absent", String.Empty), If(Not verifyAtsLive, "NEG-01 step 5 - ATS Workday integration is live", String.Empty), If(Not verifyCandidateCreated, "NEG-01 step 6 - ATS creates the unique offerless candidate", String.Empty), If(Not verifyCandidateStageUi, "NEG-01 step 7 - ATS candidate is in Application Review", String.Empty), If(Not verifyMarkAsHiredDisabled, "NEG-01 step 8 - Mark as Hired is disabled before the negative API call", String.Empty), If(Not verifyWorkdayNotSentUi, "NEG-01 step 9 - ATS has not sent the candidate to Workday", String.Empty), If(Not verifyCandidateFound, "NEG-01 step 10 - ATS API finds the created candidate by email", String.Empty), If(Not verifyAts409, "NEG-01 step 11 - ATS hire endpoint returns HTTP 409", String.Empty), If(Not verifyAtsOfferError, "NEG-01 step 12 - ATS requires an accepted offer before hiring", String.Empty), If(Not verifyCandidateApiStage, "NEG-01 step 13 - API candidate remains in Application Review", String.Empty), If(Not verifyCandidateApiStatus, "NEG-01 step 14 - API candidate is not hired", String.Empty), If(Not verifyNoWorkdayApi, "NEG-01 step 15 - API candidate has no Workday hand-off", String.Empty), If(Not verifyNoProhibitedEvent, "NEG-01 step 16 - no prohibited Workday webhook event exists", String.Empty), If(Not verifyRefreshedStage, "NEG-01 step 17 - refreshed ATS candidate remains in Application Review", String.Empty), If(Not verifyRefreshedWorkday, "NEG-01 step 18 - refreshed ATS candidate still has no Workday hand-off", String.Empty)}).Where(Function(title As String) Not String.IsNullOrWhiteSpace(title)))]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set NEG-01 Passed output" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_23">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[allVerifiesPassed]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign DisplayName="Set NEG-01 summary" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Assign_24">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[If(allVerifiesPassed, "NEG-01 passed; Workday rejected incomplete data, ATS returned HTTP 409, and no hand-off occurred. RunId=" &amp; out_RunId, "NEG-01 failed: " &amp; failedTitles &amp; ". RunId=" &amp; out_RunId)]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <If Condition="[Not allVerifiesPassed]" DisplayName="Fail NEG-01 when any verification failed" sap:VirtualizedContainerService.HintSize="710,138" sap2010:WorkflowViewState.IdRef="If_3">
+      <If.Then>
+        <Sequence DisplayName="NEG-01 verification failure" sap:VirtualizedContainerService.HintSize="680,72" sap2010:WorkflowViewState.IdRef="Sequence_17">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Throw DisplayName="Throw failed NEG-01 verification titles" Exception="[New System.InvalidOperationException(&quot;NEG-01 failed verifications: &quot; &amp; failedTitles)]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Throw_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Throw>
+        </Sequence>
+      </If.Then>
+    </If>
+  </Sequence>
+</Activity>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_Hired_Step",
+  "Description": "Hired stage in the candidate stage stepper",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Usc19a1UjUiWiE2MrrDbzg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Usc19a1UjUiWiE2MrrDbzg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.5763624Z",
+  "Updated": "2026-11-13T02:50:33.5763624Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

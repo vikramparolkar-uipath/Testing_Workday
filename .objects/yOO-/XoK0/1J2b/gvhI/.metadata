@@ -1,0 +1,15 @@
+﻿{
+  "Name": "SearchResults_ResultTitle_Link",
+  "Description": "Title link of a task or report in the Workday search results, chosen by its exact text",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "gvhI1tnqx0S-fwkBRqVk1g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/gvhI1tnqx0S-fwkBRqVk1g",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg",
+  "Created": "2026-11-13T17:49:54.4303928Z",
+  "Updated": "2026-11-13T17:49:54.4303928Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="6DLzw1h2QkqKONSoGxXMEA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="1022, 399, 468, 138" DesignTimeScaleFactor="1" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-panel' tag='DIV' /&gt;" Guid="b1167b2c-eabd-4bfe-bd9a-465f95d581b1" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="5ee90d6dcbeee37cc9ab92dd5ae89f8c.jpg" xmlns="">0dI9ZOS-pJU-xNNgqjUc0mg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

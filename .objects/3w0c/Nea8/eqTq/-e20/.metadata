@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_AdvanceStage_Button",
+  "Description": "Advance-stage button on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "-e20GErK8k-9RN07kQ1wuA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/-e20GErK8k-9RN07kQ1wuA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:55:01.4251508Z",
+  "Updated": "2026-11-13T02:55:01.4251508Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

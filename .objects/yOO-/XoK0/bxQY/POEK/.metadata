@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Position_IncumbentCount_Text",
+  "Description": "Row count of the Incumbent grid on the position page (0 items when unfilled)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "POEK5NtD302M0Pq0TD8wlw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/POEK5NtD302M0Pq0TD8wlw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/bxQYgERxDUSXQnsIY1C6zg",
+  "Created": "2026-11-15T05:19:12.910648Z",
+  "Updated": "2026-11-15T05:19:12.910648Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

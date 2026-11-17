@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_JobTitle_Input",
+  "Description": "Job Title text input, filled from the job profile",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "vsYwVwfKFkW3hepyhrGdGA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/vsYwVwfKFkW3hepyhrGdGA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:50.0689862Z",
+  "Updated": "2026-11-13T18:20:50.0689862Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

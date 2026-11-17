@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="hq8zhvIovUiBMnLrOXvjig" Reference="e00i96boZ0Ke_iif9ZtTVw/WZzWH3EWQk2Rqer-WkFH3Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="localhost" DesignTimeRectangle="919, 311, 555, 188" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' colName='Payload' tableCol='4' parentclass='card' /&gt;" Guid="38cab1d1-c3ba-4442-835c-cf0551950d94" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="2f973f13f8cb6f33e247ea84c6a8be5c.jpg" xmlns="">0m3n0ufNgzkmg6uLEVcjNeg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

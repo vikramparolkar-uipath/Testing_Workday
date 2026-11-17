@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="tYppv9xjzEmll7ckrxIY2w" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="3832, 712, 1936, 1096" BrowserType="Edge" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/candidates/9001" Version="V3">
+      <TargetApp.SapInfo>
+        <SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+      </TargetApp.SapInfo>
+      <imageRef attrName="InformativeScreenshot" originalValue="9e97b1ac01cddcb0fc3bc6cb40b9e869.jpg" xmlns="">093NKPthoSkiS3flBp3IhGQ</imageRef>
+    </TargetApp>
+    <NInteractionMode x:Key="InteractionMode">DebuggerApi</NInteractionMode>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

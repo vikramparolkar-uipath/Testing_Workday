@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Compensation Plan List Back",
+  "Description": "Back control that returns from the All Compensation Plans list to the Compensation Plan source menu",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "P-1-hLQl50Cpq0sWYC21HA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/P-1-hLQl50Cpq0sWYC21HA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:14:45.7295326Z",
+  "Updated": "2026-11-13T22:14:45.7295326Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

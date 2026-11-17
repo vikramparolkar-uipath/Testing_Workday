@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Pre-Hire Cancel Button",
+  "Description": "Cancel button that abandons the Workday Create Pre-Hire form",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "W4KqLa-EMUG4iJaNgHnfcw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/W4KqLa-EMUG4iJaNgHnfcw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T14:34:32.4523008Z",
+  "Updated": "2026-11-14T14:34:32.4523008Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

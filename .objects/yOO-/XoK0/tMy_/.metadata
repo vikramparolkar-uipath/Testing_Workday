@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Stop Proxy",
+  "Description": "Workday Stop Proxy task page with OK",
+  "Type": "Screen",
+  "Id": "tMy_M4oCK02gj6oFaY2QMQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/tMy_M4oCK02gj6oFaY2QMQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-13T18:38:58.9788491Z",
+  "Updated": "2026-11-13T18:38:58.9788491Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_FirstDayOfWork_Value_Text",
+  "Description": "Hidden screen-reader text of the First Day of Work field: current value is MM/DD/YYYY",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "J9FQPqVMSkOVjfBHQHTuCg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/J9FQPqVMSkOVjfBHQHTuCg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.4548146Z",
+  "Updated": "2026-11-13T18:20:49.4548146Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_StartDate_Input",
+  "Description": "Native date input for the offer start date",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "t8m9hM7DakC_gJbBGgUTmw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/t8m9hM7DakC_gJbBGgUTmw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.8031237Z",
+  "Updated": "2026-11-13T02:50:33.8031237Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

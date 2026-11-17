@@ -1,0 +1,232 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Login_to_Workday" this:Login_to_Workday.in_CredentialName="Workday Credentials - HR Partner" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_CredentialName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Login_to_Workday_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Login_to_Workday" sap:VirtualizedContainerService.HintSize="862,540" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Login Screen" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,516" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="c92167b3-2b67-481a-886c-7f11f8d88f70" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="710,450" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Workday_username" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'Username'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="680,426" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c92167b3-2b67-481a-886c-7f11f8d88f70" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="680,240" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="ss:SecureString" Name="Workday_password" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_CredentialName]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Workday" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Workday_password]" Username="[Workday_username]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:GetRobotCredential>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Username'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c92167b3-2b67-481a-886c-7f11f8d88f70" Text="[Workday_username]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" ContentHash="t35_9KIp1U2OpkYXZ6Ox6A" DesignTimeRectangle="882, 1214, 756, 90" DesignTimeScaleFactor="2.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='input-bml82' tag='INPUT' type='text' class='css-58jpwx' aaname='Username' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4130951e-02d6-4a82-9eee-adc3599ce08c" InformativeScreenshot="36b7f41d59291e1ce1d3d66d62d9135a.jpg" IsResponsive="True" Reference="e00i96boZ0Ke_iif9ZtTVw/Qh4IvKR_N0mKF-5wGdKtPw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="882, 1151, 756, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='m3c4fca css-16kxzaw' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username' /&gt;" Guid="2b99653a-4ec0-4393-bb9c-682369bff55f" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Password'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="c92167b3-2b67-481a-886c-7f11f8d88f70" SecureText="[Workday_password]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" ContentHash="7jwq0jgD2ketOhVNQ5C2iw" DesignTimeRectangle="882, 1421, 756, 90" DesignTimeScaleFactor="2.25" ElementType="InputBoxPassword" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='input-bml83' tag='INPUT' type='password' class='PasswordInput_textInput__xACQj css-58jpwx' aaname='Password' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4b57435e-11d1-447b-83f9-aae9d490dafb" InformativeScreenshot="564a84a59270b76b663391033dd1ac0c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/oKc5TvK7l0GPntBvROeo7w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="882, 1358, 756, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Password' tag='LABEL' type='' class='m3c4fca css-16kxzaw' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Password' /&gt;" Guid="aaf0293c-60d4-449f-b370-21a58ecfd7d2" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Sign In'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c92167b3-2b67-481a-886c-7f11f8d88f70" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" ContentHash="Cj6uZUyABEig4bH2LI9g5Q" DesignTimeRectangle="936, 1583, 648, 90" DesignTimeScaleFactor="2.25" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='md6add4 username-password-auth_button__6FoK0 css-o1hzqu' aaname='Sign In' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Sign In' /&gt;" Guid="eb7c9e24-6f60-4475-ab94-af2d4541b152" InformativeScreenshot="bf999c6499575997e955aeee5fc59a76.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/b0Ee64HOBUW7q_fd3KRAEw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="1209, 1605, 101, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Sign In' tag='SPAN' type='' class='css-1unf5sp' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Sign In' /&gt;" Guid="adf5afc1-a93a-42e4-abf2-261ecec4fabb" SearchSteps="FuzzySelector" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                        <uix:TargetAnchorable.PointOffset>
+                          <uix:PointOffset />
+                        </uix:TargetAnchorable.PointOffset>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="680,96" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" ContentHash="t35_9KIp1U2OpkYXZ6Ox6A" DesignTimeRectangle="882, 1214, 756, 90" DesignTimeScaleFactor="2.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='input-bml82' tag='INPUT' type='text' class='css-58jpwx' aaname='Username' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4130951e-02d6-4a82-9eee-adc3599ce08c" InformativeScreenshot="36b7f41d59291e1ce1d3d66d62d9135a.jpg" IsResponsive="True" Reference="e00i96boZ0Ke_iif9ZtTVw/Qh4IvKR_N0mKF-5wGdKtPw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="882, 1151, 756, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='m3c4fca css-16kxzaw' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username' /&gt;" Guid="2b99653a-4ec0-4393-bb9c-682369bff55f" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-14, -14, 3868, 2428" BrowserType="Edge" ContentHash="PGUweHqp80OEoM-oYUiqSQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAITcAACE3ATNYn3oAAAYGSURBVHhe7ZtBiBVHEIZFtkVEtpYQRCSEIBKCSK14CCKyBJEcggcPQUJaclg2hUjOIuJJgkgIiywSQhAPEjxIEBEPQYKHIOJBgkiQJYQQJIgEERERkQZDrd3S7381Mz375r2Y8H74YJmpv6rem5menp63K1YMWcE7ZUvw7mDw7nTw7ufg3Z/BuyfBuxcR/Vu3XYsxGsvBu5WY7z+h+KG3Be9OBu/uZh+0LX8F7xZiLizz+in4Cf3gH8UjiR9mUK4H7/a8tl9E8G5rPL2x8a7RL3cb1v/XFLxbFbz7Mnj33Gh2WGit41ob+xmpgncb4qmJDY6KG8G7t7CvkSiO0oMMcF2hA+VW7G+oiqPyA6OZUvQU1tve7Yj+/cyIK+Vh8O597HMoCt69F7z722iijqfBuwvBu7ng3ebg3YSRdyLmng3e/RA9mKcOPSCbMW+nCt69Ebz73Shexf3g3WH1Ya4mxVqHYg7MW8Ufwbs3MVcnCn5iZfDuslHUIgTv5oN3k5inrTRH8O7rFneZH4cygwzeHTCKWdwL3n2A/kEVvJuJubGexRfoH0jxdvfIKITcCd69jf6upLljDayLPNae0b9sxQcULIL8Frxbj96uFbxbF7xbNOojZ9C7LAXvNhVcf3ob2oTeYSn2pDWxjxzt+V30tlbw7pSRHPkYfcOW1jT6QL5BXysF79YUXPsX0DcqxfkC9pOjY8Fa9BUreLfPSJqjp9nITn1U4eX5KfqKpaeQkTDnHHpGreDd90ZfOd+ip1h6P48PPHoZIDrqb0HPqBWn1npX0EER0d47n5OMNdZYY4011lhjjfW/F7HsIpYbxHLL4DKxFK/+EItyjFhuGrkSuk9j0F4p7SH2grkU7X35U2FiOUMsL2pYQE+ViGXG8Fcxg/4qEcspw5+z/JUhYjlkJMy5hp4qEcsJw1/FcfRXiViuG/6cQ+gpVrwEMGHOY2IpWoImll8MfxU30W+JpmVl7AH9OQNdApPEEoykOY3rbsSyviBPjsauwzworW14Mc9g7yaI5baROOcT9KCIZb/ha2I/5kFpbcOXcxs9rUUsp43EOV+hB0UsZw1fE2cxD0prG76c79DTWsQyZyTO+Qk9uXSMIJb7hq+Je8Sf144vWtvw5cyip7WIZbOROOdh3UBILNsMT+5VcHui8r1//GLrvMrgb4v1KBDLAyN5TuVASCyHjfjE+QhuT1TewgoGQO258sC0ErFcMgrkVA5YxHLViE/MRnB74irmSyoYWC+hZ9kqmBCZM0JiWUssz4z4xIYIbk+o13yxUTADrDx7WotYdhgFcsyJC7HsMWITt7I4nbfj/sSe3qwvFZ8bMDZnB3qWLWJZRSxPjCKJ58SyxvAtGLGJE1lc3TS57+zSWrEmxia0125/QkcsV4xCOT1TzsmXT3+LRlxfvP5t7E8s5nkL4pUr6BlYxHLEKJRzFOI3GjGJR/kRimeYbsO4xDuQ+6gRk3Mkj+9ExLLdKJTT860TywEjJtH3Rlm3GXGJngWCgrNxex7fiaamZaLhKOlTWX5U6z7QXG/2pXgx4hKvvrB4ttQ9AWqPfT/D60TEctEomLM08moDDV9W30pSXNnBuMSrD1VwR+o7uzoTsRw0CuYsjQPEstPYl6h8QiOWX434xM4Y03T9H8S8nalhYFOWZm5xXQ/3JSqfHhue7o7FmLqZpbIR83aqhlvb0swtLkbivsQuzJnUsAKlOZtmln23zM5FLPNG4ZzPalZ/egZKVMMApzk1N27PmcecnYtYdhuFc+4a2xIXMR+qYaCty63sxnydq2DSUscBzIdqmD/U0TO5GqqI5ZzRQAk9MzpLGmP4ShjdD7aIZZ/RQBN3pqab3/hMvXyGuGP4m2hcnO1Mcbn8qdFEHcUDVMFAi2gvgy1/t1XDYGXxIeaoksYa/joaB9fOVbAklfNkalpWY44qEcvqhvUHpHJJbmhqeRlcRn+T4htfzGMx+tM/qWFFN6f1f3Cox8hjcR69IxOx7DUasmj9g2r1GHks9qJ3ZIqPvbpkXjX11Xl735peqYjlZM3cX2vqQDzQs/8/tIW+XyEt0XcAAAAASUVORK5CYII=" InformativeScreenshot="fcf4e1eed750fc8f164da3a6f8e0a373.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/SVsoonNykkC7O3UWpUZmsw" Selector="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" Url="https://wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

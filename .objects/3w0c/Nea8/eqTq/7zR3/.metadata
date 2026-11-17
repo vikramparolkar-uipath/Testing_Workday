@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_CandidateName_Text",
+  "Description": "Candidate name displayed on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "7zR312fJtEypFz6XVUmUlQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/7zR312fJtEypFz6XVUmUlQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.1906948Z",
+  "Updated": "2026-11-13T02:50:33.1906948Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

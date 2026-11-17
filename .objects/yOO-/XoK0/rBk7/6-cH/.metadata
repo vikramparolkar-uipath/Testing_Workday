@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Hire Employee Existing Pre-Hire Input",
+  "Description": "Existing Pre-Hire prompt input in the Hire Employee dialog",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "6-cHFc6WgUeTDeITOj2HIQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/6-cHFc6WgUeTDeITOj2HIQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "Created": "2026-11-13T18:02:20.057891Z",
+  "Updated": "2026-11-15T06:38:07.4101178Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

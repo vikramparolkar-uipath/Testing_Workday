@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="Cj6uZUyABEig4bH2LI9g5Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" DesignTimeRectangle="936, 1583, 648, 90" DesignTimeScaleFactor="2.25" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='submit' class='md6add4 username-password-auth_button__6FoK0 css-o1hzqu' aaname='Sign In' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Sign In' /&gt;" Guid="eb7c9e24-6f60-4475-ab94-af2d4541b152" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="1209, 1605, 101, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Sign In' tag='SPAN' type='' class='css-1unf5sp' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:innerText='Sign In' /&gt;" Guid="adf5afc1-a93a-42e4-abf2-261ecec4fabb" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="bf999c6499575997e955aeee5fc59a76.jpg" xmlns="">0hta7puIdwESo7mKbZPRMOg</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_Submit_Button",
+  "Description": "Submit button in the bottom button bar of the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "E-cSUjNRf0W_IJMeUjwidQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/E-cSUjNRf0W_IJMeUjwidQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:50.8163555Z",
+  "Updated": "2026-11-13T18:20:50.8163555Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,72 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_Termination_ReviewTermination"  sap2010:Annotation.AnnotationText="Opens &quot;Terminate: &lt;worker&gt;&quot; in My Tasks and approves it, or denies it (More &gt; Deny, with in_DenyReason). out_Result holds Workday&#x27;s confirmation, for example &quot;Success! Event approved&quot; or &quot;Event denied&quot;." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="in_Decision" Type="InArgument(x:String)" />
+    <x:Property Name="in_DenyReason" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_Result" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday Termination ReviewTermination" sap2010:WorkflowViewState.IdRef="Sequence_G225">
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Open the termination task in My Tasks" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G210" UnSafe="False" WorkflowFileName="Workflows/Workday/OpenInboxTask.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TaskText">["Terminate: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<If Condition="[in_Decision.Trim().ToLowerInvariant() = &quot;approve&quot;]" DisplayName="Approve or deny" sap2010:WorkflowViewState.IdRef="If_G224"><If.Then><Sequence DisplayName="Approve or deny - yes" sap2010:WorkflowViewState.IdRef="Sequence_G222">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="87e80ccc-3287-4887-bf62-8900efc144f0" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G214"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G213">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Approve" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="87e80ccc-3287-4887-bf62-8900efc144f0" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G211"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=&#x27;Approve&#x27; data-automation-id=&#x27;wd-CommandButton_*&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="a08baeb4-3beb-4dfd-9844-94c2860d95cc" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NGetText DisplayName="Read the approval confirmation" HealingAgentBehavior="SameAsCard" ScopeIdentifier="87e80ccc-3287-4887-bf62-8900efc144f0" TextString="[out_Result]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G212"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;bp-slim-conclusion&#x27; /&gt;" Guid="d79b8ac1-f87f-4833-814b-48ea670a9e62" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence></If.Then><If.Else><Sequence DisplayName="Approve or deny - no" sap2010:WorkflowViewState.IdRef="Sequence_G223">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G221"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G220">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open More" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G215"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id=&#x27;uic_moreButton&#x27; /&gt;" Guid="ca46729f-3939-4bb0-81aa-5456f3959d34" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Deny" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G216"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id=&#x27;moreOptionPopup&#x27; /&gt;&lt;webctrl aaname=&#x27;Deny&#x27; /&gt;" Guid="c2b055f2-a15d-4907-9bb7-44a4ed91a545" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Enter the deny reason" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" Text="[in_DenyReason]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G217"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id=&#x27;popUpDialog&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;textAreaField&#x27; /&gt;" Guid="1019e38d-0454-4982-a19e-36b0ccdb84d6" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit the deny" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G218"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id=&#x27;popUpDialog&#x27; /&gt;&lt;webctrl aaname=&#x27;Submit&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="8f45a71f-0444-4181-9044-d373bef2d4da" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NGetText DisplayName="Read the deny confirmation" HealingAgentBehavior="SameAsCard" ScopeIdentifier="759ca5aa-f5a5-4ce8-8e8d-1dad25254245" TextString="[out_Result]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G219"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;bp-slim-conclusion&#x27; /&gt;" Guid="f33c15b5-524d-438e-a0cb-ff001a3ef95f" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence></If.Else></If>
+</Sequence>
+</Activity>

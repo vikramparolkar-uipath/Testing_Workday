@@ -1,0 +1,15 @@
+﻿{
+  "Name": "EventDetails_OverallStatus_Value_Text",
+  "Description": "Overall Status value on View Event (field metadata 56$18589)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "n6g92hPlBE6SnLIgikafsA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/n6g92hPlBE6SnLIgikafsA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg",
+  "Created": "2026-11-15T04:47:12.1342682Z",
+  "Updated": "2026-11-15T04:47:12.1342682Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

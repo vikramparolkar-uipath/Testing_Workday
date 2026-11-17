@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_MarkAsHired_Button",
+  "Description": "Mark as Hired button on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "jtjIxm-Y90CL5NDvlQnFMA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/jtjIxm-Y90CL5NDvlQnFMA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:34.2083186Z",
+  "Updated": "2026-11-13T02:50:34.2083186Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

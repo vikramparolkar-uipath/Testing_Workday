@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="y1BoMEObTUaoB4Hy3meEQw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="52, 1029, 112, 35" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='wd-CommandButton_uic_okButton' tag='BUTTON' type='button' class='WKQM WOQM WA4N WNDN WDSM' aaname='OK' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="a9e27fde-d7dc-4a43-80fa-1de5c3b0d462" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="84, 1037, 48, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='WMQM' tag='SPAN' type='' aaname='OK' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="de92f76a-7b8d-4f8b-a0ca-1139755425f9" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9160158e2211e6568dae75f02e32f3de.jpg" xmlns="">0aABKznbb6Ey0TspYGVIkaQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

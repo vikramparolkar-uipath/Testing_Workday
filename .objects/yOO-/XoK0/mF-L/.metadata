@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Rescind Business Process",
+  "Description": "Workday Rescind Business Process task page",
+  "Type": "Screen",
+  "Id": "mF-LX89XLkipzP8qUm9DeA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/mF-LX89XLkipzP8qUm9DeA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-15T04:58:57.7978043Z",
+  "Updated": "2026-11-15T04:58:57.7978043Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

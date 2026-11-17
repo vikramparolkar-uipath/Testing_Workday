@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_Offer_Step",
+  "Description": "Offer stage in the candidate stage stepper",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "cbmu9qHK0UOJldM0mqExsA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/cbmu9qHK0UOJldM0mqExsA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.4909108Z",
+  "Updated": "2026-11-13T02:50:33.4909108Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_EmployeeType_Input",
+  "Description": "Employee Type prompt search input on the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "EjsPzJ6RZkGpHksCTHG3_Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/EjsPzJ6RZkGpHksCTHG3_Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.7162692Z",
+  "Updated": "2026-11-13T18:20:49.7162692Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

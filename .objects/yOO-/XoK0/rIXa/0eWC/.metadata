@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Salary Row Save",
+  "Description": "Visible row-level Save button for the existing Salary row, at the bottom of the Salary editor",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "0eWC-QGVqkS2XT0DeqsVuA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/0eWC-QGVqkS2XT0DeqsVuA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:51:34.9384461Z",
+  "Updated": "2026-11-13T22:51:34.9384461Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,70 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_Termination_CancelTermination"  sap2010:Annotation.AnnotationText="Cancels the Terminate Employee form without submitting, discarding changes if Workday asks." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_FormClosed" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday Termination CancelTermination" sap2010:WorkflowViewState.IdRef="Sequence_G245"><Sequence.Variables><Variable x:TypeArguments="x:Boolean" Name="formStillOpen" /></Sequence.Variables>
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" ContinueOnError="True" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G243"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G242">
+<ui:RetryScope DisplayName="Cancel the form until it closes" NumberOfRetries="3" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_G240"><ui:RetryScope.ActivityBody><ActivityAction><Sequence DisplayName="Cancel the form until it closes (body)" sap2010:WorkflowViewState.IdRef="Sequence_G241">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Close the Error pop-up if it is open" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[2]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G226"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id=&#x27;popUpDialog&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;closeButton&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="d73138aa-e748-4ae6-9774-644e722b032a" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NCheckState DisplayName="Is the form open?" Exists="[formStillOpen]" HealingAgentBehavior="Disabled" ScopeIdentifier="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[3]" Version="V5" sap2010:WorkflowViewState.IdRef="NCheckState_G227"><uix:NCheckState.IfExists><Sequence DisplayName="Found" sap2010:WorkflowViewState.IdRef="Sequence_G228" /></uix:NCheckState.IfExists><uix:NCheckState.IfNotExists><Sequence DisplayName="Not found" sap2010:WorkflowViewState.IdRef="Sequence_G229" /></uix:NCheckState.IfNotExists><uix:NCheckState.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;Edit Primary Reason&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="cb02038a-97f5-4eeb-a006-ea21e01764d5" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NCheckState.Target></uix:NCheckState>
+<If Condition="[formStillOpen]" DisplayName="Cancel when the form is open" sap2010:WorkflowViewState.IdRef="If_G239"><If.Then><Sequence DisplayName="Cancel when the form is open - yes" sap2010:WorkflowViewState.IdRef="Sequence_G238">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Cancel the form" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[10]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G230"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=&#x27;Cancel&#x27; data-uxi-actionbutton-action=&#x27;bpf-cancel&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="55e71f57-18be-4eba-9e12-4783e38fe7c5" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Discard the changes if Workday asks" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G231"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname=&#x27;Discard&#x27; data-automation-id=&#x27;wd-CommandButton_uic_genericYesButton&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="ce408fa7-59fc-4ec4-8c73-2febc7268993" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<Delay DisplayName="Let the form close" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_CT1" />
+<uix:NCheckState DisplayName="Is the form still open?" Exists="[formStillOpen]" HealingAgentBehavior="Disabled" ScopeIdentifier="ee721305-21ba-43f4-aa3b-4616929a8682" Timeout="[3]" Version="V5" sap2010:WorkflowViewState.IdRef="NCheckState_G232"><uix:NCheckState.IfExists><Sequence DisplayName="Found" sap2010:WorkflowViewState.IdRef="Sequence_G233" /></uix:NCheckState.IfExists><uix:NCheckState.IfNotExists><Sequence DisplayName="Not found" sap2010:WorkflowViewState.IdRef="Sequence_G234" /></uix:NCheckState.IfNotExists><uix:NCheckState.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;Edit Primary Reason&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="e32004c7-eeb8-4a7b-849a-a7da3c608edd" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NCheckState.Target></uix:NCheckState>
+<If Condition="[formStillOpen]" DisplayName="Try again when the form is still open" sap2010:WorkflowViewState.IdRef="If_G237"><If.Then><Sequence DisplayName="Try again when the form is still open - yes" sap2010:WorkflowViewState.IdRef="Sequence_G236">
+<Throw DisplayName="Form still open" Exception="[New InvalidOperationException(&quot;The Terminate Employee form is still open after Cancel; trying again.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G235" />
+</Sequence></If.Then></If>
+</Sequence></If.Then></If>
+</Sequence></ActivityAction></ui:RetryScope.ActivityBody></ui:RetryScope>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+<Assign DisplayName="Return whether the form closed" sap2010:WorkflowViewState.IdRef="Assign_G244"><Assign.To><OutArgument x:TypeArguments="x:Boolean">[out_FormClosed]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Boolean">[Not formStillOpen]</InArgument></Assign.Value></Assign>
+</Sequence>
+</Activity>

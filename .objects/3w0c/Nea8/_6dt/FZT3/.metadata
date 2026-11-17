@@ -1,0 +1,14 @@
+﻿{
+  "Name": "workday_prehire_synced(1)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "FZT3lLPjfk243C-FzID9fg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/FZT3lLPjfk243C-FzID9fg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T16:50:39.2874005Z",
+  "Updated": "2026-11-13T16:50:39.2874005Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationNext.Activities, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate Workday Position ID Text",
+  "Description": "Text value of the Workday position ID in the Workday hand-off panel on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "_2wndmztDkWS2CPT0FvjnQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/_2wndmztDkWS2CPT0FvjnQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T03:03:00.6709883Z",
+  "Updated": "2026-11-13T03:03:00.6709883Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

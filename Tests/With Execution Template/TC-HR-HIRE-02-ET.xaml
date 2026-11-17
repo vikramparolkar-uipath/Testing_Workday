@@ -1,0 +1,322 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_ET_TC_HR_HIRE_02" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uiascb="clr-namespace:UiPath.IntegrationService.Activities.SWEntities.C660B9CBAA7_GetPreHireByEmail.Bundle;assembly=C660B9CBAA7_GetPreHi.H5E9i3EtQvM1NWH4fkP6Sz1" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RunId" Type="InArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models.FilterBuilder</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Helpers.TypeDetailsCustomization</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Activities</x:String>
+      <x:String>UiPath.Platform.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+      <x:String>UiPath.IntegrationService.Activities.Runtime.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.IntegrationService.Activities.SWEntities.C660B9CBAA7_GetPreHireByEmail.Bundle</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.IntegrationService.Activities.Runtime</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>C660B9CBAA7_Applican.6d3ip14FEsG1WfYm892S8F3</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.AsyncEnumerable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>C660B9CBAA7_GetPreHi.H5E9i3EtQvM1NWH4fkP6Sz1</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-02 (with execution template) | WD-01 Confirm pre-hire in Workday" sap:VirtualizedContainerService.HintSize="862,1417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="runId" />
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="currentRun" />
+      <Variable x:TypeArguments="scg:IList(t:WorkdayHireRun)" Name="runRecords" />
+      <Variable x:TypeArguments="x:Int64" Name="runCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyStatus" />
+      <Variable x:TypeArguments="uiascb:GetPreHireByEmail[]" Name="workdayPreHires" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyLookup" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPreHireId" Default="True" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyFirstName" Default="True" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyLastName" Default="True" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEmail" Default="True" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPhone" Default="True" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAll" />
+      <Variable x:TypeArguments="x:String" Name="normalizedWorkdayPhone" />
+      <Variable x:TypeArguments="x:String" Name="normalizedExpectedPhone" />
+      <Variable x:TypeArguments="x:String" Name="failedVerifyTitles" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+        <Sequence DisplayName="Given-When-Then WD-01" sap:VirtualizedContainerService.HintSize="680,972" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Select the hire run this test needs (fails if the test data is not available)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_Select02" UnSafe="False" WorkflowFileName="Workflows/DataFabric/SelectHireRun.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_RunId">[in_RunId]</InArgument>
+              <InArgument x:TypeArguments="t:HireRunStage" x:Key="in_RequiredStage">[Testing_Workday_CrossPlatform.HireRunStage.AtsHired]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_TestCaseName">["TC-HR-HIRE-02"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ProducedBy">["TC-HR-HIRE-01"]</InArgument>
+              <OutArgument x:TypeArguments="t:WorkdayHireRun" x:Key="out_CurrentRun">[currentRun]</OutArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Use the selected run ID" sap2010:WorkflowViewState.IdRef="Assign_RunIdFromRun02">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[runId]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Expose run ID" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+          <isactr:ConnectorActivity Configuration="H4sIAAAAAAAACq1W244aORD9FcuPq55ehsnObpDmgVsyncyFgUnmIULIdBdQi9vutcsMnYh/X7kv0CyMslqteABc5dOuc05V+wf/gCAT29eKBCowvPODT0CYeCXmEsog73z7wR9ECrzDR2CsVkLOBoJEGCWgCBcYC0KtyrWPegNGpaBoFg2+/TI9XihzvoLBBUIym+ezMSzAgIohLNO7RAbnjmD2VUgHPOADtJkUeXWCAxyLBmxTITFRb2ObehvY2GDmT8Y7/HlVRZheMFpBY4OzkDDSJVZeBJfNh/CAP+eZf7Ylg2rJgwZFvEPGQXPlMQMjSBvPG7/h02bM11Csv8XASflH2/8VEy/+T8XBGP5yYIl3FkJa8P9tppXdn7oQ+E6X+vEO7+kk57tpwG+F/aIKPF+6rfMjlTk6dcUwFShn3SQxYO2JYkX0jCBomS1KY68oJTNAzihmajYse0VaMaEYbEVMLBUUr7xOXiDwmCwahOwgLCgCAwlDy5QmFgsLFxaURcINnBNRG3o0iTf9ZXE6XCrv/5H2W4pDjgymwuR8V1KJBpK3qHtyYHIe8MjeA610MhJGpEAe3W/YBXu2UMXSJXBKVNQIHHEVqcT3GFiGpXn3lmEgoXDAQpvS1lkmMRaKPA3VkxKGqgiaSv6wG8eQkWWxTlPBLGTCCIKkJNKe4WqoXNpUvCfi9dJopxIWryBe84CXfm2GZv0i1Ch9uCUwSkiGimBpCu4YJiwRJBoQddosOqTVw6MJV08jhmqhTVpKcYDZD6uoEW5sH0NsHBKq5RsAh4S3IJ6ckPsByDKjFyihgXAUn42q+NEZKiWPHluvHSValx5nFQu+Ww/ejey9k4QTkBBT7bw3vfqo+kJtxKG9f+rdVGwxdekYYm0SOy5aFpITJ9+LLTNlztlJXMEw5dI5GD+Sq2zf3+UgOJiw8AoYHvAPhQRFQ9BVu0BeCCepoqTdap3W+qAVnJTaqOh1Beb0LfNSr54cvT98uqvnFmwzP/FK0/yzZQ6i9HWaaQXKn/wDSgLTcyj94PkftJkG/NHR2bH8CWn2EWhk4BYN9PL9ID4qdWTgwsdPqr1DS16a/UixTBuWGbhYoQEbHmr+giNBq7DRrRMwG4z9oCHcICHYcPIyVFT+7F9ft3rv+71u9/fTA4Y9pxIJ4Ung2zRg53aGt78N3+PVkJ4295cPL7fvFuvR9eT7ZcC+gvHi3FyGLf8JWN9JcgZuFDgyQgZs5OYS48+QP+s1qBvlpPwPr81SgGL4f8JSiIZsAlUN0AjtpruAN9+x3iWCsHGniJQloWLYS269m6qieIcXZfGA97VSEJM2nyHnHe4wE7S6eNVmnYi8/uYBr8TIK9X6rhj63mvzPyGm+lpxxjG3RFlpvzLBG9fXL/E7JDXsYT+rPcXmOasx+iJeQXKn9dplRcP6anb1es/oVwsmIkir9erd+xny4sbUrV04iwb+VjQS8VosocnG1XXYupgDibDdal9fttpX4R9Neure3hOyjxxQ2uG7sL2nZPBWp/yUsfIWeGikExKHz9wXQSve4b/ui/Pj8k6opRNLjwx+sNyL7UgsYYLf6xl3K2zPgFijWvZXQi09lZVVIzt2ijCFvkRQ9MUWQLUXC/917URL5882BqudiWGo/O1y79ln2FJP6njtiZ/u/gbk2UgxJQwAAA==" ConnectionId="0194b511-65cb-429b-a0a6-71660b9cbaa7" DisplayName="Get Pre-Hire by Email" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="ConnectorActivity_2" UiPathActivityTypeId="9a03d38f-2e71-339c-bd1e-429089bf09b7">
+            <isactr:ConnectorActivity.FieldObjects>
+              <isactr:FieldObject Name="Email_Address" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:String">[currentRun.Email]</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="Jit_GetPreHireByEmail" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <OutArgument x:TypeArguments="uiascb:GetPreHireByEmail[]">[workdayPreHires]</OutArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="_where" Type="FilterTreeValue" />
+              <isactr:FieldObject Name="maximumRecordsReturned" Type="FieldArgument">
+                <isactr:FieldObject.Value>
+                  <InArgument x:TypeArguments="x:Int32">200</InArgument>
+                </isactr:FieldObject.Value>
+              </isactr:FieldObject>
+              <isactr:FieldObject Name="includes" Type="FieldArgument" />
+            </isactr:ConnectorActivity.FieldObjects>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </isactr:ConnectorActivity>
+
+
+          <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-01 step 1 - Workday returns exactly one pre-hire for the lookup" ContinueOnFailure="True" Expression="[workdayPreHires IsNot Nothing AndAlso workdayPreHires.Length = 1]" OutputMessageFormat="[&quot;Workday returns exactly one pre-hire for the lookup ('&quot; &amp; If(workdayPreHires Is Nothing, &quot;0&quot;, workdayPreHires.Length.ToString) &amp; &quot;'). Result: {Result}.&quot;]" Result="[verifyLookup]" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+          <Assign DisplayName="Initialize WD-01 assertion results" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[verifyAll]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[verifyLookup]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <If Condition="[verifyLookup]" DisplayName="Verify returned pre-hire fields" sap2010:WorkflowViewState.IdRef="If_2">
+            <If.Then>
+              <Sequence DisplayName="Then verify returned pre-hire fields" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Assign DisplayName="Normalize Workday phone" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[normalizedWorkdayPhone]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data Is Nothing OrElse workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data.Count = 0, String.Empty, If(System.Text.RegularExpressions.Regex.Replace(workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data(0).Phone_Number, &quot;[^0-9]&quot;, &quot;&quot;).Length &gt; 10, System.Text.RegularExpressions.Regex.Replace(workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data(0).Phone_Number, &quot;[^0-9]&quot;, &quot;&quot;).Substring(System.Text.RegularExpressions.Regex.Replace(workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data(0).Phone_Number, &quot;[^0-9]&quot;, &quot;&quot;).Length - 10), System.Text.RegularExpressions.Regex.Replace(workdayPreHires(0).Personal_Data.Contact_Data.Phone_Data(0).Phone_Number, &quot;[^0-9]&quot;, &quot;&quot;)))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <Assign DisplayName="Normalize expected phone" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[normalizedExpectedPhone]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(System.Text.RegularExpressions.Regex.Replace(currentRun.Phone, &quot;[^0-9]&quot;, &quot;&quot;).Length &gt; 10, System.Text.RegularExpressions.Regex.Replace(currentRun.Phone, &quot;[^0-9]&quot;, &quot;&quot;).Substring(System.Text.RegularExpressions.Regex.Replace(currentRun.Phone, &quot;[^0-9]&quot;, &quot;&quot;).Length - 10), System.Text.RegularExpressions.Regex.Replace(currentRun.Phone, &quot;[^0-9]&quot;, &quot;&quot;))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="WD-01 step 1 - its Pre-Hire ID equals the run record's PreHireId" ContinueOnFailure="True" Operator="Equality" OutputMessageFormat="its Pre-Hire ID equals the run record's PreHireId: actual '{LeftExpression}', expected {Operator} '{RightExpression}'. Result: {Result}." Result="[verifyPreHireId]" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                    <InArgument x:TypeArguments="x:Object">[workdayPreHires(0).Applicant_ID]</InArgument>
+                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                    <InArgument x:TypeArguments="x:Object">[If(String.IsNullOrWhiteSpace(currentRun.PreHireId), String.Empty, System.Text.RegularExpressions.Regex.Replace(currentRun.PreHireId, &quot;(?i)^Pre-Hire ID\s*&quot;, String.Empty).Trim())]</InArgument>
+                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                </uta:VerifyExpressionWithOperator>
+                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="WD-01 step 2 - first name equals the record's FirstName" ContinueOnFailure="True" Operator="Equality" OutputMessageFormat="first name equals the record's FirstName: actual '{LeftExpression}', expected {Operator} '{RightExpression}'. Result: {Result}." Result="[verifyFirstName]" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                    <InArgument x:TypeArguments="x:Object">[workdayPreHires(0).Personal_Data.Name_Data.Legal_Name_Data.Name_Detail_Data.First_Name]</InArgument>
+                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                    <InArgument x:TypeArguments="x:Object">[currentRun.FirstName]</InArgument>
+                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                </uta:VerifyExpressionWithOperator>
+                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="WD-01 step 2 - last name equals the record's LastName" ContinueOnFailure="True" Operator="Equality" OutputMessageFormat="last name equals the record's LastName: actual '{LeftExpression}', expected {Operator} '{RightExpression}'. Result: {Result}." Result="[verifyLastName]" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_3" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                    <InArgument x:TypeArguments="x:Object">[workdayPreHires(0).Personal_Data.Name_Data.Legal_Name_Data.Name_Detail_Data.Last_Name]</InArgument>
+                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                    <InArgument x:TypeArguments="x:Object">[currentRun.LastName]</InArgument>
+                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                </uta:VerifyExpressionWithOperator>
+                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="WD-01 step 3 - email equals the record's Email" ContinueOnFailure="True" Operator="RegexMatch" OutputMessageFormat="email equals the record's Email: actual '{LeftExpression}', expected {Operator} '{RightExpression}'. Result: {Result}." Result="[verifyEmail]" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_4" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                    <InArgument x:TypeArguments="x:Object">[If(workdayPreHires(0).Personal_Data.Contact_Data.Email_Address_Data Is Nothing OrElse workdayPreHires(0).Personal_Data.Contact_Data.Email_Address_Data.Count = 0, String.Empty, workdayPreHires(0).Personal_Data.Contact_Data.Email_Address_Data(0).Email_Address)]</InArgument>
+                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                    <InArgument x:TypeArguments="x:Object">[&quot;(?i)^&quot; &amp; System.Text.RegularExpressions.Regex.Escape(currentRun.Email) &amp; &quot;$&quot;]</InArgument>
+                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                </uta:VerifyExpressionWithOperator>
+                <uta:VerifyExpressionWithOperator AlternativeVerificationTitle="WD-01 step 4 - phone equals the record's Phone" ContinueOnFailure="True" Operator="Equality" OutputMessageFormat="phone equals the record's Phone: actual '{LeftExpression}', expected {Operator} '{RightExpression}'. Result: {Result}." Result="[verifyPhone]" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_5" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <uta:VerifyExpressionWithOperator.FirstExpression>
+                    <InArgument x:TypeArguments="x:Object">[normalizedWorkdayPhone]</InArgument>
+                  </uta:VerifyExpressionWithOperator.FirstExpression>
+                  <uta:VerifyExpressionWithOperator.SecondExpression>
+                    <InArgument x:TypeArguments="x:Object">[normalizedExpectedPhone]</InArgument>
+                  </uta:VerifyExpressionWithOperator.SecondExpression>
+                </uta:VerifyExpressionWithOperator>
+                <Assign DisplayName="Aggregate WD-01 assertion results" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[verifyAll]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[verifyLookup AndAlso verifyPreHireId AndAlso verifyFirstName AndAlso verifyLastName AndAlso verifyEmail AndAlso verifyPhone]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+          </If>
+          <If Condition="[Not verifyAll]" DisplayName="Persist failed WD-01 verification" sap2010:WorkflowViewState.IdRef="If_3">
+            <If.Then>
+              <Sequence DisplayName="Then persist failed WD-01 verification" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Assign DisplayName="Collect failed Verify titles" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[failedVerifyTitles]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[String.Join(&quot;; &quot;, (New String() {If(Not verifyLookup, &quot;WD-01 step 1 - Workday returns exactly one pre-hire for the lookup&quot;, String.Empty), If(Not verifyPreHireId, &quot;WD-01 step 1 - its Pre-Hire ID equals the run record's PreHireId&quot;, String.Empty), If(Not verifyFirstName, &quot;WD-01 step 2 - first name equals the record's FirstName&quot;, String.Empty), If(Not verifyLastName, &quot;WD-01 step 2 - last name equals the record's LastName&quot;, String.Empty), If(Not verifyEmail, &quot;WD-01 step 3 - email equals the record's Email&quot;, String.Empty), If(Not verifyPhone, &quot;WD-01 step 4 - phone equals the record's Phone&quot;, String.Empty)}).Where(Function(title) Not String.IsNullOrWhiteSpace(title)))]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <uda:UpdateEntityRecord x:TypeArguments="t:WorkdayHireRun" InputEntity="{x:Null}" OutputEntity="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" Version="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Persist Failed stage for WD-01 Verifies" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" RecordId="[currentRun.Id]" TimeoutInMs="30000" InputEntityInFieldView="[new Testing_Workday_CrossPlatform.WorkdayHireRun() With { .Id = currentRun.Id, .Stage = Testing_Workday_CrossPlatform.HireRunStage.Failed, .LastTestCase = &quot;TC-HR-HIRE-02&quot;, .ErrorMessage = failedVerifyTitles }]" IsInRecordView="False" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_2">
+                  <uda:UpdateEntityRecord.State>
+                    <udam:RecordState RequiredFieldCount="2">
+                      <udam:RecordState.SelectedFields>
+                        <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
+                          <udam:DynamicEntityField Id="90e73958-ebde-f111-91f2-002248a179ce" Name="Stage"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="x:Object">[Testing_Workday_CrossPlatform.HireRunStage.Failed]</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="91e73958-ebde-f111-91f2-002248a179ce" Name="LastTestCase"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="x:String">TC-HR-HIRE-02</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="92e73958-ebde-f111-91f2-002248a179ce" Name="ErrorMessage"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="x:String">[failedVerifyTitles]</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                        </scg:List>
+                      </udam:RecordState.SelectedFields>
+                    </udam:RecordState>
+                  </uda:UpdateEntityRecord.State>
+                </uda:UpdateEntityRecord>
+                <Assign DisplayName="Set failed outputs" sap2010:WorkflowViewState.IdRef="Assign_14">
+                  <Assign.To><OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument></Assign.To>
+                  <Assign.Value><InArgument x:TypeArguments="x:Boolean">[False]</InArgument></Assign.Value>
+                </Assign>
+                <Assign DisplayName="Build failed WD-01 summary" sap2010:WorkflowViewState.IdRef="Assign_15">
+                  <Assign.To><OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument></Assign.To>
+                  <Assign.Value><InArgument x:TypeArguments="x:String">[&quot;RunId=&quot; &amp; currentRun.RunId &amp; &quot;; PreHireId=&quot; &amp; currentRun.PreHireId &amp; &quot;; Stage=Failed; FailedVerifies=&quot; &amp; failedVerifyTitles]</InArgument></Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Else persist successful WD-01 verification" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <uda:UpdateEntityRecord x:TypeArguments="t:WorkdayHireRun" InputEntity="{x:Null}" OutputEntity="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" Version="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Persist PreHireVerified stage" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" RecordId="[currentRun.Id]" TimeoutInMs="30000" InputEntityInFieldView="[new Testing_Workday_CrossPlatform.WorkdayHireRun() With { .Id = currentRun.Id, .Stage = Testing_Workday_CrossPlatform.HireRunStage.PreHireVerified, .LastTestCase = &quot;TC-HR-HIRE-02&quot;, .PreHireVerifiedAt = DateTimeOffset.Now }]" IsInRecordView="False" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord`1_3">
+                  <uda:UpdateEntityRecord.State>
+                    <udam:RecordState RequiredFieldCount="2">
+                      <udam:RecordState.SelectedFields>
+                        <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="3">
+                          <udam:DynamicEntityField Id="90e73958-ebde-f111-91f2-002248a179ce" Name="Stage"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="x:Object">[Testing_Workday_CrossPlatform.HireRunStage.PreHireVerified]</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="91e73958-ebde-f111-91f2-002248a179ce" Name="LastTestCase"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="x:String">TC-HR-HIRE-02</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="abe73958-ebde-f111-91f2-002248a179ce" Name="PreHireVerifiedAt"><udam:DynamicEntityField.ArgumentValue><InArgument x:TypeArguments="s:DateTimeOffset">[DateTimeOffset.Now]</InArgument></udam:DynamicEntityField.ArgumentValue></udam:DynamicEntityField>
+                        </scg:List>
+                      </udam:RecordState.SelectedFields>
+                    </udam:RecordState>
+                  </uda:UpdateEntityRecord.State>
+                </uda:UpdateEntityRecord>
+                <Assign DisplayName="Set successful outputs" sap2010:WorkflowViewState.IdRef="Assign_16">
+                  <Assign.To><OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument></Assign.To>
+                  <Assign.Value><InArgument x:TypeArguments="x:Boolean">[True]</InArgument></Assign.Value>
+                </Assign>
+                <Assign DisplayName="Build WD-01 summary" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To><OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument></Assign.To>
+                  <Assign.Value><InArgument x:TypeArguments="x:String">[&quot;RunId=&quot; &amp; currentRun.RunId &amp; &quot;; PreHireId=&quot; &amp; workdayPreHires(0).Applicant_ID &amp; &quot;; Stage=PreHireVerified&quot;]</InArgument></Assign.Value>
+                </Assign>
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
+  </Sequence>
+</Activity>

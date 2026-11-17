@@ -1,6 +1,10 @@
 {
   "Tags": [],
-  "SeparateRuntimeDependencies": true,
+  "SeparateRuntimeDependencies": false,
   "IncludeSources": true,
-  "ConnectorKeys": []
+  "IsNonProd": true,
+  "ConnectorKeys": [
+    "uipath-workday-workdayrest",
+    "uipath-workday-workday"
+  ]
 }

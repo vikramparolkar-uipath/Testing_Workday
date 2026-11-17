@@ -1,0 +1,15 @@
+﻿{
+  "Name": "CreatePreHire_DiscardChanges_Button",
+  "Description": "Discard button in the Discard Changes? dialog shown after Cancel on Create Pre-Hire",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "S3T4peWDbE6iOseZERlcIQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/S3T4peWDbE6iOseZERlcIQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T21:06:36.4482743Z",
+  "Updated": "2026-11-14T21:06:36.4482743Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

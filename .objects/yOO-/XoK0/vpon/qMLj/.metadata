@@ -1,0 +1,15 @@
+﻿{
+  "Name": "RelatedActions_MenuItem_Text",
+  "Description": "Related Actions pop-up menu item, picked by its label (menuText), e.g. Business Process, Rescind, Cancel",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "qMLjdd6JzES4tseF4hUUhQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/qMLjdd6JzES4tseF4hUUhQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg",
+  "Created": "2026-11-15T04:55:09.8534433Z",
+  "Updated": "2026-11-15T04:55:09.8534433Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

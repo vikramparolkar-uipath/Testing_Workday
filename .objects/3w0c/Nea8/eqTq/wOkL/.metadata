@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_OfferStartDate_Text",
+  "Description": "Displayed offer start date",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "wOkLH9P1ekuRVweAdlF5mQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/wOkLH9P1ekuRVweAdlF5mQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:34.076134Z",
+  "Updated": "2026-11-13T02:50:34.076134Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

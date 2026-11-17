@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_ApplicationReview_Step",
+  "Description": "Application Review stage in the candidate stage stepper",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ue4X51hDuU22-Q6pLCQOBw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/ue4X51hDuU22-Q6pLCQOBw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.2961181Z",
+  "Updated": "2026-11-13T02:50:33.2961181Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

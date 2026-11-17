@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_ConfirmationConfirm_Button",
+  "Description": "Confirm button in the Mark as hired confirmation dialog",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "brTuS-7nHUq466iAQRCdbw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/brTuS-7nHUq466iAQRCdbw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:52:22.0360313Z",
+  "Updated": "2026-11-13T02:52:22.0360313Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "RescindBP_PageTitle_Text",
+  "Description": "Page header title of the Rescind Business Process task",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Ft_wsgNAfUOu0v4AEUAEzQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Ft_wsgNAfUOu0v4AEUAEzQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/mF-LX89XLkipzP8qUm9DeA",
+  "Created": "2026-11-15T05:03:24.2878265Z",
+  "Updated": "2026-11-15T05:03:24.2878265Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

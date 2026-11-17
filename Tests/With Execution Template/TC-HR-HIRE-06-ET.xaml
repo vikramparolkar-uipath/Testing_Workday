@@ -1,0 +1,788 @@
+<Activity mc:Ignorable="sap2010" x:Class="Tests_ET_TC_HR_HIRE_06" this:Tests_ET_TC_HR_HIRE_06.AtsBaseUrl="http://localhost:4100" this:Tests_ET_TC_HR_HIRE_06.WorkdayUiTimeout="00:00:30" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RunId" Type="InArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+    <x:Property Name="AtsBaseUrl" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-06 (with execution template) CLN-01 Cleanup" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="runId" />
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="currentRun" />
+      <Variable x:TypeArguments="scg:IList(t:WorkdayHireRun)" Name="runRecords" />
+      <Variable x:TypeArguments="x:Int64" Name="runCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="runFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="runEligible" />
+      <Variable x:TypeArguments="x:String" Name="workerName" />
+      <Variable x:TypeArguments="x:String" Name="positionId" />
+      <Variable x:TypeArguments="x:String" Name="employeeIdText" />
+      <Variable x:TypeArguments="x:String" Name="eventStatus" />
+      <Variable x:TypeArguments="x:String" Name="eventTitle" />
+      <Variable x:TypeArguments="x:String" Name="pageTitle" />
+      <Variable x:TypeArguments="x:String" Name="menuText" />
+      <Variable x:TypeArguments="x:String" Name="cleanupAction" />
+      <Variable x:TypeArguments="x:String" Name="cleanupComment" />
+      <Variable x:TypeArguments="x:String" Name="processText" />
+      <Variable x:TypeArguments="x:String" Name="positionTitle" />
+      <Variable x:TypeArguments="x:String" Name="incumbentCount" />
+      <Variable x:TypeArguments="x:Boolean" Name="proxyFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="hireEventFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="compensationEventFound" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyRun" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEligible" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifySignedIn" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyProxyAbsent" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEmployee" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEvents" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEventStatus" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyStageAgreement" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPage" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayGate" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyWorkdayFinal" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPosition" />
+      <Variable x:TypeArguments="x:String" Name="candidateId" />
+      <Variable x:TypeArguments="x:String" Name="applicationId" />
+      <Variable x:TypeArguments="x:String" Name="modeText" />
+      <Variable x:TypeArguments="x:String" Name="candidateName" />
+      <Variable x:TypeArguments="x:String" Name="candidateStage" />
+      <Variable x:TypeArguments="x:String" Name="offerStartDate" />
+      <Variable x:TypeArguments="x:String" Name="workdayPanelText" />
+      <Variable x:TypeArguments="x:String" Name="candidateApiStage" />
+      <Variable x:TypeArguments="x:String" Name="candidateApiStatus" />
+      <Variable x:TypeArguments="x:Boolean" Name="hasWorkdayApi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAtsLive" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateName" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateHired" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateOffer" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyOfferDate" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyNotSent" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyCandidateApi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyEventsApi" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyAts" />
+      <Variable x:TypeArguments="njl:JObject" Name="candidateJson" />
+      <Variable x:TypeArguments="njl:JObject" Name="eventJson" />
+      <Variable x:TypeArguments="njl:JArray" Name="eventsArray" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="candidateResponse" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="eventsResponse" />
+      <Variable x:TypeArguments="s:DateTimeOffset" Name="cleanedAt" />
+      <Variable x:TypeArguments="s:DateTimeOffset" Name="completedAt" />
+      <Variable x:TypeArguments="s:Nullable(t:HireCleanupAction)" Name="cleanupChoice" />
+      <Variable x:TypeArguments="s:Nullable(x:Boolean)" Name="atsReverted" />
+      <Variable x:TypeArguments="s:Nullable(s:DateTimeOffset)" Name="cleanedUpAt" />
+      <Variable x:TypeArguments="x:Boolean" Name="allVerifiesPassed" />
+    </Sequence.Variables>
+    <Assign DisplayName="Resolve input RunId" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[runId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_RunId]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" FilterArguments="{x:Null}" FilterValues="{x:Null}" RequiredForReadFieldNames="{x:Null}" RequiredForReadInput="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" ContinueOnError="False" DisplayName="Query newest WorkdayHireRun records" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords_1" OutputRecords="[runRecords]" QueriedEntityId="00000000-0000-0000-0000-000000000000" Skip="0" SortAscending="False" SortByField="[&quot;CreateTime&quot;]" TimeoutInMs="30000" Top="100" TotalRecords="[runCount]" />
+    <ForEach x:TypeArguments="t:WorkdayHireRun" DisplayName="Select explicit or newest eligible run" sap2010:WorkflowViewState.IdRef="ForEach_1" Values="[runRecords]">
+      <ActivityAction x:TypeArguments="t:WorkdayHireRun">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="t:WorkdayHireRun" Name="record" />
+        </ActivityAction.Argument>
+        <If Condition="[currentRun Is Nothing AndAlso ((Not String.IsNullOrWhiteSpace(in_RunId) AndAlso record.RunId IsNot Nothing AndAlso String.Equals(record.RunId, in_RunId, StringComparison.OrdinalIgnoreCase)) OrElse (String.IsNullOrWhiteSpace(in_RunId) AndAlso record.RunId IsNot Nothing AndAlso record.RunId.StartsWith(&quot;HIRE-&quot;, StringComparison.OrdinalIgnoreCase) AndAlso record.Email IsNot Nothing AndAlso record.Email.EndsWith(&quot;@example.com&quot;, StringComparison.OrdinalIgnoreCase) AndAlso Not (String.Equals(record.FirstName, &quot;Jane&quot;, StringComparison.OrdinalIgnoreCase) AndAlso String.Equals(record.LastName, &quot;Doe&quot;, StringComparison.OrdinalIgnoreCase)) AndAlso (record.Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.HireCompleted OrElse record.Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.HireSubmitted OrElse (record.Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.Failed AndAlso Not String.IsNullOrWhiteSpace(record.HireEventRef)))))]" DisplayName="Accept first matching WorkdayHireRun" sap2010:WorkflowViewState.IdRef="If_9">
+          <If.Then>
+            <Sequence DisplayName="Assign selected run" sap2010:WorkflowViewState.IdRef="Sequence_23">
+              <Assign DisplayName="Set selected WorkdayHireRun" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="t:WorkdayHireRun">[currentRun]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="t:WorkdayHireRun">[record]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </If.Then>
+        </If>
+      </ActivityAction>
+    </ForEach>
+    <Assign DisplayName="Set run lookup result" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[runFound]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[currentRun IsNot Nothing]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 1 - eligible Workday hire run was found" ContinueOnFailure="True" DisplayName="CLN-01 step 1 - eligible Workday hire run was found" Expression="[runFound]" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[&quot;Run lookup result={Result}.&quot;]" Result="[verifyRun]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+    <If Condition="[Not runFound]" DisplayName="Stop when no eligible run exists" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="No eligible run" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Throw DisplayName="Throw no eligible WorkdayHireRun" Exception="[New InvalidOperationException(&quot;Test data not available for TC-HR-HIRE-06: no WorkdayHireRun is at stage HireCompleted. Run TC-HR-HIRE-04 first, or pass in_RunId for a completed hire.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <Assign DisplayName="Expose resolved RunId" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Compute worker and candidate identities" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[workerName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[currentRun.FirstName &amp; " " &amp; currentRun.LastName]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Resolve selected position ID" sap2010:WorkflowViewState.IdRef="Assign_29">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[positionId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[currentRun.PositionId]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Validate selected run eligibility" sap2010:WorkflowViewState.IdRef="Assign_6">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[runEligible]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[currentRun IsNot Nothing]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 2 - selected run meets cleanup eligibility rules" ContinueOnFailure="True" DisplayName="CLN-01 step 2 - selected run meets cleanup eligibility rules" Expression="[runEligible]" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" OutputMessageFormat="[&quot;Eligibility result={Result}.&quot;]" Result="[verifyEligible]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+    <If Condition="[Not runEligible]" DisplayName="Stop when selected run is not eligible" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Sequence DisplayName="Eligibility failure" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Throw DisplayName="Throw selected run eligibility failure" Exception="[New InvalidOperationException(&quot;Test data not available for TC-HR-HIRE-06: the selected WorkdayHireRun is not eligible for cleanup (it needs stage HireCompleted, a position and an employee ID).&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_2" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Prepare Workday: sign in as Logan and stop any leftover proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_Prep06" UnSafe="False" WorkflowFileName="Workflows/Workday/PrepareWorkdaySession.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Check Workday signed-in user" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows\Workday\CheckIfSignedIn.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[eventTitle]</OutArgument>
+        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[verifySignedIn]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 3 - Workday is signed in as Logan McNeil" ContinueOnFailure="True" DisplayName="CLN-01 step 3 - Workday is signed in as Logan McNeil" Expression="[verifySignedIn]" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" OutputMessageFormat="[&quot;Signed-in gate={Result}.&quot;]" Result="[verifySignedIn]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday CLN-01 cleanup" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Workday cleanup steps" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <uix:NCheckState DisplayName="Check Workday proxy banner is absent" Exists="[proxyFound]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[1]" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Proxy banner present" sap2010:WorkflowViewState.IdRef="Sequence_5" />
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Proxy banner absent" sap2010:WorkflowViewState.IdRef="Sequence_6" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="qIZCX7lMDUSZ6iu-YNs7PQ" DesignTimeRectangle="12, 116, 1912, 28" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='banner' tag='DIV' visibleinnertext='On behalf of:*' /&gt;" Guid="1d5783e1-00c1-4ffb-b90a-09bacc4165ed" InformativeScreenshot="7ecad3d50a1daf469e0ceb035bb1f3dd.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/MR4YwDAmrU-bsb6a10jDHA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 4 - Workday proxy banner is absent" ContinueOnFailure="True" DisplayName="CLN-01 step 4 - Workday proxy banner is absent" Expression="[Not proxyFound]" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" OutputMessageFormat="[&quot;Proxy banner absent={Result}.&quot;]" Result="[verifyProxyAbsent]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <ui:RetryScope DisplayName="Retry header search while Workday re-renders" NumberOfRetries="3" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_Hdr0"><ui:RetryScope.ActivityBody><ActivityAction><uix:NTypeInto ActivateBefore="True" DisplayName="Search Workday for selected worker" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="Simulate" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Text="[workerName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="GyVA-QOucE2tKEbsj-UT1w" DesignTimeRectangle="719, 491, 568, 52" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wd-contextual-search-input' tag='INPUT' /&gt;" Guid="be8baa9e-2b46-48eb-8349-7dbb579b6d29" InformativeScreenshot="12ec9b636f46a2bc12fef47622a93fa2.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/sVG5kcoypkSWzlVTXhXY_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto></ActivityAction></ui:RetryScope.ActivityBody><ui:RetryScope.Condition><ActivityFunc x:TypeArguments="x:Boolean" /></ui:RetryScope.Condition></ui:RetryScope>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Submit Workday worker search" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="HardwareEvents" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
+              <uix:NKeyboardShortcuts.Target>
+                <uix:TargetAnchorable ContentHash="GyVA-QOucE2tKEbsj-UT1w" DesignTimeRectangle="719, 491, 568, 52" ElementType="DropDown" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wd-contextual-search-input' tag='INPUT' /&gt;" Guid="be8baa9e-2b46-48eb-8349-7dbb579b6d29" InformativeScreenshot="12ec9b636f46a2bc12fef47622a93fa2.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/sVG5kcoypkSWzlVTXhXY_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NKeyboardShortcuts.Target>
+            </uix:NKeyboardShortcuts>
+            <uix:NGetText DisplayName="Read Workday employee ID" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[employeeIdText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="zIQKqwSKdU2zG2DimQ3VfA" DesignTimeRectangle="473, 463, 359, 40" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pex-search-generic-preview-base' tag='DIV' visibleinnertext='Employee ID*' /&gt;" Guid="60f37a63-3588-4a0b-9ff4-1a37f76a1e85" InformativeScreenshot="ce60d9381b8b39b9a684e0574e744a41.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/06HOQRbXMkGXEHBcz_9-2g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 5 - Workday employee ID matches the selected run" ContinueOnFailure="True" DisplayName="CLN-01 step 5 - Workday employee ID matches the selected run" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_1" Operator="Contains" OutputMessageFormat="[&quot;Employee ID text={LeftExpressionText}; result={Result}.&quot;]" Result="[verifyEmployee]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[employeeIdText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">[currentRun.EmployeeId]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+            </uta:VerifyExpressionWithOperator>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open selected Workday employee result" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="B0FT6e8mukKD8U2YZ5P7sQ" DesignTimeRectangle="567, 342, 109, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='DIV' visibleinnertext='{0}*Employee' /&gt;&lt;webctrl aaname='{0}' data-automation-id='pex-search-results-header-title-link' tag='A' /&gt;&quot;, workerName)]" Guid="756497bb-33be-46cc-af47-ca7a776cbe5d" InformativeScreenshot="bf52c2f75cf859a29c26b30446c8b69c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/pbA7UvJWsUWIC2TlAnJBnQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Workday Job section" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="104, 327, 224, 44" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id='profile-nav-menu-item-job-0' tag='BUTTON' /&gt;" Guid="0481c768-5bcd-4674-9bad-e94d446170ae" InformativeScreenshot="5dc0eca4e721faf9d46beef97f301cd0.jpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Workday Worker History" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="vs3W4VIU0Uaa2R_NEYLLtA" DesignTimeRectangle="1286, 225, 128, 48" ElementType="TabPage" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id='profile-section-tab-worker--history' tag='BUTTON' /&gt;" Guid="638f3583-0c31-47ad-b2d3-a37673fdf1f8" InformativeScreenshot="da6015b484928633f4b593efa3c887b4.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/2vISV2hw9EShWl_W3WuvZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check Workday Hire event exists" Exists="[hireEventFound]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Hire event exists" sap2010:WorkflowViewState.IdRef="Sequence_7" />
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Hire event absent" sap2010:WorkflowViewState.IdRef="Sequence_8" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="-QX1W2Z8g0mi6FYdjyWB_w" DesignTimeRectangle="417, 504, 119, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id='promptOption' data-automation-label='Hire: {0}' tag='DIV' /&gt;&quot;, workerName)]" Guid="b933b6a4-0e18-47f6-aba0-1dd82debf310" InformativeScreenshot="6b401ea0e1ff9d734b197b5664f7c37a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/dPyXbcduXUuPu-hk6j1dTQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check Propose Compensation Hire event exists" Exists="[compensationEventFound]" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Compensation event exists" sap2010:WorkflowViewState.IdRef="Sequence_9" />
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Compensation event absent" sap2010:WorkflowViewState.IdRef="Sequence_10" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable ContentHash="sR5qdcBoxkqLtNH26WQOGw" DesignTimeRectangle="417, 451, 269, 41" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id='promptOption' data-automation-label='Propose Compensation Hire: {0}*' tag='DIV' /&gt;&quot;, workerName)]" Guid="affd6612-46b5-4142-a226-573bcbecc98c" InformativeScreenshot="0831eff6d50f0c355070b6135ede3896.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/6Vo3cO_C8U6RWpcUR_H9EA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 6 - Workday hire and compensation events exist" ContinueOnFailure="True" DisplayName="CLN-01 step 6 - Workday hire and compensation events exist" Expression="[hireEventFound AndAlso compensationEventFound]" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" OutputMessageFormat="[&quot;Required event gates={Result}.&quot;]" Result="[verifyEvents]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <If Condition="[Not verifyEvents]" DisplayName="Stop when Workday history gates fail" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Workday history gate failure" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                  <Throw DisplayName="Throw Workday history gate failure" Exception="[New InvalidOperationException(&quot;CLN-01 step 6 failed: required Workday events were not found.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                </Sequence>
+              </If.Then>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Workday Hire event" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="-QX1W2Z8g0mi6FYdjyWB_w" DesignTimeRectangle="417, 504, 119, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id='promptOption' data-automation-label='Hire: {0}' tag='DIV' /&gt;&quot;, workerName)]" Guid="b933b6a4-0e18-47f6-aba0-1dd82debf310" InformativeScreenshot="6b401ea0e1ff9d734b197b5664f7c37a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/dPyXbcduXUuPu-hk6j1dTQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Read Workday hire event title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[eventTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="GO1Dp4PPvECSqh0BzKuxCA" DesignTimeRectangle="258, 128, 136, 19" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeader' tag='DIV' /&gt;&lt;webctrl data-automation-id='promptOption' tag='DIV' /&gt;" Guid="e1663671-3bcf-40d4-b418-cc95a098ccf1" InformativeScreenshot="5e397e0fb904d1a44b86e0b65107471c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/kFYa9LgJUkSsWppv2PMB0A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Read Workday hire event status" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[eventStatus]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="Qq9yn8I2RUujlTQgySNZUw" DesignTimeRectangle="332, 275, 150, 18" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='textView' data-metadata-id='56$18589' tag='DIV' /&gt;" Guid="238e5b9e-28f3-4618-9107-53b85f13bfec" InformativeScreenshot="032a0f6bfc2808625f1fc3dd6cee0889.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/n6g92hPlBE6SnLIgikafsA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 7 - Workday hire event belongs to the selected worker" ContinueOnFailure="True" DisplayName="CLN-01 step 7 - Workday hire event belongs to the selected worker" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_2" Operator="Contains" OutputMessageFormat="[&quot;Event title={LeftExpressionText}; result={Result}.&quot;]" Result="[verifyStageAgreement]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[eventTitle]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">[workerName]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+            </uta:VerifyExpressionWithOperator>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 8 - Workday status agrees with cleanup branch" ContinueOnFailure="True" DisplayName="CLN-01 step 8 - Workday status agrees with cleanup branch" Expression="[(currentRun.Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.HireCompleted AndAlso eventStatus = &quot;Successfully Completed&quot;) OrElse (currentRun.Stage.GetValueOrDefault() &lt;&gt; Testing_Workday_CrossPlatform.HireRunStage.HireCompleted AndAlso eventStatus = &quot;In Progress&quot;)]" sap2010:WorkflowViewState.IdRef="VerifyExpression_6" OutputMessageFormat="[&quot;Workday status={Expression}; result={Result}.&quot;]" Result="[verifyEventStatus]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <If Condition="[currentRun.Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.HireCompleted]" DisplayName="Choose Rescind or Cancel" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Sequence DisplayName="Rescind completed hire" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                  <Assign DisplayName="Set Rescind action" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[cleanupAction]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Rescind"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Set Business Process menu text" sap2010:WorkflowViewState.IdRef="Assign_8">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[menuText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Business Process"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Related Actions" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="0eRieuJ3pU28sUcYbHctbA" DesignTimeRectangle="406, 128, 26, 15" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeader' tag='DIV' /&gt;&lt;webctrl data-automation-id='relatedIconContainer' tag='DIV' /&gt;" Guid="cfd8dcc1-b32e-46b6-8b97-6269b135c65f" InformativeScreenshot="63168a32b66df62e15473c0dddc7e69f.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KnXSiPJPw0iJCm1QUBhraQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NHover DisplayName="Hover Business Process menu item" HealingAgentBehavior="SameAsCard" HoverTime="[0.2]" sap2010:WorkflowViewState.IdRef="NHover_1" InteractionMode="HardwareEvents" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NHover.Target>
+                      <uix:TargetAnchorable ContentHash="-cD0pzfkiEiXXBt_ReJuFA" DesignTimeRectangle="479, 328, 134, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='relatedActionsItemLabel' tag='DIV' /&gt;&quot;, menuText)]" Guid="2b0e2b72-8de8-48b8-aa28-5982def4b8b6" InformativeScreenshot="55d07328d9e7c5316c214e9cbcd55ea0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/qMLjdd6JzES4tseF4hUUhQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NHover.Target>
+                  </uix:NHover>
+                  <Assign DisplayName="Set Rescind submenu text" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[menuText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Rescind"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose Rescind" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="-cD0pzfkiEiXXBt_ReJuFA" DesignTimeRectangle="479, 328, 134, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='relatedActionsItemLabel' tag='DIV' /&gt;&quot;, menuText)]" Guid="2b0e2b72-8de8-48b8-aa28-5982def4b8b6" InformativeScreenshot="55d07328d9e7c5316c214e9cbcd55ea0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/qMLjdd6JzES4tseF4hUUhQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Read Rescind Business Process page title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[pageTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="n6rdggI7c0y4zPBcYzk7vg" DesignTimeRectangle="52, 177, 285, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Rescind Business Process' data-automation-id='pageHeaderTitleText' tag='SPAN' /&gt;" Guid="d7b64c84-f74a-4dcb-8792-dffff5dfd459" InformativeScreenshot="b46fc724b6ae80c9b1a9eeda35420058.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Ft_wsgNAfUOu0v4AEUAEzQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 9 - Rescind Business Process page is open" ContinueOnFailure="True" DisplayName="CLN-01 step 9 - Rescind Business Process page is open" Expression="[pageTitle = &quot;Rescind Business Process&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_7" OutputMessageFormat="[&quot;Rescind page gate={Result}.&quot;]" Result="[verifyPage]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                  <Assign DisplayName="Build cleanup comment" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[cleanupComment]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["UiPath demo cleanup " &amp; currentRun.RunId]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" DisplayName="Enter Rescind cleanup comment" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="DebuggerApi" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Text="[cleanupComment]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="1te7aLFPlEKtwa2YqIknzQ" DesignTimeRectangle="101, 2841, 611, 64" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='enter your comment' data-automation-id='textAreaField' tag='TEXTAREA' /&gt;" Guid="f5292ffc-6034-4747-a5ee-e3bcd5995851" InformativeScreenshot="31e3bead9757c06ebb8c49d9fef4afe1.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/RpY8rdGjLECf_tnPw0P4aw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 10 - Rescind submit gate is still valid" ContinueOnFailure="True" DisplayName="CLN-01 step 10 - Rescind submit gate is still valid" Expression="[verifyPage]" sap2010:WorkflowViewState.IdRef="VerifyExpression_8" OutputMessageFormat="[&quot;Submit gate={Result}.&quot;]" Result="[verifyWorkdayGate]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                  <If Condition="[verifyWorkdayGate]" DisplayName="Submit Rescind only after gate" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If.Then>
+                      <Sequence DisplayName="Submit Rescind" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit Rescind Business Process" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable ContentHash="c6RaWZnqUE-CB7ABTsSOwg" DesignTimeRectangle="52, 1029, 112, 35" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Submit' data-automation-button-type='PRIMARY' data-uxi-actionbutton-action='bpf-empty' tag='BUTTON' /&gt;" Guid="1698dcec-233d-476b-9a28-1e3b1f3026d5" InformativeScreenshot="59c34f52d9a8e62ab0391539be3f9c32.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/wKa6xYS0rE-lvdTfBdAPBg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Rescind submit blocked" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                        <Throw DisplayName="Throw Rescind submit gate failure" Exception="[New InvalidOperationException(&quot;CLN-01 step 10 failed: Rescind submit gate was false.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_4" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NGetText DisplayName="Wait for the event title to end in (Rescinded)" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[processText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="8JhB-AFPRE-TB-R99_H7NA" DesignTimeRectangle="128, 333, 871, 16" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeader' tag='DIV' /&gt;&lt;webctrl aaname='*(Rescinded)' data-automation-id='promptOption' tag='DIV' /&gt;" Guid="912f10cf-c473-4c2a-9f5f-c47aee58d824" InformativeScreenshot="554b2b8380dbbd2662b3a144644eacee.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/ejeWmAa_z0ydIUCCPCxlYg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 11 - Workday process is rescinded" ContinueOnFailure="True" DisplayName="CLN-01 step 11 - Workday process is rescinded" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_3" Operator="Contains" OutputMessageFormat="[&quot;Event title after Rescind was '&quot; &amp; processText &amp; &quot;'. Expected it to contain '(Rescinded)'. Result: {Result}.&quot;]" Result="[verifyWorkdayFinal]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                    <uta:VerifyExpressionWithOperator.FirstExpression>
+                      <InArgument x:TypeArguments="x:String">[processText]</InArgument>
+                    </uta:VerifyExpressionWithOperator.FirstExpression>
+                    <uta:VerifyExpressionWithOperator.SecondExpression>
+                      <InArgument x:TypeArguments="x:String">["(Rescinded)"]</InArgument>
+                    </uta:VerifyExpressionWithOperator.SecondExpression>
+                  </uta:VerifyExpressionWithOperator>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Cancel in-progress hire" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Assign DisplayName="Set Cancel action" sap2010:WorkflowViewState.IdRef="Assign_11">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[cleanupAction]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Cancel"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Set Business Process menu text for Cancel" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[menuText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Business Process"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Related Actions for Cancel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="0eRieuJ3pU28sUcYbHctbA" DesignTimeRectangle="406, 128, 26, 15" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeader' tag='DIV' /&gt;&lt;webctrl data-automation-id='relatedIconContainer' tag='DIV' /&gt;" Guid="cfd8dcc1-b32e-46b6-8b97-6269b135c65f" InformativeScreenshot="63168a32b66df62e15473c0dddc7e69f.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KnXSiPJPw0iJCm1QUBhraQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NHover DisplayName="Hover Business Process menu item for Cancel" HealingAgentBehavior="SameAsCard" HoverTime="[0.2]" sap2010:WorkflowViewState.IdRef="NHover_2" InteractionMode="HardwareEvents" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NHover.Target>
+                      <uix:TargetAnchorable ContentHash="-cD0pzfkiEiXXBt_ReJuFA" DesignTimeRectangle="479, 328, 134, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='relatedActionsItemLabel' tag='DIV' /&gt;&quot;, menuText)]" Guid="2b0e2b72-8de8-48b8-aa28-5982def4b8b6" InformativeScreenshot="55d07328d9e7c5316c214e9cbcd55ea0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/qMLjdd6JzES4tseF4hUUhQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NHover.Target>
+                  </uix:NHover>
+                  <Assign DisplayName="Set Cancel submenu text" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[menuText]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["Cancel"]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose Cancel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="-cD0pzfkiEiXXBt_ReJuFA" DesignTimeRectangle="479, 328, 134, 25" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' data-automation-id='relatedActionsItemLabel' tag='DIV' /&gt;&quot;, menuText)]" Guid="2b0e2b72-8de8-48b8-aa28-5982def4b8b6" InformativeScreenshot="55d07328d9e7c5316c214e9cbcd55ea0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/qMLjdd6JzES4tseF4hUUhQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <uix:NGetText DisplayName="Read Cancel Business Process page title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[pageTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="n6rdggI7c0y4zPBcYzk7vg" DesignTimeRectangle="52, 177, 285, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Rescind Business Process' data-automation-id='pageHeaderTitleText' tag='SPAN' /&gt;" Guid="d7b64c84-f74a-4dcb-8792-dffff5dfd459" InformativeScreenshot="b46fc724b6ae80c9b1a9eeda35420058.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Ft_wsgNAfUOu0v4AEUAEzQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 9 - Cancel Business Process page is open" ContinueOnFailure="True" DisplayName="CLN-01 step 9 - Cancel Business Process page is open" Expression="[pageTitle.Contains(&quot;Business Process&quot;)]" sap2010:WorkflowViewState.IdRef="VerifyExpression_9" OutputMessageFormat="[&quot;Cancel page gate={Result}.&quot;]" Result="[verifyPage]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                  <Assign DisplayName="Build Cancel cleanup comment" sap2010:WorkflowViewState.IdRef="Assign_14">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[cleanupComment]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">["UiPath demo cleanup " &amp; currentRun.RunId]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <uix:NTypeInto ActivateBefore="True" DisplayName="Enter Cancel cleanup comment" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="DebuggerApi" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Text="[cleanupComment]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="1te7aLFPlEKtwa2YqIknzQ" DesignTimeRectangle="101, 2841, 611, 64" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='enter your comment' data-automation-id='textAreaField' tag='TEXTAREA' /&gt;" Guid="f5292ffc-6034-4747-a5ee-e3bcd5995851" InformativeScreenshot="31e3bead9757c06ebb8c49d9fef4afe1.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/RpY8rdGjLECf_tnPw0P4aw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 10 - Cancel submit gate is still valid" ContinueOnFailure="True" DisplayName="CLN-01 step 10 - Cancel submit gate is still valid" Expression="[verifyPage]" sap2010:WorkflowViewState.IdRef="VerifyExpression_10" OutputMessageFormat="[&quot;Submit gate={Result}.&quot;]" Result="[verifyWorkdayGate]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                  <If Condition="[verifyWorkdayGate]" DisplayName="Submit Cancel only after gate" sap2010:WorkflowViewState.IdRef="If_6">
+                    <If.Then>
+                      <Sequence DisplayName="Submit Cancel" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit Cancel Business Process" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable ContentHash="c6RaWZnqUE-CB7ABTsSOwg" DesignTimeRectangle="52, 1029, 112, 35" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Submit' data-automation-button-type='PRIMARY' data-uxi-actionbutton-action='bpf-empty' tag='BUTTON' /&gt;" Guid="1698dcec-233d-476b-9a28-1e3b1f3026d5" InformativeScreenshot="59c34f52d9a8e62ab0391539be3f9c32.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/wKa6xYS0rE-lvdTfBdAPBg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Cancel submit blocked" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                        <Throw DisplayName="Throw Cancel submit gate failure" Exception="[New InvalidOperationException(&quot;CLN-01 step 10 failed: Cancel submit gate was false.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <uix:NGetText DisplayName="Read final Workday status after Cancel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[eventStatus]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable ContentHash="Qq9yn8I2RUujlTQgySNZUw" DesignTimeRectangle="332, 275, 150, 18" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='textView' data-metadata-id='56$18589' tag='DIV' /&gt;" Guid="238e5b9e-28f3-4618-9107-53b85f13bfec" InformativeScreenshot="032a0f6bfc2808625f1fc3dd6cee0889.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/n6g92hPlBE6SnLIgikafsA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NGetText.Target>
+                  </uix:NGetText>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 11 - Workday process is canceled" ContinueOnFailure="True" DisplayName="CLN-01 step 11 - Workday process is canceled" Expression="[eventStatus = &quot;Canceled&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_11" OutputMessageFormat="[&quot;Canceled status={Expression}; result={Result}.&quot;]" Result="[verifyWorkdayFinal]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Workday position from cleanup event" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="aPJmGt7pA0S_VgOwj-Xtgw" DesignTimeRectangle="332, 185, 291, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}*' data-automation-id='promptOption' tag='DIV' /&gt;&quot;, positionId)]" Guid="aa71890a-7623-4a30-a6cf-c1f0218f5fab" InformativeScreenshot="32935a7e496a6b4c292c6a64cca69bb1.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/T9l-tt5kKkWMDGz4JQr9Mg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Read Workday position title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[positionTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="iD2qql3tP0O6eWjps2Tnzg" DesignTimeRectangle="128, 215, 514, 24" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id='promptOption' data-automation-label='{0}*' tag='DIV' /&gt;&quot;, positionId)]" Guid="21fbdaa1-b9f5-4114-b691-873251c5b045" InformativeScreenshot="2cd0085fcfd370426a5315b07b6260f0.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jPhiAfkts0iHnnjCZL6RRg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Read Workday incumbent count" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="c1011111-1111-4111-8111-111111111111" TextString="[incumbentCount]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="zfY0sNRMtEqdUoMOwiOI-Q" DesignTimeRectangle="148, 357, 40, 14" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='rowCountLabel' tag='LABEL' /&gt;" Guid="88fa7fa1-ae4b-4e31-bb26-643e95b43aef" InformativeScreenshot="3e3953dd5120a3a30c6038ae48869546.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/POEK5NtD302M0Pq0TD8wlw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 12 - Workday position is unfilled" ContinueOnFailure="True" DisplayName="CLN-01 step 12 - Workday position is unfilled" Expression="[positionTitle.EndsWith(&quot;(Unfilled)&quot;) AndAlso incumbentCount = &quot;0 items&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_12" OutputMessageFormat="[&quot;Position title={Expression}; result={Result}.&quot;]" Result="[verifyPosition]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="lm1OjRgnPEa2ri6V7uk7EQ" InformativeScreenshot="5a6314b9ad21ea88bd551e0b084dc6cc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Set cleanup timestamp and choices" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:DateTimeOffset">[cleanedAt]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:DateTimeOffset">[DateTimeOffset.Now]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set cleanup action choice" sap2010:WorkflowViewState.IdRef="Assign_16">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Nullable(t:HireCleanupAction)">[cleanupChoice]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Nullable(t:HireCleanupAction)">[If(cleanupAction = "Rescind", New Nullable(Of Testing_Workday_CrossPlatform.HireCleanupAction)(Testing_Workday_CrossPlatform.HireCleanupAction.Rescind), New Nullable(Of Testing_Workday_CrossPlatform.HireCleanupAction)(Testing_Workday_CrossPlatform.HireCleanupAction.Cancel))]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set ATS reverted choice" sap2010:WorkflowViewState.IdRef="Assign_17">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Nullable(x:Boolean)">[atsReverted]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Nullable(x:Boolean)">[New Nullable(Of Boolean)(True)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign DisplayName="Set cleanup timestamp choice" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Nullable(s:DateTimeOffset)">[cleanedUpAt]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Nullable(s:DateTimeOffset)">[New Nullable(Of DateTimeOffset)(cleanedAt)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS CLN-01 revert" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="c1022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="ATS revert steps" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <uix:NGetText DisplayName="Read ATS Workday live mode" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[modeText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="58k5ZbMavUiIeUqEFbJrsg" DesignTimeRectangle="1573, 105, 173, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-mode' tag='SPAN' /&gt;" Guid="6e1550c5-4372-4b89-8405-12940c25d336" InformativeScreenshot="8ab244f52a16379393ce3a825e373079.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/nmTuEBHy80qzUkrKeedcpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 13 - ATS Workday integration is live" ContinueOnFailure="True" DisplayName="CLN-01 step 13 - ATS Workday integration is live" Expression="[modeText = &quot;Workday: LIVE (uipath_dpt1)&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_13" OutputMessageFormat="[&quot;ATS mode={Expression}; result={Result}.&quot;]" Result="[verifyAtsLive]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uix:NGoToUrl DisplayName="Open selected ATS candidate" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Timeout="[WorkdayUiTimeout.TotalSeconds]" Url="[AtsBaseUrl &amp; &quot;/#/candidates/&quot; &amp; currentRun.AtsCandidateId.GetValueOrDefault().ToString(&quot;0&quot;, CultureInfo.InvariantCulture)]" Version="V5" />
+            <uix:NGetText DisplayName="Read ATS candidate name" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[candidateName]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="Ex56NQFbR0iykDz0SeeC7g" DesignTimeRectangle="434, 210, 1068, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='candidate-name' tag='H1' /&gt;" Guid="20bcffc0-6ea8-4990-9799-1e54e16808d7" InformativeScreenshot="d302451f796c8b357bea41d2a0d640d7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/7zR312fJtEypFz6XVUmUlQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 14 - ATS candidate matches selected worker" ContinueOnFailure="True" DisplayName="CLN-01 step 14 - ATS candidate matches selected worker" Expression="[candidateName = workerName]" sap2010:WorkflowViewState.IdRef="VerifyExpression_14" OutputMessageFormat="[&quot;Candidate name={Expression}; result={Result}.&quot;]" Result="[verifyCandidateName]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uix:NGetText DisplayName="Read ATS current stage before revert" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[candidateStage]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="n9mLs-ELf0Gp3MVYn9SMBQ" DesignTimeRectangle="552, 437, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='current-stage' tag='SPAN' /&gt;" Guid="bdcb06e3-57ac-482d-928f-adb87dc15e0e" InformativeScreenshot="6e9c393680b413bd6371f6f73bcb31a6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 15 - ATS candidate is Hired before revert" ContinueOnFailure="True" DisplayName="CLN-01 step 15 - ATS candidate is Hired before revert" Expression="[candidateStage = &quot;Hired&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_15" OutputMessageFormat="[&quot;Pre-revert stage={Expression}; result={Result}.&quot;]" Result="[verifyCandidateHired]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uix:NGetText DisplayName="Read ATS Workday panel" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[workdayPanelText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="6DLzw1h2QkqKONSoGxXMEA" DesignTimeRectangle="1022, 399, 468, 138" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-panel' tag='DIV' /&gt;" Guid="b1167b2c-eabd-4bfe-bd9a-465f95d581b1" InformativeScreenshot="5ee90d6dcbeee37cc9ab92dd5ae89f8c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/uB7trDGwVUanbdvnp0YnOA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 16 - ATS candidate has Workday hand-off context" ContinueOnFailure="True" DisplayName="CLN-01 step 16 - ATS candidate has Workday hand-off context" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_4" Operator="Contains" OutputMessageFormat="[&quot;Workday panel={LeftExpressionText}; result={Result}.&quot;]" Result="[verifyCandidateHired]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[workdayPanelText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">["Workday"]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+            </uta:VerifyExpressionWithOperator>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click candidate Revert hire" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="p8LychuhnkSkoZo6SudNMg" DesignTimeRectangle="455, 448, 195, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='revert-hire' tag='BUTTON' /&gt;" Guid="fc684674-ade3-4b47-8b41-639b1cee8090" InformativeScreenshot="f5ff6215592dac18a8ffa48fc08a74fe.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/9TJ7egb0OEWCtQfeB89XwA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Read ATS revert confirmation title" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_14" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[pageTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="se83H-DRuEuXQdpPfGkF3A" DesignTimeRectangle="750, 514, 436, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='modal-title' tag='H2' /&gt;" Guid="37227bec-be97-4851-881b-9a78538b0672" InformativeScreenshot="102849d9d24235f065664ef29c5c0205.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/9kuSujL9rUu6pU2JODf9Dw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 17 - ATS revert confirmation is shown" ContinueOnFailure="True" DisplayName="CLN-01 step 17 - ATS revert confirmation is shown" Expression="[pageTitle = &quot;Revert hire?&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_16" OutputMessageFormat="[&quot;Revert confirmation={Expression}; result={Result}.&quot;]" Result="[verifyAts]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <If Condition="[verifyAts]" DisplayName="Gate ATS revert confirmation" sap2010:WorkflowViewState.IdRef="If_7">
+              <If.Then>
+                <Sequence DisplayName="Confirm ATS revert" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirm ATS Revert hire" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_13" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable ContentHash="q8YLJbKSj0uoHMg45DMzDg" DesignTimeRectangle="2144, 1411, 281, 89" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='modal-ok' tag='BUTTON' /&gt;" Guid="088b8aae-368a-4a0a-8bbd-d1e2edd23890" InformativeScreenshot="19caa4a5bfa8de5bd9f81b868b3dbc06.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/brTuS-7nHUq466iAQRCdbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="ATS confirmation blocked" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                  <Throw DisplayName="Throw ATS confirmation gate failure" Exception="[New InvalidOperationException(&quot;CLN-01 step 17 failed: ATS Revert hire confirmation title was not shown.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <uix:NGetText DisplayName="Read ATS stage after revert" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[candidateStage]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="n9mLs-ELf0Gp3MVYn9SMBQ" DesignTimeRectangle="552, 437, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='current-stage' tag='SPAN' /&gt;" Guid="bdcb06e3-57ac-482d-928f-adb87dc15e0e" InformativeScreenshot="6e9c393680b413bd6371f6f73bcb31a6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 18 - ATS candidate is in Offer after revert" ContinueOnFailure="True" DisplayName="CLN-01 step 18 - ATS candidate is in Offer after revert" Expression="[candidateStage = &quot;Offer&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_17" OutputMessageFormat="[&quot;Post-revert stage={Expression}; result={Result}.&quot;]" Result="[verifyCandidateOffer]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uix:NGetText DisplayName="Read ATS offer start date" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_16" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[offerStartDate]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="SH5Wys17h02wGoIaDq7FgA" DesignTimeRectangle="597, 594, 400, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='offer-start-date' tag='DD' /&gt;" Guid="14e7db45-d4ea-4f3a-8d7a-9b322fe34cd8" InformativeScreenshot="52d52f679b9be581a724654c43a4324d.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/wOkLH9P1ekuRVweAdlF5mQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 19 - ATS offer start date is populated" ContinueOnFailure="True" DisplayName="CLN-01 step 19 - ATS offer start date is populated" Expression="[Not String.IsNullOrWhiteSpace(offerStartDate)]" sap2010:WorkflowViewState.IdRef="VerifyExpression_18" OutputMessageFormat="[&quot;Offer start date populated={Result}.&quot;]" Result="[verifyOfferDate]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uix:NGetText DisplayName="Read ATS Workday panel after revert" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="c1022222-2222-4222-8222-222222222222" TextString="[workdayPanelText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="localhost" ContentHash="5eBTEgreMEGOWFpJsqdmMg" DesignTimeRectangle="2131, 1161, 958, 162" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-status' /&gt;" Guid="86089056-0c7d-493f-a3b3-9c5a88f7669b" InformativeScreenshot="c0655d8539ef14c09cd1f72082601490.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KG-D7k0jYEyGp-JZvKZPZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector, SemanticSelector" SemanticSelectorArgument="A status indicator within the Workday hand-off section that confirms the candidate's data has been successfully synced to the Workday system and displays the associated pre-hire identifier." SemanticSelectorFindMethod="Dom" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uta:VerifyExpressionWithOperator KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 20 - ATS is not sent to Workday after revert" ContinueOnFailure="True" DisplayName="CLN-01 step 20 - ATS is not sent to Workday after revert" sap2010:WorkflowViewState.IdRef="VerifyExpressionWithOperator_5" Operator="Contains" OutputMessageFormat="[&quot;Post-revert Workday panel={LeftExpressionText}; result={Result}.&quot;]" Result="[verifyNotSent]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyExpressionWithOperator.FirstExpression>
+                <InArgument x:TypeArguments="x:String">[workdayPanelText]</InArgument>
+              </uta:VerifyExpressionWithOperator.FirstExpression>
+              <uta:VerifyExpressionWithOperator.SecondExpression>
+                <InArgument x:TypeArguments="x:String">["Not sent to Workday yet"]</InArgument>
+              </uta:VerifyExpressionWithOperator.SecondExpression>
+            </uta:VerifyExpressionWithOperator>
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" FormDataParts="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" RetryStatusCodes="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="GET ATS candidate after revert" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/candidates/&quot; &amp; currentRun.AtsCandidateId.GetValueOrDefault().ToString(&quot;0&quot;, CultureInfo.InvariantCulture)]" Result="[candidateResponse]" RetryCount="3" RetryPolicyType="None" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TimeoutInMiliseconds="[30000]" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True" />
+            <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Parse ATS candidate after revert" sap2010:WorkflowViewState.IdRef="DeserializeJson_1" JsonObject="[candidateJson]" JsonString="[candidateResponse.TextContent]" />
+            <Assign DisplayName="Read ATS API values" sap2010:WorkflowViewState.IdRef="Assign_19">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[candidateApiStage]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[candidateJson.SelectToken("applications[0].stage").ToString()]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Read ATS API status and Workday state" sap2010:WorkflowViewState.IdRef="Assign_20">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[candidateApiStatus]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[If(candidateJson.SelectToken("applications[0].status") Is Nothing, String.Empty, candidateJson.SelectToken("applications[0].status").ToString())]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Determine ATS Workday API state" sap2010:WorkflowViewState.IdRef="Assign_21">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[hasWorkdayApi]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[candidateJson.SelectToken("applications[0].workday") IsNot Nothing AndAlso candidateJson.SelectToken("applications[0].workday").Type &lt;&gt; Newtonsoft.Json.Linq.JTokenType.Null AndAlso candidateJson.SelectToken("applications[0].workday").HasValues]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" FilterArguments="{x:Null}" FilterValues="{x:Null}" OutputRecords="{x:Null}" RequiredForReadFieldNames="{x:Null}" RequiredForReadInput="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Validate the ATS candidate ID is recorded" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords_2" QueriedEntityId="00000000-0000-0000-0000-000000000000" Skip="0" SortAscending="True" TimeoutInMs="30000" Top="1" />
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 21 - ATS API state is Offer active and Workday empty" ContinueOnFailure="True" DisplayName="CLN-01 step 21 - ATS API state is Offer active and Workday empty" Expression="[candidateResponse.StatusCode = HttpStatusCode.OK AndAlso candidateApiStage = &quot;Offer&quot; AndAlso candidateApiStatus = &quot;active&quot; AndAlso Not hasWorkdayApi]" sap2010:WorkflowViewState.IdRef="VerifyExpression_19" OutputMessageFormat="[&quot;ATS API state result={Result}.&quot;]" Result="[verifyCandidateApi]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" FormData="{x:Null}" FormDataParts="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" RetryStatusCodes="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="GET ATS events" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" sap2010:WorkflowViewState.IdRef="NetHttpRequest_2" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/events&quot;]" Result="[eventsResponse]" RetryCount="3" RetryPolicyType="None" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TimeoutInMiliseconds="[30000]" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True" />
+            <ui:DeserializeJsonArray DisplayName="Parse ATS events" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" JsonArray="[eventsArray]" JsonString="[eventsResponse.TextContent]" />
+            <Assign DisplayName="Select newest hire reverted event" sap2010:WorkflowViewState.IdRef="Assign_22">
+              <Assign.To>
+                <OutArgument x:TypeArguments="njl:JObject">[eventJson]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="njl:JObject">[TryCast(eventsArray.Where(Function(item As JToken) String.Equals(If(item("action") Is Nothing, String.Empty, item("action").ToString()), "hire_reverted", StringComparison.OrdinalIgnoreCase) AndAlso item.SelectToken("payload.application_id") IsNot Nothing AndAlso item.SelectToken("payload.application_id").ToString() = currentRun.AtsApplicationId.GetValueOrDefault().ToString("0", CultureInfo.InvariantCulture)).OrderByDescending(Function(item As JToken) If(item.SelectToken("at") Is Nothing, String.Empty, item.SelectToken("at").ToString())).FirstOrDefault(), JObject)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Verify selected ATS event payload" sap2010:WorkflowViewState.IdRef="Assign_23">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[verifyEventsApi]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[eventsResponse.StatusCode = HttpStatusCode.OK AndAlso eventJson IsNot Nothing AndAlso eventJson.SelectToken("payload.application_id") IsNot Nothing AndAlso eventJson.SelectToken("payload.application_id").ToString() = currentRun.AtsApplicationId.GetValueOrDefault().ToString("0", CultureInfo.InvariantCulture)]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="CLN-01 step 22 - ATS newest hire_reverted event matches application" ContinueOnFailure="True" DisplayName="CLN-01 step 22 - ATS newest hire_reverted event matches application" Expression="[verifyEventsApi]" sap2010:WorkflowViewState.IdRef="VerifyExpression_20" OutputMessageFormat="[&quot;ATS event evidence result={Result}.&quot;]" Result="[verifyEventsApi]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="Ml43qfS6mEixOFqfki9KTg" InformativeScreenshot="9458ac2c8d27aa1481ea357319b1716b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/jobs" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <Assign DisplayName="Aggregate CLN-01 verification results" sap2010:WorkflowViewState.IdRef="Assign_24">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Boolean">[allVerifiesPassed]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Boolean">[verifyRun AndAlso verifyEligible AndAlso verifySignedIn AndAlso verifyProxyAbsent AndAlso verifyEmployee AndAlso verifyEvents AndAlso verifyStageAgreement AndAlso verifyEventStatus AndAlso verifyPage AndAlso verifyWorkdayGate AndAlso verifyWorkdayFinal AndAlso verifyPosition AndAlso verifyAtsLive AndAlso verifyCandidateName AndAlso verifyCandidateHired AndAlso verifyCandidateOffer AndAlso verifyOfferDate AndAlso verifyNotSent AndAlso verifyCandidateApi AndAlso verifyEventsApi]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[allVerifiesPassed]" DisplayName="Persist cleanup only after all verifications" sap2010:WorkflowViewState.IdRef="If_8">
+      <If.Then>
+        <Sequence DisplayName="Persist successful CLN-01 cleanup" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Persist CleanedUp WorkdayHireRun" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows\DataFabric\UpdateHireRun.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="t:WorkdayHireRun" x:Key="in_CurrentRun">[currentRun]</InArgument>
+              <InArgument x:TypeArguments="t:HireRunStage" x:Key="in_Stage">[Testing_Workday_CrossPlatform.HireRunStage.CleanedUp]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_LastTestCase">["TC-HR-HIRE-06"]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_HireEventRef">[currentRun.HireEventRef]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_HireEventStatus">[If(cleanupAction = "Rescind", "Rescinded", "Canceled")]</InArgument>
+              <InArgument x:TypeArguments="s:DateTimeOffset" x:Key="in_CompletedAt">[currentRun.CompletedAt.GetValueOrDefault()]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_ErrorMessage">[String.Empty]</InArgument>
+              <InArgument x:TypeArguments="s:Nullable(t:HireCleanupAction)" x:Key="in_CleanupAction">[cleanupChoice]</InArgument>
+              <InArgument x:TypeArguments="s:Nullable(x:Boolean)" x:Key="in_AtsReverted">[atsReverted]</InArgument>
+              <InArgument x:TypeArguments="s:Nullable(s:DateTimeOffset)" x:Key="in_CleanedUpAt">[cleanedUpAt]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+          <Assign DisplayName="Set CLN-01 passed output" sap2010:WorkflowViewState.IdRef="Assign_25">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Build CLN-01 success summary" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["RunId=" &amp; currentRun.RunId &amp; "; CleanupAction=" &amp; cleanupAction &amp; "; Stage=CleanedUp; AtsReverted=True"]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="CLN-01 verification failure" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <Assign DisplayName="Set CLN-01 failed output" sap2010:WorkflowViewState.IdRef="Assign_27">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Build CLN-01 failure summary" sap2010:WorkflowViewState.IdRef="Assign_28">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">["RunId=" &amp; currentRun.RunId &amp; "; cleanup verification failed; persistence was skipped"]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Throw DisplayName="Throw CLN-01 verification failure" Exception="[New InvalidOperationException(SummaryMessage)]" sap2010:WorkflowViewState.IdRef="Throw_7" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

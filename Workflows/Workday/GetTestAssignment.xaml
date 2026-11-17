@@ -1,0 +1,82 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_GetTestAssignment"  sap2010:Annotation.AnnotationText="Which worker this test uses. In a test cycle the Test Data Steward reserves one worker per test set (Data Fabric WorkdayTestReservation: ReservedBy = test set, Status = Reserved) and records the starting state in Notes as BL1|name|title|position|management level|location|base pay. A worker passed in wins; with no reservation the home worker of the test set is used (each set has its own, so sets never share a worker)." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TestSet" Type="InArgument(x:String)" />
+    <x:Property Name="in_DefaultWorker" Type="InArgument(x:String)" />
+    <x:Property Name="in_DefaultBaseline" Type="InArgument(x:String)" />
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="out_WorkerName" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Baseline" Type="OutArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FromReservation" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday GetTestAssignment" sap2010:WorkflowViewState.IdRef="Sequence_G22"><Sequence.Variables><Variable x:TypeArguments="scg:IList(t:WorkdayTestReservation)" Name="records" /><Variable x:TypeArguments="x:Int64" Name="total" /><Variable x:TypeArguments="t:WorkdayTestReservation" Name="pick" /><Variable x:TypeArguments="x:String" Name="nowText" /></Sequence.Variables>
+<Assign DisplayName="Start with the worker the caller gave" sap2010:WorkflowViewState.IdRef="Assign_G1"><Assign.To><OutArgument x:TypeArguments="x:String">[out_WorkerName]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[in_WorkerName]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="No starting state yet" sap2010:WorkflowViewState.IdRef="Assign_G2"><Assign.To><OutArgument x:TypeArguments="x:String">[out_Baseline]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[""]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="No run yet" sap2010:WorkflowViewState.IdRef="Assign_G3"><Assign.To><OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[""]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Not from a reservation yet" sap2010:WorkflowViewState.IdRef="Assign_G4"><Assign.To><OutArgument x:TypeArguments="x:Boolean">[out_FromReservation]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Boolean">[False]</InArgument></Assign.Value></Assign>
+<If Condition="[String.IsNullOrWhiteSpace(in_WorkerName)]" DisplayName="Look up the assignment only when no worker was given" sap2010:WorkflowViewState.IdRef="If_G21"><If.Then><Sequence DisplayName="Look up the assignment only when no worker was given - yes" sap2010:WorkflowViewState.IdRef="Sequence_G19">
+<uda:QueryEntityRecords x:TypeArguments="t:WorkdayTestReservation" RequiredForReadInput="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" ContinueOnError="False" DisplayName="Query the Test Data Steward reservations for this test set" EntityId="c996a1c7-dade-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_TA" OutputRecords="[records]" QueriedEntityId="c996a1c7-dade-f111-91f2-002248a179ce" ScopeValue="Tenant" Skip="0" SortAscending="True" TimeoutInMs="30000" Top="50" TotalRecords="[total]"><uda:QueryEntityRecords.FilterArguments><uda:FilterArgument FilterActivityType="{x:Null}"><uda:FilterArgument.Filter><uda:GroupFilter Index="0" Operator="AND"><uda:GroupFilter.Filters><scg:List x:TypeArguments="uda:SimpleFilter" Capacity="2"><uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="ReservedBy" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" /><uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="Status" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="1" /></scg:List></uda:GroupFilter.Filters><uda:GroupFilter.Groups><scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" /></uda:GroupFilter.Groups></uda:GroupFilter></uda:FilterArgument.Filter></uda:FilterArgument></uda:QueryEntityRecords.FilterArguments><uda:QueryEntityRecords.FilterValues><scg:List x:TypeArguments="InArgument" Capacity="2"><InArgument x:TypeArguments="x:String">[in_TestSet]</InArgument><InArgument x:TypeArguments="x:String">["Reserved"]</InArgument></scg:List></uda:QueryEntityRecords.FilterValues><uda:QueryEntityRecords.RequiredForReadFieldNames><scg:List x:TypeArguments="x:String" Capacity="0" /></uda:QueryEntityRecords.RequiredForReadFieldNames></uda:QueryEntityRecords>
+<Assign DisplayName="Now in the reservation time format" sap2010:WorkflowViewState.IdRef="Assign_G5"><Assign.To><OutArgument x:TypeArguments="x:String">[nowText]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss") &amp; "Z"]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Pick the newest reservation that has not expired" sap2010:WorkflowViewState.IdRef="Assign_G6"><Assign.To><OutArgument x:TypeArguments="t:WorkdayTestReservation">[pick]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="t:WorkdayTestReservation">[records.Where(Function(r) String.Compare(If(r.ExpiresAt, "").Trim().Trim(""""c), nowText, StringComparison.Ordinal) &gt; 0).OrderByDescending(Function(r) r.CreateTime).FirstOrDefault()]</InArgument></Assign.Value></Assign>
+<If Condition="[pick IsNot Nothing]" DisplayName="Use the reserved worker when there is one" sap2010:WorkflowViewState.IdRef="If_G17"><If.Then><Sequence DisplayName="Use the reserved worker when there is one - yes" sap2010:WorkflowViewState.IdRef="Sequence_G15">
+<Assign DisplayName="Worker from the reservation" sap2010:WorkflowViewState.IdRef="Assign_G7"><Assign.To><OutArgument x:TypeArguments="x:String">[out_WorkerName]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[pick.SubjectName]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Starting state from the reservation" sap2010:WorkflowViewState.IdRef="Assign_G8"><Assign.To><OutArgument x:TypeArguments="x:String">[out_Baseline]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(If(pick.Notes, "").StartsWith("BL1|"), pick.Notes, "")]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Run that reserved it" sap2010:WorkflowViewState.IdRef="Assign_G9"><Assign.To><OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(pick.RunId, "")]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="From a reservation" sap2010:WorkflowViewState.IdRef="Assign_G10"><Assign.To><OutArgument x:TypeArguments="x:Boolean">[out_FromReservation]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Boolean">[True]</InArgument></Assign.Value></Assign>
+<ui:LogMessage DisplayName="Log the assignment" Level="Info" Message="[&quot;Worker for &quot; &amp; in_TestSet &amp; &quot;: &quot; &amp; out_WorkerName &amp; &quot;, assigned by the Test Data Steward for test cycle &quot; &amp; out_RunId &amp; If(String.IsNullOrEmpty(out_Baseline), &quot; (no starting state recorded)&quot;, &quot;&quot;)]" sap2010:WorkflowViewState.IdRef="LogMessage_G11" />
+</Sequence></If.Then><If.Else><Sequence DisplayName="Use the reserved worker when there is one - no" sap2010:WorkflowViewState.IdRef="Sequence_G16">
+<Assign DisplayName="Default worker" sap2010:WorkflowViewState.IdRef="Assign_G12"><Assign.To><OutArgument x:TypeArguments="x:String">[out_WorkerName]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[in_DefaultWorker]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Default worker&#x27;s starting state" sap2010:WorkflowViewState.IdRef="Assign_G13"><Assign.To><OutArgument x:TypeArguments="x:String">[out_Baseline]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[If(If(in_DefaultBaseline, "").StartsWith("BL1|"), in_DefaultBaseline, "")]</InArgument></Assign.Value></Assign>
+<ui:LogMessage DisplayName="Log the default" Level="Info" Message="[&quot;No Test Data Steward assignment for &quot; &amp; in_TestSet &amp; &quot;; using the home worker of the set &quot; &amp; in_DefaultWorker]" sap2010:WorkflowViewState.IdRef="LogMessage_G14" />
+</Sequence></If.Else></If>
+</Sequence></If.Then><If.Else><Sequence DisplayName="Look up the assignment only when no worker was given - no" sap2010:WorkflowViewState.IdRef="Sequence_G20">
+<ui:LogMessage DisplayName="Log the given worker" Level="Info" Message="[&quot;Worker given to the test: &quot; &amp; in_WorkerName]" sap2010:WorkflowViewState.IdRef="LogMessage_G18" />
+</Sequence></If.Else></If>
+</Sequence>
+</Activity>

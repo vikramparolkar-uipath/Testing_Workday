@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_Email_Input",
+  "Description": "Email input in the Add candidate form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "rFn6yF5OqkC98uUFHUvJcg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/rFn6yF5OqkC98uUFHUvJcg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:53.1464536Z",
+  "Updated": "2026-11-13T02:37:53.1464536Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

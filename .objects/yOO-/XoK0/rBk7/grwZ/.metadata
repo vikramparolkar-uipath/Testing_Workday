@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeePrompt_ExistingPreHire_Radio",
+  "Description": "Existing Pre-Hire radio button on the Hire Employee prompt",
+  "Type": "Element",
+  "TaxonomyType": "RadioButton",
+  "Id": "grwZgpuBHkSi07XUrKk1Sw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/grwZgpuBHkSi07XUrKk1Sw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "Created": "2026-11-13T18:02:19.990048Z",
+  "Updated": "2026-11-13T18:02:19.990048Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Propose Compensation Hire",
+  "Description": "The Workday task item for the Propose Compensation Hire action, identified by the selected worker and task title",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "FFMTTYWKmEu-byZFsH9I2Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/FFMTTYWKmEu-byZFsH9I2Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T21:33:53.6508843Z",
+  "Updated": "2026-11-13T21:38:22.4091296Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

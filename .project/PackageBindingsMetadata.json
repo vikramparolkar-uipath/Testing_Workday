@@ -1,47 +1,31 @@
 {
   "ActivityBindings": {
-    "UiPath.Activities.System.Agentic.RunAgent": [
+    "UiPath.Activities.System.Jobs.RunJob": [
       {
-        "Type": "agent",
+        "Type": "process",
         "PublishNullValues": false,
         "Key": {
           "Value": "BindingsKey",
           "ValueSource": "Property"
         },
         "Values": {
-          "name": {
-            "Value": "ProcessName",
-            "ValueSource": "Property"
-          },
           "folderPath": {
             "Value": "FolderPath",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "ProcessName",
             "ValueSource": "Property"
           }
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.AddAndProcessQueueItem": [
-      {
-        "Type": "queue",
-        "Values": {
-          "name": {
-            "Value": "QueueType",
-            "ValueSource": "Property"
-          },
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.AddQueueItem": [
@@ -64,11 +48,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -96,32 +76,12 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.BeginProcess": [
-      {
-        "Type": "process",
-        "Values": {
-          "name": {
-            "Value": "ProcessName",
-            "ValueSource": "Property"
-          },
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.BulkAddQueueItems": [
@@ -144,28 +104,12 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.DeleteQueueItems": [
-      {
-        "Type": "queue",
-        "Values": {
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.EvaluateBusinessRule": [
@@ -188,28 +132,12 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.GetJobs": [
-      {
-        "Type": "process",
-        "Values": {
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.GetQueueItem": [
@@ -232,11 +160,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -264,11 +188,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -296,11 +216,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -328,11 +244,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -340,20 +252,32 @@
         "DefaultValueSource": "Property"
       }
     ],
-    "UiPath.Core.Activities.GetTransactionItem": [
+    "UiPath.Core.Activities.GetSecret": [
       {
-        "Type": "queue",
+        "Type": "asset",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
         "Values": {
-          "name": {
-            "Value": "QueueType",
-            "ValueSource": "Property"
-          },
           "folderPath": {
             "Value": "FolderPath",
             "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "AssetName",
+            "ValueSource": "Property"
           }
         },
-        "DefaultValueSource": "Default"
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
       }
     ],
     "UiPath.Core.Activities.InvokeProcess": [
@@ -376,28 +300,12 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.PostponeTransactionItem": [
-      {
-        "Type": "queue",
-        "Values": {
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.QueueTrigger": [
@@ -432,7 +340,7 @@
             "ValueSource": "Property"
           },
           "BindingsVersion": {
-            "Value": "2.1",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -460,11 +368,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -492,11 +396,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -504,28 +404,32 @@
         "DefaultValueSource": "Property"
       }
     ],
-    "UiPath.Core.Activities.SetTransactionProgress": [
+    "UiPath.Core.Activities.SetSecret": [
       {
-        "Type": "queue",
+        "Type": "asset",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
         "Values": {
           "folderPath": {
             "Value": "FolderPath",
             "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
-      }
-    ],
-    "UiPath.Core.Activities.SetTransactionStatus": [
-      {
-        "Type": "queue",
-        "Values": {
-          "folderPath": {
-            "Value": "FolderPath",
+          },
+          "name": {
+            "Value": "AssetName",
             "ValueSource": "Property"
           }
         },
-        "DefaultValueSource": "Default"
+        "Arguments": {
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
       }
     ],
     "UiPath.Core.Activities.StartJob": [
@@ -548,28 +452,12 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Core.Activities.StopJob": [
-      {
-        "Type": "process",
-        "Values": {
-          "folderPath": {
-            "Value": "FolderPath",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ],
     "UiPath.Core.Activities.Storage.DeleteStorageFile": [
@@ -592,11 +480,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -624,11 +508,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -656,11 +536,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -688,11 +564,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -720,11 +592,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -752,11 +620,7 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
-            "ValueSource": "Constant"
-          },
-          "SolutionsSupport": {
-            "Value": "true",
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -811,11 +675,391 @@
         },
         "Arguments": {
           "BindingsVersion": {
-            "Value": "2.1",
+            "Value": "2.2",
             "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.CreateEntityRecord\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
           },
-          "SolutionsSupport": {
-            "Value": "true",
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.CreateMultipleEntityRecords\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.DeleteEntityRecord\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.DeleteFileFromRecordField\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.DeleteMultipleEntityRecords\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.DownloadFileFromRecordField\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.GetEntityRecordById\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.QueryEntityRecords\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.QueryEntityRecordsBuilder\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.UpdateEntityRecord\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.UpdateMultipleEntityRecords\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
+            "ValueSource": "Constant"
+          }
+        },
+        "SubBindings": [],
+        "DefaultValueSource": "Property"
+      }
+    ],
+    "UiPath.DataService.Activities.UploadFileToRecordField\u00601": [
+      {
+        "Type": "Entity",
+        "PublishNullValues": false,
+        "Key": {
+          "Value": "BindingsKey",
+          "ValueSource": "Property"
+        },
+        "Values": {
+          "folderPath": {
+            "Value": "",
+            "ValueSource": "Property"
+          },
+          "name": {
+            "Value": "BindingsKey",
+            "ValueSource": "Property"
+          }
+        },
+        "Arguments": {
+          "Scope": {
+            "Value": "ScopeKey",
+            "ValueSource": "Property"
+          },
+          "BindingsVersion": {
+            "Value": "2.2",
             "ValueSource": "Constant"
           }
         },
@@ -855,12 +1099,12 @@
         "DefaultValueSource": "Property"
       }
     ],
-    "UiPath.Workday.IntegrationService.Activities.CreatePosition": [
+    "UiPath.UIAutomationNext.Activities.NApplicationCard": [
       {
-        "Type": "Connection",
+        "Type": "UIAConnection",
         "PublishNullValues": false,
         "Key": {
-          "Value": "BindingsKey",
+          "Value": "ConnectionId",
           "ValueSource": "Property"
         },
         "Values": {
@@ -870,351 +1114,17 @@
           }
         },
         "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
+          "ConnectionName": {
+            "Value": "ConnectionName",
             "ValueSource": "Property"
           },
           "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
+            "Value": "z-uipath-browser",
+            "ValueSource": "Constant"
           }
         },
         "SubBindings": [],
         "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.CreatePreHire": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.CreateTrigger": [
-      {
-        "Type": "EventTrigger",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "Operation": {
-            "Value": "Operation",
-            "ValueSource": "Property"
-          },
-          "ObjectName": {
-            "Value": "ObjectName",
-            "ValueSource": "Property"
-          },
-          "FilterExpression": {
-            "Value": "FilterExpression",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.GetPreHireByEmail": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.GetRecord": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.HireEmployee": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.InsertRecord": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.ListAllOpenPositions": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.ListAllRecords": [
-      {
-        "Type": "Connection",
-        "PublishNullValues": false,
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "SubBindings": [],
-        "DefaultValueSource": "Property"
-      }
-    ],
-    "UiPath.Workday.IntegrationService.Activities.Scope": [
-      {
-        "Type": "Connection",
-        "Key": {
-          "Value": "BindingsKey",
-          "ValueSource": "Property"
-        },
-        "Values": {
-          "ConnectionId": {
-            "Value": "ConnectionId",
-            "ValueSource": "Property"
-          }
-        },
-        "Arguments": {
-          "UseConnectionService": {
-            "Value": "UseConnectionService",
-            "ValueSource": "Property"
-          },
-          "Connector": {
-            "Value": "Connector",
-            "ValueSource": "Property"
-          },
-          "ActivityName": {
-            "Value": "DisplayName",
-            "ValueSource": "Property"
-          },
-          "BindingsVersion": {
-            "Value": "BindingsVersion",
-            "ValueSource": "Property"
-          }
-        },
-        "DefaultValueSource": "Default"
       }
     ]
   }

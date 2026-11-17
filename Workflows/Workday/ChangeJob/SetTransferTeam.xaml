@@ -1,0 +1,72 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_ChangeJob_SetTransferTeam"  sap2010:Annotation.AnnotationText="Transfer page: types the effective date and picks the receiving team by searching for its manager (for example &quot;James Walker&quot; gives Accounts Payable Department), retrying until Workday keeps the new team." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_EffectiveDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_TeamSearch" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_Team" Type="OutArgument(x:String)" />
+    <x:Property Name="out_NewManager" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday ChangeJob SetTransferTeam" sap2010:WorkflowViewState.IdRef="Sequence_G110">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G109"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G108">
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type the effective date" EmptyFieldMode="None" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" Text="[in_EffectiveDate]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G98"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$795470&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;dateSectionMonth-input&#x27; tag=&#x27;INPUT&#x27; /&gt;" Guid="4787e6df-8886-44c1-ba43-6458f234701b" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+<ui:RetryScope DisplayName="Set the receiving team until Workday keeps it (the form re-renders after the date is entered)" NumberOfRetries="4" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_G105"><ui:RetryScope.ActivityBody><ActivityAction><Sequence DisplayName="Set the receiving team until Workday keeps it (the form re-renders after the date is entered) (body)" sap2010:WorkflowViewState.IdRef="Sequence_G106">
+<Delay DisplayName="Let the form settle" Duration="00:00:02" sap2010:WorkflowViewState.IdRef="Delay_Team" />
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Remove the current team" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G99"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;items selected for Which team*&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;DELETE_charm&#x27; /&gt;" Guid="cfb734ba-3793-45b9-aefb-ea04a788a66f" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search the team by its manager (team names are not found)" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" Text="[in_TeamSearch &amp; &quot;[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G100"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;selectinput-56$719919*&#x27; tag=&#x27;INPUT&#x27; /&gt;" Guid="d9900205-9179-4a5e-b772-1f6afff45695" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+<Delay DisplayName="Let Workday fill the team" Duration="00:00:02" sap2010:WorkflowViewState.IdRef="Delay_Team2" />
+<Delay DisplayName="Wait for Workday to finish recalculating" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_Team3" />
+<uix:NGetText DisplayName="Read the new team" HealingAgentBehavior="SameAsCard" ScopeIdentifier="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" TextString="[out_Team]" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G101"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;items selected for Which team*&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;promptOption&#x27; /&gt;" Guid="f262fd6c-305a-4ff2-b7fc-3b7cfec457c2" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<If Condition="[String.IsNullOrWhiteSpace(out_Team) OrElse out_Team.Trim() = &quot;Office of the Controller&quot;]" DisplayName="Try again when the team is empty or still the old one" sap2010:WorkflowViewState.IdRef="If_G104"><If.Then><Sequence DisplayName="Try again when the team is empty or still the old one - yes" sap2010:WorkflowViewState.IdRef="Sequence_G103">
+<Throw DisplayName="Team not set yet" Exception="[New InvalidOperationException(&quot;The team shows [&quot; &amp; out_Team &amp; &quot;]; setting it again.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G102" />
+</Sequence></If.Then></If>
+</Sequence></ActivityAction></ui:RetryScope.ActivityBody></ui:RetryScope>
+<uix:NGetText DisplayName="Read the new manager" HealingAgentBehavior="SameAsCard" ScopeIdentifier="1beb3ffe-47f2-4df8-974f-0841bbfd1c68" TextString="[out_NewManager]" Timeout="[10]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G107"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$790504&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;promptOption&#x27; /&gt;" Guid="a7ed2f9b-5177-49c6-bc82-5db0456bf166" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence>
+</Activity>

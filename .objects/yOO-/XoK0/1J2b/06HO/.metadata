@@ -1,0 +1,15 @@
+﻿{
+  "Name": "SearchResults_EmployeeId_Text",
+  "Description": "Employee ID block in the top search result preview card; Get Text returns Employee ID followed by the number",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "06HOQRbXMkGXEHBcz_9-2g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/06HOQRbXMkGXEHBcz_9-2g",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg",
+  "Created": "2026-11-14T21:16:12.6313884Z",
+  "Updated": "2026-11-14T21:16:12.6313884Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

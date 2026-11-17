@@ -1,0 +1,71 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_Compensation_CancelLeftoverCompensationChanges" this:Workflows_Workday_Compensation_CancelLeftoverCompensationChanges.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Clean start for a compensation test: opens the worker&#x27;s Worker History and cancels every compensation change still In Progress (left by an earlier run that stopped midway). Sign in as Logan McNeil first (Business Process Administrator)." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="in_TestName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_CanceledCount" Type="OutArgument(x:Int32)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday Compensation CancelLeftoverCompensationChanges" sap2010:WorkflowViewState.IdRef="Sequence_G294"><Sequence.Variables><Variable x:TypeArguments="x:Boolean" Name="found" /><Variable x:TypeArguments="x:String" Name="ignored" /><Variable x:TypeArguments="x:String" Name="result" /></Sequence.Variables>
+<Assign DisplayName="Nothing canceled yet" sap2010:WorkflowViewState.IdRef="Assign_G280"><Assign.To><OutArgument x:TypeArguments="x:Int32">[out_CanceledCount]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[0]</InArgument></Assign.Value></Assign>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Open the worker&#x27;s Worker History" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G281" UnSafe="False" WorkflowFileName="Workflows/Workday/OpenWorkerHistory.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<While Condition="[out_CanceledCount &lt; 3]" DisplayName="Cancel each compensation change still In Progress" sap2010:WorkflowViewState.IdRef="While_Leftover"><Sequence DisplayName="Cancel one leftover" sap2010:WorkflowViewState.IdRef="Sequence_G290">
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Cancel an In Progress compensation change" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G282" UnSafe="False" WorkflowFileName="Workflows/Workday/Compensation/CancelInProgressEvent.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_EventLabel">["Compensation Change: " &amp; in_WorkerName &amp; "*"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Comment">["UiPath demo cleanup before " &amp; in_TestName &amp; " " &amp; DateTime.Now.ToString("yyyy-MM-dd HH:mm")]</InArgument><InArgument x:TypeArguments="x:Boolean" x:Key="in_SubmitWithoutCommentFirst">[False]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_EventFound">[found]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_NoCommentError">[ignored]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Result">[result]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<If Condition="[Not found]" DisplayName="Stop when there is nothing left to cancel" sap2010:WorkflowViewState.IdRef="If_G289"><If.Then><Sequence DisplayName="Stop when there is nothing left to cancel - yes" sap2010:WorkflowViewState.IdRef="Sequence_G287">
+<Assign DisplayName="Leave the loop" sap2010:WorkflowViewState.IdRef="Assign_G283"><Assign.To><OutArgument x:TypeArguments="x:Int32">[out_CanceledCount]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[out_CanceledCount + 100]</InArgument></Assign.Value></Assign>
+</Sequence></If.Then><If.Else><Sequence DisplayName="Stop when there is nothing left to cancel - no" sap2010:WorkflowViewState.IdRef="Sequence_G288">
+<ui:LogMessage DisplayName="Log the cleanup" Level="Warn" Message="[&quot;Canceled a leftover compensation change for &quot; &amp; in_WorkerName &amp; &quot;: &quot; &amp; result]" sap2010:WorkflowViewState.IdRef="LogMessage_G284" />
+<Assign DisplayName="Count it" sap2010:WorkflowViewState.IdRef="Assign_G285"><Assign.To><OutArgument x:TypeArguments="x:Int32">[out_CanceledCount]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[out_CanceledCount + 1]</InArgument></Assign.Value></Assign>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Reopen the worker&#x27;s Worker History" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G286" UnSafe="False" WorkflowFileName="Workflows/Workday/OpenWorkerHistory.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Else></If>
+</Sequence></While>
+<If Condition="[out_CanceledCount &gt;= 100]" DisplayName="Return the real count" sap2010:WorkflowViewState.IdRef="If_G293"><If.Then><Sequence DisplayName="Return the real count - yes" sap2010:WorkflowViewState.IdRef="Sequence_G292">
+<Assign DisplayName="Remove the loop marker" sap2010:WorkflowViewState.IdRef="Assign_G291"><Assign.To><OutArgument x:TypeArguments="x:Int32">[out_CanceledCount]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Int32">[out_CanceledCount - 100]</InArgument></Assign.Value></Assign>
+</Sequence></If.Then></If>
+</Sequence>
+</Activity>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "WorkerHistory_ProposeCompensation_Link",
+  "Description": "Propose Compensation Hire row link in Worker History, selector variable workerName",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "6Vo3cO_C8U6RWpcUR_H9EA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/6Vo3cO_C8U6RWpcUR_H9EA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hvEVhuoiTEi3MTdsg1K70Q",
+  "Created": "2026-11-14T21:25:46.5281472Z",
+  "Updated": "2026-11-14T21:25:46.5281472Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

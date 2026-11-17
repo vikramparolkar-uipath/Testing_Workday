@@ -1,0 +1,18 @@
+﻿{
+  "Name": "HireEmployeeForm_PromptOption_Item",
+  "Description": "Option in an open prompt results list on the Hire Employee form, chosen by its exact label, for example New Hire > Fill Vacancy",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "g4mb1kNGCUaWzslin7QIVg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/g4mb1kNGCUaWzslin7QIVg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:24:17.9948879Z",
+  "Updated": "2026-11-13T18:32:28.5913982Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "RescindBP_RescindedEvent_Link",
+  "Description": "Event title link that reads Hire: <worker> (Rescinded) after the rescind",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "ejeWmAa_z0ydIUCCPCxlYg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/ejeWmAa_z0ydIUCCPCxlYg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/mF-LX89XLkipzP8qUm9DeA",
+  "Created": "2026-11-15T05:12:08.4928943Z",
+  "Updated": "2026-11-15T05:12:08.4928943Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

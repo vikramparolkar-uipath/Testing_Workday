@@ -1,0 +1,132 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_StartProxy" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ProxyUser" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_SelectedUser" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ProxyBanner" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ProxyStarted" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Start proxy as requested user" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Start Proxy" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="a3333333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Choose James Walker" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search James Walker" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="a3333333-3333-4333-8333-333333333333" Text="[in_ProxyUser &amp; &quot;[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable ContentHash="-sDGv-I5ckCDF4eDxhcyHw" DesignTimeRectangle="181, 348, 254, 36" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-x9278i-InputContainer-1 edt0qdt13' placeholder='Search' aaname='User to Proxy As' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="8f973d27-8731-4ce0-a4c9-0d4404322b13" InformativeScreenshot="313e8d544bd82d081eb5a4bea136c796.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jmPaqsLZQ0WCZ_xH91TB6A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="52, 357, 104, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='User to Proxy As' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='User to Proxy As' /&gt;" Guid="b94d9756-4740-49e9-9f80-5047e591347c" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NGetText DisplayName="Read selected proxy user" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a3333333-3333-4333-8333-333333333333" TextString="[out_SelectedUser]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="gjxbAJAK8k293eVX5REjhg" DesignTimeRectangle="216, 357, 143, 18" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='promptOption' tag='P' /&gt;" Guid="f4e4ee1f-19d8-40d4-af24-5e55d6223592" InformativeScreenshot="eaf776f0cddbddb8ecf55037a1946465.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/FTpH7SWwQUSsuaSvkWTtdw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirm Start Proxy" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a3333333-3333-4333-8333-333333333333" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="y1BoMEObTUaoB4Hy3meEQw" DesignTimeRectangle="52, 1029, 112, 35" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='wd-CommandButton_uic_okButton' tag='BUTTON' type='button' class='WKQM WOQM WA4N WNDN WDSM' aaname='OK' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="a9e27fde-d7dc-4a43-80fa-1de5c3b0d462" InformativeScreenshot="9160158e2211e6568dae75f02e32f3de.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Hvv_aLHb6EK-WWjOjWzSSg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="84, 1037, 48, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='WMQM' tag='SPAN' type='' aaname='OK' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="de92f76a-7b8d-4f8b-a0ca-1139755425f9" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="9fxouwFTLEmN5X-PPzSstA" InformativeScreenshot="1ebd385cf80465468df30daf9ee6cfb8.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/TrmVUN8MD0OmJL2zAhKztg" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$6729.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday Header after proxy" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="a3344444-4444-4444-8444-444444444444" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Verify proxy banner" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <uix:NGetText DisplayName="Read proxy banner" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a3344444-4444-4444-8444-444444444444" TextString="[out_ProxyBanner]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="qIZCX7lMDUSZ6iu-YNs7PQ" DesignTimeRectangle="12, 116, 1912, 28" DesignTimeScaleFactor="1" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='banner' tag='DIV' visibleinnertext='On behalf of:*' /&gt;" Guid="1d5783e1-00c1-4ffb-b90a-09bacc4165ed" InformativeScreenshot="7ecad3d50a1daf469e0ceb035bb1f3dd.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/MR4YwDAmrU-bsb6a10jDHA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign DisplayName="Evaluate proxy start" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[out_ProxyStarted]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[Not String.IsNullOrWhiteSpace(in_ProxyUser) AndAlso Not String.IsNullOrWhiteSpace(out_SelectedUser) AndAlso out_SelectedUser.StartsWith(in_ProxyUser) AndAlso out_ProxyBanner = "On behalf of: " &amp; in_ProxyUser]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="lm1OjRgnPEa2ri6V7uk7EQ" InformativeScreenshot="5a6314b9ad21ea88bd551e0b084dc6cc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

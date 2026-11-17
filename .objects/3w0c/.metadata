@@ -1,0 +1,13 @@
+﻿{
+  "Name": "TalentTrack ATS",
+  "Description": "TalentTrack ATS mock recruiting web application",
+  "Type": "App",
+  "Id": "3w0cW_BnZ0ibbbyYjmpm8g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/3w0cW_BnZ0ibbbyYjmpm8g",
+  "Created": "2026-11-13T02:27:36.1400721Z",
+  "Updated": "2026-11-13T02:27:36.1400721Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

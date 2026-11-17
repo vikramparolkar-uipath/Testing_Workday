@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_Location_Input",
+  "Description": "Location prompt search input on the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "LKjEOE6Gw0CwYC9ru8Fb1Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/LKjEOE6Gw0CwYC9ru8Fb1Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.8191837Z",
+  "Updated": "2026-11-13T18:20:49.8191837Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

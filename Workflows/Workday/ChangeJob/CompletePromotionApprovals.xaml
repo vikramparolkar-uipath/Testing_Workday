@@ -1,0 +1,74 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_ChangeJob_CompletePromotionApprovals"  sap2010:Annotation.AnnotationText="Takes a submitted promotion through its approvals. Start signed in as Teresa Serrano (the initiator): she proxies as Rachel Knight (manager&#x27;s manager) to approve; Logan McNeil approves Review Change Job, proxies as Nicoleta Filipescu (Compensation Partner) for the raise, and submits Manage Business Processes for Worker if it appears. Ends signed in as Logan on Worker History with the promotion status in out_FinalStatus." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_ManagersManagerResult" Type="OutArgument(x:String)" />
+    <x:Property Name="out_RachelBanner" Type="OutArgument(x:String)" />
+    <x:Property Name="out_HrPartnerResult" Type="OutArgument(x:String)" />
+    <x:Property Name="out_CompPartnerResult" Type="OutArgument(x:String)" />
+    <x:Property Name="out_NicoletaBanner" Type="OutArgument(x:String)" />
+    <x:Property Name="out_FollowUpFound" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="out_FinalStatus" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday ChangeJob CompletePromotionApprovals" sap2010:WorkflowViewState.IdRef="Sequence_G263"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="signedInLabel" /><Variable x:TypeArguments="x:String" Name="proxyUser" /><Variable x:TypeArguments="x:Boolean" Name="proxyStarted" /><Variable x:TypeArguments="x:Boolean" Name="proxyWasActive" /><Variable x:TypeArguments="x:String" Name="dialogText" /><Variable x:TypeArguments="x:String" Name="followUpResult" /></Sequence.Variables>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Search and open Start Proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G250" UnSafe="False" WorkflowFileName="Workflows/Workday/SearchAndOpen.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_SearchText">["Start Proxy"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_ResultText">["Start Proxy"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Start a proxy as Rachel Knight" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G251" UnSafe="False" WorkflowFileName="Workflows/Workday/StartProxy.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ProxyUser">["Rachel Knight"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_SelectedUser">[proxyUser]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_ProxyBanner">[out_RachelBanner]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyStarted">[proxyStarted]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Approve as the manager&#x27;s manager (Rachel Knight, by proxy)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G252" UnSafe="False" WorkflowFileName="Workflows/Workday/ReviewInboxTask.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TaskText">["Promotion: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Decision">["Approve"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Reason">[""]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_DialogText">[dialogText]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Result">[out_ManagersManagerResult]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Stop the proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G253" UnSafe="False" WorkflowFileName="Workflows/Workday/StopProxyIfActive.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyWasActive">[proxyWasActive]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Sign in to Workday as Logan McNeil" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G254" UnSafe="False" WorkflowFileName="Workflows/Workday/SignInAs.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">["Workday Credentials - HR Partner"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_SignedInLabel">[signedInLabel]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Approve as the HR Partner (Logan McNeil)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G255" UnSafe="False" WorkflowFileName="Workflows/Workday/ReviewInboxTask.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TaskText">["Promotion: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Decision">["Approve"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Reason">[""]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_DialogText">[dialogText]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Result">[out_HrPartnerResult]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Search and open Start Proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G256" UnSafe="False" WorkflowFileName="Workflows/Workday/SearchAndOpen.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_SearchText">["Start Proxy"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_ResultText">["Start Proxy"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Start a proxy as Nicoleta Filipescu" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G257" UnSafe="False" WorkflowFileName="Workflows/Workday/StartProxy.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ProxyUser">["Nicoleta Filipescu"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_SelectedUser">[proxyUser]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_ProxyBanner">[out_NicoletaBanner]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyStarted">[proxyStarted]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Approve as the Compensation Partner (Nicoleta Filipescu, by proxy)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G258" UnSafe="False" WorkflowFileName="Workflows/Workday/ReviewInboxTask.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TaskText">["Compensation Change: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Decision">["Approve"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Reason">[""]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_DialogText">[dialogText]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Result">[out_CompPartnerResult]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Stop the proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G259" UnSafe="False" WorkflowFileName="Workflows/Workday/StopProxyIfActive.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyWasActive">[proxyWasActive]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Submit Manage Business Processes for Worker if it appears" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G260" UnSafe="False" WorkflowFileName="Workflows/Workday/ChangeJob/SubmitOptionalInboxTask.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TaskText">["Promotion: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_Found">[out_FollowUpFound]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Result">[followUpResult]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Open the worker&#x27;s Worker History" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G261" UnSafe="False" WorkflowFileName="Workflows/Workday/OpenWorkerHistory.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Read the promotion status" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G262" UnSafe="False" WorkflowFileName="Workflows/Workday/ReadLatestEventStatus.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_EventLabel">["Promotion: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Status">[out_FinalStatus]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence>
+</Activity>

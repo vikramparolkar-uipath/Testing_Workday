@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="39J2rkTkmEKoiizaRwAfQA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="267, 1099, 868, 36" DesignTimeScaleFactor="1" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1621*' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' fuzzylevel:data-uxi-ml-recommendations-uri='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Location' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="938ddd5c-a5ec-4d15-881e-ca667f18442d" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="268, 1072, 54, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Location' class='WIWI' tag='LABEL' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Location' /&gt;" Guid="1c81eb13-ddd5-4fd6-9057-6bbd6306b0f3" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="f8ad5e0c883895c542c973e2a859789c.jpg" xmlns="">0hDxhzgtuu0exrIBuFt8lqA</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

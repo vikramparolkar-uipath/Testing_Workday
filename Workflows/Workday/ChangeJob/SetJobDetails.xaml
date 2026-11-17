@@ -1,0 +1,92 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_ChangeJob_SetJobDetails" this:Workflows_Workday_ChangeJob_SetJobDetails.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Fills page 1 of the job change. Leave an argument empty to keep that field. in_JobProfile &quot;(none)&quot; removes the job profile without choosing another one (TC-HR-CJ-06)." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_EffectiveDate" Type="InArgument(x:String)" />
+    <x:Property Name="in_JobProfile" Type="InArgument(x:String)" />
+    <x:Property Name="in_BusinessTitle" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_JobProfile" Type="OutArgument(x:String)" />
+    <x:Property Name="out_JobTitle" Type="OutArgument(x:String)" />
+    <x:Property Name="out_BusinessTitle" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday ChangeJob SetJobDetails" sap2010:WorkflowViewState.IdRef="Sequence_G97">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="d6f0828c-2574-4164-9476-ed149857352f" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G96"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G95">
+<If Condition="[Not String.IsNullOrWhiteSpace(in_EffectiveDate)]" DisplayName="Type the effective date when given (MMddyyyy)" sap2010:WorkflowViewState.IdRef="If_G69"><If.Then><Sequence DisplayName="Type the effective date when given (MMddyyyy) - yes" sap2010:WorkflowViewState.IdRef="Sequence_G68">
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type the effective date" EmptyFieldMode="None" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" Text="[in_EffectiveDate]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G67"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$795470&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;dateSectionMonth-input&#x27; tag=&#x27;INPUT&#x27; /&gt;" Guid="44fe4ae9-d6c3-4f29-aad6-6f6090f0da19" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+</Sequence></If.Then></If>
+<If Condition="[Not String.IsNullOrWhiteSpace(in_JobProfile)]" DisplayName="Change the job profile when asked" sap2010:WorkflowViewState.IdRef="If_G82"><If.Then><Sequence DisplayName="Change the job profile when asked - yes" sap2010:WorkflowViewState.IdRef="Sequence_G81">
+<ui:RetryScope DisplayName="Set the job profile until Workday shows it (the form re-renders after the date is entered)" NumberOfRetries="4" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_G79"><ui:RetryScope.ActivityBody><ActivityAction><Sequence DisplayName="Set the job profile until Workday shows it (the form re-renders after the date is entered) (body)" sap2010:WorkflowViewState.IdRef="Sequence_G80">
+<Delay DisplayName="Let the form settle" Duration="00:00:01.500" sap2010:WorkflowViewState.IdRef="Delay_Profile" />
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Remove the current job profile" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G70"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;items selected for What will this person*&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;DELETE_charm&#x27; /&gt;" Guid="c140a614-7def-4236-837f-e336c0c9608c" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<If Condition="[in_JobProfile &lt;&gt; &quot;(none)&quot;]" DisplayName="Choose the new job profile unless asked to leave it empty" sap2010:WorkflowViewState.IdRef="If_G74"><If.Then><Sequence DisplayName="Choose the new job profile unless asked to leave it empty - yes" sap2010:WorkflowViewState.IdRef="Sequence_G73">
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Search the job profile" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" Text="[in_JobProfile &amp; &quot;[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G71"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;selectinput-56$719004*&#x27; tag=&#x27;INPUT&#x27; /&gt;" Guid="183104f7-14c1-4102-ad36-be6b4a69506a" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose the exact job profile (the search also lists similar ones)" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" Timeout="[10]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G72"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id=&#x27;promptOption&#x27; data-automation-label=&#x27;{0}&#x27; /&gt;&quot;, in_JobProfile)]" Guid="3a86554a-0f5c-4e93-995b-6efccb4056c8" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+</Sequence></If.Then></If>
+<uix:NGetText DisplayName="Read the job profile" HealingAgentBehavior="SameAsCard" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" TextString="[out_JobProfile]" Timeout="[3]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G75"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;items selected for What will this person*&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;promptOption&#x27; /&gt;" Guid="a84ec411-cf40-4365-a41a-9fbe492d6205" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<If Condition="[If(in_JobProfile = &quot;(none)&quot;, Not String.IsNullOrWhiteSpace(out_JobProfile), (out_JobProfile &amp; &quot;&quot;).Trim() &lt;&gt; in_JobProfile)]" DisplayName="Try again when the job profile is not the one asked for" sap2010:WorkflowViewState.IdRef="If_G78"><If.Then><Sequence DisplayName="Try again when the job profile is not the one asked for - yes" sap2010:WorkflowViewState.IdRef="Sequence_G77">
+<Throw DisplayName="Job profile not set yet" Exception="[New InvalidOperationException(&quot;Job profile shows [&quot; &amp; out_JobProfile &amp; &quot;]; setting it again.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G76" />
+</Sequence></If.Then></If>
+</Sequence></ActivityAction></ui:RetryScope.ActivityBody></ui:RetryScope>
+</Sequence></If.Then></If>
+<If Condition="[Not String.IsNullOrWhiteSpace(in_BusinessTitle)]" DisplayName="Type the business title when given" sap2010:WorkflowViewState.IdRef="If_G91"><If.Then><Sequence DisplayName="Type the business title when given - yes" sap2010:WorkflowViewState.IdRef="Sequence_G90">
+<ui:RetryScope DisplayName="Type the business title until Workday keeps it" NumberOfRetries="4" RetryInterval="00:00:02" sap2010:WorkflowViewState.IdRef="RetryScope_G88"><ui:RetryScope.ActivityBody><ActivityAction><Sequence DisplayName="Type the business title until Workday keeps it (body)" sap2010:WorkflowViewState.IdRef="Sequence_G89">
+<Delay DisplayName="Let the form settle" Duration="00:00:01.500" sap2010:WorkflowViewState.IdRef="Delay_Title" />
+<uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type the business title" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" Text="[in_BusinessTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NTypeInto_G83"><uix:NTypeInto.Target><uix:TargetAnchorable ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$719013&#x27; /&gt;&lt;webctrl tag=&#x27;INPUT&#x27; /&gt;" Guid="8c6ea024-3a9e-4033-85a1-f3dd34614f70" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NTypeInto.Target></uix:NTypeInto>
+<Delay DisplayName="Wait for Workday to finish recalculating" Duration="00:00:03" sap2010:WorkflowViewState.IdRef="Delay_Title2" />
+<uix:NGetText DisplayName="Read the business title back" HealingAgentBehavior="SameAsCard" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" TextString="[out_BusinessTitle]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G84"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$719013&#x27; /&gt;&lt;webctrl tag=&#x27;INPUT&#x27; /&gt;" Guid="31da8067-5ae9-440f-888d-a169ebd983f3" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<If Condition="[(out_BusinessTitle &amp; &quot;&quot;).Trim() &lt;&gt; in_BusinessTitle]" DisplayName="Try again when the title did not stick" sap2010:WorkflowViewState.IdRef="If_G87"><If.Then><Sequence DisplayName="Try again when the title did not stick - yes" sap2010:WorkflowViewState.IdRef="Sequence_G86">
+<Throw DisplayName="Business title not kept yet" Exception="[New InvalidOperationException(&quot;Business title shows [&quot; &amp; out_BusinessTitle &amp; &quot;]; typing it again.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G85" />
+</Sequence></If.Then></If>
+</Sequence></ActivityAction></ui:RetryScope.ActivityBody></ui:RetryScope>
+</Sequence></If.Then></If>
+<uix:NGetText DisplayName="Read the job profile" HealingAgentBehavior="SameAsCard" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" TextString="[out_JobProfile]" Timeout="[3]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G92"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label=&#x27;items selected for What will this person*&#x27; /&gt;&lt;webctrl data-automation-id=&#x27;promptOption&#x27; /&gt;" Guid="ec22d5d6-500e-4823-95af-fc10a288e616" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read the job title" HealingAgentBehavior="SameAsCard" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" TextString="[out_JobTitle]" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G93"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$719005&#x27; /&gt;&lt;webctrl tag=&#x27;INPUT&#x27; /&gt;" Guid="9b939348-8155-401d-a943-d6f352cf9abb" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read the business title" HealingAgentBehavior="SameAsCard" ScopeIdentifier="d6f0828c-2574-4164-9476-ed149857352f" TextString="[out_BusinessTitle]" Timeout="[5]" ContinueOnError="True" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G94"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$719013&#x27; /&gt;&lt;webctrl tag=&#x27;INPUT&#x27; /&gt;" Guid="26d95624-74e2-4e19-8232-00ced9d0e1a5" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence>
+</Activity>

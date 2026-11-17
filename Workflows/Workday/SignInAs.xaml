@@ -1,0 +1,80 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_SignInAs" this:Workflows_Workday_SignInAs.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Makes sure Workday is signed in as in_ExpectedUser: signs out whoever else is signed in, logs in with in_CredentialName, and stops any leftover proxy. Fails with &quot;Test environment not ready&quot; if the sign-in does not work." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ExpectedUser" Type="InArgument(x:String)" />
+    <x:Property Name="in_CredentialName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_SignedInLabel" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday SignInAs" sap2010:WorkflowViewState.IdRef="Sequence_G34"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="signedInLabel" /><Variable x:TypeArguments="x:Boolean" Name="signedInAsExpected" /><Variable x:TypeArguments="x:Boolean" Name="proxyWasActive" /></Sequence.Variables>
+<uix:NSetRuntimeBrowser BrowserType="Chrome" DisplayName="Run in Chrome (same browser as the cloud robots)" sap2010:WorkflowViewState.IdRef="NSetRuntimeBrowser_G12" Version="V4" />
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Check who is signed in" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G13" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">[in_ExpectedUser]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsExpected]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<If Condition="[Not signedInAsExpected]" DisplayName="Sign in only when needed" sap2010:WorkflowViewState.IdRef="If_G29"><If.Then><Sequence DisplayName="Sign in only when needed - yes" sap2010:WorkflowViewState.IdRef="Sequence_G27">
+<If Condition="[Not String.IsNullOrWhiteSpace(signedInLabel)]" DisplayName="Sign out the user who is signed in now" sap2010:WorkflowViewState.IdRef="If_G17"><If.Then><Sequence DisplayName="Sign out the user who is signed in now - yes" sap2010:WorkflowViewState.IdRef="Sequence_G16">
+<ui:LogMessage DisplayName="Log the user switch" Level="Info" Message="[&quot;Signing out &quot; &amp; signedInLabel &amp; &quot; to sign in as &quot; &amp; in_ExpectedUser]" sap2010:WorkflowViewState.IdRef="LogMessage_G14" />
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Sign out" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G15" UnSafe="False" WorkflowFileName="Workflows/Workday/SignOut.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Then></If>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Login to Workday" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G18" UnSafe="False" WorkflowFileName="Workflows/Workday/Login to Workday.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">[in_CredentialName]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Recheck who is signed in" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G19" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">[in_ExpectedUser]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsExpected]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<If Condition="[Not signedInAsExpected]" DisplayName="Wait and recheck when Workday is still loading" sap2010:WorkflowViewState.IdRef="If_G22"><If.Then><Sequence DisplayName="Wait and recheck when Workday is still loading - yes" sap2010:WorkflowViewState.IdRef="Sequence_G21">
+<Delay DisplayName="Wait for Workday to load" Duration="00:00:10" sap2010:WorkflowViewState.IdRef="Delay_SI1" />
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Recheck who is signed in (after waiting)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G20" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">[in_ExpectedUser]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsExpected]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Then></If>
+<If Condition="[Not signedInAsExpected]" DisplayName="Wait and recheck once more" sap2010:WorkflowViewState.IdRef="If_G25"><If.Then><Sequence DisplayName="Wait and recheck once more - yes" sap2010:WorkflowViewState.IdRef="Sequence_G24">
+<Delay DisplayName="Wait for Workday to load (again)" Duration="00:00:10" sap2010:WorkflowViewState.IdRef="Delay_SI2" />
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Recheck who is signed in (after waiting again)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G23" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">[in_ExpectedUser]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsExpected]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Then></If>
+</Sequence></If.Then><If.Else><Sequence DisplayName="Sign in only when needed - no" sap2010:WorkflowViewState.IdRef="Sequence_G28">
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Stop a proxy left over from an earlier test" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G26" UnSafe="False" WorkflowFileName="Workflows/Workday/StopProxyIfActive.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyWasActive">[proxyWasActive]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Else></If>
+<If Condition="[Not signedInAsExpected]" DisplayName="Fail when the user cannot be signed in" sap2010:WorkflowViewState.IdRef="If_G32"><If.Then><Sequence DisplayName="Fail when the user cannot be signed in - yes" sap2010:WorkflowViewState.IdRef="Sequence_G31">
+<Throw DisplayName="Test environment not ready" Exception="[New InvalidOperationException(&quot;Test environment not ready: could not sign in to Workday as &quot; &amp; in_ExpectedUser &amp; &quot; (header shows &#x27;&quot; &amp; signedInLabel &amp; &quot;&#x27;). Check the &#x27;&quot; &amp; in_CredentialName &amp; &quot;&#x27; credential asset.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G30" />
+</Sequence></If.Then></If>
+<Assign DisplayName="Return the signed-in user" sap2010:WorkflowViewState.IdRef="Assign_G33"><Assign.To><OutArgument x:TypeArguments="x:String">[out_SignedInLabel]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[signedInLabel]</InArgument></Assign.Value></Assign>
+</Sequence>
+</Activity>

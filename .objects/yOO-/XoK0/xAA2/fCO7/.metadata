@@ -1,0 +1,15 @@
+﻿{
+  "Name": "MyTasks_InboxItem_Button",
+  "Description": "My Tasks inbox item whose text contains taskText (worker name or task title)",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "fCO7quFi50uYeoQqfWzgxQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/fCO7quFi50uYeoQqfWzgxQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/xAA2_j8-r0ymUmYCmBjlww",
+  "Created": "2026-11-15T07:00:36.7717998Z",
+  "Updated": "2026-11-15T07:00:36.7717998Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

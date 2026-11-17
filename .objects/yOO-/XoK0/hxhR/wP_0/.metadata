@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Create Pre-Hire First Name Input",
+  "Description": "First Name input on the Workday Create Pre-Hire form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "wP_0rlx340anuSChT-yY5A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/wP_0rlx340anuSChT-yY5A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T14:34:32.2419417Z",
+  "Updated": "2026-11-14T20:59:33.5340278Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

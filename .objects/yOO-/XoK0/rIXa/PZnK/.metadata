@@ -1,0 +1,15 @@
+﻿{
+  "Name": "All Compensation Plans In Compensation Package",
+  "Description": "Menu item that opens compensation plans available through the worker compensation package",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "PZnKDg0ux0uWep_oorK5tg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/PZnKDg0ux0uWep_oorK5tg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:18:26.892524Z",
+  "Updated": "2026-11-13T22:18:26.892524Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

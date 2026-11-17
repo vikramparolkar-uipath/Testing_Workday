@@ -1,0 +1,15 @@
+﻿{
+  "Name": "CreatePreHire_DiscardChanges_Label",
+  "Description": "Discard Changes? dialog title shown after Cancel on Create Pre-Hire",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "Y7-SCL8P6US4ozCkU0HGxg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Y7-SCL8P6US4ozCkU0HGxg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T21:06:36.5282622Z",
+  "Updated": "2026-11-14T21:06:36.5282622Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

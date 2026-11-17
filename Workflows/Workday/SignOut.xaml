@@ -1,0 +1,61 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_SignOut"  sap2010:Annotation.AnnotationText="Signs the current user out of Workday (profile menu &gt; Sign Out), then clicks Sign In on the &quot;You&#x27;ve signed out&quot; page so the same tab shows the username form. Login to Workday then reuses this tab instead of opening a new window." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday SignOut" sap2010:WorkflowViewState.IdRef="Sequence_G11"><Sequence.Variables><Variable x:TypeArguments="x:Boolean" Name="usernameShown" /></Sequence.Variables>
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="e394b988-4ebf-413f-805b-c8c188c0873f" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G4"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G3">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open the profile menu" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e394b988-4ebf-413f-805b-c8c188c0873f" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G1"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;app-header-profile-button&#x27; tag=&#x27;BUTTON&#x27; /&gt;" Guid="8e9cc8ad-9c92-4fe3-a0e5-589fdc996219" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Sign Out" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e394b988-4ebf-413f-805b-c8c188c0873f" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G2"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;signout-button&#x27; /&gt;" Guid="1ecdd85b-5fa7-4dc5-91b2-f606c74a609b" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday signed-out page" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="a38e5bf7-6c3d-413a-8374-e33e70e7612c" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G10"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday signed-out page steps" sap2010:WorkflowViewState.IdRef="Sequence_G9">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Sign In on the signed-out page so this tab shows the username form" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a38e5bf7-6c3d-413a-8374-e33e70e7612c" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G5"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag=&#x27;BUTTON&#x27; visibleinnertext=&#x27;Sign In&#x27; /&gt;" Guid="b25270a2-0d65-45a3-9cbe-c4091743ac76" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;Workday&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NCheckState DisplayName="Wait for the username form" Exists="[usernameShown]" HealingAgentBehavior="Disabled" ScopeIdentifier="a38e5bf7-6c3d-413a-8374-e33e70e7612c" Timeout="[15]" Version="V5" sap2010:WorkflowViewState.IdRef="NCheckState_G6"><uix:NCheckState.IfExists><Sequence DisplayName="Found" sap2010:WorkflowViewState.IdRef="Sequence_G7" /></uix:NCheckState.IfExists><uix:NCheckState.IfNotExists><Sequence DisplayName="Not found" sap2010:WorkflowViewState.IdRef="Sequence_G8" /></uix:NCheckState.IfNotExists><uix:NCheckState.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag=&#x27;INPUT&#x27; type=&#x27;text&#x27; /&gt;" Guid="11676e71-ac49-403c-9602-3604ea6aaedf" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;Workday&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NCheckState.Target></uix:NCheckState>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;Workday&#x27; /&gt;" Url="https://wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence>
+</Activity>

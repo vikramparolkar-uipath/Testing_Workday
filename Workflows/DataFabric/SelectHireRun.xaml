@@ -1,0 +1,142 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_DataFabric_SelectHireRun" sap2010:Annotation.AnnotationText="Test data gate shared by TC-02, TC-03 and TC-04.&#xA;- in_RunId given: use that run, and fail if it is not at the stage the test needs.&#xA;- in_RunId blank: use the newest run at the stage the test needs.&#xA;- Nothing suitable: fail with 'Test data not available' and say which test produces the data." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RunId" Type="InArgument(x:String)" />
+    <x:Property Name="in_RequiredStage" Type="InArgument(t:HireRunStage)" />
+    <x:Property Name="in_TestCaseName" Type="InArgument(x:String)" />
+    <x:Property Name="in_ProducedBy" Type="InArgument(x:String)" />
+    <x:Property Name="out_CurrentRun" Type="OutArgument(t:WorkdayHireRun)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Select the WorkdayHireRun this test needs" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IList(t:WorkdayHireRun)" Name="runRecords" />
+      <Variable x:TypeArguments="x:Int64" Name="runCount" />
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="selectedRun" />
+      <Variable x:TypeArguments="x:String" Name="dataProblem" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[String.IsNullOrWhiteSpace(in_RunId)]" DisplayName="Use the named run, or find the newest run at the required stage" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="No RunId passed in" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" FilterArguments="{x:Null}" FilterValues="{x:Null}" RequiredForReadInput="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" ContinueOnError="False" DisplayName="Query the newest WorkdayHireRun records" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[runRecords]" QueriedEntityId="85e73958-ebde-f111-91f2-002248a179ce" ScopeValue="Tenant" Skip="0" SortAscending="False" SortByField="CreateTime" TimeoutInMs="30000" Top="100" TotalRecords="[runCount]">
+            <uda:QueryEntityRecords.RequiredForReadFieldNames>
+              <scg:List x:TypeArguments="x:String" Capacity="0" />
+            </uda:QueryEntityRecords.RequiredForReadFieldNames>
+          </uda:QueryEntityRecords>
+          <Assign DisplayName="Pick the newest run at the required stage" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="t:WorkdayHireRun">[selectedRun]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="t:WorkdayHireRun">[If(runRecords Is Nothing, Nothing, runRecords.FirstOrDefault(Function(r) r.Stage.HasValue AndAlso r.Stage.Value = in_RequiredStage))]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Describe missing test data" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[dataProblem]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[If(selectedRun Is Nothing, "Test data not available for " &amp; in_TestCaseName &amp; ": no WorkdayHireRun record is at stage " &amp; in_RequiredStage.ToString() &amp; ". Run " &amp; in_ProducedBy &amp; " first, or pass in_RunId for a run at that stage.", String.Empty)]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="RunId passed in" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" RequiredForReadInput="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" ContinueOnError="False" DisplayName="Query WorkdayHireRun by RunId" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" OutputRecords="[runRecords]" QueriedEntityId="85e73958-ebde-f111-91f2-002248a179ce" ScopeValue="Tenant" Skip="0" SortAscending="True" TimeoutInMs="30000" Top="1" TotalRecords="[runCount]">
+            <uda:QueryEntityRecords.FilterArguments>
+              <uda:FilterArgument FilterActivityType="{x:Null}">
+                <uda:FilterArgument.Filter>
+                  <uda:GroupFilter Index="0" Operator="AND">
+                    <uda:GroupFilter.Filters>
+                      <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="1">
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="RunId" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                      </scg:List>
+                    </uda:GroupFilter.Filters>
+                    <uda:GroupFilter.Groups>
+                      <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                    </uda:GroupFilter.Groups>
+                  </uda:GroupFilter>
+                </uda:FilterArgument.Filter>
+              </uda:FilterArgument>
+            </uda:QueryEntityRecords.FilterArguments>
+            <uda:QueryEntityRecords.FilterValues>
+              <scg:List x:TypeArguments="InArgument" Capacity="1">
+                <InArgument x:TypeArguments="x:String">[in_RunId.Trim()]</InArgument>
+              </scg:List>
+            </uda:QueryEntityRecords.FilterValues>
+            <uda:QueryEntityRecords.RequiredForReadFieldNames>
+              <scg:List x:TypeArguments="x:String" Capacity="0" />
+            </uda:QueryEntityRecords.RequiredForReadFieldNames>
+          </uda:QueryEntityRecords>
+          <Assign DisplayName="Take the named run" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign.To>
+              <OutArgument x:TypeArguments="t:WorkdayHireRun">[selectedRun]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="t:WorkdayHireRun">[If(runRecords Is Nothing OrElse runRecords.Count = 0, Nothing, runRecords(0))]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Describe missing or unsuitable test data" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[dataProblem]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[If(selectedRun Is Nothing, "Test data not available for " &amp; in_TestCaseName &amp; ": WorkdayHireRun " &amp; in_RunId.Trim() &amp; " does not exist.", If(Not selectedRun.Stage.HasValue OrElse selectedRun.Stage.Value &lt;&gt; in_RequiredStage, "Test data not available for " &amp; in_TestCaseName &amp; ": WorkdayHireRun " &amp; in_RunId.Trim() &amp; " is at stage " &amp; If(selectedRun.Stage.HasValue, selectedRun.Stage.Value.ToString(), "(none)") &amp; ", but this test needs stage " &amp; in_RequiredStage.ToString() &amp; ". Run " &amp; in_ProducedBy &amp; " for it first, or leave in_RunId blank to use the newest run at that stage.", String.Empty))]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <If Condition="[Not String.IsNullOrEmpty(dataProblem)]" DisplayName="Fail the test when its test data is not available" sap2010:WorkflowViewState.IdRef="If_2">
+      <If.Then>
+        <Throw DisplayName="Test data not available" Exception="[New InvalidOperationException(dataProblem)]" sap2010:WorkflowViewState.IdRef="Throw_1" />
+      </If.Then>
+    </If>
+    <ui:LogMessage DisplayName="Log the selected run" Level="Info" Message="[in_TestCaseName &amp; &quot; uses WorkdayHireRun &quot; &amp; selectedRun.RunId &amp; &quot; (stage &quot; &amp; in_RequiredStage.ToString() &amp; &quot;)&quot;]" sap2010:WorkflowViewState.IdRef="LogMessage_1" />
+    <Assign DisplayName="Return the selected run" sap2010:WorkflowViewState.IdRef="Assign_5">
+      <Assign.To>
+        <OutArgument x:TypeArguments="t:WorkdayHireRun">[out_CurrentRun]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="t:WorkdayHireRun">[selectedRun]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

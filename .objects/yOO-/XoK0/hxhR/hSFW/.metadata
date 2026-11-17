@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Pre-Hire OK Button",
+  "Description": "OK button that submits the Workday Create Pre-Hire form",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "hSFW1NvixkG6SLj3vHVjlg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/hSFW1NvixkG6SLj3vHVjlg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T14:34:32.4187794Z",
+  "Updated": "2026-11-14T14:34:32.4187794Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

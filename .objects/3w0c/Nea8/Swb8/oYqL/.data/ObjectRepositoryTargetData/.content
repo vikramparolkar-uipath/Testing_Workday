@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="e-WTVFJwqEOxgFtQRfXS1A" Reference="e00i96boZ0Ke_iif9ZtTVw/oYqLajZgBkS45Y_GrF1mQA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="763, 814, 2309, 983" ElementType="TableRow" ElementVisibilityArgument="Interactive" Guid="72b1c833-1724-47d0-9342-85dd1c3663dc" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="SemanticSelector" SemanticSelectorArgument="The row in the webhook log table that displays the second to most recent event, including its event type, timestamp, and a link to view the payload details." SemanticSelectorFindMethod="Dom" Version="V6" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="08540e9fabfc901b2534b98a4bb998ff.jpg" xmlns="">0oqLNtfGUnEaWN5xlXNLiqw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">GetText</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

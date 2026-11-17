@@ -1,0 +1,156 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workday_UI_Test_Case" this:Workday_UI_Test_Case.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Workday UI test case template (Given / When / Then).&#xA;1. Given: set the stage this test needs in Select the hire run, and the test that produces it.&#xA;2. When: add the Workday steps inside the Workday card (attach to the open Workday tab; never open a new one).&#xA;3. Then: read what Workday shows into actualValue, set expectedValue, and keep the Verify settings (continue on failure, both screenshots, title, output message).&#xA;No Try/Catch here: attach the Workday Test Execution template for failure handling and cleanup." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Leave blank to use the newest run at the stage this test needs." Name="in_RunId" Type="InArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Web.Activities.Http</x:String>
+      <x:String>UiPath.Web.Activities.Http.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-XX Workday test" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="currentRun" />
+      <Variable x:TypeArguments="x:String" Name="actualValue" />
+      <Variable x:TypeArguments="x:String" Name="expectedValue" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyResult" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Given" sap2010:Annotation.AnnotationText="Pick the test data and put Workday in a known state. The test fails with 'Test data not available' if no run is at the required stage." sap2010:WorkflowViewState.IdRef="Sequence_Given">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Select the hire run this test needs (fails if the test data is not available)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Workflows/DataFabric/SelectHireRun.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_RunId">[in_RunId]</InArgument>
+          <InArgument x:TypeArguments="t:HireRunStage" x:Key="in_RequiredStage">[Testing_Workday_CrossPlatform.HireRunStage.HireCompleted]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_TestCaseName">["TC-HR-HIRE-XX"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProducedBy">["TC-HR-HIRE-04"]</InArgument>
+          <OutArgument x:TypeArguments="t:WorkdayHireRun" x:Key="out_CurrentRun">[currentRun]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign DisplayName="Expose run ID" sap2010:WorkflowViewState.IdRef="Assign_RunId">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Prepare Workday: sign in as Logan and stop any leftover proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows/Workday/PrepareWorkdaySession.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
+    <Sequence DisplayName="When" sap2010:WorkflowViewState.IdRef="Sequence_When">
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="a1b2c3d4-0e0f-4a1b-9c2d-3e4f5a6b7c80" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Steps in Workday" sap2010:Annotation.AnnotationText="Add the Workday actions here. Use Workflows/Workday/SearchAndOpen.xaml to open a task, StartProxy/StopProxy.xaml to act as another worker, and OpenInboxTask.xaml for My Tasks items. Click Submit with DebuggerApi." sap2010:WorkflowViewState.IdRef="Sequence_Steps" />
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp BrowserType="Edge" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3">
+            <uix:TargetApp.SapInfo>
+              <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+            </uix:TargetApp.SapInfo>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_Then">
+      <Assign DisplayName="Set the expected value" sap2010:WorkflowViewState.IdRef="Assign_Expected">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[expectedValue]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["Successfully Completed"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Set the actual value read from Workday (replace with a Get Text)" sap2010:WorkflowViewState.IdRef="Assign_Actual">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[actualValue]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[currentRun.HireEventStatus]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TC-HR-HIRE-XX V-01 replace with what this check proves" ContinueOnFailure="True" DisplayName="TC-HR-HIRE-XX V-01 replace with what this check proves" Expression="[actualValue.Trim() = expectedValue]" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[&quot;Workday shows '&quot; &amp; actualValue &amp; &quot;'; expected '&quot; &amp; expectedValue &amp; &quot;'. Result: {Result}.&quot;]" Result="[verifyResult]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+      <Assign DisplayName="Set Passed" sap2010:WorkflowViewState.IdRef="Assign_Passed">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[verifyResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Build the summary" sap2010:WorkflowViewState.IdRef="Assign_Summary">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["RunId=" &amp; currentRun.RunId &amp; "; Passed=" &amp; verifyResult.ToString()]</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+  </Sequence>
+</Activity>

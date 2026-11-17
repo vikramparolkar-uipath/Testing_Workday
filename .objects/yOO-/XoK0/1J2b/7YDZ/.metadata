@@ -1,0 +1,15 @@
+﻿{
+  "Name": "No Results Message",
+  "Description": "Text message confirming that the Workday search did not find the candidate, shown in the More Categories card",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "7YDZPK-azkWHJz08bxUUUw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/7YDZPK-azkWHJz08bxUUUw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg",
+  "Created": "2026-11-14T15:36:18.7303059Z",
+  "Updated": "2026-11-14T15:36:18.7303059Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_PositionId_Text",
+  "Description": "Workday position ID text in the job mapping panel",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "VCDp32w0uEmAE4YHIk-qSw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/VCDp32w0uEmAE4YHIk-qSw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:52.9574319Z",
+  "Updated": "2026-11-13T02:37:52.9574319Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

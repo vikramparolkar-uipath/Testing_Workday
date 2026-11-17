@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate Workday Hire Date Text",
+  "Description": "Text value of the Workday hire date in the Workday hand-off panel on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "EExcM-g0Y068PQ1Ogk9Rtw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/EExcM-g0Y068PQ1Ogk9Rtw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T03:03:00.7489262Z",
+  "Updated": "2026-11-13T03:03:00.7489262Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

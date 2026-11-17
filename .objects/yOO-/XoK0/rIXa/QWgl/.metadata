@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Approve Compensation Review",
+  "Description": "Primary Approve button on the Review Compensation Hire task for the active reviewer",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "QWglKhvTy0WmDz30RbyBtg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/QWglKhvTy0WmDz30RbyBtg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T23:06:29.7849909Z",
+  "Updated": "2026-11-13T23:06:29.7849909Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

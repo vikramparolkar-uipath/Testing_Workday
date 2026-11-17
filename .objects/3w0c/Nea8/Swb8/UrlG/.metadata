@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Webhook Log Events Table Panel",
+  "Description": "Stable events table panel on the TalentTrack ATS Webhook log page",
+  "Type": "Element",
+  "TaxonomyType": "Table",
+  "Id": "UrlG8HhzLEmXWPqeBEpn5A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/UrlG8HhzLEmXWPqeBEpn5A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/Swb8KzRO6EKb1NuaaOYv3A",
+  "Created": "2026-11-13T03:07:23.5239824Z",
+  "Updated": "2026-11-13T03:07:23.5239824Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

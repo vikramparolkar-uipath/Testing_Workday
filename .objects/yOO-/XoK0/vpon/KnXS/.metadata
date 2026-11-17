@@ -1,0 +1,15 @@
+﻿{
+  "Name": "EventDetails_RelatedActions_Button",
+  "Description": "Related Actions (...) button next to the event title in the View Event page header",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "KnXSiPJPw0iJCm1QUBhraQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/KnXSiPJPw0iJCm1QUBhraQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg",
+  "Created": "2026-11-15T04:47:12.0560208Z",
+  "Updated": "2026-11-15T04:47:12.0560208Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

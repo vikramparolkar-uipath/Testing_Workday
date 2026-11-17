@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_FTE_Text",
+  "Description": "FTE percentage text under Working Time",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "zclZQAg5U06FiszZ8HQ3_A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/zclZQAg5U06FiszZ8HQ3_A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:50.6565908Z",
+  "Updated": "2026-11-13T18:20:50.6565908Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

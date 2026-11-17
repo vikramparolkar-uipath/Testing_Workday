@@ -1,0 +1,66 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_ReadJobDetails"  sap2010:Annotation.AnnotationText="Reads the Job Details tab of the worker profile that is open (open it first with OpenWorkerHistory)." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_Position" Type="OutArgument(x:String)" />
+    <x:Property Name="out_ManagementLevel" Type="OutArgument(x:String)" />
+    <x:Property Name="out_EmployeeType" Type="OutArgument(x:String)" />
+    <x:Property Name="out_TimeType" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Location" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday ReadJobDetails" sap2010:WorkflowViewState.IdRef="Sequence_G254">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G253"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G252">
+<uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open the Job Details tab" HealingAgentBehavior="SameAsCard" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NClick_G246"><uix:NClick.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-element-id=&#x27;profile-section-tab-job--details&#x27; /&gt;" Guid="76818b85-e2c8-48ad-b6f1-5eb41711fa2f" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NClick.Target></uix:NClick>
+<uix:NGetText DisplayName="Read Position" HealingAgentBehavior="SameAsCard" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" TextString="[out_Position]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G247"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$22129&#x27; /&gt;" Guid="e8eea0d7-a921-495e-9496-d7dc640cacab" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read Management Level" HealingAgentBehavior="SameAsCard" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" TextString="[out_ManagementLevel]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G248"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$506224&#x27; /&gt;" Guid="1a79abef-829b-4728-a9a6-a1b38bbd112d" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read Employee Type" HealingAgentBehavior="SameAsCard" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" TextString="[out_EmployeeType]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G249"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$13290&#x27; /&gt;" Guid="e9e3eebd-cf6e-4140-8e21-2315218c427e" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read Time Type" HealingAgentBehavior="SameAsCard" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" TextString="[out_TimeType]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G250"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$38473&#x27; /&gt;" Guid="a6898b11-e6f5-47b3-adf7-7f6bae490f53" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+<uix:NGetText DisplayName="Read Location" HealingAgentBehavior="SameAsCard" ScopeIdentifier="0012dfd3-62b8-4366-a6ce-6eb4cbed6e29" TextString="[out_Location]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G251"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id=&#x27;56$13292&#x27; /&gt;" Guid="08ef169e-45ca-4e81-a5c9-73b50bef1d38" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+</Sequence>
+</Activity>

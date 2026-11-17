@@ -1,0 +1,102 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_ReadEventDetails" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_SubmittedMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_OverallStatus" Type="OutArgument(x:String)" />
+    <x:Property Name="out_UpNext" Type="OutArgument(x:String)" />
+    <x:Property Name="out_HireEventRef" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Read Workday Event Details" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Event Details page" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="a7777777-7777-4777-8777-777777777777" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Read Event Details values" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <uix:NGetText DisplayName="Read submitted confirmation message" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NGetText_1" TextString="[out_SubmittedMessage]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="cUGMfE0K00ueX2l_lCWetw" DesignTimeRectangle="128, 238, 213, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeaderTitleText' tag='SPAN' /&gt;" Guid="c14ccae8-3b7d-40e5-96aa-8a7c32d9e48f" InformativeScreenshot="a1cdea05559c88b3f2175834bd11dcf4.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/4SDqZ1hIUkK-hZuSXmZy7w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Open View Details on the confirmation toast if it is shown" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NClick_ViewDetails" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" Timeout="10" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="719, 308, 81, 31" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-uxi-button-type='view-detail' tag='BUTTON' /&gt;" Guid="c8e4f67c-64af-4bee-abf3-683abc4dda43" InformativeScreenshot="88dc5ef96cb80a4f433605b455c9a37b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/iMFw66b-kEeK06-B9JBOAw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Details and Process" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="5SqNEPoqf0KPl2ztPnsr5Q" DesignTimeRectangle="128, 460, 26, 26" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='Details and Process' aria-role='button' tag='SPAN' /&gt;" Guid="78e593da-e891-4c9f-acd2-ddf68a49898c" InformativeScreenshot="5333664df695b701a1c8b413038f08b3.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/c11RQqAUP02kXOGQYTv8tQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NGetText DisplayName="Read overall status" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NGetText_2" TextString="[out_OverallStatus]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="AeZ8G7Yby02ZOe6TJYSrlA" DesignTimeRectangle="246, 582, 71, 29" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='LI' visibleinnertext='Overall Status*' /&gt;&lt;webctrl data-automation-id='textView' tag='DIV' /&gt;" Guid="5b56ec6e-504d-41aa-97a3-02b334a43d28" InformativeScreenshot="9bdcaeb84b27608bdb0a8cbe4d8361ee.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/h84nzJLsAU2_4AakPGYp9w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <Assign DisplayName="Leave next task context optional" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_UpNext]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[String.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Set hire event reference from submitted message" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_HireEventRef]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[out_SubmittedMessage]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <uix:NGetText ContinueOnError="True" DisplayName="Read hire event title as event reference" HealingAgentBehavior="Disabled" sap2010:WorkflowViewState.IdRef="NGetText_EvRef" TextString="[out_HireEventRef]" Version="V5"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='pageHeader' tag='DIV' /&gt;&lt;webctrl data-automation-id='promptOption' tag='DIV' /&gt;" Guid="7d1e2a40-3b55-4c8e-9a61-2f0c5b9e7a11" Reference="e00i96boZ0Ke_iif9ZtTVw/kFYa9LgJUkSsWppv2PMB0A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="Bq11TLaeaEWWwXN8Zma7bA" InformativeScreenshot="8830690907799e06f29cadd7634b3114.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/search.htmld?q=Hire+Employee&amp;refresh=true&amp;ref=%2Fuipath_dpt1%2Fsearch%2Ehtmld&amp;state=searchCategory-all%3Adefault" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

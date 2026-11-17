@@ -1,0 +1,17 @@
+﻿{
+  "Name": "View - Candidate Hired",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "OdHgD42KVU6CssxzdBbd1g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/OdHgD42KVU6CssxzdBbd1g",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T20:48:18.2120394Z",
+  "Updated": "2026-11-13T20:48:41.3642075Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationNext.Activities, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

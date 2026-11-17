@@ -1,0 +1,15 @@
+﻿{
+  "Name": "StopProxy_OK_Button",
+  "Description": "OK button on the Stop Proxy page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "tcgklyC2HUWp4BpUlq1v0w",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/tcgklyC2HUWp4BpUlq1v0w",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/tMy_M4oCK02gj6oFaY2QMQ",
+  "Created": "2026-11-13T18:39:46.1642019Z",
+  "Updated": "2026-11-13T18:39:46.1642019Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

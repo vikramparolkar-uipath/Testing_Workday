@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xysTA_4Zbka-GTy6T1mn3A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="790, 312, 157, 40" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='dropDownCommandButton' id='*wd-DropDownCommandButton*' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' fuzzylevel:id='0.0' /&gt;&lt;webctrl data-automation-id='label' tag='BUTTON' type='button' class='WKQM WOQM WA4N WNDN WASM' aaname='Make Changes' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Make Changes' /&gt;" Guid="425421db-bcdf-445f-a49b-0fc00ffd5cec" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="822, 322, 93, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='WMQM' tag='SPAN' type='' aaname='Make Changes' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Make Changes' /&gt;" Guid="90303e1d-9e1c-46dc-a1ab-5c3a14b88e55" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="af1d15f295415b355a81a31b78e7b527.jpg" xmlns="">0HCIY30HU8Emy0J_8zyVbqQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

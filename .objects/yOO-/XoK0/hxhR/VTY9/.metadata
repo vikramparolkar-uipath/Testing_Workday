@@ -1,0 +1,15 @@
+﻿{
+  "Name": "CreatePreHire_ErrorsViewAll_Button",
+  "Description": "View All on the collapsed Workday error banner; matches only while collapsed (aria-expanded=false)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "VTY9S-NxIUeKtTh1VH8R3Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/VTY9S-NxIUeKtTh1VH8R3Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-15T07:24:10.8354887Z",
+  "Updated": "2026-11-15T07:24:10.8354887Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

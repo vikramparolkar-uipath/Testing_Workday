@@ -1,0 +1,91 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_SetPromptField" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_PreHireId" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_SupervisoryOrganization" Type="OutArgument(x:String)" />
+    <x:Property Name="out_SelectedPreHire" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Set existing pre-hire prompt" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Hire Employee Prompt" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="a6666666-6666-4666-8666-666666666666" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Read organization and select pre-hire" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <uix:NGetText DisplayName="Read supervisory organization" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a6666666-6666-4666-8666-666666666666" TextString="[out_SupervisoryOrganization]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="BF2WCeo13Uy8Tyq2it6Bow" DesignTimeRectangle="863, 298, 168, 36" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='items selected for Supervisory Organization' tag='UL' /&gt;&lt;webctrl data-automation-id='promptOption' tag='P' /&gt;" Guid="a3d2c05c-cc5d-4642-9c10-777f30f3d8c8" InformativeScreenshot="aaa3d1b0b03695bacf7d79cc5af0b093.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/42SzEFH1IEqbb33xJu1lcQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Select Existing Pre-Hire" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a6666666-6666-4666-8666-666666666666" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="jUwkXTMAQUuaaoOUu4glcw" DesignTimeRectangle="838, 368, 18, 18" ElementType="RadioButton" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Existing Pre-Hire' name='ViewModel_15' tag='INPUT' type='radio' class='WDRW' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="3fb8b0f3-5b6a-4f43-a18d-7ad3cba990d1" InformativeScreenshot="050a2c4eee5bf8e098707124748fd320.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/grwZgpuBHkSi07XUrKk1Sw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="838, 368, 132, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='ViewModel_16' tag='LABEL' type='' class='WERW' aaname='Existing Pre-Hire' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='unchecked' /&gt;" Guid="a554db60-4f31-44ec-bd2c-8992cd2e8de0" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Enter Pre-Hire ID" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="SameAsCard" ScopeIdentifier="a6666666-6666-4666-8666-666666666666" Text="[in_PreHireId &amp; &quot;[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable FullSelectorArgument="&lt;webctrl data-automation-id='radioGroupChildWidget' tag='DIV' /&gt;&lt;webctrl data-uxi-widget-type='selectinput' tag='INPUT' /&gt;" ContentHash="qW_jkIx9ukGwx0WQo95I9Q" DesignTimeRectangle="994, 364, 254, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" Guid="ddd260fd-844c-406b-9c7e-93ca62399290" InformativeScreenshot="bdbc6d7b968588a44e2d44af46bcce0a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/6-cHFc6WgUeTDeITOj2HIQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NGetText DisplayName="Read selected pre-hire" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a6666666-6666-4666-8666-666666666666" TextString="[out_SelectedPreHire]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable ContentHash="ZKLH5mAbT0-_jX3e7NTafg" DesignTimeRectangle="1029, 373, 86, 18" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aria-label='items selected for Existing Pre-Hire' tag='UL' /&gt;&lt;webctrl data-automation-id='promptOption' tag='P' /&gt;" Guid="5a180881-71a2-4259-8dc9-21ab7651510c" InformativeScreenshot="1506935c08ca3c9bc19cc8591f09a2c3.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/IWwMAWqtzECijyI8QWwSjA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+              </uix:NGetText.Target>
+            </uix:NGetText>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="Xbx9mY7AxEeGVfS1tQsACA" InformativeScreenshot="62aa2918cd5f0f2614676631a25f806e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$78.htmld" Version="V3">
+          <uix:TargetApp.SapInfo>
+            <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+          </uix:TargetApp.SapInfo>
+        </uix:TargetApp>
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

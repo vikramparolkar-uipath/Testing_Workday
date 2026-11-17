@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="abEBB1ajVUK4u91epYEB8Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="786, 1029, 116, 35" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='*wd-CommandButton_*' tag='BUTTON' uipath-html-title='Approve' type='button' class='WKQM WA4N WNDN WASM WOQM' aaname='Approve' fuzzylevel:data-automation-id='0.0' matching:uipath-html-title='fuzzy' fuzzylevel:uipath-html-title='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Approve' /&gt;" Guid="18bafb82-8a64-4c7f-ba15-a42a563bc172" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="818, 1037, 52, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Approve' class='WMQM' tag='SPAN' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Approve' /&gt;" Guid="db1c36fe-2355-48a1-9df4-778150ae5480" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="9844b7a14c20309127a9bc2c2e03a20b.jpg" xmlns="">02wE8d_kvU0CNB2EUHQCYbQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_Offer_Form",
+  "Description": "Offer form container on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "7UCX9Ik8kECZK6IIdQo6vA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/7UCX9Ik8kECZK6IIdQo6vA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.7185464Z",
+  "Updated": "2026-11-13T02:50:33.7185464Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

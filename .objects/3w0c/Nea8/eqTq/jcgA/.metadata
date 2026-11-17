@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_StageStepper_Panel",
+  "Description": "Candidate stage stepper panel",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "jcgA7wlXo0upEPa4H9P2hg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/jcgA7wlXo0upEPa4H9P2hg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.2368978Z",
+  "Updated": "2026-11-13T02:50:33.2368978Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

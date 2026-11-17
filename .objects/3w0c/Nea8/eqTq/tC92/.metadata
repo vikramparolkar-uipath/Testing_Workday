@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Webhook Log Nav Events Link",
+  "Description": "Link that opens the TalentTrack ATS Webhook log from the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "tC92n5Nqbkq4cXl5SsSapQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/tC92n5Nqbkq4cXl5SsSapQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T03:14:07.132115Z",
+  "Updated": "2026-11-13T03:14:07.132115Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

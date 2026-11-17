@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Jobs_JobsTable_Panel",
+  "Description": "Jobs table container on the TalentTrack ATS Jobs page",
+  "Type": "Element",
+  "TaxonomyType": "Table",
+  "Id": "nI6tHozKkkCsdna_jOAnmw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/nI6tHozKkkCsdna_jOAnmw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T02:33:04.5805322Z",
+  "Updated": "2026-11-13T02:33:04.5805322Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

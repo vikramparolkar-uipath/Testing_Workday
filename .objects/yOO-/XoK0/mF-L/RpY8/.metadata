@@ -1,0 +1,15 @@
+﻿{
+  "Name": "RescindBP_Comment_Input",
+  "Description": "Comment text area on the Rescind Business Process task",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "RpY8rdGjLECf_tnPw0P4aw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/RpY8rdGjLECf_tnPw0P4aw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/mF-LX89XLkipzP8qUm9DeA",
+  "Created": "2026-11-15T05:03:24.386003Z",
+  "Updated": "2026-11-15T05:03:24.386003Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

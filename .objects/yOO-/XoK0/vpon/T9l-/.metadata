@@ -1,0 +1,15 @@
+﻿{
+  "Name": "EventDetails_Position_Link",
+  "Description": "Position link on View Event, selector variable positionId (P-01086)",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "T9l-tt5kKkWMDGz4JQr9Mg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/T9l-tt5kKkWMDGz4JQr9Mg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg",
+  "Created": "2026-11-15T04:47:12.223934Z",
+  "Updated": "2026-11-15T04:47:12.223934Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

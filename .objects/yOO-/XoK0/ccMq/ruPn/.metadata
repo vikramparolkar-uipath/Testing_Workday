@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_Comment_Input",
+  "Description": "Comment text area at the end of the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "ruPnWVzIzEOlGXYGt-6MSw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/ruPnWVzIzEOlGXYGt-6MSw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:50.7398373Z",
+  "Updated": "2026-11-13T18:20:50.7398373Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

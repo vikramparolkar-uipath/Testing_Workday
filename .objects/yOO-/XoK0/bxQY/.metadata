@@ -1,0 +1,14 @@
+﻿{
+  "Name": "View Position",
+  "Description": "Workday position page (View Position / Position Restrictions)",
+  "Type": "Screen",
+  "Id": "bxQYgERxDUSXQnsIY1C6zg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/bxQYgERxDUSXQnsIY1C6zg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-15T05:17:20.1452298Z",
+  "Updated": "2026-11-15T05:17:20.1452298Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

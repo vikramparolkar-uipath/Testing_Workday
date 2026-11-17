@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Worker Profile",
+  "Description": "Workday worker profile page (inst 1$247), with the profile section menu (Summary, Job, Contact, Personal)",
+  "Type": "Screen",
+  "Id": "hvEVhuoiTEi3MTdsg1K70Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/hvEVhuoiTEi3MTdsg1K70Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-14T21:17:31.728714Z",
+  "Updated": "2026-11-14T21:17:31.728714Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

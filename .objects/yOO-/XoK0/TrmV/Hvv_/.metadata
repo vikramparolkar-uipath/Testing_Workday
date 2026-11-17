@@ -1,0 +1,15 @@
+﻿{
+  "Name": "StartProxy_OK_Button",
+  "Description": "OK button at the bottom of the Start Proxy page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "Hvv_aLHb6EK-WWjOjWzSSg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Hvv_aLHb6EK-WWjOjWzSSg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/TrmVUN8MD0OmJL2zAhKztg",
+  "Created": "2026-11-13T17:51:34.8155818Z",
+  "Updated": "2026-11-13T17:51:34.8155818Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

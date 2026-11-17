@@ -1,0 +1,15 @@
+﻿{
+  "Name": "WorkerHistory_HireEvent_Link",
+  "Description": "Hire event row link in the worker Worker History list, selector variable workerName",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "dPyXbcduXUuPu-hk6j1dTQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/dPyXbcduXUuPu-hk6j1dTQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hvEVhuoiTEi3MTdsg1K70Q",
+  "Created": "2026-11-14T21:25:46.2345294Z",
+  "Updated": "2026-11-14T21:25:46.2345294Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

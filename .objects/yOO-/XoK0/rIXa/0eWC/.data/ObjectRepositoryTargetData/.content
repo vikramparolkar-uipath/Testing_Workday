@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JdNpJfTFg0SjV_QKI4ladA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="477, 981, 112, 40" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='dropDownCommandButton' parentname='Edit ' tag='DIV' visibleinnertext='Save' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' matching:visibleinnertext='fuzzy' fuzzylevel:visibleinnertext='0.0' /&gt;&lt;webctrl data-automation-id='label' tag='BUTTON' type='button' class='WKQM WOQM WA4N WNDN WGPM' aaname='Save' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Save' /&gt;" Guid="e9fd83d7-2265-47fc-a19b-0b183c65f699" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="509, 991, 48, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='WMQM' parentname='Edit ' tag='SPAN' type='' aaname='Save' matching:class='fuzzy' fuzzylevel:class='0.0' matching:parentname='fuzzy' fuzzylevel:parentname='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Save' /&gt;" Guid="ad158079-b6b8-4d32-a3de-cf6fb2a5cbee" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="03b9832f4b2dd6acad3aece7d11d3463.jpg" xmlns="">0dwRUyASl1E2LOhvT2T896Q</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,18 @@
+﻿{
+  "Name": "Add Plan Assignment",
+  "Description": "Button that adds a plan assignment compensation change in the Salary section of the Compensation task",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "mnPmzLiOukajscEWvGN5iA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/mnPmzLiOukajscEWvGN5iA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T21:47:22.7052171Z",
+  "Updated": "2026-11-13T21:48:17.2050747Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

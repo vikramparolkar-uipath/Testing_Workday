@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_OfferDetails_Panel",
+  "Description": "Offer details panel on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "VoNGu2rx7U6k3qVdds67Cg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/VoNGu2rx7U6k3qVdds67Cg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.9943365Z",
+  "Updated": "2026-11-13T02:50:33.9943365Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Start Proxy",
+  "Description": "Workday Start Proxy task page: User to Proxy As prompt with OK and Cancel",
+  "Type": "Screen",
+  "Id": "TrmVUN8MD0OmJL2zAhKztg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/TrmVUN8MD0OmJL2zAhKztg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-13T17:50:53.8622704Z",
+  "Updated": "2026-11-13T17:50:53.8622704Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

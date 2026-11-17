@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Hire Employee Prompt",
+  "Description": "First page of the Workday Hire Employee task: Supervisory Organization and the Existing Pre-Hire choice",
+  "Type": "Screen",
+  "Id": "rBk7f9kC80u6jm1AUvlw3g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-13T17:59:46.8195287Z",
+  "Updated": "2026-11-13T17:59:46.8195287Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

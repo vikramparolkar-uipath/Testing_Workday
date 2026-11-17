@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_OfferSalary_Text",
+  "Description": "Displayed offer salary",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "JTF6yp0PqU2vsl_kIJT-vw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/JTF6yp0PqU2vsl_kIJT-vw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:34.1397852Z",
+  "Updated": "2026-11-13T02:50:34.1397852Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

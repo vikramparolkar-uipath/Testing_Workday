@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_Phone_Input",
+  "Description": "Phone input in the Add candidate form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "DbZaR9TPxEixlclxp6xYTA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/DbZaR9TPxEixlclxp6xYTA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:53.2046922Z",
+  "Updated": "2026-11-13T02:37:53.2046922Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

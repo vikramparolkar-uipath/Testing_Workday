@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Details And Process",
+  "Description": "Button that expands the submitted hire event details and process section on the Workday Event Details page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "c11RQqAUP02kXOGQYTv8tQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/c11RQqAUP02kXOGQYTv8tQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/vponzSyxgEe1ApZDahPgAg",
+  "Created": "2026-11-13T20:14:18.0733873Z",
+  "Updated": "2026-11-13T20:14:18.0733873Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

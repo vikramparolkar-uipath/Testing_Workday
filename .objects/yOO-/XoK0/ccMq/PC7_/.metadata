@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_HireDate_Input",
+  "Description": "Month segment of the Hire Date date input; the date is typed as keystrokes MMDDYYYY",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "PC7_n7J2Gk6IyjDaVlvPuA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/PC7_n7J2Gk6IyjDaVlvPuA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.3280188Z",
+  "Updated": "2026-11-13T18:20:49.3280188Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

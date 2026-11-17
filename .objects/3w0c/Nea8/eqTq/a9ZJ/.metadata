@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_CurrentStage_Text",
+  "Description": "Current candidate stage text",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "a9ZJ46vin0-sObHx3RxuHg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.6408122Z",
+  "Updated": "2026-11-13T02:50:33.6408122Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

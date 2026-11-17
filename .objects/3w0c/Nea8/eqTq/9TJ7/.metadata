@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_RevertHire_Button",
+  "Description": "Revert hire (demo reset) button on a hired ATS candidate",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "9TJ7egb0OEWCtQfeB89XwA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/9TJ7egb0OEWCtQfeB89XwA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-15T05:24:57.485465Z",
+  "Updated": "2026-11-15T05:24:57.485465Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

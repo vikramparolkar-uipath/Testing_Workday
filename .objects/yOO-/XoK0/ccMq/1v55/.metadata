@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_FieldValue_Text",
+  "Description": "Value selected in a prompt field on the Hire Employee form, picked by the field label, for example Position, Employee Type, Location, Job Profile, Time Type",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "1v55DNf6pUu-G-G3PXX2uA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/1v55DNf6pUu-G-G3PXX2uA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:26:27.2362282Z",
+  "Updated": "2026-11-13T18:26:27.2362282Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

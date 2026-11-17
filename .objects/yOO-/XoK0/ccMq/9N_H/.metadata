@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_HireDate_Value_Text",
+  "Description": "Hidden screen-reader text of the Hire Date field: current value is MM/DD/YYYY",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9N_Hs4g_5E-TWY9rZ5pG4w",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/9N_Hs4g_5E-TWY9rZ5pG4w",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.3909275Z",
+  "Updated": "2026-11-13T18:20:49.3909275Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

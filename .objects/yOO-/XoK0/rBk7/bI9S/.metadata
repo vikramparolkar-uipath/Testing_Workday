@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeePrompt_Cancel_Button",
+  "Description": "Cancel button at the bottom of the Hire Employee prompt",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "bI9SXVGkSUyjHJ7wO_tcoQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/bI9SXVGkSUyjHJ7wO_tcoQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "Created": "2026-11-13T18:02:20.2468817Z",
+  "Updated": "2026-11-13T18:02:20.2468817Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

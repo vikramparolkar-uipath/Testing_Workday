@@ -1,0 +1,6 @@
+{
+  "Name": "Testing_Workday_CrossPlatform",
+  "ProjectType": "Tests",
+  "Description": "Test Automation Project",
+  "MainFile": "Main.xaml"
+}

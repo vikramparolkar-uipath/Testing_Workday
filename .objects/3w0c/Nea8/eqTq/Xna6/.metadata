@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_Salary_Input",
+  "Description": "Base salary input for the offer",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "Xna65V1zOkKep3inUcgEIQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/Xna65V1zOkKep3inUcgEIQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.8601183Z",
+  "Updated": "2026-11-13T02:50:33.8601183Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

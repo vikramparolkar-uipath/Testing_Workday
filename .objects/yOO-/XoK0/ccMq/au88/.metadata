@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_JobProfile_Input",
+  "Description": "Job Profile prompt search input on the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "au88-k5E60GB-pilZwHdtw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/au88-k5E60GB-pilZwHdtw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:49.9492091Z",
+  "Updated": "2026-11-13T18:20:49.9492091Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

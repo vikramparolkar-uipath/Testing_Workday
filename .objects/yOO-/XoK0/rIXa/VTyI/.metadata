@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Compensation Plan Type",
+  "Description": "Editable Compensation Plan Type selector in the Add Plan Assignment modal",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "VTyI6a4DA0KhFa-xyXXIZA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/VTyI6a4DA0KhFa-xyXXIZA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T21:53:53.4772453Z",
+  "Updated": "2026-11-13T21:53:53.4772453Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Create Pre-Hire Error Text",
+  "Description": "Workday validation message stating that at least one address, phone number, or email address is required",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "cK5e6_0OrkO5V9ktj0D3xw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/cK5e6_0OrkO5V9ktj0D3xw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hxhR0qalIEa3b5KU-OPaoQ",
+  "Created": "2026-11-14T15:25:16.4684488Z",
+  "Updated": "2026-11-14T15:25:16.4684488Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

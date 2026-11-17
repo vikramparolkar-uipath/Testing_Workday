@@ -1,0 +1,14 @@
+﻿{
+  "Name": "My Tasks",
+  "Description": "Workday My Tasks inbox",
+  "Type": "Screen",
+  "Id": "xAA2_j8-r0ymUmYCmBjlww",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/xAA2_j8-r0ymUmYCmBjlww",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-15T06:59:31.6303336Z",
+  "Updated": "2026-11-15T06:59:31.6303336Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

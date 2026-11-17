@@ -1,0 +1,77 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_Termination_ET_TC_HR_TERM_06" this:Tests_Termination_ET_TC_HR_TERM_06.in_WorkerName="" this:Tests_Termination_ET_TC_HR_TERM_06.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Logan rescinds the completed termination for the worker so the termination tests can run again. Needs a completed termination (run TC-HR-TERM-02 first).
+No Try/Catch: attach the Workday Test Execution template for failure handling." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="TC-HR-TERM-06 (with execution template) Rescind a completed termination" sap2010:WorkflowViewState.IdRef="Sequence_G18"><Sequence.Variables><Variable x:TypeArguments="x:String" Name="testName" /><Variable x:TypeArguments="x:String" Name="signedInLabel" /><Variable x:TypeArguments="x:String" Name="selectedWorker" /><Variable x:TypeArguments="x:Boolean" Name="formOpened" /><Variable x:TypeArguments="x:String" Name="formProblem" /><Variable x:TypeArguments="x:String" Name="reasonShown" /><Variable x:TypeArguments="x:Boolean" Name="detailsSaved" /><Variable x:TypeArguments="x:String" Name="payThroughDate" /><Variable x:TypeArguments="x:Boolean" Name="hasResignationField" /><Variable x:TypeArguments="x:String" Name="detailsError" /><Variable x:TypeArguments="x:Boolean" Name="submitted" /><Variable x:TypeArguments="x:String" Name="confirmation" /><Variable x:TypeArguments="x:String" Name="submitError" /><Variable x:TypeArguments="x:String" Name="reviewResult" /><Variable x:TypeArguments="x:String" Name="eventMessage" /><Variable x:TypeArguments="x:String" Name="overallStatus" /><Variable x:TypeArguments="x:String" Name="upNext" /><Variable x:TypeArguments="x:String" Name="eventRef" /><Variable x:TypeArguments="x:Boolean" Name="eventFound" /><Variable x:TypeArguments="x:String" Name="statusBefore" /><Variable x:TypeArguments="x:String" Name="rescindedTitle" /><Variable x:TypeArguments="x:String" Name="termDate" /><Variable x:TypeArguments="x:String" Name="termDateShown" /><Variable x:TypeArguments="x:Boolean" Name="formClosed" /><Variable x:TypeArguments="x:Boolean" Name="inProgressFound" /><Variable x:TypeArguments="x:String" Name="position" /><Variable x:TypeArguments="x:String" Name="managementLevel" /><Variable x:TypeArguments="x:String" Name="employeeType" /><Variable x:TypeArguments="x:String" Name="timeType" /><Variable x:TypeArguments="x:String" Name="location" /><Variable x:TypeArguments="x:String" Name="baseline" /><Variable x:TypeArguments="x:String" Name="cycleRunId" /><Variable x:TypeArguments="x:Boolean" Name="v1" /><Variable x:TypeArguments="x:Boolean" Name="v2" /></Sequence.Variables>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Get the worker for this test (Test Data Steward assignment, else Megan Cook)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G9" UnSafe="False" WorkflowFileName="Workflows/Workday/GetTestAssignment.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_TestSet">["TS_Termination"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_DefaultWorker">["Megan Cook"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_DefaultBaseline">["BL1|Megan Cook|Controller|P-00671 Controller|4 Vice President|New York|102,273.00 USD Annual"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[in_WorkerName]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_WorkerName">[in_WorkerName]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_Baseline">[baseline]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_RunId">[cycleRunId]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<Assign DisplayName="Name the test" sap2010:WorkflowViewState.IdRef="Assign_G10"><Assign.To><OutArgument x:TypeArguments="x:String">[testName]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">["TC-HR-TERM-06"]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Termination date: the 15th of next month (MMddyyyy)" sap2010:WorkflowViewState.IdRef="Assign_G11"><Assign.To><OutArgument x:TypeArguments="x:String">[termDate]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[New DateTime(DateTime.Today.AddMonths(1).Year, DateTime.Today.AddMonths(1).Month, 15).ToString("MMddyyyy")]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Termination date as Workday shows it" sap2010:WorkflowViewState.IdRef="Assign_G12"><Assign.To><OutArgument x:TypeArguments="x:String">[termDateShown]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[New DateTime(DateTime.Today.AddMonths(1).Year, DateTime.Today.AddMonths(1).Month, 15).ToString("MM/dd/yyyy")]</InArgument></Assign.Value></Assign>
+<Sequence DisplayName="Given" sap2010:WorkflowViewState.IdRef="Sequence_G13">
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Sign in to Workday as Logan McNeil" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G1" UnSafe="False" WorkflowFileName="Workflows/Workday/SignInAs.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">["Workday Credentials - HR Partner"]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:String" x:Key="out_SignedInLabel">[signedInLabel]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Open the worker&#x27;s Worker History" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G2" UnSafe="False" WorkflowFileName="Workflows/Workday/OpenWorkerHistory.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_WorkerName">[in_WorkerName]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence>
+<Sequence DisplayName="When" sap2010:WorkflowViewState.IdRef="Sequence_G14">
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Rescind the completed termination" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G3" UnSafe="False" WorkflowFileName="Workflows/Workday/RescindEvent.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_EventLabel">["Terminate: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_RequiredStatus">["Successfully Completed"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Comment">["UiPath demo cleanup " &amp; DateTime.Now.ToString("yyyy-MM-dd HH:mm")]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_EventFound">[eventFound]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_StatusBefore">[statusBefore]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_RescindedTitle">[rescindedTitle]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+<If Condition="[Not eventFound]" DisplayName="Fail when there is no completed termination to rescind" sap2010:WorkflowViewState.IdRef="If_G6"><If.Then><Sequence DisplayName="Fail when there is no completed termination to rescind - yes" sap2010:WorkflowViewState.IdRef="Sequence_G5">
+<Throw DisplayName="Test data not available" Exception="[New InvalidOperationException(&quot;Test data not available for &quot; &amp; testName &amp; &quot;: &quot; &amp; in_WorkerName &amp; &quot; has no Successfully Completed termination in Worker History. Run TC-HR-TERM-02 first.&quot;)]" sap2010:WorkflowViewState.IdRef="Throw_G4" />
+</Sequence></If.Then></If>
+</Sequence>
+<Sequence DisplayName="Then" sap2010:WorkflowViewState.IdRef="Sequence_G17">
+<uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TERM-06 step 1 - the termination was Successfully Completed before the rescind" ContinueOnFailure="True" DisplayName="TERM-06 step 1 - the termination was Successfully Completed before the rescind" Expression="[(statusBefore &amp; &quot;&quot;).Trim() = &quot;Successfully Completed&quot;]" OutputMessageFormat="[&quot;Status before rescind: &#x27;&quot; &amp; statusBefore &amp; &quot;&#x27;; expected &#x27;Successfully Completed&#x27;. Result: {Result}.&quot;]" Result="[v1]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" sap2010:WorkflowViewState.IdRef="VerifyExpression_G7" />
+<uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="TERM-06 step 2 - Workday shows the termination as Rescinded" ContinueOnFailure="True" DisplayName="TERM-06 step 2 - Workday shows the termination as Rescinded" Expression="[(rescindedTitle &amp; &quot;&quot;).Trim() = &quot;Terminate: &quot; &amp; in_WorkerName &amp; &quot; (Rescinded)&quot;]" OutputMessageFormat="[&quot;Event title: &#x27;&quot; &amp; rescindedTitle &amp; &quot;&#x27;; expected &#x27;Terminate: &quot; &amp; in_WorkerName &amp; &quot; (Rescinded)&#x27;. Result: {Result}.&quot;]" Result="[v2]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" sap2010:WorkflowViewState.IdRef="VerifyExpression_G8" />
+<Assign DisplayName="Set Passed" sap2010:WorkflowViewState.IdRef="Assign_G15"><Assign.To><OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Boolean">[v1 AndAlso v2]</InArgument></Assign.Value></Assign>
+<Assign DisplayName="Build the summary" sap2010:WorkflowViewState.IdRef="Assign_G16"><Assign.To><OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:String">[testName &amp; ": " &amp; rescindedTitle]</InArgument></Assign.Value></Assign>
+</Sequence>
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Sign out and close Workday" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_CloseWorkday" UnSafe="False" WorkflowFileName="Workflows/Workday/CloseWorkday.xaml"><ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile></Sequence>
+</Activity>

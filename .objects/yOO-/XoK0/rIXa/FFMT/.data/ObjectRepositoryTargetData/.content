@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="xh0-Fsr6KEqyNAvjYkq4LA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="360, 500, 338, 168" DesignTimeScaleFactor="1" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl data-automation-id='inboxItemButton' tag='DIV' visibleinnertext='*{0}: {1} - P*' /&gt;&lt;webctrl data-automation-id='inboxItem' tag='DIV' type='' class='css-i8xe1j css-i8xe1l css-i8xe1n css-i8xe1p css-i8xe1q css-i8xe1t' aaname='' /&gt;&quot;, in_TaskTitle, in_WorkerName)]" Guid="ddc51939-7679-43b4-9b27-e264f91c174d" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="0" />
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="14efa9737cb1097fef36075d549f4650.jpg" xmlns="">09AObVSekdkSdYLoaQz4hwA</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

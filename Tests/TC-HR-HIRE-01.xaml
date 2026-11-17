@@ -1,0 +1,1216 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_TC_HR_HIRE_01" this:Tests_TC_HR_HIRE_01.AtsBaseUrl="http://localhost:4100" this:Tests_TC_HR_HIRE_01.JobId="4001" this:Tests_TC_HR_HIRE_01.Phone="+1 312 555 0142" this:Tests_TC_HR_HIRE_01.StartDate="2026-11-23" this:Tests_TC_HR_HIRE_01.BaseSalary="70000" this:Tests_TC_HR_HIRE_01.ExpectedPositionId="P-01086" this:Tests_TC_HR_HIRE_01.WorkdaySyncTimeout="00:00:45" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:uwah="clr-namespace:UiPath.Web.Activities.Http;assembly=UiPath.Web.Activities" xmlns:uwahm="clr-namespace:UiPath.Web.Activities.Http.Models;assembly=UiPath.Web.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="AtsBaseUrl" Type="InArgument(x:String)" />
+    <x:Property Name="JobId" Type="InArgument(x:String)" />
+    <x:Property Name="RunSuffix" Type="InArgument(x:String)" />
+    <x:Property Name="FirstName" Type="InArgument(x:String)" />
+    <x:Property Name="LastName" Type="InArgument(x:String)" />
+    <x:Property Name="Email" Type="InArgument(x:String)" />
+    <x:Property Name="Phone" Type="InArgument(x:String)" />
+    <x:Property Name="StartDate" Type="InArgument(s:DateTime)" />
+    <x:Property Name="BaseSalary" Type="InArgument(x:Decimal)" />
+    <x:Property Name="ExpectedPositionId" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdaySyncTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="PreHireId" Type="OutArgument(x:String)" />
+    <x:Property Name="AtsCandidateId" Type="OutArgument(x:Decimal)" />
+    <x:Property Name="ApplicationId" Type="OutArgument(x:Decimal)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Linq.AsyncEnumerable</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-01" sap:VirtualizedContainerService.HintSize="872,3648" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="runSuffixValue" />
+      <Variable x:TypeArguments="x:String" Name="candidateFirstName" />
+      <Variable x:TypeArguments="x:String" Name="generatedLastName" />
+      <Variable x:TypeArguments="x:String" Name="candidateLastName" />
+      <Variable x:TypeArguments="x:String" Name="candidateEmail" />
+      <Variable x:TypeArguments="x:String" Name="runId" />
+      <Variable x:TypeArguments="x:String" Name="startDateIso" />
+      <Variable x:TypeArguments="x:Decimal" Name="jobIdDecimal" />
+      <Variable x:TypeArguments="x:String" Name="modeText" />
+      <Variable x:TypeArguments="x:String" Name="jobPositionId" />
+      <Variable x:TypeArguments="x:String" Name="candidateName" />
+      <Variable x:TypeArguments="x:String" Name="currentStage" />
+      <Variable x:TypeArguments="s:Nullable(x:Boolean)" Name="markAsHiredEnabled" />
+      <Variable x:TypeArguments="x:String" Name="offerDateText" />
+      <Variable x:TypeArguments="x:String" Name="offerSalaryText" />
+      <Variable x:TypeArguments="x:String" Name="workdayStatusText" />
+      <Variable x:TypeArguments="x:String" Name="workdayStatusCode" />
+      <Variable x:TypeArguments="x:String" Name="handoffPreHireId" />
+      <Variable x:TypeArguments="x:String" Name="handoffPositionId" />
+      <Variable x:TypeArguments="x:String" Name="handoffHireDate" />
+      <Variable x:TypeArguments="x:String" Name="candidateUrl" />
+      <Variable x:TypeArguments="x:String" Name="candidateIdText" />
+      <Variable x:TypeArguments="x:Decimal" Name="candidateIdDecimal" />
+      <Variable x:TypeArguments="uwahm:HttpResponseSummary" Name="candidateResponse" />
+      <Variable x:TypeArguments="njl:JObject" Name="candidateJson" />
+      <Variable x:TypeArguments="x:Decimal" Name="applicationIdDecimal" />
+      <Variable x:TypeArguments="x:String" Name="eventSyncText" />
+      <Variable x:TypeArguments="x:String" Name="eventHiredText" />
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="currentRun" />
+      <Variable x:TypeArguments="scg:IList(t:WorkdayHireRun)" Name="runRecords" />
+      <Variable x:TypeArguments="x:Int64" Name="runCount" />
+      <Variable x:TypeArguments="scg:IList(t:WorkdayHireRun)" Name="finalRunRecords" />
+      <Variable x:TypeArguments="x:Int64" Name="finalRunCount" />
+      <Variable x:TypeArguments="s:Exception" Name="failureException" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG0Live" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG0Unique" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG2Identity" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG2Disabled" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG3Phone" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG3Interview" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG4OfferStage" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG4Accepted" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG4Enabled" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG5Hired" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG6Status" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG6PreHire" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG6Position" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG6HireDate" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG7Webhook" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG7Count" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG7Stage" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyG7PreHire" />
+      <Variable x:TypeArguments="x:Boolean" Name="allVerifiesPassed" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="740,3624" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Given" sap:VirtualizedContainerService.HintSize="710,48" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign DisplayName="Generate run suffix" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[runSuffixValue]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(RunSuffix), DateTime.Now.ToString("ddMMyyHHmmss", CultureInfo.InvariantCulture), RunSuffix)]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <utat:GivenName DisplayName="Generate candidate given name" GivenNameResult="[candidateFirstName]" sap2010:WorkflowViewState.IdRef="GivenName_1" />
+        <utat:LastName DisplayName="Generate candidate last name" sap2010:WorkflowViewState.IdRef="LastName_1" LastNameResult="[generatedLastName]" />
+        <Assign DisplayName="Use the FirstName argument instead when one is passed in" sap2010:WorkflowViewState.IdRef="Assign_FirstOverride">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[candidateFirstName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(FirstName), candidateFirstName, FirstName).Trim()]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Derive candidate identity" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[candidateLastName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(LastName), generatedLastName, LastName).Trim() &amp; runSuffixValue]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign DisplayName="Derive candidate email" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[candidateEmail]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[If(String.IsNullOrWhiteSpace(Email), System.Text.RegularExpressions.Regex.Replace(candidateFirstName.ToLowerInvariant(), "[^a-z0-9]", "") &amp; "." &amp; System.Text.RegularExpressions.Regex.Replace(candidateLastName.ToLowerInvariant(), "[^a-z0-9]", "") &amp; "@example.com", Email.Trim())]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign DisplayName="Derive run key" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[runId]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["HIRE-" &amp; runSuffixValue]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign DisplayName="Normalize offer date" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[startDateIso]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[StartDate.ToString("MM/dd/yyyy", CultureInfo.InvariantCulture)]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+        <Assign DisplayName="Convert job id" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Decimal">[jobIdDecimal]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(JobId, NumberStyles.Number, CultureInfo.InvariantCulture)]</InArgument>
+          </Assign.Value>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Assign>
+      </Sequence>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="TalentTrack ATS" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,3486" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Always" ScopeGuid="3557a19e-5165-4a89-867b-decec6df730c" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="710,3420" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Given - live integration and run record" sap:VirtualizedContainerService.HintSize="680,48" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NGetText DisplayName="Read Workday mode" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[modeText]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="58k5ZbMavUiIeUqEFbJrsg" DesignTimeRectangle="1573, 105, 173, 26" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-mode' tag='SPAN' /&gt;" Guid="6e1550c5-4372-4b89-8405-12940c25d336" InformativeScreenshot="8ab244f52a16379393ce3a825e373079.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/nmTuEBHy80qzUkrKeedcpg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="ATS-01 step 1 - Workday live mode" ContinueOnFailure="True" Expression="[modeText = &quot;Workday: LIVE (uipath_dpt1)&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[&quot;Actual mode: {Expression}; expected live Workday integration.&quot;]" Result="[verifyG0Live]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" RequiredForReadInput="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" ContinueOnError="False" DisplayName="Reject duplicate WorkdayHireRun" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="QueryEntityRecords_1" OutputRecords="[runRecords]" QueriedEntityId="85e73958-ebde-f111-91f2-002248a179ce" Skip="0" SortAscending="True" TimeoutInMs="30000" Top="1" TotalRecords="[runCount]">
+                  <uda:QueryEntityRecords.FilterArguments>
+                    <uda:FilterArgument FilterActivityType="{x:Null}">
+                      <uda:FilterArgument.Filter>
+                        <uda:GroupFilter Index="0" Operator="AND">
+                          <uda:GroupFilter.Filters>
+                            <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="1">
+                              <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="RunId" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                            </scg:List>
+                          </uda:GroupFilter.Filters>
+                          <uda:GroupFilter.Groups>
+                            <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                          </uda:GroupFilter.Groups>
+                        </uda:GroupFilter>
+                      </uda:FilterArgument.Filter>
+                    </uda:FilterArgument>
+                  </uda:QueryEntityRecords.FilterArguments>
+                  <uda:QueryEntityRecords.FilterValues>
+                    <scg:List x:TypeArguments="InArgument" Capacity="1">
+                      <InArgument x:TypeArguments="x:String">[runId]</InArgument>
+                    </scg:List>
+                  </uda:QueryEntityRecords.FilterValues>
+                  <uda:QueryEntityRecords.RequiredForReadFieldNames>
+                    <scg:List x:TypeArguments="x:String" Capacity="0" />
+                  </uda:QueryEntityRecords.RequiredForReadFieldNames>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uda:QueryEntityRecords>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G0 unique RunId" ContinueOnFailure="True" Expression="[runCount = 0]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uda:CreateEntityRecord x:TypeArguments="t:WorkdayHireRun" InputEntity="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create WorkdayHireRun Created record" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="CreateEntityRecord_1" InputEntityInFieldView="[new Testing_Workday_CrossPlatform.WorkdayHireRun() With {  .RunId = runId,  .Stage = Testing_Workday_CrossPlatform.HireRunStage.Created,  .AtsJobId = jobIdDecimal,  .BaseSalary = BaseSalary,  .Currency = &quot;USD&quot;,  .Email = candidateEmail,  .FirstName = candidateFirstName,  .JobTitle = &quot;Accounting Specialist - AP&quot;,  .LastName = candidateLastName,  .LastTestCase = &quot;TC-HR-HIRE-01&quot;,  .Phone = Phone,  .ReqId = &quot;REQ-AP-1001&quot;,  .SalaryFrequency = &quot;Annual&quot; }]" IsInRecordView="False" OutputEntity="[currentRun]" ScopeValue="Tenant" TimeoutInMs="30000">
+                  <uda:CreateEntityRecord.State>
+                    <udam:RecordState RequiredFieldCount="2">
+                      <udam:RecordState.SelectedFields>
+                        <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="14">
+                          <udam:DynamicEntityField Id="8fe73958-ebde-f111-91f2-002248a179ce" IsRequired="True" Name="RunId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[runId]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="90e73958-ebde-f111-91f2-002248a179ce" IsRequired="True" Name="Stage">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="t:HireRunStage">[Testing_Workday_CrossPlatform.HireRunStage.Created]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="98e73958-ebde-f111-91f2-002248a179ce" Name="AtsJobId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:Decimal">[jobIdDecimal]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9ce73958-ebde-f111-91f2-002248a179ce" Name="BaseSalary">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:Decimal">[BaseSalary]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9de73958-ebde-f111-91f2-002248a179ce" Name="Currency">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">USD</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="96e73958-ebde-f111-91f2-002248a179ce" Name="Email">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[candidateEmail]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="94e73958-ebde-f111-91f2-002248a179ce" Name="FirstName">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[candidateFirstName]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9be73958-ebde-f111-91f2-002248a179ce" Name="HireDate" />
+                          <udam:DynamicEntityField Id="9ae73958-ebde-f111-91f2-002248a179ce" Name="JobTitle">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">Accounting Specialist - AP</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="95e73958-ebde-f111-91f2-002248a179ce" Name="LastName">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[candidateLastName]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="91e73958-ebde-f111-91f2-002248a179ce" Name="LastTestCase">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">TC-HR-HIRE-01</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="97e73958-ebde-f111-91f2-002248a179ce" Name="Phone">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[Phone]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="99e73958-ebde-f111-91f2-002248a179ce" Name="ReqId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">REQ-AP-1001</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9ee73958-ebde-f111-91f2-002248a179ce" Name="SalaryFrequency">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">Annual</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                        </scg:List>
+                      </udam:RecordState.SelectedFields>
+                    </udam:RecordState>
+                  </uda:CreateEntityRecord.State>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uda:CreateEntityRecord>
+                <Assign DisplayName="Expose RunId" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_7">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[runId]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+              </Sequence>
+              <Sequence DisplayName="When - ATS hire and Workday hand-off" sap:VirtualizedContainerService.HintSize="680,2922" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="eventId_str" />
+                  <Variable x:TypeArguments="x:String" Name="eventSyncName" />
+                  <Variable x:TypeArguments="x:String" Name="evenHiredName" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Accounting Specialist job" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="BEIqCe4Fx0CFAHUI4ejb4w" DesignTimeRectangle="463, 321, 173, 20" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='jobs-table' tag='TABLE' /&gt;&lt;webctrl data-testid='job-link-4001' tag='A' /&gt;" Guid="423f4084-7a3a-457c-8687-328d3d2870df" InformativeScreenshot="5493316fa75c64aa74d835a465151df8.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/v5lHGm-pv0GrOIh0ccMBWQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter candidate first name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[candidateFirstName]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="AuwZ56rxgUahOP9fstuAIg" DesignTimeRectangle="455, 736, 248, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='fn' tag='INPUT' type='' class='' aaname='First name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="68b30e6e-993b-40a7-848c-8d6eb3af670b" InformativeScreenshot="3b4da005758a1f466180136dafa0b7dc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jUxRwZKBaEuVmBVkfdTyhA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="455, 713, 248, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='First name' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='First name' /&gt;" Guid="8999df4d-a326-4c6d-ae7c-35ae5ba5c90c" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter candidate last name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[candidateLastName]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="DqWyZMaLgk-9wwIJYlQabg" DesignTimeRectangle="715, 736, 247, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ln' tag='INPUT' type='' class='' aaname='Last name' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0ee6d50b-dcdc-4499-86eb-297e63481c63" InformativeScreenshot="6fc6e61ccea3c37625f5deac0384ff5d.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/thV3SkK9A02gKHori_taJg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="715, 713, 247, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Last name' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Last name' /&gt;" Guid="32d187f0-a9ed-4e8d-9fa3-f9be6a5768e6" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter candidate email" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[candidateEmail]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="YRz3hirB60iM9w4tXZI9dg" DesignTimeRectangle="974, 736, 248, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='em' tag='INPUT' type='email' class='' aaname='Email' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="7b50d76c-e966-478d-b070-908b7cce969f" InformativeScreenshot="58119a25095f3f7f849f157ac6ea361b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/rFn6yF5OqkC98uUFHUvJcg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="974, 713, 248, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Email' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Email' /&gt;" Guid="d191716a-4528-4e14-ad9e-3fab6e30b275" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter candidate phone" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[Phone]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="mcRrr3mhO0mipuRUnNAJNw" DesignTimeRectangle="1234, 736, 247, 40" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='add-cand' tag='FORM' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='ph' tag='INPUT' type='' class='' aaname='Phone' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="b6ee9195-9861-4abe-843f-c5915bcbe11c" InformativeScreenshot="fe7ccbda2996bd35046a40634d0b534a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/DbZaR9TPxEixlclxp6xYTA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="1234, 713, 247, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Phone' tag='LABEL' type='' class='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Phone' /&gt;" Guid="42615377-d31f-4ecf-96d4-c4c08da74f27" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Create candidate" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="hx41ru1b0EOwVQMTy4X6wQ" DesignTimeRectangle="455, 788, 129, 39" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='add-cand' tag='FORM' /&gt;&lt;webctrl data-testid='add-candidate-submit' tag='BUTTON' /&gt;" Guid="ae731f01-5e60-4e8a-9095-145b392e60cc" InformativeScreenshot="4a3790f5c5f57b1003bccaf068e73e44.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/0rsNObuLhkuTaEaN0ekVkQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read candidate name" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[candidateName]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="Ex56NQFbR0iykDz0SeeC7g" DesignTimeRectangle="434, 210, 1068, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='candidate-name' tag='H1' /&gt;" Guid="20bcffc0-6ea8-4990-9799-1e54e16808d7" InformativeScreenshot="d302451f796c8b357bea41d2a0d640d7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/7zR312fJtEypFz6XVUmUlQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G2 candidate identity" ContinueOnFailure="True" Expression="[candidateName = candidateFirstName &amp; &quot; &quot; &amp; candidateLastName]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NGetUrl CurrentUrl="[candidateUrl]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetUrl_1" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetUrl>
+                <Assign DisplayName="Read candidate id" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[candidateIdText]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(candidateUrl, "/candidates/([0-9]+)").Groups(1).Value]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign DisplayName="Convert candidate id" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_9">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Decimal">[candidateIdDecimal]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(candidateIdText, System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <uwah:NetHttpRequest BasicAuthPassword="{x:Null}" BasicAuthSecurePassword="{x:Null}" BasicAuthUsername="{x:Null}" BinaryPayload="{x:Null}" ClientCertPassword="{x:Null}" ClientCertPath="{x:Null}" ClientCertSecurePassword="{x:Null}" Cookies="{x:Null}" CustomNegotiatedAuthCredentials="{x:Null}" FilePath="{x:Null}" Headers="{x:Null}" LocalFiles="{x:Null}" OAuthToken="{x:Null}" OutputFileName="{x:Null}" OutputFileTargetFolder="{x:Null}" Parameters="{x:Null}" PathResource="{x:Null}" ProxyConfiguration="{x:Null}" ResourceFiles="{x:Null}" TextPayload="{x:Null}" AuthenticationType="None" ContinueOnError="False" DisableSslVerification="False" DisplayName="Read candidate application id" EnableCookies="True" FileOverwrite="AutoRename" FollowRedirects="True" FormData="[new System.Collections.Generic.Dictionary(Of System.String, System.String) From {  }]" FormDataParts="[new System.Collections.Generic.List(Of UiPath.Web.Activities.Http.Models.FormDataPart) From {  }]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NetHttpRequest_1" InitialDelay="500" MaxRedirects="3" MaxRetryAfterDelay="30000" Method="GET" Multiplier="2" PreferRetryAfterValue="True" RequestBodyType="None" RequestUrl="[AtsBaseUrl &amp; &quot;/v1/candidates/&quot; &amp; candidateIdText]" Result="[candidateResponse]" RetryCount="3" RetryPolicyType="None" RetryStatusCodes="[New List (Of System.Net.HttpStatusCode) From _&#xA;{&#xA;&#x9;System.Net.HttpStatusCode.RequestTimeout,&#xA;&#x9;System.Net.HttpStatusCode.TooManyRequests,&#xA;&#x9;System.Net.HttpStatusCode.InternalServerError,&#xA;&#x9;System.Net.HttpStatusCode.BadGateway,&#xA;&#x9;System.Net.HttpStatusCode.ServiceUnavailable,&#xA;&#x9;System.Net.HttpStatusCode.GatewayTimeout&#xA;}]" SaveRawRequestResponse="False" SaveResponseAsFile="False" TextPayloadContentType="application/json" TextPayloadEncoding="UTF-8" TimeoutInMiliseconds="[30000]" TlsProtocol="Automatic" UseJitter="True" UseOsNegotiatedAuthCredentials="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uwah:NetHttpRequest>
+                <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonSample="{x:Null}" Settings="{x:Null}" DisplayName="Parse candidate response" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="DeserializeJson_1" JsonObject="[candidateJson]" JsonString="[candidateResponse.TextContent]">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:DeserializeJson>
+                <Assign DisplayName="Read application id" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_10">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Decimal">[applicationIdDecimal]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Decimal">[Decimal.Parse(candidateJson("applications")(0)("id").ToString(), System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign DisplayName="Expose candidate outputs" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_11">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Decimal">[AtsCandidateId]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Decimal">[candidateIdDecimal]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign DisplayName="Expose application output" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_12">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Decimal">[ApplicationId]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Decimal">[applicationIdDecimal]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <uix:NCheckElement DisplayName="Check Mark as Hired disabled" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[markAsHiredEnabled]" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NCheckElement.Target>
+                    <uix:TargetAnchorable ContentHash="NlO8MAkX_kWnmldB0bnPUw" DesignTimeRectangle="455, 788, 139, 45" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='mark-as-hired' tag='BUTTON' /&gt;" Guid="27614bb6-3c61-49af-87b4-bf8297ed5d00" InformativeScreenshot="29cbcb31061b5fd77998fee700c43373.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jtjIxm-Y90CL5NDvlQnFMA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NCheckElement.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckElement>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G2 Mark as Hired disabled" ContinueOnFailure="True" Expression="[Not markAsHiredEnabled.GetValueOrDefault()]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Advance to Phone Screen" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="AuCyL9-bPkqS3gQJyg0EmA" DesignTimeRectangle="780, 1061, 283, 89" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='advance' tag='BUTTON' /&gt;" Guid="8067cf73-3514-43e6-be41-f25fd71fec87" InformativeScreenshot="1c22c777dcf2c6142d027310526ed0c6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/-e20GErK8k-9RN07kQ1wuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read Phone Screen stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[currentStage]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="esTiee-SS0eL0utZM0SyIQ" DesignTimeRectangle="592, 347, 131, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='stage-phone-screen' tag='DIV' /&gt;" Guid="56290269-8abf-4968-a241-da2f2563f4a7" InformativeScreenshot="f720b36e9eee7d738a142e7bd6677d66.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/-RDR8yODxUqbhv5tW8Rt3w" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G3 Phone Screen" ContinueOnFailure="True" Expression="[currentStage = &quot;Phone Screen&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_6" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Advance to Interview" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="AuCyL9-bPkqS3gQJyg0EmA" DesignTimeRectangle="780, 1061, 283, 89" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='advance' tag='BUTTON' /&gt;" Guid="8067cf73-3514-43e6-be41-f25fd71fec87" InformativeScreenshot="1c22c777dcf2c6142d027310526ed0c6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/-e20GErK8k-9RN07kQ1wuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read Interview stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[currentStage]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="4_oqNOjQA0eKKRObv9MLoQ" DesignTimeRectangle="729, 347, 131, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='stage-interview' tag='DIV' /&gt;" Guid="75c6d699-1784-4949-9b28-731d1c64dda0" InformativeScreenshot="d858e20c87a97d6fa288488773b72fcc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/oIqXrHwSi0WsVsOhS9KiBQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G3 Interview" ContinueOnFailure="True" Expression="[currentStage = &quot;Interview&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_7" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter offer start date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[startDateIso]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="8stQ-QmpDkmhmg3fiaNeuA" DesignTimeRectangle="455, 678, 265, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-testid='input-start-date' tag='INPUT' /&gt;" Guid="77ed6393-b9d8-4a11-8bbe-364a84ae9cff" InformativeScreenshot="bc38ee0dd5780e379925436357bac102.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/t8m9hM7DakC_gJbBGgUTmw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="455, 655, 265, 19" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='' aaname='Start date' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='Start date' /&gt;" Guid="b299a446-8876-4771-8e6c-4da2835f93b4" SearchSteps="FuzzySelector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NTypeInto ActivateBefore="True" DisplayName="Enter offer salary" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Text="[BaseSalary.ToString(CultureInfo.InvariantCulture)]" Version="V5">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable ContentHash="1SVEvptY8Eyw_6HPK6ZRPw" DesignTimeRectangle="732, 678, 265, 40" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='input-salary' tag='INPUT' /&gt;" Guid="249e93ff-0135-4928-a07d-8c009fda5844" InformativeScreenshot="eb438a5b3d3a3f8773d6ae8dae39455e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Xna65V1zOkKep3inUcgEIQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NTypeInto.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NTypeInto>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Save accepted offer" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="-3BE2QIvy0uHtpxSJP5Jpg" DesignTimeRectangle="455, 732, 116, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='offer-form' tag='FORM' /&gt;&lt;webctrl data-testid='save-offer' tag='BUTTON' /&gt;" Guid="e3ce85d4-06b2-4835-8530-faeb9eb6ad28" InformativeScreenshot="50e4ee6ef7da8c135775f611dc99f3ed.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/CcwxN5bNvEGXgMcEPJ36Qg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read Offer stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[currentStage]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="_RuhT7UxQ025xFYTkYtLog" DesignTimeRectangle="866, 347, 131, 34" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='stage-offer' tag='DIV' /&gt;" Guid="fa41fded-ed75-447b-b93a-d88fa33fd668" InformativeScreenshot="e697c9befcdb4e0a4f06757007c2e367.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/cbmu9qHK0UOJldM0mqExsA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G4 Offer stage" ContinueOnFailure="True" Expression="[currentStage = &quot;Offer&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_8" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NGetText DisplayName="Read offer date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[offerDateText]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="SH5Wys17h02wGoIaDq7FgA" DesignTimeRectangle="597, 594, 400, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='offer-start-date' tag='DD' /&gt;" Guid="14e7db45-d4ea-4f3a-8d7a-9b322fe34cd8" InformativeScreenshot="52d52f679b9be581a724654c43a4324d.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/wOkLH9P1ekuRVweAdlF5mQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetText DisplayName="Read offer salary" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[offerSalaryText]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="1g8cv0SsfEWIjzox4rhnwA" DesignTimeRectangle="597, 622, 400, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='offer-salary' tag='DD' /&gt;" Guid="55fc0c8c-9ca7-4211-bb1a-3a97e34486b5" InformativeScreenshot="29f524a9b6e1fbbfe67738f4e27f5bb6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/JTF6yp0PqU2vsl_kIJT-vw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G4 accepted offer" ContinueOnFailure="True" Expression="[offerDateText.Contains(StartDate.ToString(&quot;MMM d, yyyy&quot;, CultureInfo.InvariantCulture)) AndAlso offerSalaryText.Contains(BaseSalary.ToString(&quot;N0&quot;, CultureInfo.InvariantCulture))]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_9" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NCheckElement DisplayName="Check Mark as Hired enabled" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[markAsHiredEnabled]" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NCheckElement.Target>
+                    <uix:TargetAnchorable ContentHash="NlO8MAkX_kWnmldB0bnPUw" DesignTimeRectangle="455, 788, 139, 45" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='mark-as-hired' tag='BUTTON' /&gt;" Guid="27614bb6-3c61-49af-87b4-bf8297ed5d00" InformativeScreenshot="29cbcb31061b5fd77998fee700c43373.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jtjIxm-Y90CL5NDvlQnFMA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NCheckElement.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckElement>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G4 Mark as Hired enabled" ContinueOnFailure="True" Expression="[markAsHiredEnabled.GetValueOrDefault()]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_10" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Open Mark as Hired confirmation" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="NlO8MAkX_kWnmldB0bnPUw" DesignTimeRectangle="455, 788, 139, 45" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='mark-as-hired' tag='BUTTON' /&gt;" Guid="27614bb6-3c61-49af-87b4-bf8297ed5d00" InformativeScreenshot="29cbcb31061b5fd77998fee700c43373.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/jtjIxm-Y90CL5NDvlQnFMA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirm live Workday hand-off" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="q8YLJbKSj0uoHMg45DMzDg" DesignTimeRectangle="2144, 1411, 281, 89" ElementType="Button" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='modal-ok' tag='BUTTON' /&gt;" Guid="088b8aae-368a-4a0a-8bbd-d1e2edd23890" InformativeScreenshot="19caa4a5bfa8de5bd9f81b868b3dbc06.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/brTuS-7nHUq466iAQRCdbw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read Hired stage" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[currentStage]" Timeout="[CInt(WorkdaySyncTimeout.TotalSeconds)]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="n9mLs-ELf0Gp3MVYn9SMBQ" DesignTimeRectangle="552, 437, 44, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='current-stage' tag='SPAN' /&gt;" Guid="bdcb06e3-57ac-482d-928f-adb87dc15e0e" InformativeScreenshot="6e9c393680b413bd6371f6f73bcb31a6.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/a9ZJ46vin0-sObHx3RxuHg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G5 Hired stage" ContinueOnFailure="True" Expression="[currentStage = &quot;Hired&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_11" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Bring Workday hand-off into view" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable ContentHash="6DLzw1h2QkqKONSoGxXMEA" DesignTimeRectangle="1022, 399, 468, 138" ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-panel' tag='DIV' /&gt;" Guid="b1167b2c-eabd-4bfe-bd9a-465f95d581b1" InformativeScreenshot="5ee90d6dcbeee37cc9ab92dd5ae89f8c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/uB7trDGwVUanbdvnp0YnOA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Read Workday status" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[workdayStatusText]" Timeout="[CInt(WorkdaySyncTimeout.TotalSeconds)]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="xLN6DB4kmk-mzZ9Taw2qJg" DesignTimeRectangle="1055, 521, 426, 44" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-status' /&gt;" Guid="182cb3d5-dd12-4f2f-aec5-40a7173c4d59" InformativeScreenshot="0c9daf2b5bbb0e407de5b926002a51fa.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KG-D7k0jYEyGp-JZvKZPZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="data-status" DisplayName="Read Workday status code" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric_1" Result="[workdayStatusCode]" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Timeout="[CInt(WorkdaySyncTimeout.TotalSeconds)]" Version="V5">
+                  <uix:NGetAttributeGeneric.Target>
+                    <uix:TargetAnchorable ContentHash="xLN6DB4kmk-mzZ9Taw2qJg" DesignTimeRectangle="1055, 521, 426, 44" DesignTimeScaleFactor="1" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-status' /&gt;" Guid="182cb3d5-dd12-4f2f-aec5-40a7173c4d59" InformativeScreenshot="0c9daf2b5bbb0e407de5b926002a51fa.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KG-D7k0jYEyGp-JZvKZPZg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetAttributeGeneric.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetAttributeGeneric>
+                <uix:NGetText DisplayName="Read Pre-Hire ID" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[handoffPreHireId]" Timeout="[CInt(WorkdaySyncTimeout.TotalSeconds)]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="bGvO3Gl7NUeEG_TSsODfag" DesignTimeRectangle="2163, 1237, 895, 59" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='wd-panel' tag='DIV' /&gt;&lt;webctrl data-testid='workday-status' tag='DIV' /&gt;&lt;webctrl idx='2' tag='DIV' /&gt;" Guid="42eab801-2a8d-4f59-a5f6-6a2934c380f7" InformativeScreenshot="0df4cd26fa11b57bb471578afcef8eb4.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/GIVRM3o28UKSY3_T3P6IVw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <Assign DisplayName="Keep only the Pre-Hire ID value" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_PreHireClean">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[handoffPreHireId]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[If(System.Text.RegularExpressions.Regex.IsMatch(If(handoffPreHireId, String.Empty), "A\d{5,}"), System.Text.RegularExpressions.Regex.Match(handoffPreHireId, "A\d{5,}").Value, If(handoffPreHireId, String.Empty).Trim())]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <uix:NGetText DisplayName="Read hand-off position" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[handoffPositionId]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="NaWKPjDcqEGPueDkuKjJXQ" DesignTimeRectangle="2451, 1350, 638, 49" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-position-id' tag='DD' /&gt;" Guid="e18424a7-5c97-4d0c-89b0-cb20a19f710c" InformativeScreenshot="a82a972ea092cfff55f3c7abd83f135f.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/_2wndmztDkWS2CPT0FvjnQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetText DisplayName="Read hand-off hire date" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[handoffHireDate]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable ContentHash="zyqkC5qdtUi1ut9H4dpn0w" DesignTimeRectangle="2451, 1412, 638, 49" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-testid='workday-hire-date' tag='DD' /&gt;" Guid="43b178f1-c771-4c96-ac2c-0e2fd9bea3bf" InformativeScreenshot="a4a6c4f610c91dd12cadc2279a543a0a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/EExcM-g0Y068PQ1Ogk9Rtw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G6 Workday status" ContinueOnFailure="True" Expression="[workdayStatusText.Trim().Split(Convert.ToChar(10))(0).Trim() = &quot;Synced to Workday&quot; AndAlso workdayStatusCode = &quot;synced&quot;]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_12" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G6 Pre-Hire format" ContinueOnFailure="True" Expression="[System.Text.RegularExpressions.Regex.IsMatch(handoffPreHireId, &quot;^A\d{5,}$&quot;)]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_13" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G6 position" ContinueOnFailure="True" Expression="[handoffPositionId = ExpectedPositionId]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_14" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G6 hire date" ContinueOnFailure="True" Expression="[DateTime.Parse(handoffHireDate).Date = DateTime.Parse(startDateIso).Date]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_15" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <Assign DisplayName="Expose Pre-Hire ID" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_13">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[PreHireId]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">[handoffPreHireId]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Webhook log'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="_d3HIx95rkeKnz69OCajTw" DesignTimeRectangle="507, 107, 92, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl aaname='Webhook log' tag='A' /&gt;" Guid="89329df5-4827-4b61-911d-a90bdf7001d6" InformativeScreenshot="5fd9561afdefae69890efd8e4c110b23.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/KcIsGk97rEyjlFWNR6r9mA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" InteractionMode="SameAsCard" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Shortcuts="[d(hk)][k(PgUp)][u(hk)]" Version="V5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NKeyboardShortcuts>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="aF51J2gjCkCIpRLAYRbuLQ" DesignTimeRectangle="919, 332, 547, 21" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' aaname='View' /&gt;" Guid="44492e98-f9ee-4d7d-9424-d1ab494fca44" InformativeScreenshot="d15b5aa370724bb300a9cec174ea6bd7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/FvmqXPTIVkqjBqw644x8wA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive">
+                      <uix:TargetAnchorable.PointOffset>
+                        <uix:PointOffset X="0" Y="0" />
+                      </uix:TargetAnchorable.PointOffset>
+                    </uix:TargetAnchorable>
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'View'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NClick_10" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="a6InhzidGU2aOa2LsyZgnQ" DesignTimeRectangle="927, 519, 539, 22" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' aaname='View' /&gt;" Guid="44492e98-f9ee-4d7d-9424-d1ab494fca44" InformativeScreenshot="df64db0c0165fb065fc7b178d7aa2bd7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/OdHgD42KVU6CssxzdBbd1g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NClick>
+                <uix:NGetText DisplayName="Get Text 'workday_prehire_synced'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_18" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[eventSyncName]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="AlUiE6wqQUa5BQfB5UYYEw" DesignTimeRectangle="493, 323, 149, 21" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='SPAN' /&gt;" Guid="924447fb-eaee-4070-9c01-e115b2601856" InformativeScreenshot="fcdf6d6c2c75b6ae1ba680c30c5dffdd.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/CKSMZO9kN0qSv2xmF19KfQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetText DisplayName="Get Text 'candidate_hired'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_19" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" TextString="[evenHiredName]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="nsD3C_IXsUK9e75bIO-5Yg" DesignTimeRectangle="493, 510, 103, 22" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' tag='SPAN' /&gt;" Guid="ff3f6841-5136-400d-a2a6-a05a27cb0add" InformativeScreenshot="8100d6e6dda59eea64087109538913ff.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/FZT3lLPjfk243C-FzID9fg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetText DisplayName="Get Text 'Payload'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_20" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" ScrapingOptions="None" TextString="[eventSyncText]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="hq8zhvIovUiBMnLrOXvjig" DesignTimeRectangle="919, 311, 555, 188" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' colName='Payload' tableCol='4' parentclass='card' /&gt;" Guid="38cab1d1-c3ba-4442-835c-cf0551950d94" InformativeScreenshot="2f973f13f8cb6f33e247ea84c6a8be5c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/WZzWH3EWQk2Rqer-WkFH3Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uix:NGetText DisplayName="Get Text 'Payload'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="NGetText_17" ScopeIdentifier="3557a19e-5165-4a89-867b-decec6df730c" ScrapingOptions="None" TextString="[eventHiredText]" Version="V5">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="localhost" ContentHash="_s4LVC-rlkul838NXnFZvw" DesignTimeRectangle="919, 499, 555, 437" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='3' colName='Payload' tableCol='4' parentclass='card' /&gt;" Guid="38cab1d1-c3ba-4442-835c-cf0551950d94" InformativeScreenshot="96fba067fbee2c91a1d2d24f85d90078.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/8v77CjnXdUWbrZB5zl3X1A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NGetText>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G7 webhook events" ContinueOnFailure="True" Expression="[eventSyncText.Contains(&quot;&quot;&quot;application_id&quot;&quot;: &quot; &amp; applicationIdDecimal.ToString(&quot;0&quot;, System.Globalization.CultureInfo.InvariantCulture) &amp; &quot;,&quot;) AndAlso&#xA;eventSyncText.Contains(&quot;&quot;&quot;pre_hire_id&quot;&quot;: &quot;&quot;&quot; &amp; handoffPreHireId &amp; &quot;&quot;&quot;&quot;) AndAlso&#xA;eventHiredText.Contains(&quot;&quot;&quot;id&quot;&quot;: &quot; &amp; applicationIdDecimal.ToString(&quot;0&quot;, System.Globalization.CultureInfo.InvariantCulture) &amp; &quot;,&quot;)]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_16" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+              </Sequence>
+              <Sequence DisplayName="Then - persisted run verification" sap:VirtualizedContainerService.HintSize="680,426" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uda:UpdateEntityRecord x:TypeArguments="t:WorkdayHireRun" InputEntity="{x:Null}" OutputEntity="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" Version="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Update WorkdayHireRun AtsHired" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="UpdateEntityRecord_1" InputEntityInFieldView="[new Testing_Workday_CrossPlatform.WorkdayHireRun() With {  .AtsApplicationId = applicationIdDecimal,  .AtsCandidateId = candidateIdDecimal,  .AtsSyncStatus = workdayStatusCode,  .HireDate = DateTime.Parse(handoffHireDate.Trim(), System.Globalization.CultureInfo.InvariantCulture),  .LastTestCase = &quot;TC-HR-HIRE-01&quot;,  .PositionId = handoffPositionId.Trim(),  .PreHireId = handoffPreHireId, .Id = currentRun.Id }]" IsInRecordView="[False]" RecordId="[currentRun.Id]" TimeoutInMs="30000">
+                  <uda:UpdateEntityRecord.State>
+                    <udam:RecordState RequiredFieldCount="2">
+                      <udam:RecordState.SelectedFields>
+                        <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="8">
+                          <udam:DynamicEntityField Id="a8e73958-ebde-f111-91f2-002248a179ce" Name="AtsApplicationId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:Decimal">[applicationIdDecimal]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="a7e73958-ebde-f111-91f2-002248a179ce" Name="AtsCandidateId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:Decimal">[candidateIdDecimal]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="a9e73958-ebde-f111-91f2-002248a179ce" Name="AtsSyncStatus">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[workdayStatusCode]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9be73958-ebde-f111-91f2-002248a179ce" Name="HireDate">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse(handoffHireDate.Trim(), System.Globalization.CultureInfo.InvariantCulture)]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="91e73958-ebde-f111-91f2-002248a179ce" Name="LastTestCase">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">["TC-HR-HIRE-01"]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="9fe73958-ebde-f111-91f2-002248a179ce" Name="PositionId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[handoffPositionId.Trim()]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="aae73958-ebde-f111-91f2-002248a179ce" Name="PreHireId">
+                            <udam:DynamicEntityField.ArgumentValue>
+                              <InArgument x:TypeArguments="x:String">[handoffPreHireId]</InArgument>
+                            </udam:DynamicEntityField.ArgumentValue>
+                          </udam:DynamicEntityField>
+                          <udam:DynamicEntityField Id="90e73958-ebde-f111-91f2-002248a179ce" Name="Stage" />
+                        </scg:List>
+                      </udam:RecordState.SelectedFields>
+                    </udam:RecordState>
+                  </uda:UpdateEntityRecord.State>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uda:UpdateEntityRecord>
+                <uda:QueryEntityRecords x:TypeArguments="t:WorkdayHireRun" RequiredForReadInput="{x:Null}" ScopeValue="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" SortByField="{x:Null}" ContinueOnError="False" DisplayName="Query persisted WorkdayHireRun" EntityId="85e73958-ebde-f111-91f2-002248a179ce" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="QueryEntityRecords_2" OutputRecords="[finalRunRecords]" QueriedEntityId="85e73958-ebde-f111-91f2-002248a179ce" Skip="0" SortAscending="True" TimeoutInMs="30000" Top="1" TotalRecords="[finalRunCount]">
+                  <uda:QueryEntityRecords.FilterArguments>
+                    <uda:FilterArgument FilterActivityType="{x:Null}">
+                      <uda:FilterArgument.Filter>
+                        <uda:GroupFilter Index="0" Operator="AND">
+                          <uda:GroupFilter.Filters>
+                            <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="1">
+                              <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="RunId" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                            </scg:List>
+                          </uda:GroupFilter.Filters>
+                          <uda:GroupFilter.Groups>
+                            <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                          </uda:GroupFilter.Groups>
+                        </uda:GroupFilter>
+                      </uda:FilterArgument.Filter>
+                    </uda:FilterArgument>
+                  </uda:QueryEntityRecords.FilterArguments>
+                  <uda:QueryEntityRecords.FilterValues>
+                    <scg:List x:TypeArguments="InArgument" Capacity="1">
+                      <InArgument x:TypeArguments="x:String">[runId]</InArgument>
+                    </scg:List>
+                  </uda:QueryEntityRecords.FilterValues>
+                  <uda:QueryEntityRecords.RequiredForReadFieldNames>
+                    <scg:List x:TypeArguments="x:String" Capacity="0" />
+                  </uda:QueryEntityRecords.RequiredForReadFieldNames>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uda:QueryEntityRecords>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G7 exactly one persisted run" ContinueOnFailure="True" Expression="[finalRunCount = 1]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_17" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G7 persisted stage" ContinueOnFailure="True" Expression="[finalRunRecords(0).Stage.GetValueOrDefault() = Testing_Workday_CrossPlatform.HireRunStage.AtsHired]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_18" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <uta:VerifyExpression KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="G7 persisted Pre-Hire ID" ContinueOnFailure="True" Expression="[finalRunRecords(0).PreHireId = handoffPreHireId]" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="VerifyExpression_19" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uta:VerifyExpression>
+                <Assign DisplayName="Set passed output" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_16">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+                <Assign DisplayName="Build summary" sap:VirtualizedContainerService.HintSize="650,48" sap2010:WorkflowViewState.IdRef="Assign_17">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">["RunId=" &amp; runId &amp; "; CandidateId=" &amp; candidateIdDecimal.ToString("0", CultureInfo.InvariantCulture) &amp; "; ApplicationId=" &amp; applicationIdDecimal.ToString("0", CultureInfo.InvariantCulture) &amp; "; PreHireId=" &amp; handoffPreHireId &amp; "; Status=" &amp; workdayStatusText.Trim().Split(Convert.ToChar(10))(0).Trim()]</InArgument>
+                  </Assign.Value>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Assign>
+              </Sequence>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="3832, 712, 1936, 1096" BrowserType="Edge" ContentHash="Ml43qfS6mEixOFqfki9KTg" InformativeScreenshot="9458ac2c8d27aa1481ea357319b1716b.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg" Selector="&lt;html app='msedge.exe' title='TalentTrack ATS (Mock)' url='http://localhost:4100/#*' /&gt;" Url="http://localhost:4100/#/jobs" Version="V3">
+            <uix:TargetApp.SapInfo>
+              <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+            </uix:TargetApp.SapInfo>
+          </uix:TargetApp>
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="t35_9KIp1U2OpkYXZ6Ox6A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="wd2-impl-identity.workday.com/wday/authgwy/uipath_dpt1/upc/login" DesignTimeRectangle="882, 1214, 756, 90" DesignTimeScaleFactor="2.25" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl id='input-bml82' tag='INPUT' type='text' class='css-58jpwx' aaname='Username' matching:id='fuzzy' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="4130951e-02d6-4a82-9eee-adc3599ce08c" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Workday uipath_dpt1 - Sign in to Workday' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target DesignTimeRectangle="882, 1151, 756, 45" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='m3c4fca css-16kxzaw' aaname='Username' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Username' /&gt;" Guid="2b99653a-4ec0-4393-bb9c-682369bff55f" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <TargetAnchorable.PointOffset>
+        <PointOffset />
+      </TargetAnchorable.PointOffset>
+      <imageRef attrName="InformativeScreenshot" originalValue="36b7f41d59291e1ce1d3d66d62d9135a.jpg" xmlns="">0WNAc-Ub1LEuiVfnOsPvsEw</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

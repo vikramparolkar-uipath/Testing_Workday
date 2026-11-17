@@ -1,0 +1,15 @@
+﻿{
+  "Name": "WorkerJob_WorkerHistory_Tab",
+  "Description": "Worker History tab on the worker Job page",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "2vISV2hw9EShWl_W3WuvZg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/2vISV2hw9EShWl_W3WuvZg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hvEVhuoiTEi3MTdsg1K70Q",
+  "Created": "2026-11-14T21:23:00.1148491Z",
+  "Updated": "2026-11-14T21:23:00.1148491Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

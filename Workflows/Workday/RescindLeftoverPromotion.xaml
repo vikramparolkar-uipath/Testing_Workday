@@ -1,0 +1,70 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Workflows_Workday_RescindLeftoverPromotion" this:Workflows_Workday_RescindLeftoverPromotion.WorkdayUiTimeout="00:00:30" sap2010:Annotation.AnnotationText="Clean start: if the newest Successfully Completed &quot;Promotion: &lt;worker&gt;&quot; in Worker History is effective in the future (a test promotion left by a run that stopped before its rescind), rescinds it. Real past promotions are never touched. Open Worker History first; sign in as Logan McNeil." xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:utat="clr-namespace:UiPath.Testing.Activities.TestData;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_WorkerName" Type="InArgument(x:String)" />
+    <x:Property Name="in_TestName" Type="InArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="out_Rescinded" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+<Sequence DisplayName="Workflows Workday RescindLeftoverPromotion" sap2010:WorkflowViewState.IdRef="Sequence_G280"><Sequence.Variables><Variable x:TypeArguments="x:Boolean" Name="found" /><Variable x:TypeArguments="x:String" Name="rowNumber" /><Variable x:TypeArguments="x:String" Name="effectiveDate" /><Variable x:TypeArguments="s:DateTime" Name="parsedDate" /><Variable x:TypeArguments="x:String" Name="statusBefore" /><Variable x:TypeArguments="x:String" Name="rescindedTitle" /></Sequence.Variables>
+<Assign DisplayName="Nothing rescinded yet" sap2010:WorkflowViewState.IdRef="Assign_G264"><Assign.To><OutArgument x:TypeArguments="x:Boolean">[out_Rescinded]</OutArgument></Assign.To><Assign.Value><InArgument x:TypeArguments="x:Boolean">[False]</InArgument></Assign.Value></Assign>
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="0bb85167-b373-4f32-bfd7-fd44559ae5b2" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G269"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G268">
+<uix:NCheckState DisplayName="Is there a Successfully Completed promotion?" Exists="[found]" HealingAgentBehavior="Disabled" ScopeIdentifier="0bb85167-b373-4f32-bfd7-fd44559ae5b2" Timeout="[3]" Version="V5" sap2010:WorkflowViewState.IdRef="NCheckState_G265"><uix:NCheckState.IfExists><Sequence DisplayName="Found" sap2010:WorkflowViewState.IdRef="Sequence_G266" /></uix:NCheckState.IfExists><uix:NCheckState.IfNotExists><Sequence DisplayName="Not found" sap2010:WorkflowViewState.IdRef="Sequence_G267" /></uix:NCheckState.IfNotExists><uix:NCheckState.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl colName=&#x27;Status*&#x27; data-automation-id=&#x27;textView&#x27; rowName=&#x27;Promotion: {0}&#x27; visibleinnertext=&#x27;Successfully Completed&#x27; /&gt;&quot;, in_WorkerName)]" Guid="078f8927-6f43-41e6-9e10-94e7caee44aa" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NCheckState.Target></uix:NCheckState>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+<If Condition="[found]" DisplayName="Check its effective date" sap2010:WorkflowViewState.IdRef="If_G279"><If.Then><Sequence DisplayName="Check its effective date - yes" sap2010:WorkflowViewState.IdRef="Sequence_G278">
+<uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Workday" HealingAgentBehavior="Job" OpenMode="Never" ScopeGuid="1d464b85-8cf3-4273-a760-edb852f8840d" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2" sap2010:WorkflowViewState.IdRef="NApplicationCard_G273"><uix:NApplicationCard.Body><ActivityAction x:TypeArguments="x:Object"><ActivityAction.Argument><DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" /></ActivityAction.Argument><Sequence DisplayName="Workday steps" sap2010:WorkflowViewState.IdRef="Sequence_G272">
+<uix:NGetAttributeGeneric x:TypeArguments="x:String" Attribute="tableRow" DisplayName="Read which row it is" HealingAgentBehavior="SameAsCard" Result="[rowNumber]" ScopeIdentifier="1d464b85-8cf3-4273-a760-edb852f8840d" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetAttributeGeneric_G270"><uix:NGetAttributeGeneric.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl colName=&#x27;Status*&#x27; data-automation-id=&#x27;textView&#x27; rowName=&#x27;Promotion: {0}&#x27; visibleinnertext=&#x27;Successfully Completed&#x27; /&gt;&quot;, in_WorkerName)]" Guid="d83d332c-00bb-43d5-af8c-070d8142feab" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetAttributeGeneric.Target></uix:NGetAttributeGeneric>
+<uix:NGetText DisplayName="Read its effective date" HealingAgentBehavior="SameAsCard" ScopeIdentifier="1d464b85-8cf3-4273-a760-edb852f8840d" TextString="[effectiveDate]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5" sap2010:WorkflowViewState.IdRef="NGetText_G271"><uix:NGetText.Target><uix:TargetAnchorable ElementType="Container" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl colName=&#x27;Effective Date*&#x27; rowName=&#x27;Promotion: {0}&#x27; tableRow=&#x27;{1}&#x27; /&gt;&quot;, in_WorkerName, rowNumber)]" Guid="cd630cd7-712a-4ce9-b8a8-9db9ddae977d" ScopeSelectorArgument="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" /></uix:NGetText.Target></uix:NGetText>
+</Sequence></ActivityAction></uix:NApplicationCard.Body><uix:NApplicationCard.TargetApp><uix:TargetApp BrowserType="Edge" Selector="&lt;html app=&#x27;msedge.exe&#x27; title=&#x27;*Workday*&#x27; url=&#x27;https://impl.workday.com/uipath_dpt1*&#x27; /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/home.htmld" Version="V3"><uix:TargetApp.SapInfo><uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" /></uix:TargetApp.SapInfo></uix:TargetApp></uix:NApplicationCard.TargetApp></uix:NApplicationCard>
+<If Condition="[DateTime.TryParseExact((effectiveDate &amp; &quot;&quot;).Trim(), &quot;MM/dd/yyyy&quot;, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, parsedDate) AndAlso parsedDate &gt; DateTime.Today]" DisplayName="Rescind it only when it is a future-dated test promotion" sap2010:WorkflowViewState.IdRef="If_G277"><If.Then><Sequence DisplayName="Rescind it only when it is a future-dated test promotion - yes" sap2010:WorkflowViewState.IdRef="Sequence_G276">
+<ui:LogMessage DisplayName="Log the cleanup" Level="Warn" Message="[&quot;Rescinding a completed test promotion for &quot; &amp; in_WorkerName &amp; &quot; effective &quot; &amp; effectiveDate &amp; &quot; (left by an earlier run)&quot;]" sap2010:WorkflowViewState.IdRef="LogMessage_G274" />
+<ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Rescind it" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_G275" UnSafe="False" WorkflowFileName="Workflows/Workday/RescindEvent.xaml"><ui:InvokeWorkflowFile.Arguments><InArgument x:TypeArguments="x:String" x:Key="in_EventLabel">["Promotion: " &amp; in_WorkerName]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_RequiredStatus">["Successfully Completed"]</InArgument><InArgument x:TypeArguments="x:String" x:Key="in_Comment">["UiPath demo cleanup before " &amp; in_TestName &amp; " " &amp; DateTime.Now.ToString("yyyy-MM-dd HH:mm")]</InArgument><InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument><OutArgument x:TypeArguments="x:Boolean" x:Key="out_EventFound">[out_Rescinded]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_StatusBefore">[statusBefore]</OutArgument><OutArgument x:TypeArguments="x:String" x:Key="out_RescindedTitle">[rescindedTitle]</OutArgument></ui:InvokeWorkflowFile.Arguments></ui:InvokeWorkflowFile>
+</Sequence></If.Then></If>
+</Sequence></If.Then></If>
+</Sequence>
+</Activity>

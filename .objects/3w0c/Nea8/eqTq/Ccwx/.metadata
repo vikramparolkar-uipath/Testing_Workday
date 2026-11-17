@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate_SaveOffer_Button",
+  "Description": "Save or update offer button",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "CcwxN5bNvEGXgMcEPJ36Qg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/CcwxN5bNvEGXgMcEPJ36Qg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T02:50:33.9444146Z",
+  "Updated": "2026-11-13T02:50:33.9444146Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

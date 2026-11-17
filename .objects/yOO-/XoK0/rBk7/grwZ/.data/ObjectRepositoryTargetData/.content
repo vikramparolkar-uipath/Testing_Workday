@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="jUwkXTMAQUuaaoOUu4glcw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="838, 368, 18, 18" DesignTimeScaleFactor="1" ElementType="RadioButton" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl aaname='Existing Pre-Hire' name='ViewModel_15' tag='INPUT' type='radio' class='WDRW' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:name='fuzzy' fuzzylevel:name='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' /&gt;" Guid="3fb8b0f3-5b6a-4f43-a18d-7ad3cba990d1" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="1">
+          <Target DesignTimeRectangle="838, 368, 132, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='ViewModel_16' tag='LABEL' type='' class='WERW' aaname='Existing Pre-Hire' matching:parentid='fuzzy' fuzzylevel:parentid='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='unchecked' /&gt;" Guid="a554db60-4f31-44ec-bd2c-8992cd2e8de0" SearchSteps="FuzzySelector" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="050a2c4eee5bf8e098707124748fd320.jpg" xmlns="">0TF6lm0RyNE-g9RP0ewEXxQ</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

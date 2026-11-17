@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeePrompt_SupervisoryOrganization_Label",
+  "Description": "Supervisory Organization field label on the Hire Employee prompt",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "9OQKXjNy2UOFNzJRIreg4Q",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/9OQKXjNy2UOFNzJRIreg4Q",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "Created": "2026-11-13T18:02:19.8634316Z",
+  "Updated": "2026-11-13T18:02:19.8634316Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

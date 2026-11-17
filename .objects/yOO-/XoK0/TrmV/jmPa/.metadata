@@ -1,0 +1,15 @@
+﻿{
+  "Name": "StartProxy_UserToProxyAs_Input",
+  "Description": "User to Proxy As prompt search input on the Start Proxy page",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "jmPaqsLZQ0WCZ_xH91TB6A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/jmPaqsLZQ0WCZ_xH91TB6A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/TrmVUN8MD0OmJL2zAhKztg",
+  "Created": "2026-11-13T17:51:34.7416166Z",
+  "Updated": "2026-11-13T17:51:34.7416166Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Submit Compensation",
+  "Description": "Primary Submit button for the completed Compensation task",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "LdnPMoGkS0aN6_wZIb2oYQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/LdnPMoGkS0aN6_wZIb2oYQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:55:31.442265Z",
+  "Updated": "2026-11-13T22:55:31.442265Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

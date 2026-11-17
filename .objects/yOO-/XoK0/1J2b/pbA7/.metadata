@@ -1,0 +1,15 @@
+﻿{
+  "Name": "SearchResults_EmployeeResult_Link",
+  "Description": "Search result title link for the worker whose result card is labelled Employee (not the old pre-hire), selector variable workerName",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "pbA7UvJWsUWIC2TlAnJBnQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/pbA7UvJWsUWIC2TlAnJBnQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg",
+  "Created": "2026-11-14T21:16:12.5819178Z",
+  "Updated": "2026-11-14T21:16:12.5819178Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

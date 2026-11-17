@@ -1,0 +1,17 @@
+﻿{
+  "Name": "View - Prehire Synced",
+  "Type": "Element",
+  "TaxonomyType": "Element",
+  "Id": "FvmqXPTIVkqjBqw644x8wA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/FvmqXPTIVkqjBqw644x8wA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T16:22:28.3558802Z",
+  "Updated": "2026-11-13T20:48:36.6609797Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationNext.Activities, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

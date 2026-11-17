@@ -1,0 +1,533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Activity mc:Ignorable="sap sap2010" x:Class="Tests_TC_HR_HIRE_03" this:Tests_TC_HR_HIRE_03.WorkdayUiTimeout="00:00:30" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:t="clr-namespace:Testing_Workday_CrossPlatform;assembly=DataService.Testing_Workday_CrossPlatform" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_RunId" Type="InArgument(x:String)" />
+    <x:Property Name="out_RunId" Type="OutArgument(x:String)" />
+    <x:Property Name="WorkdayUiTimeout" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="Passed" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="SummaryMessage" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>Testing_Workday_CrossPlatform</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>DataService.Testing_Workday_CrossPlatform</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="TC-HR-HIRE-03 | WD-02 Start Hire Employee as hiring manager" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="runId" />
+      <Variable x:TypeArguments="t:WorkdayHireRun" Name="currentRun" />
+      <Variable x:TypeArguments="x:Boolean" Name="runFound" />
+      <Variable x:TypeArguments="x:String" Name="signedInLabel" />
+      <Variable x:TypeArguments="x:Boolean" Name="signedInAsLogan" />
+      <Variable x:TypeArguments="x:String" Name="selectedProxyUser" />
+      <Variable x:TypeArguments="x:String" Name="proxyBanner" />
+      <Variable x:TypeArguments="x:Boolean" Name="proxyStarted" />
+      <Variable x:TypeArguments="x:String" Name="supervisoryOrganization" />
+      <Variable x:TypeArguments="x:String" Name="selectedPreHire" />
+      <Variable x:TypeArguments="x:String" Name="optionText" />
+      <Variable x:TypeArguments="x:String" Name="fieldLabel" />
+      <Variable x:TypeArguments="x:String" Name="positionText" />
+      <Variable x:TypeArguments="x:String" Name="submittedMessage" />
+      <Variable x:TypeArguments="x:String" Name="overallStatus" />
+      <Variable x:TypeArguments="x:String" Name="upNext" />
+      <Variable x:TypeArguments="x:String" Name="hireEventRef" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyRun" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifySignedIn" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyProxy" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyOrganization" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPreHire" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyPosition" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyBeforeProxy" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyBeforePromptOk" />
+      <Variable x:TypeArguments="x:Boolean" Name="verifyBeforeSubmit" />
+      <Variable x:TypeArguments="x:Boolean" Name="finalGate" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="WD-02 Given" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Select the hire run this test needs (fails if the test data is not available)" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_Select03" UnSafe="False" WorkflowFileName="Workflows/DataFabric/SelectHireRun.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_RunId">[in_RunId]</InArgument>
+          <InArgument x:TypeArguments="t:HireRunStage" x:Key="in_RequiredStage">[Testing_Workday_CrossPlatform.HireRunStage.PreHireVerified]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_TestCaseName">["TC-HR-HIRE-03"]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ProducedBy">["TC-HR-HIRE-02"]</InArgument>
+          <OutArgument x:TypeArguments="t:WorkdayHireRun" x:Key="out_CurrentRun">[currentRun]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign DisplayName="Use the selected run ID" sap2010:WorkflowViewState.IdRef="Assign_RunIdFromRun03">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[runId]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign DisplayName="Record that the run was found" sap2010:WorkflowViewState.IdRef="Assign_RunFound03">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[runFound]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-01 current Workday hire run exists" ContinueOnFailure="True" Expression="[runFound]" sap2010:WorkflowViewState.IdRef="VerifyExpression_1" OutputMessageFormat="[&quot;WD-02 current run lookup: {Expression}; result={Result}.&quot;]" Result="[verifyRun]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+      <Assign DisplayName="Expose RunId" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[runId]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[runFound]" DisplayName="Expose matched run ID" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence DisplayName="Matched run" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Assign DisplayName="Expose current run ID" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_RunId]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[currentRun.RunId]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="No matched run" sap2010:WorkflowViewState.IdRef="Sequence_4" />
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="WD-02 When" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Prepare Workday: sign in as Logan and stop any leftover proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_Prep03" UnSafe="False" WorkflowFileName="Workflows/Workday/PrepareWorkdaySession.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Check if signed in as Logan McNeil" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument>
+          <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsLogan]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <If Condition="[Not signedInAsLogan]" DisplayName="Login as Logan only when needed" sap2010:WorkflowViewState.IdRef="If_6">
+        <If.Then>
+          <Sequence DisplayName="Login as Logan" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Login to Workday as Logan" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Workflows\Workday\Login to Workday.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_CredentialName">["Workday Credentials - HR Partner"]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Recheck signed-in user after Logan login" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="Workflows/Workday/CheckIfSignedIn.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ExpectedUser">["Logan McNeil"]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_UserLabel">[signedInLabel]</OutArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_IsSignedIn">[signedInAsLogan]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Already signed in as Logan" sap2010:WorkflowViewState.IdRef="Sequence_19" />
+        </If.Else>
+      </If>
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-02 signed in user is Logan McNeil" ContinueOnFailure="True" Expression="[signedInAsLogan]" sap2010:WorkflowViewState.IdRef="VerifyExpression_2" OutputMessageFormat="[&quot;WD-02 signed-in user: &quot; &amp; signedInLabel &amp; &quot;; result={Result}.&quot;]" Result="[verifySignedIn]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+      <Assign DisplayName="Gate before Start Proxy" sap2010:WorkflowViewState.IdRef="Assign_4">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[verifyBeforeProxy]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[verifyRun AndAlso verifySignedIn]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <If Condition="[verifyBeforeProxy]" DisplayName="Run WD-02 only after signed-in gate" sap2010:WorkflowViewState.IdRef="If_2">
+        <If.Then>
+          <Sequence DisplayName="WD-02 UI execution" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Search Start Proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Workflows/Workday/SearchAndOpen.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchText">["Start Proxy"]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ResultText">["Start Proxy"]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Start proxy as James Walker" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Workflows/Workday/StartProxy.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ProxyUser">["James Walker"]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_SelectedUser">[selectedProxyUser]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_ProxyBanner">[proxyBanner]</OutArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_ProxyStarted">[proxyStarted]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-03 proxy started for James Walker" ContinueOnFailure="True" Expression="[proxyStarted]" sap2010:WorkflowViewState.IdRef="VerifyExpression_3" OutputMessageFormat="[&quot;WD-02 proxy user='&quot; &amp; selectedProxyUser &amp; &quot;', banner='&quot; &amp; proxyBanner &amp; &quot;'; result={Result}.&quot;]" Result="[verifyProxy]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Search Hire Employee" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="Workflows/Workday/SearchAndOpen.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchText">["Hire Employee"]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ResultText">["Hire Employee"]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Set existing pre-hire prompt" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="Workflows/Workday/SetPromptField.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_PreHireId">[currentRun.PreHireId]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_SupervisoryOrganization">[supervisoryOrganization]</OutArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_SelectedPreHire">[selectedPreHire]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-04 supervisory organization is Accounts Payable Department" ContinueOnFailure="True" Expression="[supervisoryOrganization = &quot;Accounts Payable Department&quot;]" sap2010:WorkflowViewState.IdRef="VerifyExpression_4" OutputMessageFormat="[&quot;WD-02 supervisory organization='&quot; &amp; supervisoryOrganization &amp; &quot;'; expected='Accounts Payable Department'; result={Result}.&quot;]" Result="[verifyOrganization]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-05 selected pre-hire matches current run" ContinueOnFailure="True" Expression="[Not String.IsNullOrWhiteSpace(selectedPreHire) AndAlso (selectedPreHire.Contains(currentRun.PreHireId) OrElse selectedPreHire.Contains(currentRun.FirstName &amp; &quot; &quot; &amp; currentRun.LastName))]" sap2010:WorkflowViewState.IdRef="VerifyExpression_5" OutputMessageFormat="[&quot;WD-02 selected pre-hire='&quot; &amp; selectedPreHire &amp; &quot;'; expected contains='&quot; &amp; currentRun.FirstName &amp; &quot; &quot; &amp; currentRun.LastName &amp; &quot;' or '&quot; &amp; currentRun.PreHireId &amp; &quot;'; result={Result}.&quot;]" Result="[verifyPreHire]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+            <Assign DisplayName="Gate before Hire Employee OK" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[verifyBeforePromptOk]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[verifyProxy AndAlso verifyOrganization AndAlso verifyPreHire]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <If Condition="[verifyBeforePromptOk]" DisplayName="Confirm Hire Employee prompt only after gate" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence DisplayName="Confirm prompt and prepare form" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Hire Employee Prompt OK" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="a8888888-8888-4888-8888-888888888888" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Confirm selected pre-hire" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Confirm Hire Employee" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a8888888-8888-4888-8888-888888888888" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="bsiUUyGtWkCC-GkpKQkxvQ" DesignTimeRectangle="1175, 520, 112, 40" ElementType="Button" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='wd-CommandButton_uic_okButton' tag='BUTTON' type='button' class='WKQM WOQM WA4N WNDN WDSM' aaname='OK' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:text='OK' /&gt;" Guid="31602425-b06f-4dfc-b466-a1ad5ec6b101" InformativeScreenshot="7b6afc48a9862d04c348e6423b456831.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/Rj9EJaVoNkSdlHF1QwGfJA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="1199, 530, 64, 20" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='OK' class='WMQM' tag='SPAN' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='OK' /&gt;" Guid="bfc12eaf-ee28-4fb1-a438-4b2070a38b0b" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="Xbx9mY7AxEeGVfS1tQsACA" InformativeScreenshot="62aa2918cd5f0f2614676631a25f806e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$78.htmld" Version="V3">
+                        <uix:TargetApp.SapInfo>
+                          <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+                        </uix:TargetApp.SapInfo>
+                      </uix:TargetApp>
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Hire Employee Form" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OpenMode="Never" ScopeGuid="a9999999-9999-4999-8999-999999999999" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Complete Hire Employee form before submit" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Focus Hire Date month segment" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="Ukt7jDFpd0-iAn7wH0VvZw" DesignTimeRectangle="275, 452, 29, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id='56$88744' tag='DIV' /&gt;&lt;webctrl data-automation-id='dateSectionMonth-input' tag='INPUT' /&gt;" Guid="b9f15a77-3248-439f-af20-d3f081fe30f1" InformativeScreenshot="3a3e4a71c441f66502bcd2b26970608e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/PC7_n7J2Gk6IyjDaVlvPuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Hire Date as key events" EmptyFieldMode="None" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_2" InteractionMode="HardwareEvents" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[currentRun.HireDate.Value.ToString(&quot;MMddyyyy&quot;)]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="Ukt7jDFpd0-iAn7wH0VvZw" DesignTimeRectangle="275, 452, 29, 24" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id='56$88744' tag='DIV' /&gt;&lt;webctrl data-automation-id='dateSectionMonth-input' tag='INPUT' /&gt;" Guid="b9f15a77-3248-439f-af20-d3f081fe30f1" InformativeScreenshot="3a3e4a71c441f66502bcd2b26970608e.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/PC7_n7J2Gk6IyjDaVlvPuA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Select Fill Vacancy reason" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_3" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Fill Vacancy[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="IU6t1HMfbU2nFNgfksOneg" DesignTimeRectangle="267, 632, 868, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='multiSelectContainer' data-uxi-widget-type='multiselect' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:data-uxi-widget-type='fuzzy' fuzzylevel:data-uxi-widget-type='0.0' /&gt;&lt;webctrl color='var(--cnvs-brand-common-focus-outline)' data-automation-id='multiselectInputContainer' dir='ltr' tag='DIV' matching:color='fuzzy' fuzzylevel:color='0.0' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' matching:dir='fuzzy' fuzzylevel:dir='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Reason' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="22fc4520-1c4e-4297-906b-653e1cfee5c3" InformativeScreenshot="831398f5eba2363742e049fe34ab1e9a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/RUwuiO5kOkKmNscw-Fs80g" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="268, 605, 46, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Reason' tag='LABEL' type='' class='WIWI' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Reason' /&gt;" Guid="ba300a1b-883f-435a-89d8-a466fd55a1ab" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <Assign DisplayName="Set Fill Vacancy option label" sap2010:WorkflowViewState.IdRef="Assign_11">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[optionText]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["New Hire &gt; Fill Vacancy"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose New Hire Fill Vacancy" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="yUNKOppXvEes3I5URIm4JQ" DesignTimeRectangle="271, 765, 887, 44" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-label='{0}*' data-automation-id='menuItem' tag='DIV' /&gt;&quot;, optionText)]" Guid="ba6c391e-141e-420b-9dc9-e305652777af" InformativeScreenshot="721ffc813ca8320b17f6800a1a1b9732.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/g4mb1kNGCUaWzslin7QIVg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Select position from current run" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_4" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[currentRun.PositionId &amp; &quot;[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="O91zC0Mm4k6FmbWGTcc_0w" DesignTimeRectangle="267, 903, 868, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1668*' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' fuzzylevel:data-uxi-ml-recommendations-uri='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Position' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="0ed18393-1549-4853-b4ef-94387940ba62" InformativeScreenshot="daacb3066f833658311e128e2a2dbaa8.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/PxDK_mXYpUOU36i4boFR_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="268, 876, 51, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Position' class='WIWI' tag='LABEL' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Position' /&gt;" Guid="a6653fac-efbc-4bfa-b0a7-5a0a6d314a2f" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <Assign DisplayName="Set selected position field label" sap2010:WorkflowViewState.IdRef="Assign_12">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[fieldLabel]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["Position"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <uix:NGetText DisplayName="Read selected position" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" TextString="[positionText]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable ContentHash="N2FttBBpHEWFoE_k3Usf4A" DesignTimeRectangle="302, 915, 287, 18" ElementType="Text" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-label='items selected for {0}' tag='UL' /&gt;&lt;webctrl data-automation-id='promptOption' tag='P' /&gt;&quot;, fieldLabel)]" Guid="fa3c3ebf-5f26-469d-82f3-80c63ce1d77c" InformativeScreenshot="8075653ad184bc3902d5224e0c361db7.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/1v55DNf6pUu-G-G3PXX2uA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Select Regular employee type" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Regular[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="WIWeHkZbEkSJtl-BjcyeVQ" DesignTimeRectangle="267, 1000, 408, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1651*' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' fuzzylevel:data-uxi-ml-recommendations-uri='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Employee Type' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="a5f22417-8f4d-4936-b281-02bd5f1f1220" InformativeScreenshot="d0cfbc0cc93cfe1a2a76ddb1efe5185f.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/EjsPzJ6RZkGpHksCTHG3_Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="268, 973, 94, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Employee Type' class='WIWI' tag='LABEL' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Employee Type' /&gt;" Guid="450d2836-06cf-45df-bb7a-daf83ec427de" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Select Chicago location" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_6" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Chicago[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="39J2rkTkmEKoiizaRwAfQA" DesignTimeRectangle="267, 1099, 868, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FuzzySelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1621*' tag='DIV' matching:data-automation-id='fuzzy' fuzzylevel:data-automation-id='0.0' fuzzylevel:data-uxi-ml-recommendations-uri='0.0' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' type='' class='css-5led9z-InputContainer-1 edt0qdt13' placeholder='Search' aaname='Location' fuzzylevel:data-uxi-element-id='0.0' fuzzylevel:id='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;" Guid="938ddd5c-a5ec-4d15-881e-ca667f18442d" InformativeScreenshot="f8ad5e0c883895c542c973e2a859789c.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/LKjEOE6Gw0CwYC9ru8Fb1Q" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="FuzzySelector" Version="V6" WaitForReadyArgument="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target DesignTimeRectangle="268, 1072, 54, 17" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Location' class='WIWI' tag='LABEL' type='' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' matching:class='fuzzy' fuzzylevel:class='0.0' check:text='Location' /&gt;" Guid="1c81eb13-ddd5-4fd6-9057-6bbd6306b0f3" SearchSteps="FuzzySelector" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Select Accounting Specialist AP job profile" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_7" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Accounting Specialist[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="o7BCqJ6AJEGTwe1v54HdHg" DesignTimeRectangle="267, 1301, 868, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1618*' tag='DIV' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' /&gt;" Guid="cf6c723a-b071-4b53-9a66-8dc3e09878f3" InformativeScreenshot="ee3c3e8539561c6d2a7a6b4c772689e9.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/au88-k5E60GB-pilZwHdtw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <Assign DisplayName="Set job profile option label" sap2010:WorkflowViewState.IdRef="Assign_13">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[optionText]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">["Accounting Specialist - AP"]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Choose Accounting Specialist AP" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable ContentHash="yUNKOppXvEes3I5URIm4JQ" DesignTimeRectangle="271, 765, 887, 44" ElementType="ListItem" ElementVisibilityArgument="Interactive" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-label='{0}*' data-automation-id='menuItem' tag='DIV' /&gt;&quot;, optionText)]" Guid="ba6c391e-141e-420b-9dc9-e305652777af" InformativeScreenshot="721ffc813ca8320b17f6800a1a1b9732.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/g4mb1kNGCUaWzslin7QIVg" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Set Full time" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_8" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Full time[k(enter)]&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="yXx_jHPmykyyORrfLZi-Ww" DesignTimeRectangle="267, 2076, 868, 36" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='responsiveMonikerInput' data-uxi-ml-recommendations-uri='*1619*' tag='DIV' /&gt;&lt;webctrl data-uxi-element-id='*selectinput*' id='*input*' tag='INPUT' /&gt;" Guid="19623ed2-5ced-45bd-a09f-7e0f049796dd" InformativeScreenshot="e5294e8566c62040313bb4cec127cdfc.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/BxjNJ4lJKk6mwTbmKQuhGA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Set Accounting Specialist AP job title" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_9" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Accounting Specialist - AP&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="zati1kpi_E616fYijcfDfQ" DesignTimeRectangle="266, 1389, 436, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id='56$127326' tag='DIV' /&gt;&lt;webctrl data-automation-id='textInputBox' tag='INPUT' /&gt;" Guid="a3930f3b-7e38-4f8b-922b-bfac91b91774" InformativeScreenshot="ee3c3e8539561c6d2a7a6b4c772689e9.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/vsYwVwfKFkW3hepyhrGdGA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Set Accounting Specialist AP business title" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_10" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;Accounting Specialist - AP&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="J6wNS42Ws0Sk-e5xtTYipQ" DesignTimeRectangle="726, 1389, 436, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-metadata-id='56$127325' tag='DIV' /&gt;&lt;webctrl data-automation-id='textInputBox' tag='INPUT' /&gt;" Guid="b19753a5-bcc9-4c99-988c-c8e61e80d457" InformativeScreenshot="7469136c28f12d43a4a4d69595e926a9.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/vuZQ_1GNo0avPsB1B0HkEQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Set scheduled weekly hours to 40" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_11" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;40&quot;]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="VsvgfX1lNUyEgC8rGtIhBw" DesignTimeRectangle="266, 2257, 436, 42" ElementType="InputBox" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='numericWidget' tag='DIV' uipath-html-title='Enter hours.' /&gt;&lt;webctrl data-automation-id='numericInput' tag='INPUT' /&gt;" Guid="5f0e9d51-e604-4ee2-b8a9-742808dc2523" InformativeScreenshot="ee3c3e8539561c6d2a7a6b4c772689e9.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/pCJQpMph90WIHm5b9JTolw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NGetText DisplayName="Read FTE" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" TextString="[submittedMessage]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable ContentHash="-u-RFFodMkSt_pwYJk0lUQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='numericText' data-metadata-id='56$675611' tag='DIV' /&gt;" Guid="5b9933a1-ab48-46c7-bf6a-d68d057b00c1" Reference="e00i96boZ0Ke_iif9ZtTVw/zclZQAg5U06FiszZ8HQ3_A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Enter hire comment" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NTypeInto_12" InteractionMode="SameAsCard" ScopeIdentifier="a9999999-9999-4999-8999-999999999999" Text="[&quot;UiPath test run &quot; &amp; runId]" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable ContentHash="M3286YhtWUSk21ivhSpLnw" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl id='textAreaField' tag='TEXTAREA' /&gt;" Guid="6dacac37-65d6-4d08-87e3-89bd6a4c8934" Reference="e00i96boZ0Ke_iif9ZtTVw/ruPnWVzIzEOlGXYGt-6MSw" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="gSV3vUhzcE6BKZVQyLfudQ" InformativeScreenshot="86b378f05d2db165f39cdd25e700731a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$78.htmld" Version="V3">
+                        <uix:TargetApp.SapInfo>
+                          <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+                        </uix:TargetApp.SapInfo>
+                      </uix:TargetApp>
+                    </uix:NApplicationCard.TargetApp>
+                  </uix:NApplicationCard>
+                  <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-06 position starts with current PositionId" ContinueOnFailure="True" Expression="[Not String.IsNullOrWhiteSpace(positionText) AndAlso positionText.StartsWith(currentRun.PositionId)]" sap2010:WorkflowViewState.IdRef="VerifyExpression_6" OutputMessageFormat="[&quot;WD-02 position='&quot; &amp; positionText &amp; &quot;'; expected prefix='&quot; &amp; currentRun.PositionId &amp; &quot;'; result={Result}.&quot;]" Result="[verifyPosition]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+                  <Assign DisplayName="Gate before Submit" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[verifyBeforeSubmit]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">[verifyBeforePromptOk AndAlso verifyPosition]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <If Condition="[verifyBeforeSubmit]" DisplayName="Submit only after position gate" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <Sequence DisplayName="Submit hire and read event details" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Submit Hire Employee" HealingAgentBehavior="Job" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" OpenMode="Never" ScopeGuid="abbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V2">
+                          <uix:NApplicationCard.Body>
+                            <ActivityAction x:TypeArguments="x:Object">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Submit hire" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Submit Hire Employee" HealingAgentBehavior="SameAsCard" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="SameAsCard" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="abbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" Timeout="[WorkdayUiTimeout.TotalSeconds]" Version="V5">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable ContentHash="4FvXYpwpMEWFopB_GbCEWQ" DesignTimeRectangle="0, 0, 0, 0" ElementVisibilityArgument="Interactive" FullSelectorArgument="&lt;webctrl data-automation-id='*wd-CommandButton_*' tag='BUTTON' uipath-html-title='Submit' /&gt;" Guid="8daf5faf-2b14-4c04-9f5f-73e4fa08fe43" Reference="e00i96boZ0Ke_iif9ZtTVw/E-cSUjNRf0W_IJMeUjwidQ" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" SearchSteps="Selector" Version="V6" WaitForReadyArgument="Interactive" />
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </ActivityAction>
+                          </uix:NApplicationCard.Body>
+                          <uix:NApplicationCard.TargetApp>
+                            <uix:TargetApp Area="-1928, 712, 1936, 1096" BrowserType="Edge" ContentHash="gSV3vUhzcE6BKZVQyLfudQ" InformativeScreenshot="86b378f05d2db165f39cdd25e700731a.jpg" Reference="e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA" Selector="&lt;html app='msedge.exe' title='*Workday*' url='https://impl.workday.com/uipath_dpt1*' /&gt;" Url="https://impl.workday.com/uipath_dpt1/d/task/2997$78.htmld" Version="V3">
+                              <uix:TargetApp.SapInfo>
+                                <uix:SAPElementInfo IsSapSubsystem="False" WebAutomationFramework="Default" />
+                              </uix:TargetApp.SapInfo>
+                            </uix:TargetApp>
+                          </uix:NApplicationCard.TargetApp>
+                        </uix:NApplicationCard>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Read Workday Event Details" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="Workflows/Workday/ReadEventDetails.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_SubmittedMessage">[submittedMessage]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_OverallStatus">[overallStatus]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_UpNext">[upNext]</OutArgument>
+                            <OutArgument x:TypeArguments="x:String" x:Key="out_HireEventRef">[hireEventRef]</OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Submit not reached" sap2010:WorkflowViewState.IdRef="Sequence_12" />
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Prompt gate failed" sap2010:WorkflowViewState.IdRef="Sequence_13" />
+              </If.Else>
+            </If>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Search Stop Proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Workflows/Workday/SearchAndOpen.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_SearchText">["Stop Proxy"]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ResultText">["Stop Proxy"]</InArgument>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Stop proxy" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Workflows/Workday/StopProxy.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:TimeSpan" x:Key="WorkdayUiTimeout">[WorkdayUiTimeout]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Signed-in gate failed" sap2010:WorkflowViewState.IdRef="Sequence_14" />
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence DisplayName="WD-02 Then" sap2010:WorkflowViewState.IdRef="Sequence_15">
+      <uta:VerifyExpression KeepScreenshots="{x:Null}" ScreenshotsPath="{x:Null}" AlternativeVerificationTitle="WD-02 V-07 all required gates passed after Stop Proxy" ContinueOnFailure="True" Expression="[verifyRun AndAlso verifySignedIn AndAlso verifyProxy AndAlso verifyOrganization AndAlso verifyPreHire AndAlso verifyPosition AndAlso verifyBeforeSubmit]" sap2010:WorkflowViewState.IdRef="VerifyExpression_7" OutputMessageFormat="[&quot;WD-02 final gate after Stop Proxy: result={Result}.&quot;]" Result="[finalGate]" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True" />
+      <If Condition="[finalGate]" DisplayName="Persist HireSubmitted only after final gate" sap2010:WorkflowViewState.IdRef="If_5">
+        <If.Then>
+          <Sequence DisplayName="Persist successful hire submission" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" DisplayName="Update WorkdayHireRun HireSubmitted" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="Workflows/DataFabric/UpdateHireRun.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="t:WorkdayHireRun" x:Key="in_CurrentRun">[currentRun]</InArgument>
+                <InArgument x:TypeArguments="t:HireRunStage" x:Key="in_Stage">[Testing_Workday_CrossPlatform.HireRunStage.HireSubmitted]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_LastTestCase">["TC-HR-HIRE-03"]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_HireEventRef">[hireEventRef]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_HireEventStatus">["In Progress"]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_ErrorMessage">[String.Empty]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <Assign DisplayName="Set passed output" sap2010:WorkflowViewState.IdRef="Assign_7">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[True]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Build successful summary" sap2010:WorkflowViewState.IdRef="Assign_8">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["RunId=" &amp; out_RunId &amp; "; Stage=HireSubmitted; HireEventStatus=In Progress; EventDetails=Read"]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence DisplayName="Leave failure handling to execution template" sap2010:WorkflowViewState.IdRef="Sequence_17">
+            <Assign DisplayName="Set failed output" sap2010:WorkflowViewState.IdRef="Assign_9">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">[Passed]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Build failed summary" sap2010:WorkflowViewState.IdRef="Assign_10">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[SummaryMessage]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">["RunId=" &amp; out_RunId &amp; "; Stage=Failed; FailedGate=WD-02 final gate"]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>

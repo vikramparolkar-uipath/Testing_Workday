@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Header_CurrentUser_Button",
+  "Description": "Profile button in the top-right header; its aria-label names the signed-in user (Profile Logan McNeil)",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "3JKdvy2RMUO9LV-NPTFYrg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/3JKdvy2RMUO9LV-NPTFYrg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug",
+  "Created": "2026-11-13T17:36:53.5477998Z",
+  "Updated": "2026-11-13T17:36:53.5477998Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

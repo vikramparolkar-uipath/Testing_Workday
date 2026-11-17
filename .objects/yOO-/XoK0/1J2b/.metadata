@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Search Results",
+  "Description": "Workday global search results page",
+  "Type": "Screen",
+  "Id": "1J2bmEuijku09qAzkSCmOg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/1J2bmEuijku09qAzkSCmOg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-13T17:48:30.6138549Z",
+  "Updated": "2026-11-13T17:48:30.6138549Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

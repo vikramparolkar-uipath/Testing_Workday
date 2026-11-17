@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_ScheduledWeeklyHours_Input",
+  "Description": "Scheduled Weekly Hours numeric input under Working Time",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "pCJQpMph90WIHm5b9JTolw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/pCJQpMph90WIHm5b9JTolw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:20:50.4540224Z",
+  "Updated": "2026-11-13T18:20:50.4540224Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

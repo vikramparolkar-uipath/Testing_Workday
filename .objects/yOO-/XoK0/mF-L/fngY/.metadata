@@ -1,0 +1,15 @@
+﻿{
+  "Name": "RescindBP_ProcessRescinded_Text",
+  "Description": "Process Rescinded confirmation text shown after submitting the rescind",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "fngYrYmaGU2w2eGJ3elF6A",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/fngYrYmaGU2w2eGJ3elF6A",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/mF-LX89XLkipzP8qUm9DeA",
+  "Created": "2026-11-15T05:12:08.4451844Z",
+  "Updated": "2026-11-15T05:12:08.4451844Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

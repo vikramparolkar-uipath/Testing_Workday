@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Make Changes",
+  "Description": "The primary Workday Make Changes button on the Compensation task page",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "7cBrq1_Tj0-3hcElhgaNiA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/7cBrq1_Tj0-3hcElhgaNiA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T21:33:53.7152312Z",
+  "Updated": "2026-11-13T21:33:53.7152312Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

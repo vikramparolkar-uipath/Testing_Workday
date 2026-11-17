@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeeForm_DiscardChanges_Button",
+  "Description": "Discard button in the Discard Changes? dialog shown after Cancel on the Hire Employee form",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "O2OeNAqyVkyU6D8EXqFqIA",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/O2OeNAqyVkyU6D8EXqFqIA",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/ccMquulkHkeGPzGs6XnnlA",
+  "Created": "2026-11-13T18:36:17.7026997Z",
+  "Updated": "2026-11-13T18:36:17.7026997Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

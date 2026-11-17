@@ -1,0 +1,15 @@
+﻿{
+  "Name": "WorkerProfile_Job_Tab",
+  "Description": "Job section button in the worker profile menu",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "hjfWX49KW0iuijXhKqucQg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/hjfWX49KW0iuijXhKqucQg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/hvEVhuoiTEi3MTdsg1K70Q",
+  "Created": "2026-11-14T21:21:04.784Z",
+  "Updated": "2026-11-14T21:21:04.784Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

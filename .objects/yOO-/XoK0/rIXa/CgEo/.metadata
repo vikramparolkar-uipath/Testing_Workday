@@ -1,0 +1,15 @@
+﻿{
+  "Name": "All Compensation Plans",
+  "Description": "Menu item that opens the All Compensation Plans source for the Compensation Plan field",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "CgEotoH0fEetF-87wdED_g",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/CgEotoH0fEetF-87wdED_g",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:09:19.1529072Z",
+  "Updated": "2026-11-13T22:09:19.1529072Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_AddCandidate_Form",
+  "Description": "Add candidate form container on the job page",
+  "Type": "Element",
+  "TaxonomyType": "Container",
+  "Id": "PHTu612MvkOV4PYUP8lMvw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/PHTu612MvkOV4PYUP8lMvw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:53.0066757Z",
+  "Updated": "2026-11-13T02:37:53.0066757Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

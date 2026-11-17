@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Candidate Workday Pre Hire ID Text",
+  "Description": "Text value of the Workday Pre-Hire ID in the Workday hand-off panel on the Candidate page",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "GIVRM3o28UKSY3_T3P6IVw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/GIVRM3o28UKSY3_T3P6IVw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/eqTq-EjRtU-OKkyjg1xfgA",
+  "Created": "2026-11-13T03:03:00.5980629Z",
+  "Updated": "2026-11-13T03:03:00.5980629Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

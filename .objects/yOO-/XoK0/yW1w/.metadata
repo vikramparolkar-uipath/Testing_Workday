@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Header",
+  "Description": "Workday header present on every page: global search and the signed-in user button",
+  "Type": "Screen",
+  "Id": "yW1wjdzrNkuwGx3JfAwYug",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/yW1wjdzrNkuwGx3JfAwYug",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/XoK0nMUL_ki6UIireSleoA",
+  "Created": "2026-11-13T17:36:23.3937581Z",
+  "Updated": "2026-11-13T17:36:23.3937581Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_LastName_Input",
+  "Description": "Last name input in the Add candidate form",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "thV3SkK9A02gKHori_taJg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/thV3SkK9A02gKHori_taJg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:53.1018447Z",
+  "Updated": "2026-11-13T02:37:53.1018447Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Job_WorkdayMapping_Panel",
+  "Description": "Workday mapping panel on the Accounting Specialist - AP job page",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "G0hsTBNG0Euh_4M_-TR2Fw",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/G0hsTBNG0Euh_4M_-TR2Fw",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/9-Y8EvVxhUmS02saeGV7rQ",
+  "Created": "2026-11-13T02:37:52.9162765Z",
+  "Updated": "2026-11-13T02:37:52.9162765Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

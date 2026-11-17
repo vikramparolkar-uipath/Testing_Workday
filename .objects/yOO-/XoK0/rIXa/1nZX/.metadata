@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Compensation Plan",
+  "Description": "Searchable Compensation Plan input in the Add Plan Assignment modal",
+  "Type": "Element",
+  "TaxonomyType": "Input",
+  "Id": "1nZXVevkxEKrM1BsAQ-7LQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/1nZXVevkxEKrM1BsAQ-7LQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T21:59:54.8425778Z",
+  "Updated": "2026-11-13T21:59:54.8425778Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,15 @@
+﻿{
+  "Name": "HireEmployeePrompt_SupervisoryOrganization_Text",
+  "Description": "Selected supervisory organization in the Supervisory Organization prompt, for example Accounts Payable Department",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "42SzEFH1IEqbb33xJu1lcQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/42SzEFH1IEqbb33xJu1lcQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rBk7f9kC80u6jm1AUvlw3g",
+  "Created": "2026-11-13T18:02:19.9134895Z",
+  "Updated": "2026-11-13T18:02:19.9134895Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

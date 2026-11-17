@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Jobs_JobLink4001_Link",
+  "Description": "Accounting Specialist - AP job link for requisition 4001",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "v5lHGm-pv0GrOIh0ccMBWQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/v5lHGm-pv0GrOIh0ccMBWQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T02:33:04.7887035Z",
+  "Updated": "2026-11-13T02:33:04.7887035Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

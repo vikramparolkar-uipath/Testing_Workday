@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Jobs_JobRow4001_Row",
+  "Description": "Job row for requisition 4001 in the Jobs table",
+  "Type": "Element",
+  "TaxonomyType": "None",
+  "Id": "HDzEc5lzsU2Fcdaw3hiYmg",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/HDzEc5lzsU2Fcdaw3hiYmg",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/_6dtvlP750WU67tvUQmFRg",
+  "Created": "2026-11-13T02:33:04.690349Z",
+  "Updated": "2026-11-13T02:33:04.690349Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

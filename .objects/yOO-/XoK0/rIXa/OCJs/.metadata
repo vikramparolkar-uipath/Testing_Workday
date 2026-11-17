@@ -1,0 +1,15 @@
+﻿{
+  "Name": "Salary Row Related Actions",
+  "Description": "Related actions control for the existing Salary row in the Compensation task",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "OCJsIDoDCkCrTqU70zs7QQ",
+  "Reference": "e00i96boZ0Ke_iif9ZtTVw/OCJsIDoDCkCrTqU70zs7QQ",
+  "ParentRef": "e00i96boZ0Ke_iif9ZtTVw/rIXazAOetUqn5XnmG8vnMQ",
+  "Created": "2026-11-13T22:28:37.8855354Z",
+  "Updated": "2026-11-13T22:28:37.8855354Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.8.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
